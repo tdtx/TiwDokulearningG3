@@ -19,29 +19,33 @@ public class usuarioMatriculacion extends usuarioRegistro {
 	private String fechaNacimiento;
 	private String DNI;
 	private boolean aceptar;
+	private static int ident = 3;
+	private int id;
+	
 
-
-
-
-	public usuarioMatriculacion(String nick, String nombre, String apellido1,
-			String apellido2, String clave1, String clave2, String correo,
-			boolean terminos, String telefono,
-			genero sexo, String calle, String localidad, String codigoPostal,
-			String provincia, datosCobro formaPago, String fechaNacimiento,
-			String dNI, boolean aceptar) {
-		super(nick, nombre, apellido1, apellido2, clave1, clave2, correo,
-				terminos);
+	public usuarioMatriculacion( String telefono,
+			String calle, String localidad, String codigoPostal,
+			String provincia, String fechaNacimiento, String dNI,
+			boolean aceptar) {
+		super();
 		this.telefono = telefono;
-		this.sexo = sexo;
 		this.calle = calle;
 		this.localidad = localidad;
 		this.codigoPostal = codigoPostal;
 		this.provincia = provincia;
-		this.formaPago = formaPago;
 		this.fechaNacimiento = fechaNacimiento;
 		DNI = dNI;
 		this.aceptar = aceptar;
+		this.id=getIdentificadorSiguiente();
 	}
+
+
+
+	public static int getIdentificadorSiguiente(){
+    	return(ident++);
+    }
+	
+	
 
 	public String getTelefono() {
 		return telefono;
@@ -106,6 +110,11 @@ public class usuarioMatriculacion extends usuarioRegistro {
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
+	
+
+		// TODO Auto-generated method stub
+		
+	
 
 	public String getDNI() {
 		return DNI;
@@ -123,22 +132,12 @@ public class usuarioMatriculacion extends usuarioRegistro {
 		this.aceptar = aceptar;
 	}
 
-	public usuarioMatriculacion(String clave1, String correo) {
-		super(clave1, correo);
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	public usuarioMatriculacion() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public usuarioMatriculacion(String nick, String nombre, String apellido1,
-			String apellido2, String clave1, String clave2, String correo,
-			boolean terminos) {
-		super(nick, nombre, apellido1, apellido2, clave1, clave2, correo,
-				terminos);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	public String ValidarMatriculacion()
 	{
@@ -175,4 +174,6 @@ public class usuarioMatriculacion extends usuarioRegistro {
 		
 		return mensaje;
 	}
+
+	
 }
