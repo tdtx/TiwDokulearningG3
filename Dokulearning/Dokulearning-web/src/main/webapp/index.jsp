@@ -8,6 +8,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <c:choose>
+	<c:when test="${not empty mensaje }">
+		<h1>${mensaje}</h1>
+	</c:when>
+	<c:otherwise>
+		<h1>Hello World!</h1>
+	</c:otherwise>
+</c:choose>
     </body>
 </html>
