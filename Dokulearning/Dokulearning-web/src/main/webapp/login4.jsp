@@ -22,11 +22,11 @@
 	</c:otherwise>
 </c:choose>
 <!-- el siguiente formulario  envia los datos al LoginServlet. Los parametros contienen el atributo name -->
-<form action="login" method="post">
+<form action="registroWeb" method="post">
 
 
-<label for="usuario">Usuario:</label><input type="text" name="usuario" id="usuario"/><br/>
-<label for="password">Password:</label><input type="password" name="password" id="password" />
+<label for="usuario">Usuario:</label><input type="text" name="correo" id="correo"/><br/>
+<label for="password">Password:</label><input type="password" name="clave1" id="clave1" />
 <input type="submit" value="Enviar"/>
 
 </form>
