@@ -8,9 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import matriculacion.usuarioMatriculacion.datosCobro;
-import matriculacion.usuarioMatriculacion.genero;
 import registro.usuarioRegistro;
 
 /**
@@ -39,8 +36,8 @@ public class controlMatriculacion extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		
-		usuarioMatriculacion um1 = new usuarioMatriculacion("123123123", "calle1", "madrid", "12345", "madrid",  "holafechamal", "123456789", true);
-		usuarioMatriculacion um2 = new usuarioMatriculacion("321321321", "calle2", "madrid", "12345", "madrid",  "holafechamal", "123456789", true);
+		usuarioMatriculacion um1 = new usuarioMatriculacion("123123123", "calle1", "madrid", "12345", "madrid",  "holafechamal", "123456789", true, "mujer", "transferencia");
+		usuarioMatriculacion um2 = new usuarioMatriculacion("321321321", "calle2", "madrid", "12345", "madrid",  "holafechamal", "123456789", true,"mujer","paypal");
         
         matriculados = new ArrayList<usuarioMatriculacion>();
         matriculados.add(um1);
@@ -90,7 +87,7 @@ private void eliminarMatriculado(String correo) {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	
 		
 		String telefono = request.getParameter("telefono");
 		String calle = request.getParameter("calle");
@@ -100,6 +97,8 @@ private void eliminarMatriculado(String correo) {
 		String fechanacimiento = request.getParameter("fechaNacimiento");
 		String DNI = request.getParameter("DNI");
 		Boolean aceptar = true;
+		String genero= request.getParameter("genero");
+		String formaPago= request.getParameter("formaPago");
 		String pagina = indexJSP;
 
 	/*	if (aceptar!= null){
@@ -110,14 +109,14 @@ private void eliminarMatriculado(String correo) {
 	if(comprobarUsuario(telefono)==null){
 		
 	
-	registrarMatriculacion(telefono, calle, localidad, codigopostal, provincia, fechanacimiento, DNI, aceptar);
+	registrarMatriculacion(telefono, calle, localidad, codigopostal, provincia, fechanacimiento, DNI, aceptar, genero, formaPago);
 		request.setAttribute("matriculados", matriculados);
 	
 	}
 	else{
 		
 		try{
-			editarUsuarioMatriculacion(telefono, calle, localidad, codigopostal, provincia, fechanacimiento, DNI, aceptar);
+			editarUsuarioMatriculacion(telefono, calle, localidad, codigopostal, provincia, fechanacimiento, DNI, aceptar, genero, formaPago);
 			request.setAttribute("matriculados", matriculados);
 			pagina= matriculacionDeCursoJSP;
 		}catch(Exception e){
@@ -188,10 +187,10 @@ private void eliminarMatriculado(String correo) {
 	}
 	private void registrarMatriculacion(String telefono, String calle,
 			String localidad, String codigopostal, String provincia,
-			String fechanacimiento, String dNI, Boolean aceptar) {
+			String fechanacimiento, String dNI, Boolean aceptar, String genero, String formPago) {
 		// TODO Auto-generated method stub
 		
-		usuarioMatriculacion um1= new usuarioMatriculacion(telefono, calle, localidad, codigopostal, provincia,  fechanacimiento, dNI, aceptar);
+		usuarioMatriculacion um1= new usuarioMatriculacion(telefono, calle, localidad, codigopostal, provincia,  fechanacimiento, dNI, aceptar, "mujer","transferencia");
         
       
         matriculados.add(um1);
@@ -203,7 +202,7 @@ private void eliminarMatriculado(String correo) {
 	
 	private void editarUsuarioMatriculacion(String telefono, String calle,
 			String localidad, String codigopostal, String provincia,
-			String fechanacimiento, String dNI, boolean aceptar) {
+			String fechanacimiento, String dNI, boolean aceptar, String genero, String formaPago) {
 		for (usuarioMatriculacion um : matriculados) {
 			if (telefono.equals(um.getTelefono())){
 				um.setTelefono(telefono);
@@ -214,6 +213,8 @@ private void eliminarMatriculado(String correo) {
 				um.setFechaNacimiento(fechanacimiento);
 				um.setDNI(dNI);
 				um.setAceptar(aceptar);
+				um.setGenero(genero);
+				um.setFormaPago(formaPago);
 				break;
 			}
 		}

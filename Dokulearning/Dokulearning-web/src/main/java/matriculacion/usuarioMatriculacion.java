@@ -5,16 +5,16 @@ import registro.usuarioRegistro;
 
 public class usuarioMatriculacion extends usuarioRegistro {
 
-	public enum genero {noDefinido, hombre, mujer};
-	public enum datosCobro {noDefinido,transferencia, tarjeta, paypal};
+	
 	
 	private String telefono;
-	private genero sexo;
+	private String genero;
+	private String formaPago;
 	private String calle;
 	private String localidad;
 	private String codigoPostal;
 	private String provincia;
-	private datosCobro formaPago;
+	
 	//foto
 	private String fechaNacimiento;
 	private String DNI;
@@ -26,7 +26,7 @@ public class usuarioMatriculacion extends usuarioRegistro {
 	public usuarioMatriculacion( String telefono,
 			String calle, String localidad, String codigoPostal,
 			String provincia, String fechaNacimiento, String dNI,
-			boolean aceptar) {
+			boolean aceptar, String genero, String formaPago) {
 		super();
 		this.telefono = telefono;
 		this.calle = calle;
@@ -36,6 +36,8 @@ public class usuarioMatriculacion extends usuarioRegistro {
 		this.fechaNacimiento = fechaNacimiento;
 		DNI = dNI;
 		this.aceptar = aceptar;
+		this.genero=genero;
+		this.formaPago=formaPago;
 		this.id=getIdentificadorSiguiente();
 	}
 
@@ -55,13 +57,7 @@ public class usuarioMatriculacion extends usuarioRegistro {
 		this.telefono = telefono;
 	}
 
-	public genero getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(genero sexo) {
-		this.sexo = sexo;
-	}
+	
 
 	public String getCalle() {
 		return calle;
@@ -95,13 +91,7 @@ public class usuarioMatriculacion extends usuarioRegistro {
 		this.provincia = provincia;
 	}
 
-	public datosCobro getFormaPago() {
-		return formaPago;
-	}
-
-	public void setFormaPago(datosCobro formaPago) {
-		this.formaPago = formaPago;
-	}
+	
 
 	public String getFechaNacimiento() {
 		return fechaNacimiento;
@@ -166,13 +156,32 @@ public class usuarioMatriculacion extends usuarioRegistro {
 		if (!this.aceptar)
 			mensaje += "<li>Debe aceptar los terminos y condiciones.</li>";
 		
-		if(this.getFormaPago()==datosCobro.noDefinido)
-			mensaje += "<li>Debe seleccionar la forma de pago.</li>";
-		
-		if(this.getSexo()==genero.noDefinido)
-			mensaje += "<li>Debe seleccionar su genero.</li>";
 		
 		return mensaje;
+	}
+
+
+
+	public String getGenero() {
+		return genero;
+	}
+
+
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+
+
+	public String getFormaPago() {
+		return formaPago;
+	}
+
+
+
+	public void setFormaPago(String formaPago) {
+		this.formaPago = formaPago;
 	}
 
 	
