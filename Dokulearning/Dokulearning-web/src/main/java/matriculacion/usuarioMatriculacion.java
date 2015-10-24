@@ -23,8 +23,21 @@ public class usuarioMatriculacion extends usuarioRegistro {
 	private int id;
 	
 
-
-
+	public usuarioMatriculacion( String telefono,
+			String calle, String localidad, String codigoPostal,
+			String provincia, String fechaNacimiento, String dNI,
+			boolean aceptar) {
+		super();
+		this.telefono = telefono;
+		this.calle = calle;
+		this.localidad = localidad;
+		this.codigoPostal = codigoPostal;
+		this.provincia = provincia;
+		this.fechaNacimiento = fechaNacimiento;
+		DNI = dNI;
+		this.aceptar = aceptar;
+		this.id=getIdentificadorSiguiente();
+	}
 
 
 
@@ -123,6 +136,7 @@ public class usuarioMatriculacion extends usuarioRegistro {
 	public usuarioMatriculacion() {
 		// TODO Auto-generated constructor stub
 	}
+
 
 
 	public String ValidarMatriculacion()
