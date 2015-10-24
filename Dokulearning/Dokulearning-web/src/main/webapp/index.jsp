@@ -134,16 +134,22 @@
 
 
 	<!---inicio-footer---->
+	  
 	<div class="footer">
 		<div class="wrap">
 			<div class="foot-nav"></div>
 
 			<div class="copy-right">
-				<p>2015 Copyright (c). Kiwi</p>
+				<p>2015 Copyright (c). TCRAM</p>
 			</div>
+			
 			<div class="clear"></div>
 		</div>
 	</div>
+	
+	
+
+	
 	<!---final-footer---->
 
 
