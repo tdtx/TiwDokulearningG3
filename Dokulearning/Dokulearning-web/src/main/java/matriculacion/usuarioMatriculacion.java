@@ -29,8 +29,7 @@ public class usuarioMatriculacion extends usuarioRegistro {
 			genero sexo, String calle, String localidad, String codigoPostal,
 			String provincia, datosCobro formaPago, String fechaNacimiento,
 			String dNI, boolean aceptar) {
-		super(nick, nombre, apellido1, apellido2, clave1, clave2, correo,
-				terminos);
+		super();
 		this.telefono = telefono;
 		this.sexo = sexo;
 		this.calle = calle;
@@ -135,8 +134,7 @@ public class usuarioMatriculacion extends usuarioRegistro {
 	public usuarioMatriculacion(String nick, String nombre, String apellido1,
 			String apellido2, String clave1, String clave2, String correo,
 			boolean terminos) {
-		super(nick, nombre, apellido1, apellido2, clave1, clave2, correo,
-				terminos);
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

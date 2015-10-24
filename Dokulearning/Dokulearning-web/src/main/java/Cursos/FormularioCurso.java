@@ -1,4 +1,4 @@
-package es.uc3m.tiw.web;
+package Cursos;
 
 public class FormularioCurso {
 
