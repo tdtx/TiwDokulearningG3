@@ -3,6 +3,9 @@ package registro;
 import dominio.validaciones;
 
 public class usuarioRegistro {
+	
+
+
 	String nick ;
 	String nombre;
 	String apellido1 ;
@@ -12,17 +15,40 @@ public class usuarioRegistro {
 	String correo ;
 	boolean terminos ;
 	boolean mayoredad;
+	
+	
+	//constructor para iniciar sesion
 	public usuarioRegistro(String clave1, String correo) {
 		super();
 		this.clave1 = clave1;
 		this.correo = correo;
 	}
+	
+	//constructor vacio
 	public usuarioRegistro() {
 		super();
 	}
+	
+	//Constructor con todo menos apellido 2
+	public usuarioRegistro(String nick, String nombre, String apellido1,
+			String clave1, String clave2, String correo, boolean terminos,
+			boolean mayoredad) {
+		super();
+		this.nick = nick;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.clave1 = clave1;
+		this.clave2 = clave2;
+		this.correo = correo;
+		this.terminos = terminos;
+		this.mayoredad = mayoredad;
+	}
+	
+	
+	//constructor con todo
 	public usuarioRegistro(String nick, String nombre, String apellido1,
 			String apellido2, String clave1, String clave2, String correo,
-			boolean terminos) {
+			boolean terminos, boolean mayoredad) {
 		super();
 		this.nick = nick;
 		this.nombre = nombre;
@@ -32,7 +58,35 @@ public class usuarioRegistro {
 		this.clave2 = clave2;
 		this.correo = correo;
 		this.terminos = terminos;
+		this.mayoredad = mayoredad;
 	}
+	
+	//constructor con todo menos checkbox ni apellido2
+	public usuarioRegistro(String nick, String nombre, String apellido1,
+			String clave1, String clave2, String correo) {
+		super();
+		this.nick = nick;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.clave1 = clave1;
+		this.clave2 = clave2;
+		this.correo = correo;
+	}
+	
+	//constructor con todo menos checkbox
+	public usuarioRegistro(String nick, String nombre, String apellido1,
+			String apellido2, String clave1, String clave2, String correo) {
+		super();
+		this.nick = nick;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.clave1 = clave1;
+		this.clave2 = clave2;
+		this.correo = correo;
+	}
+	
+	
 	public String getNick() {
 		return nick;
 	}
@@ -104,8 +158,8 @@ public class usuarioRegistro {
 			mensaje += "<li>El primer apellido es obligatorio y no debe ser  mayor de 20 caracteres.</li>";
 		if (!val.maxLength(apellido2, 20))
 			mensaje += "<li>El segundo apellido no debe ser  mayor de 20 caracteres.</li>";
-		if (!val.correo(correo, 20))
-			mensaje += "<li>El correo es obligatorio y el formato valido, debe ser: aaa@bb.ccc y no debe ser mayor de 20 caracteres.</li>";
+		/*if (!val.correo(correo, 20))
+			mensaje += "<li>El correo es obligatorio y el formato valido, debe ser: aaa@bb.ccc y no debe ser mayor de 20 caracteres.</li>"*/;
 		if (!val.formatoClave(clave1, 20,8))
 			mensaje += "<li> La clave tiene que tener minimo 8 caracteres y maximo 20</li>";
 		if (!val.stringIguales(clave1, clave2))

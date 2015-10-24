@@ -22,9 +22,9 @@ public class validaciones {
 		
 	}
 	
-	public boolean correo(String dato, int max){
+/*	public boolean correo(String dato, int max){
 		return dato.trim().matches("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?") && dato.length() <= max;		
-	}
+	}*/
 	
 	public boolean formatoClave(String dato, int max, int min){
 		return obligatorio(dato) && maxLength(dato, max) && minLength(dato, min);

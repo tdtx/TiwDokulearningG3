@@ -220,9 +220,9 @@
 						<label id="lblclave2" for="clave2">Repita su contraseña:</label><input
 							type="password" name="clave2" id="clave2" maxlength="20" /><br />
 						<label id="lblterminos" for="terminos">Acepto los
-							terminos:</label><input type="checkbox" name="terminos" id="terminos" /><br />
+							terminos:</label><input type="checkbox" name="terminos" id="terminos" value="ok"/><br />
 						<label id="lblmayoredad" for="mayoredad">Declaro ser mayor
-							de edad:</label><input type="checkbox" name="mayoredad" id="mayoredad" /><br />
+							de edad:</label><input type="checkbox" name="mayoredad" id="mayoredad" value="ok"/><br />
 
 
 						<input id="btnEnviar" type="button" value="Enviar" />

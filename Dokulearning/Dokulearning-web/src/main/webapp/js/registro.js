@@ -41,7 +41,7 @@ function comprobarFormulario(){//comprobacion de los campos del formulario con s
         mensaje.push("Debe indicar su primer apellido");
     }
     
-    $("#lblcorreo").removeClass("error");
+    /*$("#lblcorreo").removeClass("error");
     if (($("#correo").val() == "") || ($("#correo").val() == undefined)){
         $("#lblcorreo").addClass("error");
         mensaje.push("Debe indicar su dirección de correo electrónico");
@@ -52,7 +52,7 @@ function comprobarFormulario(){//comprobacion de los campos del formulario con s
             $("#lblcorreo").addClass("error");
             mensaje.push("Debe indicar una dirección de correo electrónico válida:aaa@bbb.ccc");
         }
-    }
+    }*/
       
     $("#lblclave1").removeClass("error");
     if (($("#clave1").val() == "") || ($("#clave1").val() == undefined)){
