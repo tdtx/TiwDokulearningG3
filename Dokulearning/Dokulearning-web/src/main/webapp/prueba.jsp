@@ -36,7 +36,7 @@
 
 </c:forEach>
 </table>
-<p><a href="login.jsp">Volver</a></p>
+<p><a href="registroWeb?action=perfil">Volver</a></p>
 </div>
 </body>
 </html>

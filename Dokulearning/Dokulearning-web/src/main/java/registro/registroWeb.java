@@ -55,13 +55,20 @@ public class registroWeb extends HttpServlet {
 
 		String action = request.getParameter("action");
 		String pagina = indexJSP;
+		
+		String clave = request.getParameter("clave1");
+		String correo = request.getParameter("correo");
+		
 		if (action != null && action.equals("perfil")) {
-			request.setAttribute("registrados", registrados);
-			pagina = formularioReg;
+			
+			/*usuarioRegistro registrados=comprobarUsuario(correo, clave);
+			
+			request.setAttribute("registrados", registrados);*/
+			pagina = "/perfilUsuario.jsp";
 		}
 
 		if (action != null && action.equals("eliminarReg")) {
-			String correo = request.getParameter("correo");
+			correo = request.getParameter("correo");
 			eliminarRegistrado(correo);
 			request.setAttribute("registrados", registrados);
 			pagina = formularioReg;
