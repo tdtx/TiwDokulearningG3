@@ -1,4 +1,4 @@
-package es.uc3m.tiw.web;
+package Cursos;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import pruebasclase.Usuario;
+
 
 /**
  * Servlet implementation class Cursos
