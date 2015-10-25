@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 //import dominio.validaciones;
 
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/registroWeb")
 public class registroWeb extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private ArrayList<usuarioRegistro> registrados;
+	public static ArrayList<usuarioRegistro> registrados;
 	private static final String formularioReg = "/registro.jsp";
 	private static final String indexJSP = "/index.jsp";
 
@@ -34,14 +35,17 @@ public class registroWeb extends HttpServlet {
 		// TODO Auto-generated method stub
 		super.init();
 
-		usuarioRegistro ur1 = new usuarioRegistro("MCH", "Maria", "Cañizares",
-				"Holgado", "clave", "clave", "mch@mch.mch", true, true);
-		usuarioRegistro ur2 = new usuarioRegistro("CAS", "Carol", "Arredondo",
-				"Silo", "clave", "clave", "cas@cas.cas", true, true);
-
-		registrados = new ArrayList<usuarioRegistro>();
-		registrados.add(ur1);
-		registrados.add(ur2);
+		if (registrados == null)
+		{
+			usuarioRegistro ur1 = new usuarioRegistro("MCH", "Maria", "Cañizares",
+					"Holgado", "clave", "clave", "mch@mch.mch", true, true);
+			usuarioRegistro ur2 = new usuarioRegistro("CAS", "Carol", "Arredondo",
+					"Silo", "clave", "clave", "cas@cas.cas", true, true);
+	
+			registrados = new ArrayList<usuarioRegistro>();
+			registrados.add(ur1);
+			registrados.add(ur2);
+		}
 
 	}
 
@@ -53,13 +57,16 @@ public class registroWeb extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		HttpSession sesion = request.getSession(true);
 		String action = request.getParameter("action");
 		String pagina = indexJSP;
 		
-		String clave = request.getParameter("clave1");
-		String correo = request.getParameter("correo");
+		//String clave = request.getParameter("clave1");
+		//String correo = request.getParameter("correo");
 		
 		if (action != null && action.equals("perfil")) {
+			//usuarioRegistro u = (usuarioRegistro) sesion.getAttribute("usuario");
+			//request.setAttribute("usrperfil", u);
 			
 			/*usuarioRegistro registrados=comprobarUsuario(correo, clave);
 			
@@ -68,7 +75,7 @@ public class registroWeb extends HttpServlet {
 		}
 
 		if (action != null && action.equals("eliminarReg")) {
-			correo = request.getParameter("correo");
+			String correo = request.getParameter("correo");
 			eliminarRegistrado(correo);
 			request.setAttribute("registrados", registrados);
 			pagina = formularioReg;
@@ -101,6 +108,7 @@ public class registroWeb extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+		HttpSession sesion = request.getSession(true);
 		String nick = request.getParameter("nick");
 		String nombre = request.getParameter("nombre");
 		String apellido1 = request.getParameter("apellido1");
@@ -112,11 +120,16 @@ public class registroWeb extends HttpServlet {
 		// String mayoredad = request.getParameter("mayoredad");
 		String pagina = indexJSP;
 
+		
 		if (comprobarUsuario(correo, clave1) == null) {
 			registrarRegistrado(nick, nombre, apellido1, apellido2, clave1,
 					clave2, correo);
-			request.setAttribute("registrados", registrados);
+			//variable de sesion para que cualqier pag pueda obtener este dato
 
+			usuarioRegistro u = comprobarUsuario(correo, clave1);
+			sesion.setAttribute("usuario", u);
+			sesion.setAttribute("acceso", correo);
+			request.setAttribute("registrados", registrados);
 		} else {
 
 			try {
@@ -131,7 +144,7 @@ public class registroWeb extends HttpServlet {
 		}
 
 		response.setContentType("text/html");
-		this.getServletContext().getRequestDispatcher("/prueba.jsp")
+		this.getServletContext().getRequestDispatcher("/perfilUsuario.jsp")
 				.forward(request, response);
 
 		/*

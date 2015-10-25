@@ -1,5 +1,6 @@
 package registro;
 
+import matriculacion.usuarioMatriculacion;
 import dominio.validaciones;
 
 public class usuarioRegistro {
@@ -15,6 +16,7 @@ public class usuarioRegistro {
 	String correo ;
 	boolean terminos ;
 	boolean mayoredad;
+	usuarioMatriculacion matriculacion;
 	
 	
 	//constructor para iniciar sesion
@@ -144,6 +146,14 @@ public class usuarioRegistro {
 	}
 	
 	
+	public usuarioMatriculacion getMatriculacion() {
+		return matriculacion;
+	}
+
+	public void setMatriculacion(usuarioMatriculacion matriculacion) {
+		this.matriculacion = matriculacion;
+	}
+
 	public String Validar()
 	{
 		String mensaje = "";

@@ -198,6 +198,7 @@
 
 					<form id="reg" action="registroWeb" method="post">
 
+
 						<c:choose>
 							<c:when test="${not empty mensaje }">
 								<p class="error">${mensaje }</p>
