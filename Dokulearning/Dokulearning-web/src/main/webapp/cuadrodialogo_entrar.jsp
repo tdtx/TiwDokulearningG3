@@ -1,52 +1,104 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Iniciar sesion</title>
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link href="css/dialogo.css" rel="stylesheet" type="text/css">
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 </head>
-
-<html>
-    
-
-    <div id="login-overlay" class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">Login to site.com</h4>
-          </div>
-          <div class="modal-body">
-              <div class="row">
-                  <div class="col-xs-12">
-                      <div class="well">
-                          <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
-                              <div class="form-group">
-                                  <label for="username" class="control-label">Username</label>
-                                  <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
-                                  <span class="help-block"></span>
-                              </div>
-                              <div class="form-group">
-                                  <label for="password" class="control-label">Password</label>
-                                  <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
-                                  <span class="help-block"></span>
-                              </div>
-                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
-                              <div class="checkbox">
-                                  <label>
-                                      <input type="checkbox" name="remember" id="remember"> Remember login
-                                  </label>
-                                  <p class="help-block">(if this is a private computer)</p>
-                              </div>
-                              <button type="submit" class="btn btn-success btn-block">Login</button>
-                              <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+<body>
+<button class="btn btn-info btn-xs" data-toggle="modal"
+                                                data-toggle="tooltip" data-placement="left"
+                                                title="Editar Registrado" data-target="#myModal">                           
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                            </button>
+<div class="modal fade" id="myModal" tabindex="-1"
+                                        role="dialog" aria-labelledby="myModalLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">
+                                                        <span aria-hidden="true">&times;</span><span
+                                                            class="sr-only">Close</span>
+                                                    </button>
+                                                    <h4 class="modal-title" id="myModalLabel">Editar
+                                                        Registrado de ${registrado.correo}</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="">
+    <!---Form Registrado --------------------------><form  onSubmit="return validarR(this)" action="gestionRegistrado" method="post"
+                                                            class="form-horizontal" role="form">
+                                                            <input type="text" name="id" value="${registrado.correo}"
+                                                                style="display: none">
+                                                            <div class="row">
+                                                                <div class="form-group col-md-1"></div>
+                                                                <div class="form-group col-md-5" id="columnas62">
+                                                                    <label for="nickR">Nick </label> <input type="text"
+                                                                        class="form-control" id="nickR" name="nickR"
+                                                                        value="${registrado.nick}">
+                                                                </div>
+                                                                <div class="form-group col-md-5">
+                                                                    <label for="nombreR">Nombre</label> <input
+                                                                        type="text" class="form-control" id="nombreR"
+                                                                        name="nombreR" 
+                                                                        value="${registrado.nombre}">
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-1"></div>
+                                                                <div class="form-group col-md-5" id="columnas62">
+                                                                    <label for="apellido1R">Apellido 1 </label> <input type="text"
+                                                                        class="form-control" id="apellido1R" name="apellido1R"
+                                                                        value="${registrado.apellido1}">
+                                                                </div>
+                                                                <div class="form-group col-md-5">
+                                                                    <label for="apellido2R">Apellido 2</label> <input
+                                                                        type="text" class="form-control" id="apellido2R"
+                                                                        name="apellido2R" 
+                                                                        value="${registrado.apellido2}">
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                            <div class="row">
+                                                                <div class="form-group col-md-1"></div>
+                                                                <div class="form-group col-md-5" id="columnas62">
+                                                                    <label for="correoR">Correo </label> <input type="text"
+                                                                        class="form-control" id="correoR" name="correoR"
+                                                                        value="${registrado.correo}">
+                                                                </div>
+                                                                <div class="form-group col-md-5">
+                                                                    <label for="fechaNcR">Fecha de nacimiento</label> <input
+                                                                        type="text" class="form-control" id="fechaNcR"
+                                                                        name="fechaNcR" 
+                                                                        value="${registrado.fechaNc}">
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                            <div class="modal-footer">
+                                                    <div>
+                                                                <button type="submit" class="btn btn-primary">Guardar
+                                                                    Cambios</button>
+                                                                <button type="button" class="btn btn-primary"
+                                                                    data-dismiss="modal">Cerrar</button>
+                                                            </div>                              
+                                                </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+</body>
 </html>
+       
