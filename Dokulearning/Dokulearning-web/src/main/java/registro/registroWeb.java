@@ -21,6 +21,8 @@ public class registroWeb extends HttpServlet {
 	public static ArrayList<usuarioRegistro> registrados;
 	private static final String formularioReg = "/registro.jsp";
 	private static final String indexJSP = "/index.jsp";
+	private usuarioRegistro usuarioReg;
+
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -116,20 +118,28 @@ public class registroWeb extends HttpServlet {
 		String clave1 = request.getParameter("clave1");
 		String clave2 = request.getParameter("clave2");
 		String correo = request.getParameter("correo");
+		String claveActual =request.getParameter("claveActual");
+		String claveNueva =request.getParameter("claveNueva");
+		String RclaveNueva =request.getParameter("RclaveNueva");
+		
 		// String terminos = request.getParameter("terminos");
 		// String mayoredad = request.getParameter("mayoredad");
-		String pagina = indexJSP;
-
+		String pagina = indexJSP;		
+		
 		
 		if (comprobarUsuario(correo, clave1) == null) {
 			registrarRegistrado(nick, nombre, apellido1, apellido2, clave1,
 					clave2, correo);
 			//variable de sesion para que cualqier pag pueda obtener este dato
-
+		
 			usuarioRegistro u = comprobarUsuario(correo, clave1);
-			sesion.setAttribute("usuario", u);
+			sesion.setAttribute("usuarioReg", u);
 			sesion.setAttribute("acceso", correo);
 			request.setAttribute("registrados", registrados);
+			
+	
+			
+			
 		} else {
 
 			try {
@@ -142,7 +152,11 @@ public class registroWeb extends HttpServlet {
 				System.out.println("ERROR");
 			}
 		}
+		if (claveActual != null) {
 
+		System.err.println("hola");
+		
+	}
 		response.setContentType("text/html");
 		this.getServletContext().getRequestDispatcher("/perfilUsuario.jsp")
 				.forward(request, response);
@@ -198,6 +212,26 @@ public class registroWeb extends HttpServlet {
 		}
 
 	}
+	
+	
+	private void cambiarClave(String correo, String claveNueva) {
+		// TODO Auto-generated method stub
+
+		for (usuarioRegistro cc : registrados) {
+			if (correo.equals(cc.getCorreo())) {
+				cc.setClave1(claveNueva);
+				cc.setClave2(claveNueva);
+
+				// perfil.setTerminos(true);
+				// perfil.setMayoredad(true);
+
+			}
+
+		}
+
+	}
+	
+	
 
 	// añadir registrados al array
 	private void registrarRegistrado(String nick, String nombre,
