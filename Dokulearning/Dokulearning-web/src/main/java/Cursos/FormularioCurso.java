@@ -2,6 +2,8 @@ package Cursos;
 
 import dominio.validaciones;
 
+package Cursos;
+
 
 public class FormularioCurso {
 

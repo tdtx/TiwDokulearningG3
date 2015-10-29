@@ -157,6 +157,9 @@ public class Cursos extends HttpServlet {
 		}
 		}
 			
+		}
+	
+		this.getServletContext().getRequestDispatcher(FORM_JSP).forward(request, response);
 		
 	}
 
