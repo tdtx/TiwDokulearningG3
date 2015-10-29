@@ -1,12 +1,15 @@
-package es.uc3m.tiw.web;
+package Cursos;
+
+import dominio.validaciones;
+
 
 public class FormularioCurso {
 
 	
 	String nom;
 	String rama;
-	int id;
-	int horas;
+	String id;
+	String horas;
 	String descripcion;
 	String temario;
 	String profesor;
@@ -19,16 +22,16 @@ public class FormularioCurso {
 	String categoria;
 	String destacado, tipo_oferta, imagen, dificultad, f_inicio, f_fin, asociado, cierre_curso;
 	boolean validado, terminos;
-	int precio ; 
+	String precio ; 
 	
-	public FormularioCurso(String nom, String rama, int id, int horas,
+	public FormularioCurso(String nom, String rama, String id, String horas,
 			String descripcion, String temario, String profesor,
 			String certificado, String secciones, String lecciones,
 			String material, String notificaciones, String calificaciones,
 			String categoria, String destacado, String tipo_oferta,
 			String imagen, String dificultad, boolean terminos, String f_inicio,
 			String f_fin, String asociado, String cierre_curso,
-			boolean validado, int precio) {
+			boolean validado, String precio) {
 		super();
 		this.nom = nom;
 		this.rama = rama;
@@ -76,15 +79,15 @@ public class FormularioCurso {
 	public int getId(int id){
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public int getHoras() {
+	public String getHoras() {
 		return horas;
 	}
 
-	public void setHoras(int horas) {
+	public void setHoras(String horas) {
 		this.horas = horas;
 	}
 
@@ -248,15 +251,65 @@ public class FormularioCurso {
 		this.validado = validado;
 	}
 
-	public int getPrecio() {
+	public String getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(int precio) {
+	public void setPrecio(String precio) {
 		this.precio = precio;
 	}
 	
-	
+	public String validarCurso(){
+		String mensaje="";
+		validaciones val = new validaciones();
+		
+		
+		if(!val.obligatorio(nom)){
+			mensaje += "<li>El nombre del curso es obligatorio.</li>";
+		}
+		if(!val.obligatorio(rama)){
+			mensaje +="<li>El nombre del curso es obligatorio.</li>";
+		}
+		if(!val.obligatorio(horas)){
+			mensaje +="<li>El numero de horas es obligatorio.</li>";
+		}
+		if(!val.maxLength(descripcion, 120)){
+			mensaje +="<li>La descripcion ha de tener como maximo 120 caracteres.</li>";
+		}
+		if(!val.obligatorio(temario)){
+			mensaje +="<li>El temario es obligatorio indicarlo.</li>";
+		}
+		if(!val.obligatorio(categoria)){
+			mensaje +="<li>La categoria es obligatoria indicarla.</li>";
+		}
+		if(!val.obligatorio(dificultad)){
+			mensaje +="<li>Hay que indicar la dificultad del curso.</li>";
+		}
+		if(!this.terminos){
+			mensaje +="<li>Hay que aceptar los terminos y condiciones.</li>";
+		}
+		if(!val.obligatorio(f_inicio)){
+			mensaje +="<li>f_inicio.</li>";
+		}
+		if(!val.obligatorio(f_fin)){
+			mensaje +="<li>f_fin.</li>";
+		}
+		/*if(!val.obligatorio(asociado)){
+			mensaje +="<li>asociado.</li>";
+		}*/
+		if(!val.obligatorio(cierre_curso)){
+			mensaje +="<li>cierre de curso.</li>";
+		}
+		if(!val.obligatorio(precio)){
+			mensaje +="<li>precio.</li>";
+		}
+		
+		return mensaje;
+		
+		
+		
+		
+	}
 	
 	
 }
