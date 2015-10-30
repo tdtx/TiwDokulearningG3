@@ -8,7 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import registro.registroWeb;
 import registro.usuarioRegistro;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class controlMatriculacion
@@ -19,7 +23,9 @@ public class controlMatriculacion extends HttpServlet {
 	private ArrayList<usuarioMatriculacion> matriculados;
 	private static final String matriculacionDeCursoJSP="/matriculacionDeCurso.jsp";
 	private static final String indexJSP="/index.jsp";
-	
+	private usuarioMatriculacion usuarioMat;
+
+	registroWeb rw= new registroWeb();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -88,7 +94,7 @@ private void eliminarMatriculado(String correo) {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		
+		HttpSession sesion = request.getSession(true);
 		String telefono = request.getParameter("telefono");
 		String calle = request.getParameter("calle");
 		String localidad= request.getParameter("localidad");
@@ -100,33 +106,44 @@ private void eliminarMatriculado(String correo) {
 		String genero= request.getParameter("genero");
 		String formaPago= request.getParameter("formaPago");
 		String pagina = indexJSP;
+		//String correo = request.getParameter("correoo");
+		//String clave1 = request.getParameter("clave1");
 
 	/*	if (aceptar!= null){
 			setAceptar(true);
 		}*/
+	
+		if(comprobarUsuario(telefono)==null){
+			registrarMatriculacion(telefono, calle, localidad, codigopostal, provincia, fechanacimiento, DNI, aceptar, genero, formaPago);
+				
+			usuarioMatriculacion u = comprobarUsuario(telefono);
+			sesion.setAttribute("usuarioMat", u);
+			sesion.setAttribute("acceso", telefono);
 			
-		
-	if(comprobarUsuario(telefono)==null){
-		
-	
-	registrarMatriculacion(telefono, calle, localidad, codigopostal, provincia, fechanacimiento, DNI, aceptar, genero, formaPago);
-		request.setAttribute("matriculados", matriculados);
-	
-	}
-	else{
-		
-		try{
-			editarUsuarioMatriculacion(telefono, calle, localidad, codigopostal, provincia, fechanacimiento, DNI, aceptar, genero, formaPago);
 			request.setAttribute("matriculados", matriculados);
-			pagina= matriculacionDeCursoJSP;
-		}catch(Exception e){
-			e.printStackTrace();
-		System.out.println("error");
-		}
-		}
+			
+			}
+			else{
+				
+				try{
+					editarUsuarioMatriculacion(telefono, calle, localidad, codigopostal, provincia, fechanacimiento, DNI, aceptar, genero, formaPago);
+					request.setAttribute("matriculados", matriculados);
+					pagina= matriculacionDeCursoJSP;
+				}catch(Exception e){
+					e.printStackTrace();
+				System.out.println("error");
+				}
+				}
+		/*usuarioRegistro r = rw.comprobarUsuario(correo, clave1);	
+		 if(r!= null){
+				
+			System.err.println("malo");
+		 }
+		*/
+
 		
 		response.setContentType("text/html");
-		this.getServletContext().getRequestDispatcher("/pruebasMatriculacion.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/perfilUsuario.jsp").forward(request, response);
 		/*usuarioMatriculacion usr = new usuarioMatriculacion();
 		
 		usr.setTelefono(request.getParameter("telefono"));

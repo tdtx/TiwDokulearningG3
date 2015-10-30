@@ -89,7 +89,7 @@ public class registroWeb extends HttpServlet {
 				.forward(request, response);
 	}
 
-	private void eliminarRegistrado(String correo) {
+	public void eliminarRegistrado(String correo) {
 		// TODO Auto-generated method stub
 		int x = 0;
 		for (usuarioRegistro perfil : registrados) {
@@ -192,7 +192,7 @@ public class registroWeb extends HttpServlet {
 	}
 
 	// editar
-	private void RegistrarUser(String nick, String nombre, String apellido1,
+	public void RegistrarUser(String nick, String nombre, String apellido1,
 			String apellido2, String clave1, String clave2, String correo) {
 		// TODO Auto-generated method stub
 
@@ -214,7 +214,7 @@ public class registroWeb extends HttpServlet {
 	}
 	
 	
-	private void cambiarClave(String correo, String claveNueva) {
+	public void cambiarClave(String correo, String claveNueva) {
 		// TODO Auto-generated method stub
 
 		for (usuarioRegistro cc : registrados) {
@@ -234,7 +234,7 @@ public class registroWeb extends HttpServlet {
 	
 
 	// añadir registrados al array
-	private void registrarRegistrado(String nick, String nombre,
+	public void registrarRegistrado(String nick, String nombre,
 			String apellido1, String apellido2, String clave1, String clave2,
 			String correo) {
 		// TODO Auto-generated method stub
@@ -243,7 +243,7 @@ public class registroWeb extends HttpServlet {
 	}
 
 	// comprueba el array list y devuelve solo el que buscas
-	private usuarioRegistro comprobarUsuario(String correo, String clave1) {
+	public usuarioRegistro comprobarUsuario(String correo, String clave1) {
 		usuarioRegistro u = null;
 		for (usuarioRegistro usuarioReg : registrados) {
 			if (correo.equals(usuarioReg.getCorreo())
