@@ -19,56 +19,83 @@ $(document).ready(function(){
 });
 
 
-function comprobarFormulario(){//comprobacion de los campos del formulario con sus alerts como en la practica anterior
+function comprobarFormulario(formulario){//comprobacion de los campos del formulario con sus alerts como en la practica anterior
     var mensaje = new Array();
 
     $("#lblnick").removeClass("error");
     if (($("#nick").val() == "") || ($("#nick").val() == undefined)){
         $("#lblnick").addClass("error");
-        mensaje.push("Debe indicar su nombre");
+        mensaje.push("Debe indicar su nick");
+        
+    }else{
+        var patron = new RegExp(/[^\s\a-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&-]/gi);
+        if(patron.test($("#nick").val())){
+            $("#lblnick").addClass("error");
+            mensaje.push("\nEl nick no debe contener caracteres especiales\n");
+        }
     }
     
 
     $("#lblnombre").removeClass("error");
     if (($("#nombre").val() == "") || ($("#nombre").val() == undefined)){
         $("#lblnombre").addClass("error");
-        mensaje.push("Debe indicar su nombre");
+        mensaje.push("\nDebe indicar su nombre");
+    }else{
+        var patron = new RegExp(/[^\s\a-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&-]/gi);
+        if(patron.test($("#nombre").val())){
+            $("#lblnombre").addClass("error");
+            mensaje.push("\nEl nombre no debe contener caracteres especiales");
+        }
     }
     
     $("#lblapellido1").removeClass("error");
     if (($("#apellido1").val() == "") || ($("#apellido1").val() == undefined)){
         $("#lblapellido1").addClass("error");
-        mensaje.push("Debe indicar su primer apellido");
+        mensaje.push("\nDebe indicar su primer apellido");
+    }else{
+        var patron = new RegExp(/[^\s\a-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&-]/gi);
+        if(patron.test($("#apellido1").val())){
+            $("#lblapellido1").addClass("error");
+            mensaje.push("\nEl apellido no debe contener caracteres especiales");
+        }
     }
     
-    /*$("#lblcorreo").removeClass("error");
+    $("#lblcorreo").removeClass("error");
     if (($("#correo").val() == "") || ($("#correo").val() == undefined)){
         $("#lblcorreo").addClass("error");
-        mensaje.push("Debe indicar su dirección de correo electrónico");
+        mensaje.push("\nDebe indicar su dirección de correo electrónico");
     }
     else{
-        var patron = new RegExp(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/);
+        var patron = new RegExp(/^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/);
         if(!patron.test($("#correo").val())){
             $("#lblcorreo").addClass("error");
-            mensaje.push("Debe indicar una dirección de correo electrónico válida:aaa@bbb.ccc");
+            mensaje.push("\nDebe indicar una dirección de correo electrónico válida:aaa@bbb.ccc");
         }
-    }*/
+    }
+    
+    
       
     $("#lblclave1").removeClass("error");
     if (($("#clave1").val() == "") || ($("#clave1").val() == undefined)){
         $("#lblclave1").addClass("error");
-        mensaje.push("Debe indicar su clave de usuario");
+        mensaje.push("\nDebe indicar su clave de usuario");
     }
     else if($("#clave1").val().length < 8){
             $("#lblclave1").addClass("error");
-            mensaje.push("La clave tiene que tener minimo 8 caracteres");
+            mensaje.push("\nLa clave tiene que tener minimo 8 caracteres");
+    }else{
+        var patron = new RegExp(/[^\s\a-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&-]/gi);
+        if(!patron.test($("#clave1").val())){
+            $("#lblclave1").addClass("error");
+            mensaje.push("\nLa clave no debe contener caracteres especiales");
+        }
     }
     
 
     $("#lblclave2").removeClass("error");
     if($("#clave2").val() != $("#clave1").val()){
         $("#lblclave2").addClass("error");
-        mensaje.push("Las claves de usuario no coinciden");
+        mensaje.push("\nLas claves de usuario no coinciden");
     }
 
     
@@ -76,13 +103,13 @@ function comprobarFormulario(){//comprobacion de los campos del formulario con s
     $("#lblterminos").removeClass("error");
     if (!$("#terminos").is(':checked')){
         $("#lblterminos").addClass("error");
-        mensaje.push("Debe aceptar los terminos y las condiciones de uso");
+        mensaje.push("\nDebe aceptar los terminos y las condiciones de uso");
     }
     
     $("#lblmayoredad").removeClass("error");
     if (!$("#mayoredad").is(':checked')){
         $("#lblmayoredad").addClass("error");
-        mensaje.push("Debe ser mayor de edad");
+        mensaje.push("\nDebe ser mayor de edad");
     }
     
     
@@ -90,11 +117,13 @@ function comprobarFormulario(){//comprobacion de los campos del formulario con s
     
 
     if (mensaje == ""){ //No hay error
+    	alert("El usuario se ha registrado con exito!");
+
     	    $("#reg").submit();
     }
     else{
-        
-    	$("#ulErroresEnPagina").empty();
+        alert(mensaje);
+    	/*$("#ulErroresEnPagina").empty();
         for(error in mensaje){
             li = document.createElement("li");
             $(li).html(mensaje[error]);
@@ -114,7 +143,7 @@ function comprobarFormulario(){//comprobacion de los campos del formulario con s
                     modal: true
 
                 });
-        $("#dialogo").show();
+        $("#dialogo").show();*/
 
     }
 }

@@ -130,7 +130,6 @@ public class registroWeb extends HttpServlet {
 		if (comprobarUsuario(correo, clave1) == null) {
 			registrarRegistrado(nick, nombre, apellido1, apellido2, clave1,
 					clave2, correo);
-			//variable de sesion para que cualqier pag pueda obtener este dato
 		
 			usuarioRegistro u = comprobarUsuario(correo, clave1);
 			sesion.setAttribute("usuarioReg", u);

@@ -196,7 +196,7 @@
 
 					<ul id="ulErroresEnPagina"></ul>
 
-					<form id="reg" action="registroWeb" method="post">
+					<form  id="reg" action="registroWeb" method="post">
 
 
 						<c:choose>

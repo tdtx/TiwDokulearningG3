@@ -1,13 +1,16 @@
 package matriculacion;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import registro.registroWeb;
 import registro.usuarioRegistro;
@@ -18,7 +21,17 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class controlMatriculacion
  */
 @WebServlet("/controlMatriculacion")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+maxFileSize = 1024 * 1024 * 10, // 10MB
+maxRequestSize = 1024 * 1024 * 50,
+location="/")// 50MB
+
+
+
 public class controlMatriculacion extends HttpServlet {
+	
+	//private static final String SAVE_DIR = "uploadFiles";
+
 	private static final long serialVersionUID = 1L;
 	private ArrayList<usuarioMatriculacion> matriculados;
 	private static final String matriculacionDeCursoJSP="/matriculacionDeCurso.jsp";
@@ -106,6 +119,12 @@ private void eliminarMatriculado(String correo) {
 		String genero= request.getParameter("genero");
 		String formaPago= request.getParameter("formaPago");
 		String pagina = indexJSP;
+		
+		///////////////////////
+		
+		
+		
+		
 		//String correo = request.getParameter("correoo");
 		//String clave1 = request.getParameter("clave1");
 
@@ -248,4 +267,10 @@ private void eliminarMatriculado(String correo) {
 		}
 		return u;
 	}
+	
+	
+	
+	
+	
+	
 }

@@ -171,11 +171,6 @@
 					<ul id="ulErroresEnPagina"></ul>
 
 
-					<div>
-						<h2>Info del curso</h2>
-
-
-					</div>
 
 
 					<c:choose>
@@ -262,10 +257,18 @@
 							<option value="transferencia">Transferencia</option>
 							<option value="tarjeta">Tarjeta</option>
 							<option value="paypal">Paypal</option>
-						</select><br /> <label id="txtImagen" for="fecha">Imagen de
-							Perfil:</label><input type="file" name="imagen" id="imagen" /><br /> <label
+						</select><br /> 
+						
+						<label id="txtImagen" for="fecha">Imagen de
+							Perfil:</label><input type="file" name="imagen" id="imagen" size="60"/><br />
+							
+							
+							<!--  <label
 							id="txtFecha" for="fecha">Fecha de Nacimiento:</label><input
-							type="text" name="fecha" id="fecha" /><br /> <label id="txtDNI"
+							type="text" name="fecha" id="fecha" /><br />  -->
+							
+							
+							<label id="txtDNI"
 							for="DNI">DNI:</label><input type="text" name="DNI" id="DNI" /><br />
 
 						<label id="txtAceptar" for="aceptar">Acepto los terminos:</label><input
