@@ -320,18 +320,19 @@ function validarCurso(formulario){
 			         document.getElementById("cierre_curso").style.borderStyle="dotted";
 			         mensaje = mensaje.concat("año menor" + '\n');
 			    }
-			    /*
-			     * FALTA VALIDAR EL CAMPO TERMINOS
-			     */
-
+			    //validando terminos y condiciones
+			    //var terminosursos = document.getElementById("terminos").value;
+			    if(!formulario.terminos.checked){
+			    	mensaje = mensaje.concat("Hay que marcar casilla de terminos y condiciones" + '\n');
+			    }else{
+			    	contador = contador + 1;
+			    }
 			    		//+1 cuando se añada validar terminos
-    if(contador == 13){//+1 cuando se añada validar material
+    if(contador == 14){
         alert("Datos del curso correctos. Visualizando vista previa.");
     } else{
         alert(mensaje);
         return false;
     }
-	
-	
-    
+   
 }

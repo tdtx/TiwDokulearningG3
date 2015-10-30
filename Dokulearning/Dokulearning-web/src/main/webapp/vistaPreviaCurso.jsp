@@ -176,13 +176,34 @@ function val(){
 
 					<ul id="ulErroresEnPagina"></ul>
 			<div>
-			<h3>Datos del curso introducidos</h3>
+			<h4>${param.descripcion}</h4>
 			<br>
-			<h4>descripcion: ${param.descripcion}</h4>
+			<div> 
+			
+			
+			
+	<div class="container" style="margin-right: 25%">
+  <h2>Temario</h2>
+  <div class="panel-group" style="margin-right: 25%">
+    <div class="panel panel-default" style="margin-right: 25%">
+      <div class="panel-heading">${param.secciones}</div>
+      <div class="panel-body">${param.lecciones}</div>
+      <div class="panel-body">${param.lecciones}</div>
+      <div class="panel-body">${param.lecciones}</div>
+    </div>
+    <div class="panel panel-default" style="margin-right: 25%">
+      <div class="panel-heading">${param.secciones}</div>
+      <div class="panel-body">${param.lecciones}</div>
+      <div class="panel-body">${param.lecciones}</div>
+    </div>
+    <div class="panel panel-default" style="margin-right: 25%">
+      <div class="panel-heading">${param.secciones}</div>
+      <div class="panel-body">${param.lecciones}</div>
+    </div>
+  </div>
+</div>
+			
 			<h4>temario: ${param.temario}</h4>
-			<h4>lecciones:  ${param.lecciones}</h4>
-			<h4>Secciones: ${param.secciones}</h4>
-			<h4>Precio: ${param.precio}</h4>
 			<h4>Numero de horas: ${param.horas}</h4>
 			<h4>Fecha inicio curso: ${param.f_inicio}</h4>
 			<h4>Fecha fin curso: ${param.f_fin}</h4>
