@@ -1,6 +1,6 @@
 package Cursos;
 
-import java.io.*;
+import java.io.*; 
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import dominio.validaciones;
+//import pruebasclase.Usuario;
 
 /**
  * Servlet implementation class Cursos
@@ -25,14 +28,6 @@ public class Cursos extends HttpServlet {
      * 
      * @see HttpServlet#HttpServlet()
      */
-	
-	public void init() throws ServletException{
-		
-
-		System.out.println("Servlet de Cursos");
-		
-		
-	}
 	
     public Cursos() {
         super();
@@ -51,9 +46,44 @@ public class Cursos extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		FormularioCurso form = new FormularioCurso();
 		
+
+		
+		
+		/*if (request.getParameter("terminos") != null)
+			form.terminos = true;
+		
+		
+		String mensaje = form.validarCurso(); 
+		if (!mensaje.equals(""))
+		{
+			mensaje = "<ul>" + mensaje + "</ul>";
+			request.setAttribute("mensaje", mensaje);
+
+			this.getServletContext().getRequestDispatcher("/formularioCurso.jsp").forward(request, response);
+			
+		}
+		else 
+		{
+			mensaje = "El curso se ha enviado para validar";
+			request.setAttribute("mensaje", mensaje);
+			this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+		}
+		
+	}
+
+
+		
+	}
+	*/
+
+
+
+
+
 		String nom = request.getParameter("nom");
-		String rama = request.getParameter("rama");
+		
 		String mensaje ="";
 		HttpSession sesion = request.getSession();
 		
@@ -61,37 +91,77 @@ public class Cursos extends HttpServlet {
 		
 		response.setContentType("text/html");
 		
-		if(nom.equals("") || null == nom){
-			errores.add("Nombre del curso vacio");
-			
-			
-		}
-		if(rama.equals("") || null == rama){
-			errores.add("Rama/Campo del curso vacio");
-			mensaje="Rama/Campo del curso vacio";
-			request.setAttribute("mensaje", mensaje);
-		}
 		HttpSession curso = request.getSession();
-		String accion = request.getParameter("accion");
-
-		if(accion != null){
-			if (errores.isEmpty()){
+		String action = request.getParameter("action");
+		//String enviarValidar = request.getParameter("enviarValidar");
+		if(action != null){
+			//if (errores.isEmpty()){
 		//.getServletConfig()
+			switch(action){
+			case "rellenar_formulario":
+				
 			
-		this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+			form.nom = request.getParameter("nom");
+			form.descripcion = request.getParameter("descripcion");
+			form.temario = request.getParameter("temario");
+			form.precio = request.getParameter("precio");
+			form.horas = request.getParameter("horas");
+			form.profesor = request.getParameter("profesor");
+			form.f_inicio = request.getParameter("f_inicio");
+			form.f_fin = request.getParameter("f_fin");
+			form.cierre_curso = request.getParameter("cierre_curso");
+			form.categoria = request.getParameter("categoria");
+			form.dificultad = request.getParameter("dificultad");
+			form.terminos = false;
+			
+			this.getServletContext().getRequestDispatcher("/vistaPreviaCurso.jsp").forward(request, response);
+			
+			break;
+			case "vistaPrevia":
+				
+				form.nom = request.getParameter("nom");
+				form.descripcion = request.getParameter("descripcion");
+				form.temario = request.getParameter("temario");
+				form.precio = request.getParameter("precio");
+				form.horas = request.getParameter("horas");
+				form.profesor = request.getParameter("profesor");
+				form.f_inicio = request.getParameter("f_inicio");
+				form.f_fin = request.getParameter("f_fin");
+				form.cierre_curso = request.getParameter("cierre_curso");
+				form.categoria = request.getParameter("categoria");
+				form.dificultad = request.getParameter("dificultad");
+				form.terminos = false;
+				//if(enviarValidar != null){
+				this.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+			break;
+			default:
+				break;
+			}
+			/*this.getServletContext().getRequestDispatcher("/vistaPreviaCurso.jsp").forward(request, response);
+			 * else{
+			
+				this.getServletContext().getRequestDispatcher("/formularioCurso.jsp").forward(request, response);
+				
+			}
 		
+			this.getServletContext().getRequestDispatcher(FORM_JSP).forward(request, response);
+			
+			
+			}
+			 * 
+			 */
+			
+			
+			
 			
 		}
-		else{
-		
-			this.getServletContext().getRequestDispatcher("/formularioCurso.jsp").forward(request, response);
+		}
 			
 		}
 	
 		this.getServletContext().getRequestDispatcher(FORM_JSP).forward(request, response);
 		
-		
-		}
-	}}
-	
+	}
+
+
 
