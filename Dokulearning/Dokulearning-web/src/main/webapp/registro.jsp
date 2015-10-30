@@ -197,7 +197,7 @@
 					<ul id="ulErroresEnPagina"></ul>
 
 					<form  id="reg" action="registroWeb" method="post">
-
+		<input type="text" name="distribucion" value="crearRegistrado" style="display:none"/>
 
 						<c:choose>
 							<c:when test="${not empty mensaje }">

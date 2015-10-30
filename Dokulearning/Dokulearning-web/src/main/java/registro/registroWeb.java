@@ -58,7 +58,9 @@ public class registroWeb extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		
+		
+		
 		HttpSession sesion = request.getSession(true);
 		String action = request.getParameter("action");
 		String pagina = indexJSP;
@@ -109,56 +111,85 @@ public class registroWeb extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		
 		HttpSession sesion = request.getSession(true);
-		String nick = request.getParameter("nick");
-		String nombre = request.getParameter("nombre");
-		String apellido1 = request.getParameter("apellido1");
-		String apellido2 = request.getParameter("apellido2");
-		String clave1 = request.getParameter("clave1");
-		String clave2 = request.getParameter("clave2");
-		String correo = request.getParameter("correo");
-		String claveActual =request.getParameter("claveActual");
-		String claveNueva =request.getParameter("claveNueva");
-		String RclaveNueva =request.getParameter("RclaveNueva");
+		String distribucion = request.getParameter("distribucion");
+		String pagina = indexJSP;
+		
+		switch(distribucion){
+		
+			case "cambiarClave":
+				String claveActual = request.getParameter("claveActual");
+				String claveNueva = request.getParameter("claveNueva");
+				String RclaveNueva = request.getParameter("RclaveNueva");
+				if (claveActual != null) {
+
+				
+					cambiarClave(claveActual, claveNueva);
+					request.setAttribute("registrados", registrados);
+					pagina = "/prueba.jsp";
+				}else{
+					System.err.println("he petao");
+				}
+				
+			
+				break;
+				
+			case "crearRegistrado":
+				
+				String nick = request.getParameter("nick");
+				String nombre = request.getParameter("nombre");
+				String apellido1 = request.getParameter("apellido1");
+				String apellido2 = request.getParameter("apellido2");
+				String clave1 = request.getParameter("clave1");
+				String clave2 = request.getParameter("clave2");
+				String correo = request.getParameter("correo");
+				
+				
+				if (comprobarUsuario(correo, clave1) == null) {
+					registrarRegistrado(nick, nombre, apellido1, apellido2, clave1,
+							clave2, correo);
+				
+					usuarioRegistro u = comprobarUsuario(correo, clave1);
+					sesion.setAttribute("usuarioReg", u);
+					sesion.setAttribute("acceso", correo);
+					request.setAttribute("registrados", registrados);
+					
+			
+					pagina = "/perfilUsuario.jsp";
+					
+				} else {
+
+					try {
+						RegistrarUser(nick, nombre, apellido1, apellido2, clave1,
+								clave2, correo);
+						request.setAttribute("registrados", registrados);
+						pagina = formularioReg;
+					} catch (Exception e) {
+						e.printStackTrace();
+						System.out.println("ERROR");
+					}
+				}
+				
+				break;
+			
+			default:
+				
+				break;
+				
+		}
+
+		response.setContentType("text/html");
+		this.getServletContext().getRequestDispatcher(pagina)
+				.forward(request, response);
+		
 		
 		// String terminos = request.getParameter("terminos");
 		// String mayoredad = request.getParameter("mayoredad");
-		String pagina = indexJSP;		
+				
 		
-		
-		if (comprobarUsuario(correo, clave1) == null) {
-			registrarRegistrado(nick, nombre, apellido1, apellido2, clave1,
-					clave2, correo);
-		
-			usuarioRegistro u = comprobarUsuario(correo, clave1);
-			sesion.setAttribute("usuarioReg", u);
-			sesion.setAttribute("acceso", correo);
-			request.setAttribute("registrados", registrados);
-			
 	
-			
-			
-		} else {
-
-			try {
-				RegistrarUser(nick, nombre, apellido1, apellido2, clave1,
-						clave2, correo);
-				request.setAttribute("registrados", registrados);
-				pagina = formularioReg;
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("ERROR");
-			}
-		}
-		if (claveActual != null) {
-
-		System.err.println("hola");
 		
-	}
-		response.setContentType("text/html");
-		this.getServletContext().getRequestDispatcher("/perfilUsuario.jsp")
-				.forward(request, response);
 
 		/*
 		 * usuarioRegistro usr = new usuarioRegistro();
@@ -213,11 +244,11 @@ public class registroWeb extends HttpServlet {
 	}
 	
 	
-	public void cambiarClave(String correo, String claveNueva) {
+	public void cambiarClave(String claveActual, String claveNueva) {
 		// TODO Auto-generated method stub
 
 		for (usuarioRegistro cc : registrados) {
-			if (correo.equals(cc.getCorreo())) {
+			if (claveActual.equals(cc.getClave1())) {
 				cc.setClave1(claveNueva);
 				cc.setClave2(claveNueva);
 

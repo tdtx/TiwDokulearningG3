@@ -134,7 +134,9 @@
 					<!---Form Registrado -------------------------->
 					<form action="registroWeb" method="post" class="form-horizontal"
 						role="form">
-						<input type="text" name="id" value="hola" style="display: none">
+						<input type="text" name="distribucion" value="cambiarClave" style="display: none">
+			
+						
 						<div class="row">
 							<div class="form-group col-md-1"></div>
 							<div class="form-group col-md-5" id="columnas62">

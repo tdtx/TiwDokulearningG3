@@ -84,8 +84,8 @@ function comprobarFormulario(formulario){//comprobacion de los campos del formul
             $("#lblclave1").addClass("error");
             mensaje.push("\nLa clave tiene que tener minimo 8 caracteres");
     }else{
-        var patron = new RegExp(/[^\s\a-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&-]/gi);
-        if(!patron.test($("#clave1").val())){
+        var patron = new RegExp(/[^a-zñÑA-Z\d-]/gi);
+        if(patron.test($("#clave1").val())){
             $("#lblclave1").addClass("error");
             mensaje.push("\nLa clave no debe contener caracteres especiales");
         }
