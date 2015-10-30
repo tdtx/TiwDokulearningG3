@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,21 +13,21 @@
 <link href="css/sb-admin.css" rel="stylesheet">
 
 <link rel="stylesheet"
-	href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
 <script src="js/jquery.js"></script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script src="js/matriculacion.js"></script>
 <style type="text/css">
 .error {
-	color: red;
+    color: red;
 }
 </style>
 
 
 <!-- Custom Fonts icono-->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
-	type="text/css">
+    type="text/css">
 
 
 </head>
@@ -170,14 +170,22 @@
 
 					<ul id="ulErroresEnPagina"></ul>
 
-					<form id="formularioMat" action="controlMatriculacion"
-						method="post">
 
-						<c:choose>
-							<c:when test="${not empty mensaje }">
-								<p class="error">${mensaje }</p>
-							</c:when>
-						</c:choose>
+					<div>
+						<h2>Info del curso</h2>
+
+
+					</div>
+
+
+					<c:choose>
+						<c:when test="${not empty mensaje }">
+							<p class="error">${mensaje }</p>
+						</c:when>
+					</c:choose>
+
+				
+
 
 
 						<!-- <label for="nick">Nick:</label><input type="text" name="nick" id="nick"/><br/>
@@ -189,14 +197,42 @@
 <label for="clave2">Repita su contraseña:</label><input type="password" name="clave2" id="clave2" /><br/>
 <label for="terminos">Acepto los terminos:</label><input type="checkbox" value="SI" name="terminos" id="terminos" /><br/> -->
 
-		<label id="lblnick" for="nick">Nick:</label><input type="text" name="nick" id="nick" maxlength="8" value="${sessionScope.usuario.nick}"  disabled /><br /> 
-		
-		<label id="lblnombre" for="nombre">Nombre:</label><input type="text" name="nombre" id="nombre" maxlength="20" value="${sessionScope.usuario.nombre}"  disabled /><br /> 
-		<label id="lblapellido1" for="apellido1">Primer apellido:</label><input type="text" name="apellido1" id="apellido1" maxlength="20" value="${sessionScope.usuario.apellido1}"  disabled /><br /> 
-		<label id="lblapellido2" for="apellido2">Segundo apellido:</label><input type="text" name="apellido2" id="apellido2" maxlength="20" value="${sessionScope.usuario.apellido2}"  disabled /><br />
-		<label id="lblcorreo" for="correo">Correo electronico:</label><input type="text" name="correo" id="correo" maxlength="30" value="${sessionScope.usuario.correo}"  disabled /><br /> 
-		
-						<label id="txtTelefono" for="telefono">Telefono:</label><input
+	<form id="formularioMat" action="controlMatriculacion"
+						method="post" enctype="multipart/form-data">
+
+<%-- 
+						<label id="lblclave1" for="clave1">Correo electronico:</label><input
+							type="text" name="clave1" id="clave1" maxlength="30"
+							value="${sparam.clave1}"/><br />
+							
+							<label id="lblcorreoo" for="correoo">Correo electronico:</label><input
+							type="text" name="correoo" id="correoo" maxlength="30"
+							value="${sparam.correo}"/><br />
+							<br />
+							<br />
+							<br />
+							<br />
+ --%>
+
+
+						<%-- <label id="lblnick" for="nick">Nick:</label><input type="text"
+							name="nick" id="nick" maxlength="8" value="${param.nick}"
+							readonly /><br /> <label id="lblnombre" for="nombre">Nombre:</label><input
+							type="text" name="nombre" id="nombre" maxlength="20"
+							value="${param.nombre}" readonly /><br /> <label
+							id="lblapellido1" for="apellido1">Primer apellido:</label><input
+							type="text" name="apellido1" id="apellido1" maxlength="20"
+							value="${param.apellido1}" readonly /><br /> <label
+							id="lblapellido2" for="apellido2">Segundo apellido:</label><input
+							type="text" name="apellido2" id="apellido2" maxlength="20"
+							value="${sparam.apellido2}" readonly /><br /> <label
+							id="lblcorreo" for="correo">Correo electronico:</label><input
+							type="text" name="correo" id="correo" maxlength="30"
+							value="${sparam.correo}" readonly /><br />  --%>
+							
+							
+							<label
+							id="txtTelefono" for="telefono">Telefono:</label><input
 							type="text" name="telefono" id="telefono" /><br /> <label
 							id="txtGenero" for="genero">Genero:</label> <select id="genero"
 							name="genero">
@@ -226,8 +262,8 @@
 							<option value="transferencia">Transferencia</option>
 							<option value="tarjeta">Tarjeta</option>
 							<option value="paypal">Paypal</option>
-						</select><br /> <label id="txtImagen" for="fecha">Imagen de Perfil:</label><input
-							type="file" name="imagen" id="imagen" /><br /> <label
+						</select><br /> <label id="txtImagen" for="fecha">Imagen de
+							Perfil:</label><input type="file" name="imagen" id="imagen" /><br /> <label
 							id="txtFecha" for="fecha">Fecha de Nacimiento:</label><input
 							type="text" name="fecha" id="fecha" /><br /> <label id="txtDNI"
 							for="DNI">DNI:</label><input type="text" name="DNI" id="DNI" /><br />
