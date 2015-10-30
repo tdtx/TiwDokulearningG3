@@ -59,6 +59,37 @@ function validarCurso(formulario){
 		document.getElementById("temario").style.borderStyle="dotted";
 		contador = contador + 1;
 	}
+	
+	  //Validado el campo secciones
+	var seccionesCurso = document.getElementById("secciones").value;
+	var seccionesC = seccionesCurso.toString();
+	if (temarioC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| seccionesC == null || seccionesC == ""){
+		document.getElementById("secciones").style.borderColor="red";
+		document.getElementById("secciones").style.borderStyle="dotted";
+		mensaje = mensaje.concat("El campo secciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+	} else {
+		document.getElementById("secciones").style.borderColor="green";
+		document.getElementById("secciones").style.borderStyle="dotted";
+		contador = contador + 1;
+	}
+	
+	  //Validado el campo lecciones
+	var leccionesCurso = document.getElementById("lecciones").value;
+	var leccionesC = leccionesCurso.toString();
+	if (temarioC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| leccionesC == null || leccionesC == ""){
+		document.getElementById("lecciones").style.borderColor="red";
+		document.getElementById("lecciones").style.borderStyle="dotted";
+		mensaje = mensaje.concat("El campo lecciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+	} else {
+		document.getElementById("lecciones").style.borderColor="green";
+		document.getElementById("lecciones").style.borderStyle="dotted";
+		contador = contador + 1;
+	}
+	/*
+	 * AQUI FALTA VALIDAR EL CAMPO MATERIAL
+	 * 
+	 */
+	
 	//Validado el campo nombre del profesor
     var profesorCurso = document.getElementById("profesor").value;
     var profesorC = profesorCurso.toString();
@@ -289,10 +320,13 @@ function validarCurso(formulario){
 			         document.getElementById("cierre_curso").style.borderStyle="dotted";
 			         mensaje = mensaje.concat("año menor" + '\n');
 			    }
+			    /*
+			     * FALTA VALIDAR EL CAMPO TERMINOS
+			     */
 
-    
-    if(contador == 11){
-        alert("Curso enviado para validar con éxito");
+			    		//+1 cuando se añada validar terminos
+    if(contador == 13){//+1 cuando se añada validar material
+        alert("Datos del curso correctos. Visualizando vista previa.");
     } else{
         alert(mensaje);
         return false;

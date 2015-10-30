@@ -45,7 +45,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.html">Creacion de curso</a>
+			<a class="navbar-brand" href="index.jsp">iLexion</a>
 		</div>
 		<!-- Top Menu Items -->
 		<ul class="nav navbar-right top-nav">
@@ -154,17 +154,11 @@
 			<div class="container-fluid">
 
 				<!-- Page Heading -->
-				<div class="row"></div>
+				<div class="row">
+				
+				</div>
 				<!-- /.row -->
-
-
-
-
-
-
-
-
-
+				<h1>Crear Curso</h1>
 
 				<div style="margin: 100px 0px 100px 0px">
 
@@ -174,6 +168,7 @@
 <input type ="text" name = "action" value="rellenar_formulario" style="display:none">
 <br/>
 <div class="form-group">
+
  <!--<c:choose>
 	<c:when test="${not empty mensaje }">
 		<p class="error">${mensaje }</p>
@@ -202,7 +197,15 @@
 <textarea class="form-control" rows="3" type="text" name="temario" id="temario"></textarea>
 </div>
 <br/>
- 
+  <div class="form-group">
+<label>Listado de secciones del curso</label>
+<textarea class="form-control" rows="3" type="text" name="secciones" id="secciones"></textarea>
+</div>
+ <div class="form-group">
+<label>Listado de lecciones del curso</label>
+<textarea class="form-control" rows="3" type="text" name="lecciones" id="lecciones"></textarea>
+</div>
+<br/>
  <div class="form-group">
 <label>Precio</label>
 <input class="form-control" type="number" name="precio" id="precio">

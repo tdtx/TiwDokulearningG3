@@ -82,12 +82,12 @@ public class Cursos extends HttpServlet {
 
 
 
-		String nom = request.getParameter("nom");
+		/*String nom = request.getParameter("nom");
 		
 		String mensaje ="";
 		HttpSession sesion = request.getSession();
 		
-		ArrayList<String> errores = new ArrayList<String>();
+		ArrayList<String> errores = new ArrayList<String>();*/
 		
 		response.setContentType("text/html");
 		
@@ -104,6 +104,9 @@ public class Cursos extends HttpServlet {
 			form.nom = request.getParameter("nom");
 			form.descripcion = request.getParameter("descripcion");
 			form.temario = request.getParameter("temario");
+			form.secciones = request.getParameter("secciones");
+			form.lecciones = request.getParameter("lecciones");
+			form.material = request.getParameter("material");
 			form.precio = request.getParameter("precio");
 			form.horas = request.getParameter("horas");
 			form.profesor = request.getParameter("profesor");
@@ -122,6 +125,9 @@ public class Cursos extends HttpServlet {
 				form.nom = request.getParameter("nom");
 				form.descripcion = request.getParameter("descripcion");
 				form.temario = request.getParameter("temario");
+				form.secciones = request.getParameter("secciones");
+				form.lecciones = request.getParameter("lecciones");
+				form.material = request.getParameter("material");
 				form.precio = request.getParameter("precio");
 				form.horas = request.getParameter("horas");
 				form.profesor = request.getParameter("profesor");
@@ -159,7 +165,7 @@ public class Cursos extends HttpServlet {
 			
 		
 	
-		this.getServletContext().getRequestDispatcher(FORM_JSP).forward(request, response);
+		//this.getServletContext().getRequestDispatcher(FORM_JSP).forward(request, response);
 		
 	}}
 
