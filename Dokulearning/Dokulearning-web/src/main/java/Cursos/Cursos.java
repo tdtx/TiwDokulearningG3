@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import matriculacion.usuarioMatriculacion;
+
+
 
 
 //import pruebasclase.Usuario;
@@ -59,9 +62,24 @@ public class Cursos extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		HttpSession sesion = request.getSession();
+		System.err.println("entro get");
 		String accion = request.getParameter("accion");
 		String pagina = "/index.jsp";
+		FormularioCurso a = null;
+		try{
+		a=comprobarUsuario(accion);
+		System.err.println("entro get 2" + a);
+		}catch(Exception e){
+			System.err.println("Error");
+		}
+		
+		if(a !=null){
+			sesion.setAttribute("mostrar", a);
+			request.setAttribute("cursos", cursos);
+			pagina = "/resumenCurso.jsp";
+			System.err.println("entroooo");
+		}
 		if (accion.equals("ofertas")) {
 			request.setAttribute("cursos", cursos);
 			pagina = "/cursoOferta.jsp";
@@ -75,6 +93,31 @@ public class Cursos extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(pagina)
 				.forward(request, response);
 	}
+	
+	private FormularioCurso comprobarUsuario(String horas) {
+		FormularioCurso u = null;
+		for (FormularioCurso f : cursos) {
+			if (horas.equals(f.getHoras())) {
+				u = f;
+				break;
+			}
+		}
+		return u;
+	}
+	/*
+	 * 	private usuarioMatriculacion comprobarUsuario(String telefono) {
+		usuarioMatriculacion u = null;
+		for (usuarioMatriculacion usuarioum : matriculados) {
+			if (telefono.equals(usuarioum.getTelefono())) {
+				u = usuarioum;
+				break;
+			}
+		}
+		return u;
+	}
+	 */
+	
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

@@ -99,7 +99,7 @@ public class FormularioCurso {
 	public void setRama(String rama) {
 		this.rama = rama;
 	}
-	public int getId(int id){
+	public String getId(){
 		return id;
 	}
 	public void setId(String id) {
