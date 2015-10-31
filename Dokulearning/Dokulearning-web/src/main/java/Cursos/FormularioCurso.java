@@ -62,6 +62,27 @@ public class FormularioCurso {
 		this.precio = precio;
 	}
 
+
+	public FormularioCurso(String nom, String horas, String descripcion,
+			String temario, String profesor, String categoria, String imagen,
+			String dificultad, String f_inicio, String f_fin,
+			String cierre_curso, String precio) {
+		super();
+		this.nom = nom;
+		this.horas = horas;
+		this.descripcion = descripcion;
+		this.temario = temario;
+		this.profesor = profesor;
+		this.categoria = categoria;
+		this.imagen = imagen;
+		this.dificultad = dificultad;
+		this.f_inicio = f_inicio;
+		this.f_fin = f_fin;
+		this.cierre_curso = cierre_curso;
+		this.precio = precio;
+	}
+
+
 	public FormularioCurso(){
 		super();
 	}

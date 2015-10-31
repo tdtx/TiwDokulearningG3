@@ -1,6 +1,6 @@
 package Cursos;
 
-import java.io.*; 
+import java.io.*;  
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dominio.validaciones;
+
+
 //import pruebasclase.Usuario;
 
 /**
@@ -22,13 +23,33 @@ public class Cursos extends HttpServlet {
 	private static final String INDEX_JSP = "/index.jsp";
 	private static final String FORM_JSP = "/formularioCurso.jsp";
 	private FormularioCurso fcurso;
+	private ArrayList<FormularioCurso> cursos;
 	private static final long serialVersionUID = 1L;
-	
-    /**
+	public FormularioCurso cursoOferta;
+    /**	
      * 
      * @see HttpServlet#HttpServlet()
      */
-	
+	@Override
+	public void init() throws ServletException {
+		
+		super.init();
+				FormularioCurso curso1 = new FormularioCurso("Programacion en GLPK", "1234", "descripcion breve",
+						"Tema1 Tema2 Tema3", "Aitor Tilla", "Heuristica y optimizacion", "imagenes/addressbook_add_128.png", "Alta"
+						, "01-11-2015", "01-12-2015",
+						"02-12-2015", "12");
+				FormularioCurso curso2 = new FormularioCurso("Programacion en C++", "2334", "descripcion breve",
+						"Tema1 Tema2 Tema3", "Aitor Menta", "Programacion", "imagenes/addressbook_add_128.png", "Alta"
+						, "01-11-2015", "01-12-2015",
+						"02-12-2015", "12");
+				
+				cursos = new ArrayList<FormularioCurso>();
+				cursos.add(curso1);
+				cursos.add(curso2);
+				
+			
+				
+	}
     public Cursos() {
         super();
         // TODO Auto-generated constructor stub
@@ -38,9 +59,21 @@ public class Cursos extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher(FORM_JSP).forward(request, response);
+		
+		String accion = request.getParameter("accion");
+		String pagina = "/index.jsp";
+		if (accion.equals("ofertas")) {
+			request.setAttribute("ofertas", cursos);
+			pagina = "/resumenCurso.jsp";
+		}
+		if(accion.equals("destacados")){
+			request.setAttribute("destacados", cursos);
+			pagina = "/resumenCurso.jsp";
 	}
-
+		response.setContentType("text/html");
+		this.getServletContext().getRequestDispatcher(pagina)
+				.forward(request, response);
+	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
