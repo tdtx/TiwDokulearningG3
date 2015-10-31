@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Registro de usuario</title>
+<title>Contacto</title>
 
 <!-- Bootstrap Core CSS formato-->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -36,24 +36,7 @@
 
 
 		<div id="page-wrapper">
-
-
-
-
-
-
-
-
-
-
-
-
-
-			<form onSubmit="return validarR(this)" role="form">
-
-
-
-
+			<form onSubmit="return validarK(this)" role="form">
 				<label for="nombreJ">Nombre:</label> <input type="text"
 					name="nombreJ" id="nombreJ"><br /> <label
 					id="etiqemail" for="email">Correo electrónico:</label> <input
@@ -63,21 +46,15 @@
 				<label id="etiqmensaje" for="mensajee">Mensaje:</label>
 				<textarea name="mensajee" id="mensajee"></textarea>
 				<br /> 
-				<a href="index.jsp">  <button type="submit" value="Enviar" >enviar</button></a>
+				<a href="index.jsp">  <button type="submit" value="Enviar" >Enviar</button></a>
 
 			</form>
-
-
 
 
 		</div>
 		<!-- /#page-wrapper -->
 	</div>
 
-
-
-
-
-
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

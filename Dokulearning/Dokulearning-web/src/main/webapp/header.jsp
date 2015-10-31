@@ -272,7 +272,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.jsp">iLexion</a>
+				<a class="navbar-brand" href="portada.jsp">iLexion</a>
 				
 			</div>
 			
@@ -289,10 +289,10 @@
 			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
-					<li><a href="#"> Inicio</a></li>
+					<li><a href="index.jsp"> Inicio</a></li>
 					<li><a href="Cursos?accion=ofertas"> Oferta de Cursos</a></li>
 					<li><a href="Cursos?accion=destacados"> Cursos Destacados</a></li>
-					<li><a href="#"> Contactos</a></li>
+					<li><a href="contacto.jsp"> Contactos</a></li>
 					<!-- aqui van las redireciones entre li a -->
 					
 				</ul>

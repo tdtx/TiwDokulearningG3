@@ -1,4 +1,4 @@
-function validarR(formulario){
+function validarK(formulario){
     var contador = 0;
     var mensaje = "";
 
