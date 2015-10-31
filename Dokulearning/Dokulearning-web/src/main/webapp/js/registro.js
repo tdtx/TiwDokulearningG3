@@ -1,149 +1,117 @@
-/**
- * 
- */
-$(document).ready(function(){
-    /*$(function() {
-        $("#fechaNacimiento").datepicker({ //calendario de la fecha de nacimiento
-            dateFormat: "dd/mm/yyyy",
-            dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sá" ] ,
-            firstDay: 1,
-            monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-        });
-    });
-    $("#sexo").selectmenu().selectmenu("menuWidget").addClass("camposFormulario");
-    $(document).tooltip();*/
-    $("#btnEnviar").button().click(function(){ comprobarFormulario(); }); //comprobarFormulario);
-    		
-    
-
-});
-
-
-function comprobarFormulario(formulario){//comprobacion de los campos del formulario con sus alerts como en la practica anterior
-    var mensaje = new Array();
-
-    $("#lblnick").removeClass("error");
-    if (($("#nick").val() == "") || ($("#nick").val() == undefined)){
-        $("#lblnick").addClass("error");
-        mensaje.push("Debe indicar su nick");
-        
-    }else{
-        var patron = new RegExp(/[^\s\a-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&-]/gi);
-        if(patron.test($("#nick").val())){
-            $("#lblnick").addClass("error");
-            mensaje.push("\nEl nick no debe contener caracteres especiales\n");
-        }
+function pwdIguales(){ //Antes de validar el resto del formulario, es indispensable que tanto la contraseña como la confirmación de contraseña sean la misma
+    var pwd1 = document.getElementById("clave1").value;
+    var pwd2 = document.getElementById("clave2").value;
+    if(pwd1==pwd2 && pwd1 != null && pwd1 != "" && pwd2 != null && pwd2 != ""){
+        return validarF();
+    } else {
+        document.getElementById("clave1").style.borderColor="red";
+        document.getElementById("clave1").style.borderStyle="dotted";
+        document.getElementById("clave2").style.borderColor="red";
+        document.getElementById("clave2").style.borderStyle="dotted";
+        alert("Las contraseñas no son iguales. Por favor, introduzca la misma contraseña en ambos campos.");
+        return false;
+    }
+}	
+function validarR(formulario){
+    var contador = 0;
+    var mensaje = "";
+	   //Validado el campo correo de registrado
+    var correoRegistrado = document.getElementById("correo").value;
+    var correoR = correoRegistrado.toString();
+    if (correoR.match(/[^\w\d.@-_ñÑ&#/]/g)|| correoR == null || correoR == ""){
+        document.getElementById("correo").style.borderColor="red";
+        document.getElementById("correo").style.borderStyle="dotted";
+        mensaje = mensaje.concat("El campo correo no puede permanecer vacío" + '\n');
+    } else {
+        document.getElementById("correo").style.borderColor="green";
+        document.getElementById("correo").style.borderStyle="dotted";
+        contador = contador + 1;
+    }
+    //Validado el campo nick de registrado
+    var nickRegistrado = document.getElementById("nick").value;
+    var nickR = nickRegistrado.toString();
+    if (nickR == null || nickR == "") {
+        mensaje = mensaje.concat("El campo Nick debe rellenarse" + '\n');
+        document.getElementById("nick").style.borderColor="red";
+        document.getElementById("nick").style.borderStyle="dotted";
+    } else if (nickR.match(/[^a-zñÑA-Z\d-]/gi)){
+        mensaje = mensaje.concat("El Nick no puede contener símbolos, ni estar en blanco" + '\n');
+        document.getElementById("nick").style.borderColor="red";
+        document.getElementById("nick").style.borderStyle="dotted";      
+    } else {
+        document.getElementById("nick").style.borderColor="green";
+        document.getElementById("nick").style.borderStyle="dotted";
+        contador = contador + 1;
     }
     
-
-    $("#lblnombre").removeClass("error");
-    if (($("#nombre").val() == "") || ($("#nombre").val() == undefined)){
-        $("#lblnombre").addClass("error");
-        mensaje.push("\nDebe indicar su nombre");
-    }else{
-        var patron = new RegExp(/[^\s\a-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&-]/gi);
-        if(patron.test($("#nombre").val())){
-            $("#lblnombre").addClass("error");
-            mensaje.push("\nEl nombre no debe contener caracteres especiales");
-        }
-    }
-    
-    $("#lblapellido1").removeClass("error");
-    if (($("#apellido1").val() == "") || ($("#apellido1").val() == undefined)){
-        $("#lblapellido1").addClass("error");
-        mensaje.push("\nDebe indicar su primer apellido");
-    }else{
-        var patron = new RegExp(/[^\s\a-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&-]/gi);
-        if(patron.test($("#apellido1").val())){
-            $("#lblapellido1").addClass("error");
-            mensaje.push("\nEl apellido no debe contener caracteres especiales");
-        }
-    }
-    
-    $("#lblcorreo").removeClass("error");
-    if (($("#correo").val() == "") || ($("#correo").val() == undefined)){
-        $("#lblcorreo").addClass("error");
-        mensaje.push("\nDebe indicar su dirección de correo electrónico");
-    }
-    else{
-        var patron = new RegExp(/^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/);
-        if(!patron.test($("#correo").val())){
-            $("#lblcorreo").addClass("error");
-            mensaje.push("\nDebe indicar una dirección de correo electrónico válida:aaa@bbb.ccc");
-        }
-    }
-    
-    
-      
-    $("#lblclave1").removeClass("error");
-    if (($("#clave1").val() == "") || ($("#clave1").val() == undefined)){
-        $("#lblclave1").addClass("error");
-        mensaje.push("\nDebe indicar su clave de usuario");
-    }
-    else if($("#clave1").val().length < 8){
-            $("#lblclave1").addClass("error");
-            mensaje.push("\nLa clave tiene que tener minimo 8 caracteres");
-    }else{
-        var patron = new RegExp(/[^a-zñÑA-Z\d-]/gi);
-        if(patron.test($("#clave1").val())){
-            $("#lblclave1").addClass("error");
-            mensaje.push("\nLa clave no debe contener caracteres especiales");
-        }
-    }
-    
-
-    $("#lblclave2").removeClass("error");
-    if($("#clave2").val() != $("#clave1").val()){
-        $("#lblclave2").addClass("error");
-        mensaje.push("\nLas claves de usuario no coinciden");
+    //Validado el campo nombre de registrado
+    var nombreRegistrado = document.getElementById("nombre").value;
+    var nombreR = nombreRegistrado.toString();
+    if (nombreR == null || nombreR == "") {
+        mensaje = mensaje.concat("El campo Nombre de registrado debe rellenarse" + '\n');
+        document.getElementById("nombre").style.borderColor="red";
+        document.getElementById("nombre").style.borderStyle="dotted";
+    } else if (nombreR.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
+        document.getElementById("nombre").style.borderColor="red";
+        document.getElementById("nombre").style.borderStyle="dotted";
+        mensaje = mensaje.concat("El nombre del registrado no puede contener símbolos, ni estar en blanco" + '\n');
+    } else {
+        document.getElementById("nombre").style.borderColor="green";
+        document.getElementById("nombre").style.borderStyle="dotted";
+        contador = contador + 1;
     }
 
-    
-    
-    $("#lblterminos").removeClass("error");
-    if (!$("#terminos").is(':checked')){
-        $("#lblterminos").addClass("error");
-        mensaje.push("\nDebe aceptar los terminos y las condiciones de uso");
-    }
-    
-    $("#lblmayoredad").removeClass("error");
-    if (!$("#mayoredad").is(':checked')){
-        $("#lblmayoredad").addClass("error");
-        mensaje.push("\nDebe ser mayor de edad");
-    }
-    
-    
-    
-    
 
-    if (mensaje == ""){ //No hay error
-    	alert("El usuario se ha registrado con exito!");
-
-    	    $("#reg").submit();
+    //Validado el campo apellido 1 de registrado
+    var apellido1Registrado = document.getElementById("apellido1").value;
+    var apellido1R = apellido1Registrado.toString();
+    if (apellido1R == null || apellido1R == "") {
+        mensaje = mensaje.concat("El campo Apellido 1 de registrado debe rellenarse" + '\n');
+        document.getElementById("apellido1").style.borderColor="red";
+        document.getElementById("apellido1").style.borderStyle="dotted";
+    } else if (apellido1R.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
+        document.getElementById("apellido1").style.borderColor="red";
+        document.getElementById("apellido1").style.borderStyle="dotted";
+        mensaje = mensaje.concat("El apellido 1 del registrado no puede contener símbolos, ni estar en blanco" + '\n');
+    } else {
+        document.getElementById("apellido1").style.borderColor="green";
+        document.getElementById("apellido1").style.borderStyle="dotted";
+        contador = contador + 1;
     }
-    else{
+    //Valido el campo 'contrasena'
+    var pwdUsuario = document.getElementById("clave1").value;
+    var pwd = pwdUsuario.toString();
+    if (pwd.match(/[^\w\d-.@$%&#€/¡!¿?ñÑáéíóúüçÁÉÍÓÚÇÜ]/g)|| pwd == null || pwd == ""){
+        document.getElementById("clave1").style.borderColor="red";
+        document.getElementById("clave1").style.borderStyle="dotted";
+        mensaje = mensaje.concat("El campo Contraseña del proveedor no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+    } else {
+        document.getElementById("clave1").style.borderColor="green";
+        document.getElementById("clave1").style.borderStyle="dotted";
+        contador = contador + 1;
+    }
+     
+    //Valido el campo 'confirmar contrasena'
+    var pwd2Usuario = document.getElementById("clave2").value;
+    var pwd2 = pwd2Usuario.toString();
+    if (pwd2.match(/[^\w\d-.@$%&#€/¡!¿?ñÑáéíóúüçÁÉÍÓÚÇÜ]/g)|| pwd == null || pwd == ""){
+        document.getElementById("clave2").style.borderColor="red";
+        document.getElementById("clave2").style.borderStyle="dotted";
+        mensaje = mensaje.concat("El campo Contraseña del proveedor no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+    } else {
+        document.getElementById("clave2").style.borderColor="green";
+        document.getElementById("clave2").style.borderStyle="dotted";
+        contador = contador + 1;
+    }
+
+
+ 
+
+     
+    if(contador == 6){
+        alert("Usuario registrado con éxito");
+    } else{
         alert(mensaje);
-    	/*$("#ulErroresEnPagina").empty();
-        for(error in mensaje){
-            li = document.createElement("li");
-            $(li).html(mensaje[error]);
-            $("#ulErroresEnPagina").append(li); 
-        }
-      
-        
-    	$("#ulErrores").empty();
-        for(error in mensaje){
-            li = document.createElement("li");
-            $(li).html(mensaje[error]);
-            $("#ulErrores").append(li); 
-        }
-        $("#dialogo").dialog({
-                    scrollable: true,
-                    width: 650,
-                    modal: true
-
-                });
-        $("#dialogo").show();*/
-
+        return false;
     }
 }

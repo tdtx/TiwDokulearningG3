@@ -194,6 +194,7 @@
 
 	<form id="formularioMat" action="controlMatriculacion"
 						method="post" enctype="multipart/form-data">
+			<input type="text" name="distribucionMatriculacion" value="crearMatriculacion" style="display:none"/>
 
 <%-- 
 						<label id="lblclave1" for="clave1">Correo electronico:</label><input
@@ -228,7 +229,7 @@
 							
 							<label
 							id="txtTelefono" for="telefono">Telefono:</label><input
-							type="text" name="telefono" id="telefono" /><br /> <label
+							type="text" name="telefono" id="telefono" maxlength="9" /><br /> <label
 							id="txtGenero" for="genero">Genero:</label> <select id="genero"
 							name="genero">
 							<option value="">Elija su sexo</option>
@@ -239,13 +240,13 @@
 						<fieldset>
 							<legend>Direccion</legend>
 							<label id="txtCalle" for="calle">Calle:</label><input type="text"
-								name="calle" id="calle" /><br /> <label id="txtLocalidad"
+								name="calle" id="calle" maxlength="50"/><br /> <label id="txtLocalidad"
 								for="localidad">localidad:</label><input type="text"
-								name="localidad" id="localidad" /><br /> <label
+								name="localidad" id="localidad" maxlength="30"/><br /> <label
 								id="txtCodigoPostal" for="codigopostal">Codigo Postal:</label><input
-								type="text" name="codigopostal" id="codigopostal" /><br /> <label
+								type="text" name="codigopostal" id="codigopostal" maxlength="5" /><br /> <label
 								id="txtProvincia" for="provincia">Provincia:</label><input
-								type="text" name="provincia" id="provincia" /><br />
+								type="text" name="provincia" id="provincia" maxlength="30" /><br />
 
 						</fieldset>
 
@@ -269,7 +270,7 @@
 							
 							
 							<label id="txtDNI"
-							for="DNI">DNI:</label><input type="text" name="DNI" id="DNI" /><br />
+							for="DNI">DNI:</label><input type="text" name="DNI" id="DNI" maxlength="10"/><br />
 
 						<label id="txtAceptar" for="aceptar">Acepto los terminos:</label><input
 							type="checkbox" value="SI" name="aceptar" id="aceptar" /><br />

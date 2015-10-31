@@ -61,8 +61,14 @@ public class registroWeb extends HttpServlet {
 		
 		
 		
-		HttpSession sesion = request.getSession(true);
+
+		HttpSession sesion = request.getSession();
+		
 		String action = request.getParameter("action");
+		
+		if (action != null && action.equals("salir")) {
+			request.getSession().invalidate();
+		}
 		String pagina = indexJSP;
 		
 		//String clave = request.getParameter("clave1");
@@ -112,12 +118,39 @@ public class registroWeb extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		HttpSession sesion = request.getSession(true);
+		HttpSession sesion = request.getSession();
 		String distribucion = request.getParameter("distribucion");
 		String pagina = indexJSP;
-		
+		String clave1 = null;
+		String correo = null;
 		switch(distribucion){
-		
+			
+		case "iniciarSesion":
+			clave1 = request.getParameter("clave1");				
+			correo = request.getParameter("correo");
+			
+			try {
+				usuarioRegistro u = comprobarUsuario(correo, clave1);
+				if (u  != null) {
+					pagina = "/index.jsp";
+					request.setAttribute("registrados", registrados);
+					sesion.setAttribute("usuario", u);
+					sesion.setAttribute("acceso", "ok");
+					sesion.setAttribute("correo", u.getCorreo());
+					System.err.println("entro");
+				}
+				else {
+					System.err.println("no entro");
+					String mensaje = "Usuario o contraseña invalida";
+					request.setAttribute("mensaje", mensaje);
+				}
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("ERROR: Usuario o contraseña invalida");
+			}
+			break;
+			
 			case "cambiarClave":
 				String claveActual = request.getParameter("claveActual");
 				String claveNueva = request.getParameter("claveNueva");
@@ -141,9 +174,9 @@ public class registroWeb extends HttpServlet {
 				String nombre = request.getParameter("nombre");
 				String apellido1 = request.getParameter("apellido1");
 				String apellido2 = request.getParameter("apellido2");
-				String clave1 = request.getParameter("clave1");
+				 clave1 = request.getParameter("clave1");
 				String clave2 = request.getParameter("clave2");
-				String correo = request.getParameter("correo");
+				 correo = request.getParameter("correo");
 				
 				
 				if (comprobarUsuario(correo, clave1) == null) {

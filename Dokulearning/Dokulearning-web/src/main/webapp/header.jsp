@@ -28,6 +28,8 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="js/registro.js"></script>
+
 </head>
 
 <body>
@@ -36,9 +38,8 @@
 	<div id="wrapper">
 		<!-- Navigation -->
 	
-<ul class="nav navbar-right top-nav">
-				<li><a href="#" data-toggle="modal"
-                                                title="Iniciar sesi&oacuten" data-target="#myModal">Iniciar Sesion 
+<ul class="nav navbar-right top-nav negrito">
+				<li><a href="#" data-toggle="modal" title="Iniciar sesi&oacuten" data-target="#myModal" onClick="$('#loginbox').show(); $('#signupbox').hide()">Iniciar Sesion 
                         </a></li>
 			</ul>
 			<div class="modal fade" id="myModal" tabindex="-1"
@@ -48,28 +49,40 @@
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
-                        <div class="panel-title">Iniciar sesion</div>
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <div class="panel-title">Iniciar sesion </div>
                         <!-- para implementacion futura -->
                         <!-- <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div> -->
+                   
                     </div>     
 
                     <div style="padding-top:30px" class="panel-body" >
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
-                        <form id="loginform" class="form-horizontal" role="form">
-                                    
+                        
+                           <form  action="registroWeb" method="post" class="form-horizontal" role="form">
+                                	<input type="text" name="distribucion" value="iniciarSesion" style="display:none"/>
+                     
+                                        
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="login-username" type="text" class="form-control" name="usuario" value="" placeholder="correo electronico">                                        
+                                        <input id="correo" type="text" class="form-control" name="correo" value="" placeholder="correo electronico">                                        
                                     </div>
                                 
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control" name="contraseña" placeholder="contraseña">
+                                        <input id="login-password" type="password" class="form-control" name="clave1" id= "clave1" placeholder="contraseña">
+                                        
                                     </div>
-                                    
-
+                                    	
+					
+                                     <div style="margin-bottom: 25px" class="input-group">
+                                     <a  href="#"  onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                            Registrarse
+                                        </a>
+       
+                                    </div>
                                 <!-- Implementacion futura -->
                             <!-- <div class="input-group">
                                       <div class="checkbox">
@@ -85,10 +98,11 @@
 
 
                                     <div class="col-sm-12 controls centrado">
-                                      
-                                      <a id="btn-login" href="#" class="btn btn-success" >Iniciar sesion </a>
-                                      <a id="btn-fblogin" href="#" class ="btn btn-primary" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                            Registrarse
+                                       <button id="btn-login"  class="btn btn-success" type="submit" ><i class="icon-hand-right"></i> iniciar Sesion</button>
+                                        <span style="margin-left:8px;"></span>  
+                             
+                                      <a id="btn-fblogin" href="#" class ="btn btn-primary" data-dismiss="modal">
+                                            Cerrar
                                         </a>
                                       
                                       
@@ -109,16 +123,15 @@
         <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
+                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <div class="panel-title">Registro</div>
-                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Iniciar sesion</a></div>
+                          
+                      
                         </div>  
                         <div class="panel-body" >
-                            <form id="signupform" class="form-horizontal" role="form">
-                                
-                                <div id="signupalert" style="display:none" class="alert alert-danger">
-                                    <p>Error:</p>
-                                    <span></span>
-                                </div>
+                            <form onSubmit="return validarR(this)" action="registroWeb" method="post" class="form-horizontal" role="form">
+                                	<input type="text" name="distribucion" value="crearRegistrado" style="display:none"/>
+                     
                                     
                                 
                                   
@@ -145,15 +158,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="primerapellido" class="col-md-3 control-label">1º apellido</label>
+                                    <label for="apellido1" class="col-md-3 control-label">1º apellido</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="primerapellido" id="primerapellido" placeholder="Ej.: Perez">
+                                        <input type="text" class="form-control" name="apellido1" id="apellido1" placeholder="Ej.: Perez">
                                     </div>
                                 </div>
                                   <div class="form-group">
-                                    <label for="segundoapellido" class="col-md-3 control-label">2º apellido *</label>
+                                    <label for="apellido2" class="col-md-3 control-label">2º apellido *</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="segundoapellido"  id="segundoapellido" placeholder="Ej.: Osborne">
+                                        <input type="text" class="form-control" name="apellido2"  id="apellido2" placeholder="Ej.: Osborne">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -175,7 +188,7 @@
                                                                     <label for="mayoredad">Declaro ser mayor de edad : </label> <input type="checkbox" name="mayoredad" id="mayoredad">
                                                                 </div>
                                                                 <div class="form-group col-md-5">
-                                                                    <label for="termino">Acepto los terminos web : </label> <input type="checkbox"  name="terminos" id="termino">
+                                                                    <label for="terminos">Acepto los terminos web : </label> <input type="checkbox"  name="terminos" id="terminos">
                                                                 </div>
                                                             </div>
                                 
@@ -194,11 +207,17 @@
                                 <div class="form-group centrado">
                                                                            
                                     <div >
-                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> Registrarse</button>
+                                     
+                                        <button type="submit" class="btn btn-info"><i class="icon-hand-right"></i> Registrarse</button>
                                         <span style="margin-left:8px;"></span>  
+                                         <a id="btn-fblogin" href="#" class ="btn btn-primary" data-dismiss="modal">
+                                            Cerrar
+                                        </a>
                                     </div>
                                 </div>
-                                
+                                <a  href="#" onClick="$('#loginbox').show(); $('#signupbox').hide()">
+                                            &lt&lt Atras
+                                        </a>
                                <!--  <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
                                     
                                     <div class="col-md-offset-3 col-md-9">

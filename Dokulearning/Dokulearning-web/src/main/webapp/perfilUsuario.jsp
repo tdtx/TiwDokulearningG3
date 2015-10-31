@@ -29,6 +29,15 @@
 <body>
 
 	<h1>PERFIL</h1>
+	
+	
+	
+	 
+	<div>
+	<img alt="logo" src="fonts/users_folder_128.png" width="10%">
+	</div>
+	
+	
 <div>
 
 	<label id="lblnick" for="nick">Nick:</label>
@@ -61,7 +70,50 @@
 
 </div>
 
+<div>
 
+
+<label id="txtTelefono" for="telefono">Telefono:</label>
+	<input type="text" name="telefono" id="telefono"
+		value="${param.telefono}" />
+	<br />
+
+	<label id="txtGenero" for="genero">Genero:</label>
+	<input type="text" name="genero" id="genero"
+		value="${param.genero}" />
+	<br />
+	<label id="txtCalle" for="calle">Calle:</label>
+	<input type="text" name="calle" id="calle" maxlength="50"
+		value="${param.calle}" />
+	<br />
+	<label id="txtLocalidad" for="localidad">Localidad:</label>
+	<input type="text" name="localidad" id="localidad" maxlength="30"
+		value="${param.localidad}" />
+	<br />
+	<label id="txtCodigoPostal" for="codigopostal">Codigo postal:</label>
+	<input type="text" name="codigopostal" id="codigopostal" maxlength="5"
+		value="${param.codigopostal}" />
+	<br />
+	<!-- <label id="lblclave1" for="clave1">Contraseña:</label><input type="password" name="clave1" id="clave1" maxlength="20" value="${param.clave1}" /><br /> -->
+
+	<label id="txtProvincia" for="provincia">Provincia:</label>
+	<input type="text" name="provincia" id="provincia" maxlength="30"
+		value="${param.provincia}" />
+	<br />
+
+
+	<label id="txtFormaPago" for="provincia">Forma de pago:</label>
+	<input type="text" name="formaPago" id="formaPago" 
+		value="${param.formaPago}" />
+	<br />
+
+
+	<label id="txtDNI" for="DNI">DNI:</label>
+	<input type="text" name="DNI" id="DNI" maxlength="10"
+		value="${param.DNI}" />
+	<br />
+
+</div>
 
 
 	<%-- <c:choose>
