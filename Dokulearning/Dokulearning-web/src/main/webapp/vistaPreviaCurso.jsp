@@ -160,22 +160,13 @@ function val(){
 		<div id="page-wrapper">
 
 			<div class="container-fluid">
-
-				<!-- Page Heading -->
-				<div class="row">
-				
-								
-				
-				
-				
-				</div>
+		<div class="col-lg-6">
 				<!-- /.row -->
 				<h1>${param.nom}</h1><p>${param.categoria}</p>
 				
 				<div style="margin: 100px 0px 100px 0px">
 
 					<ul id="ulErroresEnPagina"></ul>
-			<div>
 			<h4>${param.descripcion}</h4>
 			<br>
 			<div> 
@@ -187,29 +178,43 @@ function val(){
   <div class="panel-group" style="margin-right: 25%">
     <div class="panel panel-default" style="margin-right: 25%">
       <div class="panel-heading">${param.secciones}</div>
-      <div class="panel-body">${param.lecciones}</div>
-      <div class="panel-body">${param.lecciones}</div>
-      <div class="panel-body">${param.lecciones}</div>
+      <div class="panel-body" style="margin-right: 25%">${param.lecciones}</div>
+      <div class="panel-body" style="margin-right: 25%">${param.lecciones}</div>
+      <div class="panel-body" style="margin-right: 25%">${param.lecciones}</div>
     </div>
     <div class="panel panel-default" style="margin-right: 25%">
       <div class="panel-heading">${param.secciones}</div>
-      <div class="panel-body">${param.lecciones}</div>
-      <div class="panel-body">${param.lecciones}</div>
+      <div class="panel-body" style="margin-right: 25%">${param.lecciones}</div>
+      <div class="panel-body" style="margin-right: 25%">${param.lecciones}</div>
     </div>
     <div class="panel panel-default" style="margin-right: 25%">
       <div class="panel-heading">${param.secciones}</div>
-      <div class="panel-body">${param.lecciones}</div>
+      <div class="panel-body" style="margin-right: 25%">${param.lecciones}</div>
     </div>
-  </div>
+  </div>		
 </div>
-			
-			<h4>temario: ${param.temario}</h4>
-			<h4>Numero de horas: ${param.horas}</h4>
-			<h4>Fecha inicio curso: ${param.f_inicio}</h4>
-			<h4>Fecha fin curso: ${param.f_fin}</h4>
-			<h4>Dificultad del curso: ${param.dificultad}</h4>
+</div>
+</div>
+</div>
+<div class="col-lg-6">
+<div style="margin: 100px 250px 50px 100px"><img alt="Foto" src="imagenes/addressbook_add_128.png" width="80%"> </div>
+<div style="margin: 100px 100px 100px 100px">
+<div class="container" style="margin-right: 50px">
+  			<div class="container-fluid" style="margin-right: 50px">
+			<div class="panel panel-info" style="margin-right: 50px">
+      <div class="panel-heading">Informacion</div>
+      <div class="panel-body" style="margin-left: 50px">Fecha inicio curso: ${param.f_inicio}</div>
+       <div class="panel-body" style="margin-left: 50px">Fecha fin curso: ${param.f_fin}</div>
+        <div class="panel-body" style="margin-left: 50px">Numero de horas: ${param.horas}</div>
+         <div class="panel-body" style="margin-left: 50px">Dificultad del curso: ${param.dificultad}</div>
+         <div class="panel-body" style="margin-left: 50px">Profesor: ${param.profesor}</div>
+         <div class="panel-body" style="margin-left: 50px">Temario: ${param.temario}</div>
+         
+					
+    	</div>
+		</div>
 			</div>
-
+</div>
  <nav class="navbar navbar-inverse navbar-fixed-bottom">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -228,11 +233,23 @@ function val(){
 </nav>
 
 
-</div>
-</div>
+
 </div>
 </div>
 
+			<!--<div class="container-fluid" style="margin-left: 75%">
+			<div class="panel panel-info">
+      <div class="panel-heading">Informacion</div>
+      <div class="panel-body">Fecha inicio curso: ${param.f_inicio}</div>
+       <div class="panel-body">Fecha fin curso: ${param.f_fin}</div>
+        <div class="panel-body">Numero de horas: ${param.horas}</div>
+         <div class="panel-body">Dificultad del curso: ${param.dificultad}</div>
+         <div class="panel-body">temario: ${param.temario}</div>
+    	</div>
+			
+</div>  -->		
+</div>	
+</div>
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
 

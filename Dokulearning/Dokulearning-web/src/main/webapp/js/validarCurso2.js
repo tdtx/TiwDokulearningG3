@@ -321,15 +321,15 @@ function validarCurso(formulario){
 			         mensaje = mensaje.concat("año menor" + '\n');
 			    }
 			    //validando terminos y condiciones
-			    //var terminosursos = document.getElementById("terminos").value;
+			    
 			    if(!formulario.terminos.checked){
 			    	mensaje = mensaje.concat("Hay que marcar casilla de terminos y condiciones" + '\n');
 			    }else{
 			    	contador = contador + 1;
 			    }
-			    		//+1 cuando se añada validar terminos
+			    		
     if(contador == 14){
-        alert("Datos del curso correctos. Visualizando vista previa.");
+        alert("Datos del curso correctos. Cargando vista previa.");
     } else{
         alert(mensaje);
         return false;
