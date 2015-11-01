@@ -40,9 +40,9 @@ public class registroWeb extends HttpServlet {
 		if (registrados == null)
 		{
 			usuarioRegistro ur1 = new usuarioRegistro("MCH", "Maria", "Cañizares",
-					"Holgado", "clave", "clave", "mch@mch.mch", true, true);
+					"Holgado", "clavemch", "clavemch", "mch@mch.mch", true, true);
 			usuarioRegistro ur2 = new usuarioRegistro("CAS", "Carol", "Arredondo",
-					"Silo", "clave", "clave", "cas@cas.cas", true, true);
+					"Silo", "clavecas", "clavecas", "cas@cas.cas", true, true);
 	
 			registrados = new ArrayList<usuarioRegistro>();
 			registrados.add(ur1);
