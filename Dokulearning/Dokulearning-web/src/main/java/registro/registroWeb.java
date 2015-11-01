@@ -58,22 +58,20 @@ public class registroWeb extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		
-		
 
 		HttpSession sesion = request.getSession();
 		
 		String action = request.getParameter("action");
 		
+		String estado = request.getParameter("estado");
+
+		System.err.println("valor" + estado);
 		if (action != null && action.equals("salir")) {
 			request.getSession().invalidate();
+			sesion.setAttribute("estadoValidacion",null);
 		}
 		String pagina = indexJSP;
-		
-		//String clave = request.getParameter("clave1");
-		//String correo = request.getParameter("correo");
-		
+	
 		if (action != null && action.equals("perfil")) {
 			//usuarioRegistro u = (usuarioRegistro) sesion.getAttribute("usuario");
 			//request.setAttribute("usrperfil", u);
@@ -81,6 +79,14 @@ public class registroWeb extends HttpServlet {
 			/*usuarioRegistro registrados=comprobarUsuario(correo, clave);
 			
 			request.setAttribute("registrados", registrados);*/
+			System.err.println("entrado al estado");
+			request.setAttribute("registrados", registrados);
+			sesion.setAttribute("acceso", "ok");
+			sesion.setAttribute("estadoValidacion", estado);
+			
+			
+			
+			
 			pagina = "/perfilUsuario.jsp";
 		}
 
@@ -137,6 +143,7 @@ public class registroWeb extends HttpServlet {
 					sesion.setAttribute("usuario", u);
 					sesion.setAttribute("acceso", "ok");
 					sesion.setAttribute("correo", u.getCorreo());
+					sesion.setAttribute("estadoValidacion", u.getNombre());
 					System.err.println("entro");
 				}
 				else {
@@ -160,7 +167,7 @@ public class registroWeb extends HttpServlet {
 				
 					cambiarClave(claveActual, claveNueva);
 					request.setAttribute("registrados", registrados);
-					pagina = "/prueba.jsp";
+					pagina = "/perfilUsuario.jsp";
 				}else{
 					System.err.println("he petao");
 				}

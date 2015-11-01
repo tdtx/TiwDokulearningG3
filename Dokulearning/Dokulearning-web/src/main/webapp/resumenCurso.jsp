@@ -44,8 +44,43 @@
 <div>Cierre curso:${param.cierre_curso}</div>
 <div>Precio:${param.precio}</div>
 </div>
-<div><button type="button" class="btn btn-info">Matricularse</button></div>
+<a href="matriculacionDeCurso.jsp"><button type="button" class="btn btn-info">Matricularse</button></a>
+
 </div>
+
+<div>
+
+	<label id="lblnick" for="nick">nom:</label>
+	<input type="text" name="nick" id="nick" maxlength="8"
+		value="${param.nom}" />
+	<br />
+
+
+	<label id="lblnombre" for="nombre">categoria:</label>
+	<input type="text" name="nombre" id="nombre" maxlength="20"
+		value="${param.categoria}" />
+	<br />
+	<label id="lblapellido1" for="apellido1">descripcion:</label>
+	<input type="text" name="apellido1" id="apellido1" maxlength="20"
+		value="${param.descripcion}" />
+	<br />
+	<label id="lblapellido2" for="apellido2">temario:</label>
+	<input type="text" name="apellido2" id="apellido2" maxlength="20"
+		value="${param.temario}" />
+	<br />
+	<label id="lblcorreo" for="correo">horas:</label>
+	<input type="text" name="correo" id="correo" maxlength="30"
+		value="${param.horas}" />
+	<br />
+	<!-- <label id="lblclave1" for="clave1">Contraseña:</label><input type="password" name="clave1" id="clave1" maxlength="20" value="${param.clave1}" /><br /> -->
+
+	<label id="lblcorreo" for="clave">f_inicio:</label>
+	<input type="text" name="clave" id="clave" maxlength="30"
+		value="${param.f_inicio}" />
+	<br />
+
+</div>
+
 		
 </div>  	
 </div>	

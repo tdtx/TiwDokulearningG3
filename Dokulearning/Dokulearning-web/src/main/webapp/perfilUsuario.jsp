@@ -71,15 +71,17 @@
 		value="${param.correo}" />
 	<br />
 	<!-- <label id="lblclave1" for="clave1">Contraseña:</label><input type="password" name="clave1" id="clave1" maxlength="20" value="${param.clave1}" /><br /> -->
-
+<%-- 
 	<label id="lblcorreo" for="clave">Correo electronico:</label>
 	<input type="text" name="clave" id="clave" maxlength="30"
 		value="${param.clave1}" />
-	<br />
+	<br /> --%>
+<a href="formularioCurso.jsp"><button type="button" class="btn btn-info">Crear curso</button></a>
 
 </div>
 
-<div class="signupboxt">
+<!-- <div class="signupboxt"> -->
+<div>
 
 
 <label id="txtTelefono" for="telefono">Telefono:</label>
@@ -121,7 +123,18 @@
 	<input type="text" name="DNI" id="DNI" maxlength="10"
 		value="${param.DNI}" />
 	<br />
+	
+	<label id="lblprecio" for="precio">Precio:</label>
+	<input type="text" name="precio" id="precio"
+		value="${param.precio}" />
+	<br />
 
+
+	<label id="lblnombreCurso" for="nombreCurso">Nombre del curso:</label>
+	<input type="text" name="nombreCurso" id="nombreCurso" maxlength="30"
+		value="${param.nombreCurso}" />
+	<br />
+					
 </div>
 
 
@@ -232,6 +245,8 @@
 							</div>
 						</div>
 					</form>
+					
+					
 
 				</div>
 

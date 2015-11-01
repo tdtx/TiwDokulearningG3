@@ -82,6 +82,20 @@
 <label for="clave2">Repita su contraseña:</label><input type="password" name="clave2" id="clave2" /><br/>
 <label for="terminos">Acepto los terminos:</label><input type="checkbox" value="SI" name="terminos" id="terminos" /><br/> -->
 
+	
+	<label id="lblprecio" for="precio">Precio:</label>
+	<input type="text" name="precio" id="precio" readonly
+		value="${param.precio}" />
+	<br />
+
+
+	<label id="lblnombreCurso" for="nombreCurso">Nombre del curso:</label>
+	<input type="text" name="nombreCurso" id="nombreCurso" maxlength="30" readonly
+		value="${param.nombreCurso}" />
+	<br />
+	
+	
+	
 	<form id="formularioMat" action="controlMatriculacion"
 						method="post" enctype="multipart/form-data">
 			<input type="text" name="distribucionMatriculacion" value="crearMatriculacion" style="display:none"/>

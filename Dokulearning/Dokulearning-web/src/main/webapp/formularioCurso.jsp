@@ -64,7 +64,7 @@
 	</c:otherwise>
 </c:choose>-->
 <label for="nom">Nombre de curso </label>
-<input class="form-control" type="text" id="nom" name="nom" /><br>
+<input class="form-control" type="text" id="nom" name="nom" placeholder="Ej.: Matematicas"/><br>
 </div>
 <!-- <br/>
  <div class="form-group">
@@ -74,64 +74,64 @@
  <br/>
 <div class="form-group">
 <label>Descripcion del curso</label>
-<textarea class="form-control" rows="3" type="text" name="descripcion" id="descripcion"></textarea>
+<textarea class="form-control" rows="3" type="text" name="descripcion" id="descripcion" placeholder="Ej.: bases de datos"></textarea>
 </div>
 <br/>
  <br/>
  <div class="form-group">
 <label>Listado del contenido del curso</label>
-<textarea class="form-control" rows="3" type="text" name="temario" id="temario"></textarea>
+<textarea class="form-control" rows="3" type="text" name="temario" id="temario" placeholder="Ej.: titulos de los temas"></textarea>
 </div>
 <br/>
   <div class="form-group">
 <label>Listado de secciones del curso</label>
-<textarea class="form-control" rows="3" type="text" name="secciones" id="secciones"></textarea>
+<textarea class="form-control" rows="3" type="text" name="secciones" id="secciones" placeholder="Ej.: bloque 1, bloque2,..."></textarea>
 </div>
  <div class="form-group">
 <label>Listado de lecciones del curso</label>
-<textarea class="form-control" rows="3" type="text" name="lecciones" id="lecciones"></textarea>
+<textarea class="form-control" rows="3" type="text" name="lecciones" id="lecciones" placeholder="Ej.: tema1, tema2,..."></textarea>
 </div>
 <br/>
  <div class="form-group">
 <label>Precio</label>
-<input class="form-control" type="number" name="precio" id="precio">
+<input class="form-control" type="number" name="precio" id="precio" placeholder="Ej.: 300" >
 </div>
 <br/>
  
  <div class="form-group">
 <label>Numero de horas</label>
-<input class="form-control" type="number" name="horas" id="horas">
+<input class="form-control" type="number" name="horas" id="horas" placeholder="Ej.: 0053 (cuatro digitos)">
 </div>
 <br/>
 
  <div class="form-group">
 <label>Nombre del profesor</label>
-<input class="form-control" type="text" name="profesor" id="profesor"> 
+<input class="form-control" type="text" name="profesor" id="profesor" placeholder="Ej.: Pepe"> 
 </div>
 <br/>
  <div class="form-group">
 <label>Fecha inicio del curso</label>
-<input class="form-control" type="text" name="f_inicio" id="f_inicio">
+<input class="form-control" type="text" name="f_inicio" id="f_inicio" placeholder="01/01/2016">
 </div>
 <br/>
  <div class="form-group">
 <label>Fecha fin del curso</label>
-<input class="form-control" type="text" name="f_fin" id="f_fin">
+<input class="form-control" type="text" name="f_fin" id="f_fin" placeholder="01/02/2016">
 </div>
 <br/>
  <div class="form-group">
 <label>Fecha de cierre del curso</label>
-<input class="form-control" type="text" name="cierre_curso" id="cierre_curso">
+<input class="form-control" type="text" name="cierre_curso" id="cierre_curso" placeholder="01/03/2016">
 </div>
 <br/>
  <div class="form-group">
 <label>Categoria del curso</label>
-<input class="form-control" type="text" name="categoria" id="categoria">
+<input class="form-control" type="text" name="categoria" id="categoria" placeholder="Rama del curso">
 </div>
 <br/>
  <div class="form-group">
 <label>Dificultad del curso</label>
-<input class="form-control" type="text" name="dificultad" id="dificultad">
+<input class="form-control" type="text" name="dificultad" id="dificultad" placeholder="Alta, Media o Baja">
 </div>
 <br/>
 

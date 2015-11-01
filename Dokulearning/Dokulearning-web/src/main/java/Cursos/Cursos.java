@@ -62,7 +62,7 @@ public class Cursos extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession sesion = request.getSession();
+		HttpSession sesion = request.getSession(true);
 		System.err.println("entro get");
 		String accion = request.getParameter("accion");
 		String pagina = "/index.jsp";
@@ -75,7 +75,7 @@ public class Cursos extends HttpServlet {
 		}
 		
 		if(a !=null){
-			sesion.setAttribute("mostrar", a);
+			sesion.setAttribute("cursoO", a);
 			request.setAttribute("cursos", cursos);
 			pagina = "/resumenCurso.jsp";
 			System.err.println("entroooo");

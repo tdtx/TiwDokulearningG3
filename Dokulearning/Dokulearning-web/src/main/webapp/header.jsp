@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 
 <html lang="es">
+<c:set var="estVal" scope="session" value="${estadoValidacion}"></c:set>
 <head>
 <link rel="shotcut icon" href="fonts/Captura_de_pantallaico_2015-10-08_a_las_17.ico" type="image/x-icon">
 <meta charset="utf-8">
@@ -37,7 +38,7 @@
 
 	<div id="wrapper">
 		<!-- Navigation -->
-	<c:if test="${clienteValidado==null}">
+	<c:if test="${estadoValidacion==null}">
             <div class="user-menu-small row">   
                <ul class="nav navbar-right top-nav negrito">
 				<li><a href="#" data-toggle="modal" title="Iniciar sesi&oacuten" data-target="#myModal" onClick="$('#loginbox').show(); $('#signupbox').hide()">Iniciar Sesion 
@@ -45,16 +46,16 @@
 			</ul>
             </div>
         </c:if>
-            <c:if test="${clienteValidado!=null}">
+            <c:if test="${estadoValidacion!=null}">
             <div class="user-menu-small row">   
                <ul class="nav navbar-right top-nav">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"><i class="fa fa-user"></i> Usuario <b
+					data-toggle="dropdown"><i class="fa fa-user"></i> <c:out value="${estVal}"></c:out> <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="login?accion=perfil"><i
+						<li><a href="registroWeb?action=perfil&estado=${estVal}"><i
 								class="fa fa-fw fa-user"></i> Perfil</a></li>
-								<li><a href="login?accion=salir"><i
+								<li><a href="registroWeb?action=salir"><i
 								class="fa fa-fw fa-power-off"></i> Cerrar sesion</a></li>
 					</ul>
 					
@@ -272,7 +273,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="portada.jsp">iLexion</a>
+				<a class="navbar-brand" href="index.jsp">iLexion</a>
 				
 			</div>
 			
