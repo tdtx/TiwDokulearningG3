@@ -7,6 +7,9 @@
 
 </head>
 <body>
+
+	<jsp:include page="header.jsp"></jsp:include>
+
 <div id="wrapper">
 		<div id="page-wrapper">
 			<div class="container-fluid">
@@ -38,5 +41,7 @@
 			</div>
 		</div>
 	</div>
+		<jsp:include page="footer.jsp"></jsp:include>
+	
 </body>
 </html>

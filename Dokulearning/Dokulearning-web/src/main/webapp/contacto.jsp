@@ -30,13 +30,13 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-<h1>Contacto</h1>
+
 
 	<div id="wrapper">
 
 
 		<div id="page-wrapper">
-			<form onSubmit="return validarR(this)" role="form">
+			<form onSubmit="return validarK(this)" role="form">
 				<label for="nombreJ">Nombre:</label> <input type="text"
 					name="nombreJ" id="nombreJ"><br /> <label
 					id="etiqemail" for="email">Correo electrónico:</label> <input
