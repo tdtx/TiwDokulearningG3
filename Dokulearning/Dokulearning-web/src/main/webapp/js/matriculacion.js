@@ -38,7 +38,7 @@ function comprobarFormulario(){//comprobacion de los campos del formulario con s
     
 //GENERO    
      $("#txtGenero").removeClass("error");
-    if (($("#genero").val() == "") || ($("#telefono").val() == undefined)){
+    if (($("#genero").val() == "") || ($("#genero").val() == undefined)){
     	$("#txtGenero").addClass("error");
         mensaje.push("\nDebe seleccionar su genero");
     }
