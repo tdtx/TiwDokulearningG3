@@ -27,6 +27,14 @@
 </head>
 
 <body>
+<jsp:include page="header.jsp"></jsp:include>
+
+<div id="wrapper">
+
+		<!-- Navigation -->
+		
+
+		<div id="page-wrapper">
 
 	<h1>PERFIL</h1>
 	
@@ -44,6 +52,7 @@
 	<input type="text" name="nick" id="nick" maxlength="8"
 		value="${param.nick}" />
 	<br />
+
 
 	<label id="lblnombre" for="nombre">Nombre:</label>
 	<input type="text" name="nombre" id="nombre" maxlength="20"
@@ -63,14 +72,14 @@
 	<br />
 	<!-- <label id="lblclave1" for="clave1">Contraseña:</label><input type="password" name="clave1" id="clave1" maxlength="20" value="${param.clave1}" /><br /> -->
 
-	<label id="lblcorreo" for="correo">Correo electronico:</label>
-	<input type="text" name="correo" id="correo" maxlength="30"
+	<label id="lblcorreo" for="clave">Correo electronico:</label>
+	<input type="text" name="clave" id="clave" maxlength="30"
 		value="${param.clave1}" />
 	<br />
 
 </div>
 
-<div>
+<div class="signupboxt">
 
 
 <label id="txtTelefono" for="telefono">Telefono:</label>
@@ -229,9 +238,11 @@
 			</div>
 		</div>
 	</div>
+		</div>
+			</div>
 
 
-
+<jsp:include page="footer.jsp"></jsp:include>
 
 </body>
 </html>

@@ -34,6 +34,8 @@ public class controlMatriculacion extends HttpServlet {
 	private static final String matriculacionDeCursoJSP = "/matriculacionDeCurso.jsp";
 	private static final String indexJSP = "/index.jsp";
 	private usuarioMatriculacion usuarioMat;
+	
+	
 
 	registroWeb rw = new registroWeb();
 

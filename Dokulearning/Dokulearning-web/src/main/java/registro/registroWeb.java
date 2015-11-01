@@ -176,7 +176,7 @@ public class registroWeb extends HttpServlet {
 				String apellido2 = request.getParameter("apellido2");
 				 clave1 = request.getParameter("clave1");
 				String clave2 = request.getParameter("clave2");
-				 correo = request.getParameter("correo");
+				 correo = request.getParameter("correoR");
 				
 				
 				if (comprobarUsuario(correo, clave1) == null) {
@@ -185,7 +185,7 @@ public class registroWeb extends HttpServlet {
 				
 					usuarioRegistro u = comprobarUsuario(correo, clave1);
 					sesion.setAttribute("usuarioReg", u);
-					sesion.setAttribute("acceso", correo);
+					//sesion.setAttribute("acceso", correo);
 					request.setAttribute("registrados", registrados);
 					
 			

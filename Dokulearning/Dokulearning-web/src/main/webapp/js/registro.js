@@ -16,15 +16,15 @@ function validarR(formulario){
     var contador = 0;
     var mensaje = "";
 	   //Validado el campo correo de registrado
-    var correoRegistrado = document.getElementById("correo").value;
+    var correoRegistrado = document.getElementById("correoR").value;
     var correoR = correoRegistrado.toString();
     if (correoR.match(/[^\w\d.@-_ñÑ&#/]/g)|| correoR == null || correoR == ""){
-        document.getElementById("correo").style.borderColor="red";
-        document.getElementById("correo").style.borderStyle="dotted";
+        document.getElementById("correoR").style.borderColor="red";
+        document.getElementById("correoR").style.borderStyle="dotted";
         mensaje = mensaje.concat("El campo correo no puede permanecer vacío" + '\n');
     } else {
-        document.getElementById("correo").style.borderColor="green";
-        document.getElementById("correo").style.borderStyle="dotted";
+        document.getElementById("correoR").style.borderColor="green";
+        document.getElementById("correoR").style.borderStyle="dotted";
         contador = contador + 1;
     }
     //Validado el campo nick de registrado

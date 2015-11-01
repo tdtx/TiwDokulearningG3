@@ -37,11 +37,33 @@
 
 	<div id="wrapper">
 		<!-- Navigation -->
-	
-<ul class="nav navbar-right top-nav negrito">
+	<c:if test="${clienteValidado==null}">
+            <div class="user-menu-small row">   
+               <ul class="nav navbar-right top-nav negrito">
 				<li><a href="#" data-toggle="modal" title="Iniciar sesi&oacuten" data-target="#myModal" onClick="$('#loginbox').show(); $('#signupbox').hide()">Iniciar Sesion 
                         </a></li>
 			</ul>
+            </div>
+        </c:if>
+            <c:if test="${clienteValidado!=null}">
+            <div class="user-menu-small row">   
+               <ul class="nav navbar-right top-nav">
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown"><i class="fa fa-user"></i> Usuario <b
+						class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="login?accion=perfil"><i
+								class="fa fa-fw fa-user"></i> Perfil</a></li>
+								<li><a href="login?accion=salir"><i
+								class="fa fa-fw fa-power-off"></i> Cerrar sesion</a></li>
+					</ul>
+					
+						
+					
+			</ul>
+            </div>
+        </c:if>
+
 			<div class="modal fade" id="myModal" tabindex="-1"
                                         role="dialog" aria-labelledby="myModalLabel"
                                         aria-hidden="true">
@@ -117,9 +139,11 @@
 
 
 
+
                         </div>                     
                     </div>  
         </div>
+
         <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -136,9 +160,9 @@
                                 
                                   
                                 <div class="form-group">
-                                    <label for="correo" class="col-md-3 control-label">Correo</label> 
+                                    <label for="correoR" class="col-md-3 control-label">Correo</label> 
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="correo" id="correo" placeholder="Ej.:algo@algo.es">
+                                        <input type="text" class="form-control" name="correoR" id="correoR" placeholder="Ej.:algo@algo.es">
                                     </div>
                                 </div>
                                 
