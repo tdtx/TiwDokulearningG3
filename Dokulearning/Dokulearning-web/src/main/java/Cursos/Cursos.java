@@ -63,12 +63,13 @@ public class Cursos extends HttpServlet {
 		String accion = request.getParameter("accion");
 		String pagina = "/index.jsp";
 		if (accion.equals("ofertas")) {
-			request.setAttribute("ofertas", cursos);
-			pagina = "/resumenCurso.jsp";
+			request.setAttribute("cursos", cursos);
+			pagina = "/cursoOferta.jsp";
+	
 		}
 		if(accion.equals("destacados")){
-			request.setAttribute("destacados", cursos);
-			pagina = "/resumenCurso.jsp";
+			request.setAttribute("cursos", cursos);
+			pagina = "/cursoDestacados.jsp";
 	}
 		response.setContentType("text/html");
 		this.getServletContext().getRequestDispatcher(pagina)

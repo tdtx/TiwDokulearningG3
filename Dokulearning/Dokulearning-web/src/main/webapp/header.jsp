@@ -290,8 +290,8 @@
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
 					<li><a href="#"> Inicio</a></li>
-					<li><a href="#"> Oferta de Cursos</a></li>
-					<li><a href="#"> Cursos</a></li>
+					<li><a href="Cursos?accion=ofertas"> Oferta de Cursos</a></li>
+					<li><a href="Cursos?accion=destacados"> Cursos Destacados</a></li>
 					<li><a href="#"> Contactos</a></li>
 					<!-- aqui van las redireciones entre li a -->
 					
