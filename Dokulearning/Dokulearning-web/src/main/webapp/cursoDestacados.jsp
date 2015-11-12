@@ -10,13 +10,18 @@
 
 	<jsp:include page="header.jsp"></jsp:include>
 
-<div id="wrapper">
-		<div id="page-wrapper">
-			<div class="container-fluid">
+
+			<div class="container">
 				<!-- Page Heading -->
 				<div class="row">
+					<div class="box">
+				
 					<div class="col-lg-12 ">
-						<h1 class="page-header">Cursos Destacados</h1>
+					 <hr>
+                    <h2 class="intro-text text-center">Cursos 
+                        <strong>destacados</strong>
+                    </h2>
+                    <hr>
 						<div class="table-responsive panel panel-default">
 							<table class="table table-hover">
 								<thead>
@@ -40,7 +45,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 		<jsp:include page="footer.jsp"></jsp:include>
 	
 </body>
