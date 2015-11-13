@@ -24,11 +24,11 @@ public class imagenDAO {
         ut.commit();   
         return nuevaImagen;
     }
-    public imagenes actualizarImagen(imagenes clienteImagen) throws Exception{
+    public imagenes actualizarImagen(imagenes imagen) throws Exception{
         ut.begin();
-        em.merge(clienteImagen);
+        em.merge(imagen);
         ut.commit();
-        return clienteImagen;
+        return imagen;
     }
     
     public void borrarImagen(imagenes imagen)throws Exception{
