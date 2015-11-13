@@ -24,11 +24,11 @@ public class matriculadoDAO {
         ut.commit();   
         return nuevoMatriculado;
     }
-    public matriculados actualizarMatriculado(matriculados clienteMatriculado) throws Exception{
+    public matriculados actualizarMatriculado(matriculados matriculado) throws Exception{
         ut.begin();
-        em.merge(clienteMatriculado);
+        em.merge(matriculado);
         ut.commit();
-        return clienteMatriculado;
+        return matriculado;
     }
     
     public void borrarMatriculado(matriculados matriculado)throws Exception{

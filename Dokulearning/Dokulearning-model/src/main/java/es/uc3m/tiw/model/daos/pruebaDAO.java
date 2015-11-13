@@ -24,11 +24,11 @@ public class pruebaDAO {
         ut.commit();   
         return nuevaPrueba;
     }
-    public pruebas actualizarPrueba(pruebas clientePrueba) throws Exception{
+    public pruebas actualizarPrueba(pruebas prueba) throws Exception{
         ut.begin();
-        em.merge(clientePrueba);
+        em.merge(prueba);
         ut.commit();
-        return clientePrueba;
+        return prueba;
     }
     
     public void borrarPrueba(pruebas prueba)throws Exception{

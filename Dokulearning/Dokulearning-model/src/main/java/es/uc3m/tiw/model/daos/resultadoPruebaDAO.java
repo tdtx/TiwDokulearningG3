@@ -24,11 +24,11 @@ public class resultadoPruebaDAO {
         ut.commit();   
         return nuevoResultadoPrueba;
     }
-    public resultadosPruebas actualizarResultadoPrueba(resultadosPruebas clienteResultadoPrueba) throws Exception{
+    public resultadosPruebas actualizarResultadoPrueba(resultadosPruebas resultadoPrueba) throws Exception{
         ut.begin();
-        em.merge(clienteResultadoPrueba);
+        em.merge(resultadoPrueba);
         ut.commit();
-        return clienteResultadoPrueba;
+        return resultadoPrueba;
     }
     
     public void borrarResultadoPrueba(resultadosPruebas resultadoPrueba)throws Exception{

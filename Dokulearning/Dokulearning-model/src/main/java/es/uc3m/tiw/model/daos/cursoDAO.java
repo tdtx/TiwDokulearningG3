@@ -1,12 +1,12 @@
 package es.uc3m.tiw.model.daos;
 
+
 import javax.persistence.EntityManager;
 
 import javax.transaction.UserTransaction;
 
 
 import es.uc3m.tiw.model.dominios.curso;
-
 
 public class cursoDAO{	
 	  private final EntityManager em;
