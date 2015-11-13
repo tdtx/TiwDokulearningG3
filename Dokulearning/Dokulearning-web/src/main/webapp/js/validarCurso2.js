@@ -1,18 +1,18 @@
 function validarCurso(formulario){
     var contador = 0;
-    var mensaje = "";
+    //var mensaje = "";
     
     //Validado el campo titulo de curso
     var tituloCurso = document.getElementById("nom").value;
     var tituloC = tituloCurso.toString();
     if (tituloC == null || tituloC == "") {
-        mensaje = mensaje.concat("El campo titulo de curso debe rellenarse" + '\n');
+       // mensaje = mensaje.concat("El campo titulo de curso debe rellenarse" + '\n');
         document.getElementById("nom").style.borderColor="red";
         document.getElementById("nom").style.borderStyle="dotted";
     } else if (tituloC.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
         document.getElementById("nom").style.borderColor="red";
         document.getElementById("nom").style.borderStyle="dotted";
-        mensaje = mensaje.concat("El nombre de curso no puede contener símbolos, ni estar en blanco" + '\n');
+        //mensaje = mensaje.concat("El nombre de curso no puede contener símbolos, ni estar en blanco" + '\n');
     } else {
         document.getElementById("nom").style.borderColor="green";
         document.getElementById("nom").style.borderStyle="dotted";
@@ -24,7 +24,7 @@ function validarCurso(formulario){
 	if (descripcionC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| descripcionC == null || descripcionC == ""){
 		document.getElementById("descripcion").style.borderColor="red";
 		document.getElementById("descripcion").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo descripcion no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+		//mensaje = mensaje.concat("El campo descripcion no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("descripcion").style.borderColor="green";
 		document.getElementById("descripcion").style.borderStyle="dotted";
@@ -37,11 +37,11 @@ function validarCurso(formulario){
 	if (nHorasC.match(/[\D]/g)|| nHorasC == null || nHorasC == ""){
 		document.getElementById("horas").style.borderColor="red";
 		document.getElementById("horas").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El numero de horas no puede permanecer vacío y sólo puede estar formado por números" + '\n');
+		//mensaje = mensaje.concat("El numero de horas no puede permanecer vacío y sólo puede estar formado por números" + '\n');
 	} else if(cpLong != 4){
 		document.getElementById("horas").style.borderColor="red";
 		document.getElementById("horas").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo numero de horas debe estar formado por 4 dígitos" + '\n');
+		//mensaje = mensaje.concat("El campo numero de horas debe estar formado por 4 dígitos" + '\n');
 	} else {
 		document.getElementById("horas").style.borderColor="green";
 		document.getElementById("horas").style.borderStyle="dotted";
@@ -53,7 +53,7 @@ function validarCurso(formulario){
 	if (temarioC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| temarioC == null || temarioC == ""){
 		document.getElementById("temario").style.borderColor="red";
 		document.getElementById("temario").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo temario no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+		//mensaje = mensaje.concat("El campo temario no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("temario").style.borderColor="green";
 		document.getElementById("temario").style.borderStyle="dotted";
@@ -66,7 +66,7 @@ function validarCurso(formulario){
 	if (temarioC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| seccionesC == null || seccionesC == ""){
 		document.getElementById("secciones").style.borderColor="red";
 		document.getElementById("secciones").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo secciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+		//mensaje = mensaje.concat("El campo secciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("secciones").style.borderColor="green";
 		document.getElementById("secciones").style.borderStyle="dotted";
@@ -79,7 +79,7 @@ function validarCurso(formulario){
 	if (temarioC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| leccionesC == null || leccionesC == ""){
 		document.getElementById("lecciones").style.borderColor="red";
 		document.getElementById("lecciones").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo lecciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+		//mensaje = mensaje.concat("El campo lecciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("lecciones").style.borderColor="green";
 		document.getElementById("lecciones").style.borderStyle="dotted";
@@ -94,13 +94,13 @@ function validarCurso(formulario){
     var profesorCurso = document.getElementById("profesor").value;
     var profesorC = profesorCurso.toString();
     if (profesorC == null || profesorC == "") {
-        mensaje = mensaje.concat("El campo profesor de cursp debe rellenarse" + '\n');
+        //mensaje = mensaje.concat("El campo profesor de cursp debe rellenarse" + '\n');
         document.getElementById("profesor").style.borderColor="red";
         document.getElementById("profesor").style.borderStyle="dotted";
     } else if (profesorC.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
         document.getElementById("profesor").style.borderColor="red";
         document.getElementById("profesor").style.borderStyle="dotted";
-        mensaje = mensaje.concat("El profesor del curso no puede contener símbolos, ni estar en blanco" + '\n');
+        //mensaje = mensaje.concat("El profesor del curso no puede contener símbolos, ni estar en blanco" + '\n');
     } else {
         document.getElementById("profesor").style.borderColor="green";
         document.getElementById("profesor").style.borderStyle="dotted";
@@ -112,7 +112,7 @@ function validarCurso(formulario){
 	if (categoriaC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| categoriaC == null || categoriaC == ""){
 		document.getElementById("categoria").style.borderColor="red";
 		document.getElementById("categoria").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo categoria no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+		//mensaje = mensaje.concat("El campo categoria no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("categoria").style.borderColor="green";
 		document.getElementById("categoria").style.borderStyle="dotted";
@@ -122,13 +122,13 @@ function validarCurso(formulario){
     var precioCursos = document.getElementById("precio").value;
     var precioC = precioCursos.toString();
     if (precioC == null || precioC == "") {
-        mensaje = mensaje.concat("El campo precio  debe rellenarse." + '\n');
+        //mensaje = mensaje.concat("El campo precio  debe rellenarse." + '\n');
         document.getElementById("precio").style.borderColor="red";
         document.getElementById("precio").style.borderStyle="dotted";
     } else if (precioC.match(/[^\d.]/gi)){
         document.getElementById("precio").style.borderColor="red";
         document.getElementById("precio").style.borderStyle="dotted";
-        mensaje = mensaje.concat("El campo precio  no puede contener letras ni estar en blanco." + '\n');
+        //mensaje = mensaje.concat("El campo precio  no puede contener letras ni estar en blanco." + '\n');
     } else {
         document.getElementById("precio").style.borderColor="green";
         document.getElementById("precio").style.borderStyle="dotted";
@@ -138,7 +138,7 @@ function validarCurso(formulario){
     var dificultadCursos = document.getElementById("dificultad").value;
     var dificultadC = dificultadCursos.toString();
     if (dificultadC == null || dificultadC == "") {
-        mensaje = mensaje.concat("El campo dificultad debe rellenarse" + '\n');
+        //mensaje = mensaje.concat("El campo dificultad debe rellenarse" + '\n');
         document.getElementById("dificultad").style.borderColor="red";
         document.getElementById("dificultad").style.borderStyle="dotted";
     } else if (dificultadC=="Alta" || dificultadC=="Media" || dificultadC=="Baja"){
@@ -146,7 +146,7 @@ function validarCurso(formulario){
         document.getElementById("dificultad").style.borderStyle="dotted";
         contador = contador + 1;    
     } else {
-        mensaje = mensaje.concat("El campo dificultad debe rellenarse con Alta, Media y Baja)" + '\n');
+        //mensaje = mensaje.concat("El campo dificultad debe rellenarse con Alta, Media y Baja)" + '\n');
         document.getElementById("dificultad").style.borderColor="red";
         document.getElementById("dificultad").style.borderStyle="dotted";
     }
@@ -176,19 +176,19 @@ function validarCurso(formulario){
 	    if (array_fecha.length!=3) {
 	    	 document.getElementById("f_inicio").style.borderColor="red";
 	         document.getElementById("f_inicio").style.borderStyle="dotted";
-	         mensaje = mensaje.concat("La fecha de inicio no tiene el formato dd/mm/aaaa" + '\n');
+	      //   mensaje = mensaje.concat("La fecha de inicio no tiene el formato dd/mm/aaaa" + '\n');
 	    }else if (isNaN(ano)) {
 	    	 document.getElementById("f_inicio").style.borderColor="red";
 	         document.getElementById("f_inicio").style.borderStyle="dotted";
-	         mensaje = mensaje.concat("El año es incorrecto" + '\n');
+	        // mensaje = mensaje.concat("El año es incorrecto" + '\n');
 	    }else if (isNaN(mes)) {
 	    	 document.getElementById("f_inicio").style.borderColor="red";
 	         document.getElementById("f_inicio").style.borderStyle="dotted";
-	         mensaje = mensaje.concat("El mes es incorrecto" + '\n');
+	         //mensaje = mensaje.concat("El mes es incorrecto" + '\n');
 	    }else if (isNaN(dia)) {
 	    	 document.getElementById("f_inicio").style.borderColor="red";
 	         document.getElementById("f_inicio").style.borderStyle="dotted";
-	         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
+	         //mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 	    }else if (ano - hoy.getYear()+1 >= 0) {
 	    	if (mes - hoy.getMonth()+1 >= 0) {
 	    		if (dia - hoy.getUTCDate() >= 0 || mes - hoy.getMonth()+1 >= 1 || ano - hoy.getYear()+1 >= 1) {
@@ -198,18 +198,18 @@ function validarCurso(formulario){
 				}else {
 				   	 document.getElementById("f_inicio").style.borderColor="red";
 			         document.getElementById("f_inicio").style.borderStyle="dotted";
-			         mensaje = mensaje.concat("dia menor, el plazo de inicio de matriculacion tiene que ser mayor al dñia actual" + '\n');
+			   //      mensaje = mensaje.concat("dia menor, el plazo de inicio de matriculacion tiene que ser mayor al dñia actual" + '\n');
 				
 				}
 	    	}else{
 		    	 document.getElementById("f_inicio").style.borderColor="red";
 		         document.getElementById("f_inicio").style.borderStyle="dotted";
-		         mensaje = mensaje.concat("mes menor" + '\n');
+		         //mensaje = mensaje.concat("mes menor" + '\n');
 				}
 	    }else{
 	    	document.getElementById("f_inicio").style.borderColor="red";
 	         document.getElementById("f_inicio").style.borderStyle="dotted";
-	         mensaje = mensaje.concat("año menor" + '\n');
+	         //mensaje = mensaje.concat("año menor" + '\n');
 	    }
 	    
 	    
@@ -227,19 +227,19 @@ function validarCurso(formulario){
 		    if (array_fechaF.length!=3) {
 		    	 document.getElementById("f_fin").style.borderColor="red";
 		         document.getElementById("f_fin").style.borderStyle="dotted";
-		         mensaje = mensaje.concat("La fecha de fin no tiene el formato dd/mm/aaaa" + '\n');
+		       //  mensaje = mensaje.concat("La fecha de fin no tiene el formato dd/mm/aaaa" + '\n');
 		    }else if (isNaN(anoF)) {
 		    	 document.getElementById("f_fin").style.borderColor="red";
 		         document.getElementById("f_fin").style.borderStyle="dotted";
-		         mensaje = mensaje.concat("El año es incorrecto" + '\n');
+		         //mensaje = mensaje.concat("El año es incorrecto" + '\n');
 		    }else if (isNaN(mesF)) {
 		    	 document.getElementById("f_fin").style.borderColor="red";
 		         document.getElementById("f_fin").style.borderStyle="dotted";
-		         mensaje = mensaje.concat("El mes es incorrecto" + '\n');
+		         //mensaje = mensaje.concat("El mes es incorrecto" + '\n');
 		    }else if (isNaN(diaF)) {
 		    	 document.getElementById("f_fin").style.borderColor="red";
 		         document.getElementById("f_fin").style.borderStyle="dotted";
-		         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
+		         //mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 		    }else if (anoF - ano >= 0) {
 		    	if (mesF - mes >= 0) {
 		    		if (diaF - hoyF.getUTCDate() >= 0) {
@@ -254,17 +254,17 @@ function validarCurso(formulario){
 						else {
 					   	 document.getElementById("f_fin").style.borderColor="red";
 				         document.getElementById("f_fin").style.borderStyle="dotted";
-				         mensaje = mensaje.concat("dia menor" + '\n');	
+				   //      mensaje = mensaje.concat("dia menor" + '\n');	
 					}
 		    	}else{
 			    	 document.getElementById("f_fin").style.borderColor="red";
 			         document.getElementById("f_fin").style.borderStyle="dotted";
-			         mensaje = mensaje.concat("mes menor" + '\n');
+			         //mensaje = mensaje.concat("mes menor" + '\n');
 					}
 		    }else{
 		    	document.getElementById("f_fin").style.borderColor="red";
 		         document.getElementById("f_fin").style.borderStyle="dotted";
-		         mensaje = mensaje.concat("año menor" + '\n');
+		         //mensaje = mensaje.concat("año menor" + '\n');
 		    }
 		    
 		  //Validado el campo f del cierre curso
@@ -281,19 +281,19 @@ function validarCurso(formulario){
 			    if (array_fechaF.length!=3) {
 			    	 document.getElementById("cierre_curso").style.borderColor="red";
 			         document.getElementById("cierre_curso").style.borderStyle="dotted";
-			         mensaje = mensaje.concat("La fecha de fin no tiene el formato dd/mm/aaaa" + '\n');
+			       //  mensaje = mensaje.concat("La fecha de fin no tiene el formato dd/mm/aaaa" + '\n');
 			    }else if (isNaN(anoC)) {
 			    	 document.getElementById("cierre_curso").style.borderColor="red";
 			         document.getElementById("cierre_curso").style.borderStyle="dotted";
-			         mensaje = mensaje.concat("El año es incorrecto" + '\n');
+			         //mensaje = mensaje.concat("El año es incorrecto" + '\n');
 			    }else if (isNaN(mesC)) {
 			    	 document.getElementById("cierre_curso").style.borderColor="red";
 			         document.getElementById("cierre_curso").style.borderStyle="dotted";
-			         mensaje = mensaje.concat("El mes es incorrecto" + '\n');
+			         //mensaje = mensaje.concat("El mes es incorrecto" + '\n');
 			    }else if (isNaN(diaC)) {
 			    	 document.getElementById("cierre_curso").style.borderColor="red";
 			         document.getElementById("cierre_curso").style.borderStyle="dotted";
-			         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
+			         //mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 			    }else if (anoC - ano >= 0) {
 			    	if (mesC - mes >= 0) {
 			    		if (diaC - dia >= 0) {
@@ -308,22 +308,22 @@ function validarCurso(formulario){
 							else {
 						   	 document.getElementById("cierre_curso").style.borderColor="red";
 					         document.getElementById("cierre_curso").style.borderStyle="dotted";
-					         mensaje = mensaje.concat("dia menor" + '\n');	
+					   //      mensaje = mensaje.concat("dia menor" + '\n');	
 						}
 			    	}else{
 				    	 document.getElementById("cierre_curso").style.borderColor="red";
 				         document.getElementById("cierre_curso").style.borderStyle="dotted";
-				         mensaje = mensaje.concat("mes menor" + '\n');
+				         //mensaje = mensaje.concat("mes menor" + '\n');
 						}
 			    }else{
 			    	document.getElementById("cierre_curso").style.borderColor="red";
 			         document.getElementById("cierre_curso").style.borderStyle="dotted";
-			         mensaje = mensaje.concat("año menor" + '\n');
+			         //mensaje = mensaje.concat("año menor" + '\n');
 			    }
 			    //validando terminos y condiciones
 			    
 			    if(!formulario.terminos.checked){
-			    	mensaje = mensaje.concat("Hay que marcar casilla de terminos y condiciones" + '\n');
+			    	//mensaje = mensaje.concat("Hay que marcar casilla de terminos y condiciones" + '\n');
 			    }else{
 			    	contador = contador + 1;
 			    }
@@ -331,7 +331,7 @@ function validarCurso(formulario){
     if(contador == 14){
         alert("Datos del curso correctos. Cargando vista previa.");
     } else{
-        alert(mensaje);
+        //alert(mensaje);
         return false;
     }
    

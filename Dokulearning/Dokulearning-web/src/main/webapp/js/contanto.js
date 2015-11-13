@@ -1,19 +1,19 @@
 function validarK(formulario){
     var contador = 0;
-    var mensaje = "";
+    //var mensaje = "";
 
 	 
     //Validado el campo nombre de registrado
     var nombreRegistrado = document.getElementById("nombreJ").value;
     var nombreR = nombreRegistrado.toString();
     if (nombreR == null || nombreR == "") {
-        mensaje = mensaje.concat("El campo Nombre debe rellenarse" + '\n');
+        //mensaje = mensaje.concat("El campo Nombre debe rellenarse" + '\n');
         document.getElementById("nombreJ").style.borderColor="red";
         document.getElementById("nombreJ").style.borderStyle="dotted";
     } else if (nombreR.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
         document.getElementById("nombreJ").style.borderColor="red";
         document.getElementById("nombreJ").style.borderStyle="dotted";
-        mensaje = mensaje.concat("El nombre no puede contener símbolos, ni estar en blanco" + '\n');
+        //mensaje = mensaje.concat("El nombre no puede contener símbolos, ni estar en blanco" + '\n');
     } else {
         document.getElementById("nombreJ").style.borderColor="green";
         document.getElementById("nombreJ").style.borderStyle="dotted";
@@ -27,7 +27,7 @@ function validarK(formulario){
     if (correoR.match(/[^\w\d.@-_ñÑ&#/]/g)|| correoR == null || correoR == ""){
         document.getElementById("email").style.borderColor="red";
         document.getElementById("email").style.borderStyle="dotted";
-        mensaje = mensaje.concat("El campo correo no puede permanecer vacío" + '\n');
+        //mensaje = mensaje.concat("El campo correo no puede permanecer vacío" + '\n');
     } else {
         document.getElementById("email").style.borderColor="green";
         document.getElementById("email").style.borderStyle="dotted";
@@ -41,11 +41,11 @@ function validarK(formulario){
     var nickRegistrado = document.getElementById("mensajee").value;
     var nickR = nickRegistrado.toString();
     if (nickR == null || nickR == "") {
-        mensaje = mensaje.concat("El mensaje debe rellenarse" + '\n');
+        //mensaje = mensaje.concat("El mensaje debe rellenarse" + '\n');
         document.getElementById("mensajee").style.borderColor="red";
         document.getElementById("mensajee").style.borderStyle="dotted";
     } else if (nickR.match(/[^a-zñÑA-Z\d-]/gi)){
-        mensaje = mensaje.concat("El mensaje no puede contener símbolos, ni estar en blanco" + '\n');
+        //mensaje = mensaje.concat("El mensaje no puede contener símbolos, ni estar en blanco" + '\n');
         document.getElementById("mensajee").style.borderColor="red";
         document.getElementById("mensajee").style.borderStyle="dotted";      
     } else {
@@ -60,7 +60,7 @@ function validarK(formulario){
         alert("El mensaje se ha enviado con éxito");
         
     } else{
-        alert(mensaje);
+        //alert(mensaje);
         return false;
     }
 }

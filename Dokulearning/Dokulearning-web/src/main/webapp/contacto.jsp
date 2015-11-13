@@ -27,15 +27,15 @@
                         <div class="row">
                             <div class="form-group col-lg-4">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" placeholder="ej.: David">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Correo electonico</label>
-                                <input type="email" class="form-control">
+                                <input type="email" class="form-control" placeholder="ej.: algo@algo.es">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Numero de telefono</label>
-                                <input type="tel" class="form-control">
+                                <input type="tel" class="form-control" placeholder="9 digitos">
                             </div>
                             <div class="clearfix"></div>
                             <div class="form-group col-lg-12">
