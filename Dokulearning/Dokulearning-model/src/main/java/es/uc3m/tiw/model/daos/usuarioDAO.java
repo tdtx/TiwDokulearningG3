@@ -24,11 +24,11 @@ public class usuarioDAO {
         ut.commit();   
         return nuevoUsuario;
     }
-    public usuarios actualizarUsuario(usuarios clienteUsuario) throws Exception{
+    public usuarios actualizarUsuario(usuarios usuario) throws Exception{
         ut.begin();
-        em.merge(clienteUsuario);
+        em.merge(usuario);
         ut.commit();
-        return clienteUsuario;
+        return usuario;
     }
     
     public void borrarUsuario(usuarios usuario)throws Exception{
