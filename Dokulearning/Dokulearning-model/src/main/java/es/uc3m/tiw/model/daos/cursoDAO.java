@@ -14,7 +14,7 @@ import javax.transaction.UserTransaction;
 import javax.persistence.Query;
 
 import es.uc3m.tiw.model.dominios.curso;
-import es.uc3m.tiw.model.dominios.usuarios;
+
 
 import java.util.List;
 

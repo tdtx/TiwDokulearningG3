@@ -38,7 +38,20 @@ public class usuarioDAO {
     }
     
      public usuarios comprobarLogin(String email, String password)throws NoResultException{
-        return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",usuarios.class).getSingleResult();
+       // return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",usuarios.class).getSingleResult();
+     
+        Query query = em.createQuery("select u from Cliente u where u.email=:email and u.password=:password",usuarios.class);
+        query.setParameter("email", email);
+        query.setParameter("password", password);
+        return (usuarios) query.getSingleResult();
+        /*
+         * Query query =  em.createQuery("SELECT u FROM Usuario u where u.nick=:nick and u.password=:password", Usuario.class);
+		query.setParameter("nick", user);
+		query.setParameter("password", password);
+		return (Usuario) query.getSingleResult();
+         */
+        
+        
      }
      
     public usuarios buscarCliente(Long id) {
