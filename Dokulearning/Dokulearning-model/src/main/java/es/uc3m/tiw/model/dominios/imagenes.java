@@ -6,7 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 @Entity
@@ -19,6 +22,14 @@ public class imagenes  implements Serializable{
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
 	String imagen;
+	
+	
+
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private  usuarios usuarios;
+	 
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private curso curso;
 	
 	
 	public imagenes() {

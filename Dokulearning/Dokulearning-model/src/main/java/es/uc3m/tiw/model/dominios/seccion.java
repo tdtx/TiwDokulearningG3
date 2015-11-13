@@ -1,5 +1,7 @@
 package es.uc3m.tiw.model.dominios;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 import java.io.Serializable;
@@ -7,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class seccion implements Serializable {		
@@ -15,6 +18,12 @@ public class seccion implements Serializable {
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
 	String descripcion;
+	
+	
+	
+	@OneToMany(fetch = LAZY, cascade = ALL)
+    private  leccion leccion;
+	
 	
 	public seccion() {
 		super();

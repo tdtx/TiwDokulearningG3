@@ -8,6 +8,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import static javax.persistence.FetchType.LAZY;
+import static javax.persistence.CascadeType.ALL;
+
+
 
 @Entity
 public class curso implements Serializable {		
@@ -32,6 +38,20 @@ public class curso implements Serializable {
 	String fechaCaducidad;
 	String tipo;
 	String valor;
+	
+	
+	
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private  pruebas pruebas;
+	 
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private leccion leccion;
+	 
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private matriculados matriculados;
+	
+	
+	
 	
 	public curso() {
 		super();

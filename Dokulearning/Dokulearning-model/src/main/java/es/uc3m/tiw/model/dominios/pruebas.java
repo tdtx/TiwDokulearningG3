@@ -6,7 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 @Entity
@@ -21,6 +24,14 @@ private static final long serialVersionUID = 1L;
 	String id_curso;
 	@Column(unique = false, nullable = true)
 	String descripcion;
+	
+	
+	
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private  resultadosPruebas rescultadosPruebas;
+	
+	
+	
 	
 	
 	public pruebas() {

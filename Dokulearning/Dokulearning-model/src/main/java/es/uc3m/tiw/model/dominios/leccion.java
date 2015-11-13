@@ -1,5 +1,7 @@
 package es.uc3m.tiw.model.dominios;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 import java.io.Serializable;
@@ -8,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class leccion implements Serializable {		
@@ -20,6 +23,11 @@ public class leccion implements Serializable {
 	@Column(unique = true, nullable = false)
 	String idSeccion;
 	String descripcion;
+	
+	
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private  material material;
+	
 	
 	public leccion() {
 		super();
