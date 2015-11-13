@@ -1,24 +1,13 @@
 package es.uc3m.tiw.model.daos;
 
-import static javax.persistence.GenerationType.AUTO;
-
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
+
 import javax.transaction.UserTransaction;
-import javax.persistence.Query;
+
 
 import es.uc3m.tiw.model.dominios.curso;
-import es.uc3m.tiw.model.dominios.usuarios;
 
-import java.util.List;
 
-@Entity
 public class cursoDAO{	
 	  private final EntityManager em;
 	    private final UserTransaction ut;
