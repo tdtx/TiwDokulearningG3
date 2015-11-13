@@ -14,7 +14,7 @@ import static javax.persistence.GenerationType.AUTO;
 import javax.persistence.Id;
 
 @Entity
-public class usuarios implements Serializable {		
+public class Usuarios implements Serializable {		
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = AUTO)
@@ -42,15 +42,15 @@ public class usuarios implements Serializable {
 	String Pais;
 	
 	@OneToMany(fetch = LAZY, cascade = ALL)
-    private  matriculados matriculados;
+    private  Matriculados matriculados;
 	
 	
 	
-	public usuarios() {
+	public Usuarios() {
 		super();
 	}
 //para el registro	
-	public usuarios(String nick, String clave, String nombre, String apellido1,
+	public Usuarios(String nick, String clave, String nombre, String apellido1,
 			String apellido2, String email, String fechaNacimiento) {
 		super();
 		this.nick = nick;
@@ -62,13 +62,13 @@ public class usuarios implements Serializable {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 //para login	
-	public usuarios(String clave, String email) {
+	public Usuarios(String clave, String email) {
 		super();
 		this.clave = clave;
 		this.email = email;
 	}
 //para perfil
-	public usuarios(Long id, String rol, String nick, String clave, String nombre,
+	public Usuarios(Long id, String rol, String nick, String clave, String nombre,
 			String apellido1, String apellido2, int telefono, String email,
 			String cuentaBancaria, String idImagen, String fechaNacimiento,
 			String descripcion, String aficiones, String calle, String localidad,

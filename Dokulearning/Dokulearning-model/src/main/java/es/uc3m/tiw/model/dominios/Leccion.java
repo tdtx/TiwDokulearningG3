@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class leccion implements Serializable {		
+public class Leccion implements Serializable {		
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = AUTO)
@@ -26,13 +26,13 @@ public class leccion implements Serializable {
 	
 	
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private  material material;
+	    private  Material material;
 	
 	
-	public leccion() {
+	public Leccion() {
 		super();
 	}
-	public leccion(Long id, String idCurso, String idSeccion, String descripcion) {
+	public Leccion(Long id, String idCurso, String idSeccion, String descripcion) {
 		super();
 		this.id = id;
 		this.idCurso = idCurso;

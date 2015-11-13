@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class seccion implements Serializable {		
+public class Seccion implements Serializable {		
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = AUTO)
@@ -22,13 +22,13 @@ public class seccion implements Serializable {
 	
 	
 	@OneToMany(fetch = LAZY, cascade = ALL)
-    private  leccion leccion;
+    private  Leccion leccion;
 	
 	
-	public seccion() {
+	public Seccion() {
 		super();
 	}
-	public seccion(Long id, String descripcion) {
+	public Seccion(Long id, String descripcion) {
 		super();
 		this.id = id;
 		this.descripcion = descripcion;

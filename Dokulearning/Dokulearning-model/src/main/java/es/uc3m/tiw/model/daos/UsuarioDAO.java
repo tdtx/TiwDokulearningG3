@@ -4,46 +4,46 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.transaction.UserTransaction;
 import javax.persistence.Query;
-import es.uc3m.tiw.model.dominios.usuarios;
+import es.uc3m.tiw.model.dominios.Usuarios;
 
 import java.util.List;
 
-public class usuarioDAO {
+public class UsuarioDAO {
     private final EntityManager em;
     private final UserTransaction ut;
 
-    public usuarioDAO(EntityManager em, UserTransaction ut) {
+    public UsuarioDAO(EntityManager em, UserTransaction ut) {
         super();
         this.em = em;
         this.ut = ut;
     }
 
-    public usuarios guardarUsuario(usuarios nuevoUsuario) throws Exception{
+    public Usuarios guardarUsuario(Usuarios nuevoUsuario) throws Exception{
         ut.begin();    
         em.persist(nuevoUsuario); 
         ut.commit();   
         return nuevoUsuario;
     }
-    public usuarios actualizarUsuario(usuarios usuario) throws Exception{
+    public Usuarios actualizarUsuario(Usuarios usuario) throws Exception{
         ut.begin();
         em.merge(usuario);
         ut.commit();
         return usuario;
     }
     
-    public void borrarUsuario(usuarios usuario)throws Exception{
+    public void borrarUsuario(Usuarios usuario)throws Exception{
         ut.begin();
         em.remove(em.merge(usuario));
         ut.commit();
     }
     
-     public usuarios comprobarLogin(String email, String password)throws NoResultException{
+     public Usuarios comprobarLogin(String email, String password)throws NoResultException{
        // return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",usuarios.class).getSingleResult();
      
-        Query query = em.createQuery("select u from Cliente u where u.email=:email and u.password=:password",usuarios.class);
+        Query query = em.createQuery("select u from Cliente u where u.email=:email and u.password=:password",Usuarios.class);
         query.setParameter("email", email);
         query.setParameter("password", password);
-        return (usuarios) query.getSingleResult();
+        return (Usuarios) query.getSingleResult();
         /*
          * Query query =  em.createQuery("SELECT u FROM Usuario u where u.nick=:nick and u.password=:password", Usuario.class);
 		query.setParameter("nick", user);
@@ -54,7 +54,7 @@ public class usuarioDAO {
         
      }
      
-    public usuarios buscarCliente(Long id) {
-        return em.find(usuarios.class, id);
+    public Usuarios buscarCliente(Long id) {
+        return em.find(Usuarios.class, id);
     } 
 }

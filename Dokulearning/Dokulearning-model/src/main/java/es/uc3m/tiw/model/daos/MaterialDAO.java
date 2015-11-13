@@ -3,33 +3,33 @@ package es.uc3m.tiw.model.daos;
 import javax.persistence.EntityManager;
 import javax.transaction.UserTransaction;
 
-import es.uc3m.tiw.model.dominios.material;
+import es.uc3m.tiw.model.dominios.Material;
 
-public class materialDAO {
+public class MaterialDAO {
 	
 	 private final EntityManager em;
 	    private final UserTransaction ut;
 	    
-	 public materialDAO(EntityManager em, UserTransaction ut) {
+	 public MaterialDAO(EntityManager em, UserTransaction ut) {  
 			super();
 			this.em = em;
 			this.ut = ut;
 		}
 	//private Long id;
 		
-	 public material guardarmaterial(material nuevomaterial) throws Exception{
+	 public Material guardarMaterial(Material nuevoMaterial) throws Exception{
 		 ut.begin();
-		 em.persist(nuevomaterial);
+		 em.persist(nuevoMaterial);
 		 ut.commit();
-		 return nuevomaterial;
+		 return nuevoMaterial;
 	 }
-	 public material actualizarmaterial(material actualmaterial) throws Exception{
+	 public Material actualizarMaterial(Material actualMaterial) throws Exception{
 		 ut.begin();
-		 em.merge(actualmaterial);
+		 em.merge(actualMaterial);
 		 ut.commit();
-		 return actualmaterial;
+		 return actualMaterial;
 	 }
-	 public void borrarmaterial(material material) throws Exception{
+	 public void borrarMaterial(Material material) throws Exception{
 		 ut.begin();
 		 em.remove(em.merge(material));
 		 ut.commit();
@@ -40,8 +40,8 @@ public class materialDAO {
      return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",usuarios.class).getSingleResult();
   }
 	  */
-	    public material buscarmaterial(Long id) {
-	        return em.find(material.class, id);
+	    public Material buscarMaterial(Long id) {
+	        return em.find(Material.class, id);
 	    } 
 	
 	

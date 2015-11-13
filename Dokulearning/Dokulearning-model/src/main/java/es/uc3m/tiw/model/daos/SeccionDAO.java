@@ -3,35 +3,36 @@ package es.uc3m.tiw.model.daos;
 import javax.persistence.EntityManager;
 import javax.transaction.UserTransaction;
 
-import es.uc3m.tiw.model.dominios.leccion;
+import es.uc3m.tiw.model.dominios.Seccion;
 
-public class leccionDAO {
+public class SeccionDAO {
 
+	
 	 private final EntityManager em;
 	    private final UserTransaction ut;
 	    
-	 public leccionDAO(EntityManager em, UserTransaction ut) {
+	 public SeccionDAO(EntityManager em, UserTransaction ut) {
 			super();
 			this.em = em;
 			this.ut = ut;
 		}
 	//private Long id;
 		
-	 public leccion guardarleccion(leccion nuevoleccion) throws Exception{
+	 public Seccion guardarSeccion(Seccion nuevoSeccion) throws Exception{
 		 ut.begin();
-		 em.persist(nuevoleccion);
+		 em.persist(nuevoSeccion);
 		 ut.commit();
-		 return nuevoleccion;
+		 return nuevoSeccion;
 	 }
-	 public leccion actualizarleccion(leccion actualleccion) throws Exception{
+	 public Seccion actualizarSeccion(Seccion actualSeccion) throws Exception{
 		 ut.begin();
-		 em.merge(actualleccion);
+		 em.merge(actualSeccion);
 		 ut.commit();
-		 return actualleccion;
+		 return actualSeccion;
 	 }
-	 public void borrarleccion(leccion leccion) throws Exception{
+	 public void borrarSeccion(Seccion seccion) throws Exception{
 		 ut.begin();
-		 em.remove(em.merge(leccion));
+		 em.remove(em.merge(seccion));
 		 ut.commit();
 		 
 	 }
@@ -40,9 +41,16 @@ public class leccionDAO {
      return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",usuarios.class).getSingleResult();
   }
 	  */
-	    public leccion buscarleccion(Long id) {
-	        return em.find(leccion.class, id);
+	    public Seccion buscarSeccion(Long id) {
+	        return em.find(Seccion.class, id);
 	    } 
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

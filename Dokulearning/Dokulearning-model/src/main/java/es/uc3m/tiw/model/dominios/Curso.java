@@ -16,7 +16,7 @@ import static javax.persistence.CascadeType.ALL;
 
 
 @Entity
-public class curso implements Serializable {		
+public class Curso implements Serializable {		
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = AUTO)
@@ -42,21 +42,21 @@ public class curso implements Serializable {
 	
 	
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private  pruebas pruebas;
+	    private  Pruebas pruebas;
 	 
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private leccion leccion;
+	    private Leccion leccion;
 	 
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private matriculados matriculados;
+	    private Matriculados matriculados;
 	
 	
 	
 	
-	public curso() {
+	public Curso() {
 		super();
 	}
-	public curso(Long id, String titulo, String descripcion, String horas,
+	public Curso(Long id, String titulo, String descripcion, String horas,
 			String temario, String idProfesor, String nivel,
 			String certificado, String categoria, String destacado,
 			String estado, double precio, String tipoOferta, String idImagen,

@@ -6,32 +6,32 @@ import javax.persistence.EntityManager;
 import javax.transaction.UserTransaction;
 
 
-import es.uc3m.tiw.model.dominios.curso;
+import es.uc3m.tiw.model.dominios.Curso;
 
-public class cursoDAO{	
+public class CursoDAO{	
 	  private final EntityManager em;
 	    private final UserTransaction ut;
 	    
-	 public cursoDAO(EntityManager em, UserTransaction ut) {
+	 public CursoDAO(EntityManager em, UserTransaction ut) {
 			super();
 			this.em = em;
 			this.ut = ut;
 		}
 	//private Long id;
 		
-	 public curso guardarCurso(curso nuevoCurso) throws Exception{
+	 public Curso guardarCurso(Curso nuevoCurso) throws Exception{
 		 ut.begin();
 		 em.persist(nuevoCurso);
 		 ut.commit();
 		 return nuevoCurso;
 	 }
-	 public curso actualizarCurso(curso actualCurso) throws Exception{
+	 public Curso actualizarCurso(Curso actualCurso) throws Exception{
 		 ut.begin();
 		 em.merge(actualCurso);
 		 ut.commit();
 		 return actualCurso;
 	 }
-	 public void borrarCurso(curso curso) throws Exception{
+	 public void borrarCurso(Curso curso) throws Exception{
 		 ut.begin();
 		 em.remove(em.merge(curso));
 		 ut.commit();
@@ -42,8 +42,8 @@ public class cursoDAO{
         return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",usuarios.class).getSingleResult();
      }
 	  */
-	    public curso buscarCurso(Long id) {
-	        return em.find(curso.class, id);
+	    public Curso buscarCurso(Long id) {
+	        return em.find(Curso.class, id);
 	    } 
 	 
 	 

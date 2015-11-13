@@ -13,7 +13,7 @@ import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 @Entity
-public class pruebas implements Serializable {
+public class Pruebas implements Serializable {
 	
 private static final long serialVersionUID = 1L;
 	
@@ -28,18 +28,18 @@ private static final long serialVersionUID = 1L;
 	
 	
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private  resultadosPruebas rescultadosPruebas;
+	    private  ResultadosPruebas rescultadosPruebas;
 	
 	
 	
 	
 	
-	public pruebas() {
+	public Pruebas() {
 		super();
 	}
 	
 	
-	public pruebas(Long id, String id_curso, String descripcion) {
+	public Pruebas(Long id, String id_curso, String descripcion) {
 		super();
 		this.id = id;
 		this.id_curso = id_curso;
