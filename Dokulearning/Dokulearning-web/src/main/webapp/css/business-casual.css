@@ -13,6 +13,12 @@ body {
     -o-background-size: cover;
 }
 
+
+@media(min-width:468px) {
+    body {
+        margin-top: 0px;
+    }
+
 h1,
 h2,
 h3,
@@ -82,6 +88,17 @@ hr {
     padding: 30px 15px;
     background: #fff;
     background: rgba(255,255,255,0.9);
+}
+
+.tam{
+	font-size: 16px;
+	 
+}
+
+.row{
+	margin-left:15px;
+	margin-top:7px;
+	
 }
 
 .intro-text {

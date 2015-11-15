@@ -21,7 +21,7 @@
 <!-- Custom CSS barra vetical-->
 <link href="css/sb-admin.css" rel="stylesheet">
 <!-- Custom CSS -->
-<link href="css/business-casual.css" rel="stylesheet">
+ <link href="css/business-casual.css" rel="stylesheet"> 
 
 <!-- Fonts -->
 <link
@@ -50,8 +50,8 @@
 	<!-- Navigation -->
 	  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<c:if test="${estadoValidacion==null}">
-		<div class="user-menu-small row">
-			<ul class="nav navbar-right top-nav negrito">
+		<div class="user-menu-small row tam">
+			<ul class="navbar-right top-nav">
 				<li><a href="#" data-toggle="modal"
 					title="Iniciar sesi&oacuten" data-target="#myModal"
 					onClick="$('#loginbox').show(); $('#signupbox').hide()"><i class="fa fa-user"></i> Iniciar
@@ -60,8 +60,8 @@
 		</div>
 	</c:if>
 	<c:if test="${estadoValidacion!=null}">
-		<div class="user-menu-small row">
-			<ul class="nav navbar-right top-nav">
+		<div class="user-menu-small row tam">
+			<ul class="navbar-right top-nav">
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown"><i class="fa fa-user"></i> <c:out
 							value="${estVal}"></c:out> <b class="caret"></b></a>

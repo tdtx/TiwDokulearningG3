@@ -13,7 +13,7 @@ body {
 
 @media(min-width:768px) {
     body {
-        margin-top: 50px;
+        margin-top: 0px;
     }
 }
 
@@ -45,7 +45,7 @@ body {
 /* Top Navigation */
 
 .top-nav {
-    padding: 0 15px;
+    padding: 5px;
 }
 
 .top-nav>li {
@@ -54,10 +54,10 @@ body {
 }
 
 .top-nav>li>a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    line-height: 20px;
-    color: #999;
+    
+    padding-right: 40px;
+    line-height: 30px;
+    color: white;
 }
 
 .top-nav>li>a:hover,
