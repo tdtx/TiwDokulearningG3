@@ -104,11 +104,28 @@ function validarR(formulario){
         contador = contador + 1;
     }
 
-
+    //Valido el campo mayor edad
+    
+    if (!document.getElementById("mayoredad").checked){ 
+		document.getElementById("txtAceptar").style.color="red";
+    } else { 
+		document.getElementById("txtAceptar").style.color="green";
+        contador = contador + 1;
+    }
+    
+    
+//Valido el terminos
+    
+    if (!document.getElementById("terminos").checked){ 
+		document.getElementById("txtAceptar").style.color="red";
+    } else { 
+		document.getElementById("txtAceptar").style.color="green";
+        contador = contador + 1;
+    }
  
 
      
-    if(contador == 6){
+    if(contador == 8){
         alert("Usuario registrado con éxito");
     } else{
         //alert(mensaje);

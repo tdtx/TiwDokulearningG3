@@ -77,7 +77,7 @@
 
 
 					<div style="margin: 0px 0px 0px 200px">
-						<form id="formularioMat" action="controlMatriculacion"
+						<form onSubmit="return comprobarMatriculacion(this)" id="formularioMat" action="controlMatriculacion"
 							method="post" enctype="multipart/form-data">
 							<input type="text" name="distribucionMatriculacion"
 								value="crearMatriculacion" style="display: none" />
@@ -116,25 +116,32 @@
 								<label id="lblprecio" for="precio">Precio</label> <input
 									type="text" class="form-control" name="precio" id="precio"
 									maxlength="8" readonly value="${param.precio}" /><br />
+								
+								
+								
 								<label id="txtTelefono" for="telefono">Telefono</label> <input
 									type="text" class="form-control" name="telefono" id="telefono" 
-									maxlength="9" /> <br /> <label id="txtGenero" for="genero">Genero</label>
+									maxlength="9" placeholder="Ej.: 123456789"/> <br />
+									
+									
+									
+									 <label id="txtGenero" for="genero">Genero</label>
 								<select id="genero" name="genero" class="form-control">
 									<option value="">Elija su sexo</option>
-									<option value="hombre">Hombre</option>
-									<option value="mujer">Mujer</option>
+									<option value="Hombre">Hombre</option>
+									<option value="Mujer">Mujer</option>
 								</select><br />
 								<label id="txtDNI" for="DNI">DNI:</label><input type="text"
-									class="form-control" name="DNI" id="DNI" maxlength="10" /><br />
+									           placeholder="Ej.: 12345678G / sin guion" class="form-control" name="DNI" id="DNI" maxlength="10" /><br />
 
 								
 								 <label id="txtFormaPago" for="formaPago">Forma
 									de pago</label> <select class="form-control" id="formaPago"
 									name="formaPago">
 									<option value="">Elija una forma de pago</option>
-									<option value="transferencia">Transferencia</option>
-									<option value="tarjeta">Tarjeta</option>
-									<option value="paypal">Paypal</option>
+									<option value="Transferencia">Transferencia</option>
+									<option value="Tarjeta">Tarjeta</option>
+									<option value="Paypal">Paypal</option>
 								</select><br /> <label id="txtImagen" for="fecha">Imagen de
 									Perfil</label><input type="file" name="imagen" id="imagen" size="60" /><br />
 
@@ -156,17 +163,17 @@
 									name="nombreCurso" id="nombreCurso" maxlength="30" readonly
 									value="${param.nombreCurso}" /><br />
 								<label id="txtCalle" for="calle">Calle</label><input type="text"
-									class="form-control" name="calle" id="calle" maxlength="50" /><br />
+									placeholder="Ej.: avenida de la Universidad" class="form-control" name="calle" id="calle" maxlength="50" /><br />
 
 
 								<label id="txtLocalidad" for="localidad">Localidad</label><input
-									type="text" class="form-control" name="localidad" 
+									type="text" placeholder="Ej.: Colmenarejo" class="form-control" name="localidad" 
 									id="localidad" maxlength="30" /><br /> <label
 									id="txtCodigoPostal" for="codigopostal">Codigo Postal</label><input
-									type="text" class="form-control" name="codigopostal" 
+									type="text" placeholder="Ej.: 12349" class="form-control" name="codigopostal" 
 									id="codigopostal" maxlength="5" /><br /> <label
 									id="txtProvincia" for="provincia">Provincia</label><input
-									type="text" class="form-control" name="provincia"
+									type="text" placeholder="Ej.: Madrid" class="form-control" name="provincia"
 									id="provincia" maxlength="30" /><br />
 									<label id="txtAceptar" for="aceptar">Acepto los
 									terminos&nbsp;&nbsp; </label><input type="checkbox" value="SI" name="aceptar"
@@ -176,7 +183,7 @@
 									<div class="form-group col-lg-12" style="margin: 0px 0px 0px 300px">
 									
 									 <input id="btnEnviar"
-									type="button" class="btn btn-default" value="Enviar" />
+									type="submit" class="btn btn-default" value="Enviar" />
 						</div>
 						</form>
 						</div>
