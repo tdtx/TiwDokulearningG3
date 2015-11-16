@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,82 +17,69 @@
 	type="text/css">
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="header.jsp"></jsp:include>
 
-
-<div id="wrapper">
-
-		
-
-		<div id="page-wrapper">
-
-			<div class="container-fluid">
-		<div>
-		<div style="margin-left: 5px"><img alt="Foto" src="imagenes/addressbook_add_128.png" width=250px> </div>
+	<div class="container">
+		<div class="row">
+			<div class="box">
 				<!-- /.row -->
-     </div>
-     <div>
-<div><h1>Nombre:${param.nom}</h1></div>
-<div><h2>categoria:${param.categoria}</h2></div>
-<div>Descripcion:${param.descripcion}</div>
-<div>Numero de horas:${param.horas}</div>
-<div>Desde:${param.f_inicio}</div>
-<div>Hasta: ${param.f_inicio}</div>
-<div>Temario:${param.temario}</div>
-<div>Profesor:${param.profesor}</div>
-<div>Dificultad:${param.dificultad}</div>
-<div>Cierre curso:${param.cierre_curso}</div>
-<div>Precio:${param.precio}</div>
-</div>
-<a href="matriculacionDeCurso.jsp"><button type="button" class="btn btn-info">Matricularse</button></a>
-
-</div>
-
-<div>
-
-	<label id="lblnick" for="nick">nom:</label>
-	<input type="text" name="nick" id="nick" maxlength="8"
-		value="${param.nom}" />
-	<br />
+				<div class="col-lg-12">
+					<hr>
+					<h2 class="intro-text text-center">
+						resumen de <strong>curso</strong>
+					</h2>
+					<hr>
 
 
-	<label id="lblnombre" for="nombre">categoria:</label>
-	<input type="text" name="nombre" id="nombre" maxlength="20"
-		value="${param.categoria}" />
-	<br />
-	<label id="lblapellido1" for="apellido1">descripcion:</label>
-	<input type="text" name="apellido1" id="apellido1" maxlength="20"
-		value="${param.descripcion}" />
-	<br />
-	<label id="lblapellido2" for="apellido2">temario:</label>
-	<input type="text" name="apellido2" id="apellido2" maxlength="20"
-		value="${param.temario}" />
-	<br />
-	<label id="lblcorreo" for="correo">horas:</label>
-	<input type="text" name="correo" id="correo" maxlength="30"
-		value="${param.horas}" />
-	<br />
-	<!-- <label id="lblclave1" for="clave1">Contraseña:</label><input type="password" name="clave1" id="clave1" maxlength="20" value="${param.clave1}" /><br /> -->
+					<ul id="ulErroresEnPagina"></ul>
 
-	<label id="lblcorreo" for="clave">f_inicio:</label>
-	<input type="text" name="clave" id="clave" maxlength="30"
-		value="${param.f_inicio}" />
-	<br />
+					<c:choose>
+						<c:when test="${not empty mensaje }">
+							<p class="error">${mensaje }</p>
+						</c:when>
+					</c:choose>
 
-</div>
+					<div>
+						<img alt="Foto" src="imagenes/addressbook_add_128.png" width=10%>
+					</div>
+					<div>
+						<div class="form-group col-lg-4">
 
-		
-</div>  	
-</div>	
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+							<h2 class="intro-text">Nombre del curso:${param.nom}</h2>
+							<h2 class="intro-text">Categoria:${param.categoria}</h2>
+							<h2 class="intro-text">Descripcion:${param.descripcion}</h2>
+							<h2 class="intro-text">Numero de horas:${param.horas}</h2>
+							<h2 class="intro-text">Desde:${param.f_inicio}</h2>
+							<h2 class="intro-text">Hasta: ${param.f_inicio}</h2>
+							<h2 class="intro-text">Temario:${param.temario}</h2>
+							<h2 class="intro-text">Profesor:${param.profesor}</h2>
+							<h2 class="intro-text">Dificultad:${param.dificultad}</h2>
+							<h2 class="intro-text">Cierre curso:${param.cierre_curso}</h2>
+							<h2 class="intro-text">Precio:${param.precio}</h2>
 
 
-	<jsp:include page="footer.jsp"></jsp:include>
 
 
+							<a href="matriculacionDeCurso.jsp"><button type="button"
+									class="btn btn-default">Matricularse</button></a>
+						</div>
+					</div>
+
+
+
+
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="js/bootstrap.min.js"></script>
+
+
+		<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
