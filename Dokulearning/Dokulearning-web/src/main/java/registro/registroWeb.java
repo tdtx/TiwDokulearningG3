@@ -64,30 +64,28 @@ public class registroWeb extends HttpServlet {
 		String action = request.getParameter("action");
 		
 		String estado = request.getParameter("estado");
-
+		String pagina = indexJSP;
 		System.err.println("valor" + estado);
 		if (action != null && action.equals("salir")) {
+			pagina = indexJSP;
 			request.getSession().invalidate();
-			sesion.setAttribute("estadoValidacion",null);
 		}
-		String pagina = indexJSP;
+		
 	
-		if (action != null && action.equals("perfil")) {
-			//usuarioRegistro u = (usuarioRegistro) sesion.getAttribute("usuario");
-			//request.setAttribute("usrperfil", u);
+		if (action != null && action.equals("perfil")&& estado!=null) {
+
+			usuarioRegistro u=comprobarNick(estado);
+			if( u!= null){
+				pagina = "/perfilUsuario.jsp";
+				request.setAttribute("registrados", registrados);
+				sesion.setAttribute("usuario", u);
+				sesion.setAttribute("acceso", "ok");
+				sesion.setAttribute("correo", u.getCorreo());
+				sesion.setAttribute("perfilRegistrado", u);
+				System.err.println("entro");
+			}else{	System.err.println("malo");}
 			
-			/*usuarioRegistro registrados=comprobarUsuario(correo, clave);
 			
-			request.setAttribute("registrados", registrados);*/
-			System.err.println("entrado al estado");
-			request.setAttribute("registrados", registrados);
-			sesion.setAttribute("acceso", "ok");
-			sesion.setAttribute("estadoValidacion", estado);
-			
-			
-			
-			
-			pagina = "/perfilUsuario.jsp";
 		}
 
 		if (action != null && action.equals("eliminarReg")) {
@@ -102,7 +100,16 @@ public class registroWeb extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(pagina)
 				.forward(request, response);
 	}
-
+	public usuarioRegistro comprobarNick(String nick) {
+		usuarioRegistro u = null;
+		for (usuarioRegistro usuarioReg : registrados) {
+			if (nick.equals(usuarioReg.getNick())) {
+				u = usuarioReg;
+				break;
+			}
+		}
+		return u;
+	}
 	public void eliminarRegistrado(String correo) {
 		// TODO Auto-generated method stub
 		int x = 0;
@@ -143,7 +150,7 @@ public class registroWeb extends HttpServlet {
 					sesion.setAttribute("usuario", u);
 					sesion.setAttribute("acceso", "ok");
 					sesion.setAttribute("correo", u.getCorreo());
-					sesion.setAttribute("estadoValidacion", u.getNombre());
+					sesion.setAttribute("estadoValidacion", u.getNick());
 					System.err.println("entro");
 				}
 				else {

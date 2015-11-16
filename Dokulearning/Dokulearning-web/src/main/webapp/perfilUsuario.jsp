@@ -29,7 +29,7 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 
-
+<c:set var="registrado" scope="session" value="${perfilRegistrado}"></c:set>
 	<!-- Navigation -->
 
 
@@ -56,18 +56,18 @@
 						<div class="form-group col-lg-4">
 							<label id="lblnick" for="nick">Nick</label> <input type="text"
 								class="form-control" name="nick" id="nick" maxlength="8"
-								value="${param.nick}" /> <label id="lblnombre" for="nombre">Nombre</label>
+								value="${registrado.nick}" /> <label id="lblnombre" for="nombre">Nombre</label>
 							<input type="text" class="form-control" name="nombre" id="nombre"
-								maxlength="20" value="${param.nombre}" /> <label
+								maxlength="20" value="${registrado.nombre}" /> <label
 								id="lblapellido1" for="apellido1">Primer apellido</label> <input
 								type="text" class="form-control" name="apellido1" id="apellido1"
-								maxlength="20" value="${param.apellido1}" /> <label
+								maxlength="20" value="${registrado.apellido1}" /> <label
 								id="lblapellido2" for="apellido2">Segundo apellido</label> <input
 								type="text" class="form-control" name="apellido2" id="apellido2"
-								maxlength="20" value="${param.apellido2}" /> <label
+								maxlength="20" value="${registrado.apellido2}" /> <label
 								id="lblcorreo" for="correo">Correo electronico</label> <input
 								type="text" class="form-control" name="correo" id="correo"
-								maxlength="20" value="${param.correo}" /></br></br>
+								maxlength="20" value="${registrado.correo}" /></br></br>
 
 							<button class="btn btn-default" data-toggle="modal"
 								data-toggle="tooltip" data-placement="left"
@@ -92,7 +92,7 @@
 
 
 
-						<!-- <div class="signupboxt"> -->
+						 <div class="signupboxt"> 
 						<div class="form-group col-lg-4">
 
 
@@ -137,7 +137,7 @@
 
 						</div>
 						
-					
+					</div>
 					</div>
 
 					<%-- <c:choose>

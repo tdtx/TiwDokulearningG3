@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="es">
-<c:set var="estVal" scope="session" value="${estadoValidacion}"></c:set>
+
 <head>
 <link rel="shotcut icon"
 	href="fonts/Captura_de_pantallaico_2015-10-08_a_las_17.ico"
@@ -46,7 +46,7 @@
 
 </head>
 <body>
-
+<c:set var="estVal" scope="session" value="${estadoValidacion}"></c:set>
 	<!-- Navigation -->
 	  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<c:if test="${estadoValidacion==null}">
