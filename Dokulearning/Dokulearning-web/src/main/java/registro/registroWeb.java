@@ -313,7 +313,7 @@ public class registroWeb extends HttpServlet {
 			String correo) {
 		// TODO Auto-generated method stub
 		registrados.add(new usuarioRegistro(nick, nombre, apellido1, apellido2,
-				clave1, clave2, correo));
+				clave1, clave2, correo,true, true));
 	}
 
 	// comprueba el array list y devuelve solo el que buscas

@@ -27,15 +27,11 @@ maxRequestSize = 1024 * 1024 * 50, location = "/")
 // 50MB
 public class controlMatriculacion extends HttpServlet {
 
-	// private static final String SAVE_DIR = "uploadFiles";
-
 	private static final long serialVersionUID = 1L;
 	private ArrayList<usuarioMatriculacion> matriculados;
 	private static final String matriculacionDeCursoJSP = "/matriculacionDeCurso.jsp";
 	private static final String indexJSP = "/index.jsp";
 	private usuarioMatriculacion usuarioMat;
-	
-	
 
 	registroWeb rw = new registroWeb();
 
@@ -164,65 +160,7 @@ public class controlMatriculacion extends HttpServlet {
 		response.setContentType("text/html");
 		this.getServletContext().getRequestDispatcher("/perfilUsuario.jsp")
 				.forward(request, response);
-		/*
-		 * response.setContentType("text/html");
-		 * this.getServletContext().getRequestDispatcher(pagina)
-		 * .forward(request, response);
-		 */
 
-		// String correo = request.getParameter("correoo");
-		// String clave1 = request.getParameter("clave1");
-
-		/*
-		 * if (aceptar!= null){ setAceptar(true); }
-		 */
-
-		/*
-		 * usuarioRegistro r = rw.comprobarUsuario(correo, clave1); if(r!=
-		 * null){
-		 * 
-		 * System.err.println("malo"); }
-		 */
-
-		/*
-		 * usuarioMatriculacion usr = new usuarioMatriculacion();
-		 * 
-		 * usr.setTelefono(request.getParameter("telefono"));
-		 * usr.setCalle(request.getParameter("calle"));
-		 * usr.setLocalidad(request.getParameter("localidad"));
-		 * usr.setCodigoPostal(request.getParameter("codigopostal"));
-		 * usr.setProvincia(request.getParameter("provincia"));
-		 * usr.setFechaNacimiento(request.getParameter("fechaNacimiento"));
-		 * usr.setDNI(request.getParameter("DNI")); usr.setAceptar(false); if
-		 * (request.getParameter("aceptar") != null) usr.setAceptar(true);
-		 * 
-		 * switch(request.getParameter("genero")){ case "hombre":
-		 * usr.setSexo(genero.hombre); break; case "mujer":
-		 * usr.setSexo(genero.mujer); break; default:
-		 * usr.setSexo(genero.noDefinido); }
-		 * 
-		 * 
-		 * switch(request.getParameter("formaPago")){ case "transferencia":
-		 * usr.setFormaPago(datosCobro.transferencia); break; case "tarjeta":
-		 * usr.setFormaPago(datosCobro.tarjeta); break; case "paypal":
-		 * usr.setFormaPago(datosCobro.paypal); break; default:
-		 * usr.setFormaPago(datosCobro.noDefinido); }
-		 * 
-		 * //usr.setNick(request.getParameter("nick"));
-		 * 
-		 * 
-		 * String mensaje = usr.ValidarMatriculacion(); if (!mensaje.equals(""))
-		 * { mensaje = "<ul>" + mensaje + "</ul>";
-		 * request.setAttribute("mensaje", mensaje);
-		 * 
-		 * this.getServletContext().getRequestDispatcher("/matriculacionDeCurso.jsp"
-		 * ).forward(request, response);
-		 * 
-		 * } else { mensaje = "Te has registrado satisfactoriamente";
-		 * request.setAttribute("mensaje", mensaje);
-		 * this.getServletContext().getRequestDispatcher
-		 * ("/index.jsp").forward(request, response); }
-		 */
 	}
 
 	private void registrarMatriculacion(String telefono, String calle,

@@ -10,6 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
 /**
  * Este filtro intercepta cualquier peticion que vaya a la pagina listado.jsp y
  * comprueba que el usuario se haya autenticado con un token en sesion, en caso
@@ -18,8 +19,9 @@ import javax.servlet.http.HttpSession;
  * @author David Palomar
  */
 
-//"/formularioCurso.jsp", "/matriculacionDeCurso.jsp", "/perfilUsuario.jsp", "/vistaPreviaCurso.jsp"
-@WebFilter(urlPatterns = { })
+// "/formularioCurso.jsp", "/matriculacionDeCurso.jsp", "/perfilUsuario.jsp",
+// "/vistaPreviaCurso.jsp"
+@WebFilter(urlPatterns = {})
 public class LoginFilter implements Filter {
 
 	/**

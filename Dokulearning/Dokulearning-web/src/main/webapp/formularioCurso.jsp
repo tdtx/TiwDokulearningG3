@@ -56,14 +56,6 @@
 						style="display: none"> <br />
 
 
-					<!--<c:choose>
-	<c:when test="${not empty mensaje }">
-		<p class="error">${mensaje }</p>
-	</c:when>
-	<c:otherwise>
-		<br/>
-	</c:otherwise>
-</c:choose>-->
 					<div style="margin: 0px 0px 0px 200px">
 
 						<div class="form-group col-lg-4">
@@ -72,15 +64,8 @@
 
 							<label for="nom">Nombre de curso </label> <input
 								class="form-control" type="text" id="nom" name="nom"
-								placeholder="Ej.: Matematicas" /><br />
-
-							<!-- <br/>
- <div class="form-group">
-<label for="rama">Campo de enseñanza</label>
-<input class="form-control" type="text" name="rama" id="rama" />
- </div>-->
-
-							<label>Descripcion del curso</label>
+								placeholder="Ej.: Matematicas" /><br /> <label>Descripcion
+								del curso</label>
 							<textarea class="form-control" rows="3" name="descripcion"
 								id="descripcion" placeholder="Ej.: bases de datos"></textarea>
 							<br /> <label>Listado del contenido del curso</label>
@@ -124,41 +109,30 @@
 								id="dificultad" placeholder="Alta, Media o Baja"> <br />
 
 
-							<label>Acepto los terminos&nbsp;&nbsp;</label> <label
-								> <input type="checkbox"
-								name="terminos" id="terminos">
+							<label>Acepto los terminos&nbsp;&nbsp;</label> <label>
+								<input type="checkbox" name="terminos" id="terminos">
 							</label>
-							
-							
+
+
 						</div>
-						
-							<div class="form-group col-lg-12" style="margin: 0px 0px 0px 200px">
-						<button type="submit" name="accion" id="accion"
-									class="btn btn-default">Vista previa</button>
-								<button type="reset" class="btn btn-default">Deshacer
-									todo</button>
-												</div>
-						
+
+						<div class="form-group col-lg-12"
+							style="margin: 0px 0px 0px 200px">
+							<button type="submit" name="accion" id="accion"
+								class="btn btn-default">Vista previa</button>
+							<button type="reset" class="btn btn-default">Deshacer
+								todo</button>
 						</div>
+
+					</div>
 				</form>
 
 
 			</div>
-</div>
-
 		</div>
-		<!-- /.container-fluid -->
 
-	<!-- /#page-wrapper -->
+	</div>
 
-	<!-- /#wrapper -->
-
-	<!-- <div id="dialogo" title="Hay Errores en el Formulario">
-		<p>Por favor, corrija los siguientes errores y reenvíe el
-			formulario:</p>
-		<ul id="ulErrores"></ul>
-	</div> -->
-	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->

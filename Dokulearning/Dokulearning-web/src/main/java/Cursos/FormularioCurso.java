@@ -2,12 +2,8 @@ package Cursos;
 
 import dominio.validaciones;
 
-
-
-
 public class FormularioCurso {
 
-	
 	String nom;
 	String rama;
 	String id;
@@ -22,18 +18,19 @@ public class FormularioCurso {
 	String notificaciones;
 	String calificaciones;
 	String categoria;
-	String destacado, tipo_oferta, imagen, dificultad, f_inicio, f_fin, asociado, cierre_curso;
+	String destacado, tipo_oferta, imagen, dificultad, f_inicio, f_fin,
+			asociado, cierre_curso;
 	boolean validado, terminos;
-	String precio ; 
-	
+	String precio;
+
 	public FormularioCurso(String nom, String rama, String id, String horas,
 			String descripcion, String temario, String profesor,
 			String certificado, String secciones, String lecciones,
 			String material, String notificaciones, String calificaciones,
 			String categoria, String destacado, String tipo_oferta,
-			String imagen, String dificultad, boolean terminos, String f_inicio,
-			String f_fin, String asociado, String cierre_curso,
-			boolean validado, String precio) {
+			String imagen, String dificultad, boolean terminos,
+			String f_inicio, String f_fin, String asociado,
+			String cierre_curso, boolean validado, String precio) {
 		super();
 		this.nom = nom;
 		this.rama = rama;
@@ -62,7 +59,6 @@ public class FormularioCurso {
 		this.precio = precio;
 	}
 
-
 	public FormularioCurso(String nom, String horas, String descripcion,
 			String temario, String profesor, String categoria, String imagen,
 			String dificultad, String f_inicio, String f_fin,
@@ -82,26 +78,30 @@ public class FormularioCurso {
 		this.precio = precio;
 	}
 
-
-	public FormularioCurso(){
+	public FormularioCurso() {
 		super();
 	}
-	
+
 	public String getNom() {
 		return nom;
 	}
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+
 	public String getRama() {
 		return rama;
 	}
+
 	public void setRama(String rama) {
 		this.rama = rama;
 	}
-	public String getId(){
+
+	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -281,58 +281,51 @@ public class FormularioCurso {
 	public void setPrecio(String precio) {
 		this.precio = precio;
 	}
-	
-	public String validarCurso(){
-		String mensaje="";
+
+	public String validarCurso() {
+		String mensaje = "";
 		validaciones val = new validaciones();
-		
-		
-		if(!val.obligatorio(nom)){
+
+		if (!val.obligatorio(nom)) {
 			mensaje += "<li>El nombre del curso es obligatorio.</li>";
 		}
-		if(!val.obligatorio(rama)){
-			mensaje +="<li>El nombre del curso es obligatorio.</li>";
+		if (!val.obligatorio(rama)) {
+			mensaje += "<li>El nombre del curso es obligatorio.</li>";
 		}
-		if(!val.obligatorio(horas)){
-			mensaje +="<li>El numero de horas es obligatorio.</li>";
+		if (!val.obligatorio(horas)) {
+			mensaje += "<li>El numero de horas es obligatorio.</li>";
 		}
-		if(!val.maxLength(descripcion, 120)){
-			mensaje +="<li>La descripcion ha de tener como maximo 120 caracteres.</li>";
+		if (!val.maxLength(descripcion, 120)) {
+			mensaje += "<li>La descripcion ha de tener como maximo 120 caracteres.</li>";
 		}
-		if(!val.obligatorio(temario)){
-			mensaje +="<li>El temario es obligatorio indicarlo.</li>";
+		if (!val.obligatorio(temario)) {
+			mensaje += "<li>El temario es obligatorio indicarlo.</li>";
 		}
-		if(!val.obligatorio(categoria)){
-			mensaje +="<li>La categoria es obligatoria indicarla.</li>";
+		if (!val.obligatorio(categoria)) {
+			mensaje += "<li>La categoria es obligatoria indicarla.</li>";
 		}
-		if(!val.obligatorio(dificultad)){
-			mensaje +="<li>Hay que indicar la dificultad del curso.</li>";
+		if (!val.obligatorio(dificultad)) {
+			mensaje += "<li>Hay que indicar la dificultad del curso.</li>";
 		}
-		if(!this.terminos){
-			mensaje +="<li>Hay que aceptar los terminos y condiciones.</li>";
+		if (!this.terminos) {
+			mensaje += "<li>Hay que aceptar los terminos y condiciones.</li>";
 		}
-		if(!val.obligatorio(f_inicio)){
-			mensaje +="<li>f_inicio.</li>";
+		if (!val.obligatorio(f_inicio)) {
+			mensaje += "<li>f_inicio.</li>";
 		}
-		if(!val.obligatorio(f_fin)){
-			mensaje +="<li>f_fin.</li>";
+		if (!val.obligatorio(f_fin)) {
+			mensaje += "<li>f_fin.</li>";
 		}
-		/*if(!val.obligatorio(asociado)){
-			mensaje +="<li>asociado.</li>";
-		}*/
-		if(!val.obligatorio(cierre_curso)){
-			mensaje +="<li>cierre de curso.</li>";
+
+		if (!val.obligatorio(cierre_curso)) {
+			mensaje += "<li>cierre de curso.</li>";
 		}
-		if(!val.obligatorio(precio)){
-			mensaje +="<li>precio.</li>";
+		if (!val.obligatorio(precio)) {
+			mensaje += "<li>precio.</li>";
 		}
-		
+
 		return mensaje;
-		
-		
-		
-		
+
 	}
-	
-	
+
 }
