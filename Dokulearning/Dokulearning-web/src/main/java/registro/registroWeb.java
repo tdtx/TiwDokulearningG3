@@ -77,11 +77,8 @@ public class registroWeb extends HttpServlet {
 			usuarioRegistro u=comprobarNick(estado);
 			if( u!= null){
 				pagina = "/perfilUsuario.jsp";
-				request.setAttribute("registrados", registrados);
-				sesion.setAttribute("usuario", u);
-				sesion.setAttribute("acceso", "ok");
-				sesion.setAttribute("correo", u.getCorreo());
 				sesion.setAttribute("perfilRegistrado", u);
+				sesion.setAttribute("estadoValidacion", u.getNick());
 				System.err.println("entro");
 			}else{	System.err.println("malo");}
 			

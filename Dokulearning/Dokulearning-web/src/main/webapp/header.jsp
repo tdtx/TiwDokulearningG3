@@ -341,9 +341,8 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="index.jsp">Inicio</a></li>
-					<li><a href="cursoOferta.jsp">Ofertas</a></li>
-					<li><a href="cursoDestacados.jsp">Cursos destacados</a></li>
-
+					<li><a href="Cursos?accion=ofertas">Ofertas</a></li>
+					<li><a href="Cursos?accion=destacados">Cursos destacados</a></li>
 					<li><a href="contacto.jsp">Contacto</a></li>
 				</ul>
 			</div>
