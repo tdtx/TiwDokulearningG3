@@ -22,7 +22,7 @@
 <link href="css/sb-admin.css" rel="stylesheet">
 <!-- Custom CSS -->
  <link href="css/business-casual.css" rel="stylesheet"> 
-
+ <link href="css/otro.css" rel="stylesheet"> 
 <!-- Fonts -->
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
@@ -118,7 +118,7 @@
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-lock"></i></span> <input
 									id="login-password" type="password" class="form-control"
-									name="clave1" id="clave1" placeholder="contraseÃ±a">
+									name="clave1" id="clave1" placeholder="contrasenia">
 
 							</div>
 
@@ -213,7 +213,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="apellido1" class="col-md-3 control-label">1Âº
+								<label for="apellido1" class="col-md-3 control-label">1º
 									apellido</label>
 								<div class="col-md-9">
 									<input type="text" class="form-control" name="apellido1"
@@ -221,7 +221,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="apellido2" class="col-md-3 control-label">2Âº
+								<label for="apellido2" class="col-md-3 control-label">2º
 									apellido *</label>
 								<div class="col-md-9">
 									<input type="text" class="form-control" name="apellido2"
@@ -229,10 +229,10 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="clave1" class="col-md-3 control-label">ContraseÃ±a</label>
+								<label for="clave1" class="col-md-3 control-label">Contrasenia</label>
 								<div class="col-md-9">
 									<input type="password" class="form-control" name="clave1"
-										id="clave1" placeholder="Ej.: contraseÃ±ahipersegura">
+										id="clave1" placeholder="Ej.: contraseniahipersegura">
 								</div>
 							</div>
 							<div class="form-group">
@@ -240,7 +240,7 @@
 									ContraseÃ±a</label>
 								<div class="col-md-9">
 									<input type="password" class="form-control" name="clave2"
-										id="clave2" placeholder="Ej.: contraseÃ±ahipersegura">
+										id="clave2" placeholder="Ej.: contraseniahipersegura">
 								</div>
 							</div>
 
@@ -267,9 +267,8 @@
                                         <input type="text" class="form-control" name="icode" placeholder="">
                                     </div>
                                 </div> -->
-
-							<div class="form-group centrado">
-
+							<div class="form-group centradro">
+						
 								<div>
 
 									<button type="submit" class="btn btn-info">

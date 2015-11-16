@@ -19,6 +19,12 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+.centradro{
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 .red{
 	color: red;
 }
