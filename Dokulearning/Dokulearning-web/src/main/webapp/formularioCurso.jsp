@@ -121,11 +121,10 @@
 								<input type="radio" name="dificultad" id="dificultad" value="Media">Media<br>
 								<input type="radio" name="dificultad" id="dificultad" value="Alta">Alta<br>
 
-							<label>Acepto los terminos&nbsp;&nbsp;</label> <label>
+							<label>Acepto los <a data-toggle="modal" data-target="#Modal">terminos</a></label> <label>
 								<input type="checkbox" name="terminos" id="terminos">
 							</label>
 						<!-- Trigger the modal with a button -->
-  <button type="button" data-toggle="modal" data-target="#Modal">Mostrar Terminos y Condiciones de creacion de curso</button>
 
   <!-- Modal -->
   <div class="modal" id="Modal" role="dialog">

@@ -39,6 +39,7 @@ public class usuarioMatriculacion extends usuarioRegistro {
 		this.genero=genero;
 		this.formaPago=formaPago;
 		this.id=getIdentificadorSiguiente();
+		
 	}
 
 

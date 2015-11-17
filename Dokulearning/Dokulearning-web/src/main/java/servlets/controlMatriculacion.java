@@ -71,16 +71,16 @@ public class controlMatriculacion extends HttpServlet {
 		// TODO Auto-generated method stub
 		String accion = request.getParameter("accion");
 		String pagina = indexJSP;
-		if (!accion.equals(null)&& accion.equals("perfil")) {
-			request.setAttribute("matriculados", matriculados);
-			pagina = matriculacionDeCursoJSP;
-		}
-		if (!accion.equals(null) && accion.equals("eliminarMatricula")) {
-			String correo = request.getParameter("correo");
-			eliminarMatriculado(correo);
-			request.setAttribute("matriculados", matriculados);
-			pagina = matriculacionDeCursoJSP;
-		}
+		if (accion != null && accion.equals("perfil")) {
+            request.setAttribute("matriculados", matriculados);
+            pagina = matriculacionDeCursoJSP;
+        }
+        if (accion != null && accion.equals("eliminarMatricula")) {
+            String correo = request.getParameter("correo");
+            eliminarMatriculado(correo);
+            request.setAttribute("matriculados", matriculados);
+            pagina = matriculacionDeCursoJSP;
+        }
 		response.setContentType("text/html");
 		this.getServletContext().getRequestDispatcher(pagina)
 				.forward(request, response);
@@ -113,7 +113,7 @@ public class controlMatriculacion extends HttpServlet {
 		switch (distribucionMatriculacion) {
 
 		case "crearMatriculacion":
-
+			
 			String telefono = request.getParameter("telefono");
 			String calle = request.getParameter("calle");
 			String localidad = request.getParameter("localidad");
@@ -124,11 +124,13 @@ public class controlMatriculacion extends HttpServlet {
 			Boolean aceptar = true;
 			String genero = request.getParameter("genero");
 			String formaPago = request.getParameter("formaPago");
+			String precio = request.getParameter("precio");
+			String nombreCurso = request.getParameter("nombreCurso");
 
-			if (comprobarUsuario(telefono).equals(null)&&comprobarUsuario(telefono).equals("")) {
+			if (comprobarUsuario(telefono)!=null) {
 				registrarMatriculacion(telefono, calle, localidad,
 						codigopostal, provincia, fechanacimiento, DNI, aceptar,
-						genero, formaPago);
+						genero, formaPago, precio, nombreCurso);
 
 				usuarioMatriculacion u = comprobarUsuario(telefono);
 				sesion.setAttribute("usuarioMat", u);
@@ -141,7 +143,7 @@ public class controlMatriculacion extends HttpServlet {
 				try {
 					editarUsuarioMatriculacion(telefono, calle, localidad,
 							codigopostal, provincia, fechanacimiento, DNI,
-							aceptar, genero, formaPago);
+							aceptar, genero, formaPago );
 					request.setAttribute("matriculados", matriculados);
 					pagina = matriculacionDeCursoJSP;
 				} catch (Exception e) {
@@ -158,7 +160,7 @@ public class controlMatriculacion extends HttpServlet {
 
 		}
 		response.setContentType("text/html");
-		this.getServletContext().getRequestDispatcher("/perfilUsuario.jsp")
+		this.getServletContext().getRequestDispatcher("perfilUsuario.jsp")
 				.forward(request, response);
 
 	}
@@ -166,12 +168,12 @@ public class controlMatriculacion extends HttpServlet {
 	private void registrarMatriculacion(String telefono, String calle,
 			String localidad, String codigopostal, String provincia,
 			String fechanacimiento, String dNI, Boolean aceptar, String genero,
-			String formPago) {
+			String formPago, String precio, String nombreCurso) {
 		// TODO Auto-generated method stub
 
 		usuarioMatriculacion um1 = new usuarioMatriculacion(telefono, calle,
 				localidad, codigopostal, provincia, fechanacimiento, dNI,
-				aceptar, "mujer", "transferencia");
+				aceptar, "mujer", "transferencia" );
 
 		matriculados.add(um1);
 	}
