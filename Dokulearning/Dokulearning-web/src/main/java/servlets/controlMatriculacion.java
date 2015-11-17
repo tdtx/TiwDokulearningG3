@@ -71,11 +71,11 @@ public class controlMatriculacion extends HttpServlet {
 		// TODO Auto-generated method stub
 		String accion = request.getParameter("accion");
 		String pagina = indexJSP;
-		if (accion != null && accion.equals("perfil")) {
+		if (!accion.equals(null)&& accion.equals("perfil")) {
 			request.setAttribute("matriculados", matriculados);
 			pagina = matriculacionDeCursoJSP;
 		}
-		if (accion != null && accion.equals("eliminarMatricula")) {
+		if (!accion.equals(null) && accion.equals("eliminarMatricula")) {
 			String correo = request.getParameter("correo");
 			eliminarMatriculado(correo);
 			request.setAttribute("matriculados", matriculados);
@@ -125,7 +125,7 @@ public class controlMatriculacion extends HttpServlet {
 			String genero = request.getParameter("genero");
 			String formaPago = request.getParameter("formaPago");
 
-			if (comprobarUsuario(telefono) == null) {
+			if (comprobarUsuario(telefono).equals(null)&&comprobarUsuario(telefono).equals("")) {
 				registrarMatriculacion(telefono, calle, localidad,
 						codigopostal, provincia, fechanacimiento, DNI, aceptar,
 						genero, formaPago);

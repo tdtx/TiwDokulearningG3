@@ -41,12 +41,7 @@
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 
 </head>
 <body>
@@ -264,13 +259,7 @@
 
 
 
-							<!-- Codigo no necesario actualmente -->
-							<!-- <div class="form-group">
-                                    <label for="icode" class="col-md-3 control-label">Invitation Code</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="icode" placeholder="">
-                                    </div>
-                                </div> -->
+						
 							<div class="form-group centradro">
 						
 								<div>
@@ -286,13 +275,7 @@
 							<a href="#"
 								onClick="$('#loginbox').show(); $('#signupbox').hide()">
 								&lt&lt Atras </a>
-							<!--  <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
-                                    
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i> Iniciar sesion</button>
-                                    </div>                                           
-                                        
-                                </div> -->
+							
 
 
 

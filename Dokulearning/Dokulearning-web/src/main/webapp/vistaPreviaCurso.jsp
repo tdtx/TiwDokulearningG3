@@ -48,17 +48,7 @@
 						Vista previa del curso <strong>del curso</strong>
 					</h2>
 					<hr>
-					<!-- <div class="col-lg-6"> -->
-					<!-- /.row 
-				<h1> nom ${param.nom}</h1><p> categoria ${param.categoria}</p>-->
-					<!-- 
-				<div style="margin: 100px 0px 100px 0px">
-
-					<ul id="ulErroresEnPagina"></ul>
-			<h4> descripcion ${param.descripcion}</h4>
-			<br>
-			<div> 
-			 -->
+				
 					<div class="form-group col-lg-4">
 						<h2 class="intro-text"> Nombre del curso </h2><label>nombre aqui${param.nom}</label>
 						<h2 class="intro-text">Categoria</h2><label>categoria aqui ${param.categoria}</label>
@@ -111,10 +101,7 @@
 														de horas: ${param.horas}</div>
 													<div class="panel-body">Dificultad
 														del curso: ${param.dificultad}</div>
-													<!-- <div class="panel-body">Profesor:
-														${param.profesor}</div> 
-													<div class="panel-body" >Temario:
-														${param.temario}</div>-->
+												
 
 								</div>
 
@@ -123,9 +110,7 @@
 										</div>
 									</div>
 									<nav class=" navbar-foot  navbar-fixed-bottom">
-											<!-- <div class="navbar-header">
-												<a class="navbar-brand" href="#">iLexion</a>
-											</div> -->
+											
 											<div>
 												<form onSubmit="return validarCurso(this)" role="form"
 													action="Cursos" method="post">
@@ -146,16 +131,7 @@
 									
 
 
-					<!--<div class="container-fluid" style="margin-left: 75%">
-			<div class="panel panel-info">
-      <div class="panel-heading">Informacion</div>
-      <div class="panel-body">Fecha inicio curso: ${param.f_inicio}</div>
-       <div class="panel-body">Fecha fin curso: ${param.f_fin}</div>
-        <div class="panel-body">Numero de horas: ${param.horas}</div>
-         <div class="panel-body">Dificultad del curso: ${param.dificultad}</div>
-         <div class="panel-body">temario: ${param.temario}</div>
-    	</div>
-			
+	
 </div>  -->
 
 					<!-- jQuery -->
