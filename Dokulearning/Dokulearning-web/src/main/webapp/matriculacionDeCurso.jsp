@@ -119,24 +119,24 @@
 								
 								
 								
-								<label id="txtTelefono" for="telefono">Telefono</label> <input
+								<label id="txtTelefono" for="telefono">Telefono *</label> <input
 									type="text" class="form-control" name="telefono" id="telefono" 
 									maxlength="9" placeholder="Ej.: 123456789"/> <br />
 									
 									
 									
-									 <label id="txtGenero" for="genero">Genero</label>
+									 <label id="txtGenero" for="genero">Genero *</label>
 								<select id="genero" name="genero" class="form-control">
 									<option value="">Elija su sexo</option>
 									<option value="Hombre">Hombre</option>
 									<option value="Mujer">Mujer</option>
 								</select><br />
-								<label id="txtDNI" for="DNI">DNI:</label><input type="text"
+								<label id="txtDNI" for="DNI">DNI *</label><input type="text"
 									           placeholder="Ej.: 12345678G / sin guion" class="form-control" name="DNI" id="DNI" maxlength="10" /><br />
 
 								
 								 <label id="txtFormaPago" for="formaPago">Forma
-									de pago</label> <select class="form-control" id="formaPago"
+									de pago *</label> <select class="form-control" id="formaPago"
 									name="formaPago">
 									<option value="">Elija una forma de pago</option>
 									<option value="Transferencia">Transferencia</option>
@@ -162,21 +162,21 @@
 									curso</label> <input type="text" class="form-control"
 									name="nombreCurso" id="nombreCurso" maxlength="30" readonly
 									value="${param.nombreCurso}" /><br />
-								<label id="txtCalle" for="calle">Calle</label><input type="text"
+								<label id="txtCalle" for="calle">Calle *</label><input type="text"
 									placeholder="Ej.: avenida de la Universidad" class="form-control" name="calle" id="calle" maxlength="50" /><br />
 
 
-								<label id="txtLocalidad" for="localidad">Localidad</label><input
+								<label id="txtLocalidad" for="localidad">Localidad *</label><input
 									type="text" placeholder="Ej.: Colmenarejo" class="form-control" name="localidad" 
 									id="localidad" maxlength="30" /><br /> <label
-									id="txtCodigoPostal" for="codigopostal">Codigo Postal</label><input
+									id="txtCodigoPostal" for="codigopostal">Codigo Postal *</label><input
 									type="text" placeholder="Ej.: 12349" class="form-control" name="codigopostal" 
 									id="codigopostal" maxlength="5" /><br /> <label
-									id="txtProvincia" for="provincia">Provincia</label><input
+									id="txtProvincia" for="provincia">Provincia *</label><input
 									type="text" placeholder="Ej.: Madrid" class="form-control" name="provincia"
 									id="provincia" maxlength="30" /><br />
 									<label id="txtAceptar" for="aceptar">Acepto los
-									terminos&nbsp;&nbsp; </label><input type="checkbox" value="SI" name="aceptar"
+									terminos *&nbsp;&nbsp; </label><input type="checkbox" value="SI" name="aceptar"
 									id="aceptar" /><br />
 									
 									</div>

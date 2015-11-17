@@ -19,7 +19,13 @@
 		
 }
 
-
+  .navbar-foot {
+      background: url('../img/2.jpg') no-repeat center  fixed;
+  
+        background-color: 	#DEB887;
+        border-color: 	#000000;
+       padding: 15px;
+    }
 
 .centrado {
 	text-align: center;

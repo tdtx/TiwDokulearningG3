@@ -42,21 +42,54 @@
 				<div class="col-lg-12">
 					<hr>
 					<h2 class="intro-text text-center">
-						perfil <strong>usuario</strong>
+						perfil de &nbsp;&nbsp;<strong>${registrado.nick}</strong>
 					</h2>
 					<hr>
 
 
-					<div>
-						<img alt="logo" src="fonts/users_folder_128.png" width="10%">
+					<div class="form-group col-lg-4">
+						<img alt="logo" src="fonts/users_folder_128.png" width="50%">
+						
+						
+						</br></br>
+						
+						<button class="btn btn-default" 
+								title="editar perfil">
+								Editar perfil
+							</button>
+													</br></br>
+							
+						
+						<button class="btn btn-default" data-toggle="modal"
+								data-toggle="tooltip" data-placement="left"
+								title="Cambiar contraseña" data-target="#miDialog">
+								<span>Cambiar contraseña</span>
+							</button>
+							</br></br>
+								<a href="formularioCurso.jsp"><button type="button"
+								class="btn btn-default">Crear curso</button></a>
+						
 					</div>
 
 
 					<div>
 						<div class="form-group col-lg-4">
+						
+						
+						<div class="form-group"> <label>Nick:&nbsp;&nbsp;</label>${registrado.nick}</div>
+						<div class="form-group"> <label>Nombre:&nbsp;&nbsp;</label>${registrado.nombre}</div>
+						<div class="form-group"> <label>Primer apellido:&nbsp;&nbsp;</label>${registrado.apellido1}</div>
+						<div class="form-group"> <label>Segundo apellido:&nbsp;&nbsp;</label>${registrado.apellido2}</div>
+						<div class="form-group"> <label>Correo electronico:&nbsp;&nbsp;</label>${registrado.correo}</div>
+						
+						
+						<!-- 
 							<label id="lblnick" for="nick">Nick</label> <input type="text"
 								class="form-control" name="nick" id="nick" maxlength="8"
-								value="${registrado.nick}" /> <label id="lblnombre" for="nombre">Nombre</label>
+								value="${registrado.nick}" /> 
+								
+								
+								<label id="lblnombre" for="nombre">Nombre</label>
 							<input type="text" class="form-control" name="nombre" id="nombre"
 								maxlength="20" value="${registrado.nombre}" /> <label
 								id="lblapellido1" for="apellido1">Primer apellido</label> <input
@@ -68,16 +101,11 @@
 								id="lblcorreo" for="correo">Correo electronico</label> <input
 								type="text" class="form-control" name="correo" id="correo"
 								maxlength="20" value="${registrado.correo}" /></br></br>
+								
+								
+								 -->
 
-							<button class="btn btn-default" data-toggle="modal"
-								data-toggle="tooltip" data-placement="left"
-								title="Cambiar contraseña" data-target="#miDialog">
-								<span>Cambiar contraseña</span>
-							</button>
-							</br></br>
-								<a href="formularioCurso.jsp"><button type="button"
-								class="btn btn-default">Crear curso</button></a>
-
+							
 
 
 

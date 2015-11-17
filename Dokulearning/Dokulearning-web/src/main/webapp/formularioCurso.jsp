@@ -62,13 +62,18 @@
 
 
 
-							<label for="nom">Nombre de curso </label> <input
+							<label id="labelNombre" for="nom">Nombre de curso </label> <input
 								class="form-control" type="text" id="nom" name="nom"
-								placeholder="Ej.: Matematicas" /><br /> <label>Descripcion
+								placeholder="Ej.: Matematicas" /><br /> 
+								
+							<label id="labelDescripcion" >Descripcion
 								del curso</label>
 							<textarea class="form-control" rows="3" name="descripcion"
 								id="descripcion" placeholder="Ej.: bases de datos"></textarea>
-							<br /> <label>Listado del contenido del curso</label>
+							<br /> 
+							
+							
+							<label>Listado del contenido del curso</label>
 							<textarea class="form-control" rows="3" name="temario"
 								id="temario" placeholder="Ej.: titulos de los temas"></textarea>
 							<br /> <label>Listado de secciones del curso</label>

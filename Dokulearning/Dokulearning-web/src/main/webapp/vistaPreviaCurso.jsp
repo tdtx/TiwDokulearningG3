@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +8,15 @@
 <title>Vista previa curso</title>
 <!-- Bootstrap Core CSS formato-->
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/miestilo.css" rel="stylesheet">
+
 
 <!-- Custom CSS barra vetical-->
 <link href="css/sb-admin.css" rel="stylesheet">
 <script type="text/javascript">
-function val(){
-	alert("Curso enviado para validar");
-}
+	function val() {
+		alert("Curso enviado para validar");
+	}
 </script>
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
@@ -34,89 +36,117 @@ function val(){
 	type="text/css">
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
-	<div id ="wrapper">
-		<div id="page-wrapper">
+	<jsp:include page="header.jsp"></jsp:include>
 
-			<div class="container-fluid">
-		<div class="col-lg-6">
-				<!-- /.row -->
-				<h1>${param.nom}</h1><p>${param.categoria}</p>
-				
+	<div class="container">
+
+		<div class="row">
+			<div class="box">
+				<div class="col-lg-12">
+					<hr>
+					<h2 class="intro-text text-center">
+						Vista previa del curso <strong>del curso</strong>
+					</h2>
+					<hr>
+					<!-- <div class="col-lg-6"> -->
+					<!-- /.row 
+				<h1> nom ${param.nom}</h1><p> categoria ${param.categoria}</p>-->
+					<!-- 
 				<div style="margin: 100px 0px 100px 0px">
 
 					<ul id="ulErroresEnPagina"></ul>
-			<h4>${param.descripcion}</h4>
+			<h4> descripcion ${param.descripcion}</h4>
 			<br>
 			<div> 
-			
-			
-			
-	<div class="container" style="margin-right: 300px">
-  <h2>Temario</h2>
-  <div class="panel-group" style="margin-right: 35%">
-    <div class="panel panel-default" style="margin-right: 35%">
-      <div class="panel-heading">${param.secciones}</div>
-      <div class="panel-body" style="margin-right: 35%">${param.lecciones}</div>
-      <div class="panel-body" style="margin-right: 35%">${param.lecciones}</div>
-      <div class="panel-body" style="margin-right: 35%">${param.lecciones}</div>
-    </div>
-    <div class="panel panel-default" style="margin-right: 35%">
-      <div class="panel-heading">${param.secciones}</div>
-      <div class="panel-body" style="margin-right: 35%">${param.lecciones}</div>
-      <div class="panel-body" style="margin-right: 35%">${param.lecciones}</div>
-    </div>
-    <div class="panel panel-default" style="margin-right: 35%">
-      <div class="panel-heading">${param.secciones}</div>
-      <div class="panel-body" style="margin-right: 35%">${param.lecciones}</div>
-    </div>
-  </div>		
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6">
-<div style="margin: 100px 250px 150px 150px"><img alt="Foto" src="imagenes/addressbook_add_128.png" width="80%"> </div>
-<div style="margin: 50px 50px 100px 50px">
-<div class="container" style="margin-right: 50px">
-  			<div class="container-fluid" style="margin-right: 50px">
-			<div class="panel panel-info" style="margin-right: 50px">
-      <div class="panel-heading">Informacion</div>
-      <div class="panel-body" style="margin-left: 50px">Fecha inicio curso: ${param.f_inicio}</div>
-       <div class="panel-body" style="margin-left: 50px">Fecha fin curso: ${param.f_fin}</div>
-        <div class="panel-body" style="margin-left: 50px">Numero de horas: ${param.horas}</div>
-         <div class="panel-body" style="margin-left: 50px">Dificultad del curso: ${param.dificultad}</div>
-         <div class="panel-body" style="margin-left: 50px">Profesor: ${param.profesor}</div>
-         <div class="panel-body" style="margin-left: 50px">Temario: ${param.temario}</div>
-         
-					
-    	</div>
-		</div>
-			</div>
-</div>
- <nav class="navbar navbar-inverse navbar-fixed-bottom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">iLexion</a>
-    </div>
-    <div>
-	<form onSubmit="return validarCurso(this)" role="form" action="Cursos" method="post">
-	<input type ="text" name = "action" value="vistaPrevia" style="display:none">
-	  <div style="margin-left: 50%">
- 	<button type="submit" name= "enviarValidar" id= "enviarValidar" OnClick= "val()">Enviar a validar</button>
- 	<a href="formularioCurso.jsp">Volver atras</a>
-	</div>
-	</form>
-    </div>
-  </div>
-</nav>
+			 -->
+					<div class="form-group col-lg-4">
+						<h2 class="intro-text"> Nombre del curso </h2><label>nombre aqui${param.nom}</label>
+						<h2 class="intro-text">Categoria</h2><label>categoria aqui ${param.categoria}</label>
+						
+						<div>
+						<br />
+							<img alt="Foto" src="imagenes/addressbook_add_128.png" width=60%>
+						</div>
+						
+						
+						</div>
+							<div class="form-group col-lg-4">
+
+								<!-- <div class="container" style="margin-right: 300px"> -->
+								<h2 class="intro-text">Temario</h2>
+								<div class="panel-group">
+									<div class="panel panel-default">
+										<div class="panel-heading">secciones ${param.secciones}</div>
+										<div class="panel-body">
+											lecciones ${param.lecciones}</div>
+										<div class="panel-body">
+											lecciones ${param.lecciones}</div>
+										<div class="panel-body">
+											lecciones ${param.lecciones}</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">secciones ${param.secciones}</div>
+										<div class="panel-body" >
+											lecciones ${param.lecciones}</div>
+										<div class="panel-body">
+											lecciones ${param.lecciones}</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">secciones ${param.secciones}</div>
+										<div class="panel-body">
+											lecciones ${param.lecciones}</div>
+									</div>
+								</div>
+							</div>
+								<div class="form-group col-lg-4">
+<h2 class="intro-text">Informacion</h2>
+												<div class="panel panel-default">
+																				
+												<div class="panel-heading">Profesor: ${param.profesor}</div>
+													<div class="panel-body" >Fecha
+														inicio curso: ${param.f_inicio}</div>
+													<div class="panel-body">Fecha
+														fin curso: ${param.f_fin}</div>
+													<div class="panel-body">Numero
+														de horas: ${param.horas}</div>
+													<div class="panel-body">Dificultad
+														del curso: ${param.dificultad}</div>
+													<!-- <div class="panel-body">Profesor:
+														${param.profesor}</div> 
+													<div class="panel-body" >Temario:
+														${param.temario}</div>-->
+
+								</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<nav class=" navbar-foot  navbar-fixed-bottom">
+											<!-- <div class="navbar-header">
+												<a class="navbar-brand" href="#">iLexion</a>
+											</div> -->
+											<div>
+												<form onSubmit="return validarCurso(this)" role="form"
+													action="Cursos" method="post">
+													<input type="text" name="action" value="vistaPrevia"
+														style="display: none">
+														
+													<div style="text-align: center" >
+														<button type="submit" class="btn btn-default" name="enviarValidar"
+															id="enviarValidar" OnClick="val()">Enviar a
+															validar</button>
+														<a href="formularioCurso.jsp" style="color: white"><strong>Volver atras</strong></a>
+													</div>
+												</form>
+											</div>
+
+									</nav>
+																			</div>
+									
 
 
-
-</div>
-</div>
-
-			<!--<div class="container-fluid" style="margin-left: 75%">
+					<!--<div class="container-fluid" style="margin-left: 75%">
 			<div class="panel panel-info">
       <div class="panel-heading">Informacion</div>
       <div class="panel-body">Fecha inicio curso: ${param.f_inicio}</div>
@@ -126,17 +156,15 @@ function val(){
          <div class="panel-body">temario: ${param.temario}</div>
     	</div>
 			
-</div>  -->		
-</div>	
-</div>
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+</div>  -->
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+					<!-- jQuery -->
+					<script src="js/jquery.js"></script>
+
+					<!-- Bootstrap Core JavaScript -->
+					<script src="js/bootstrap.min.js"></script>
 
 
-	<jsp:include page="footer.jsp"></jsp:include>
-
+					<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

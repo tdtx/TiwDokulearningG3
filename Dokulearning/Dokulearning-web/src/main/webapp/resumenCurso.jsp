@@ -26,7 +26,7 @@
 				<div class="col-lg-12">
 					<hr>
 					<h2 class="intro-text text-center">
-						resumen de <strong>curso</strong>
+						resumen del curso <strong>${param.nom}</strong>
 					</h2>
 					<hr>
 
@@ -38,30 +38,39 @@
 							<p class="error">${mensaje }</p>
 						</c:when>
 					</c:choose>
+							<div class="form-group col-lg-1"></div>
+														<div class="form-group col-lg-1"></div>
+							
 
+					<div class="form-group col-lg-4">
 					<div>
-						<img alt="Foto" src="imagenes/addressbook_add_128.png" width=10%>
+						<img alt="Foto" src="imagenes/addressbook_add_128.png" width=60%>
+					</div>
+					<div>
+					<br /><br /><br /><br /><br /><br /><br />
+						<a href="matriculacionDeCurso.jsp"><button type="button"
+									class="btn btn-default" style="text-align:center" >Matricularse</button></a>
+					</div>
 					</div>
 					<div>
 						<div class="form-group col-lg-4">
 
-							<h2 class="intro-text">Nombre del curso:${param.nom}</h2>
-							<h2 class="intro-text">Categoria:${param.categoria}</h2>
-							<h2 class="intro-text">Descripcion:${param.descripcion}</h2>
-							<h2 class="intro-text">Numero de horas:${param.horas}</h2>
-							<h2 class="intro-text">Desde:${param.f_inicio}</h2>
-							<h2 class="intro-text">Hasta: ${param.f_inicio}</h2>
-							<h2 class="intro-text">Temario:${param.temario}</h2>
-							<h2 class="intro-text">Profesor:${param.profesor}</h2>
-							<h2 class="intro-text">Dificultad:${param.dificultad}</h2>
-							<h2 class="intro-text">Cierre curso:${param.cierre_curso}</h2>
-							<h2 class="intro-text">Precio:${param.precio}</h2>
+							<!-- <div class="form-group"> <label>Nombre del curso:</label>${param.nom}</div> -->
+							<div class="form-group"> <label>Categoria:</label>${param.categoria}</div>
+							<div class="form-group"> <label>Descripcion:</label>${param.descripcion}</div>
+							<div class="form-group"> <label>Horas del curso:</label>${param.horas}</div>
+							<div class="form-group"> <label>Empieza el:</label>${param.f_inicio}</div>
+							<div class="form-group"> <label>Acaba el:</label>${param.f_inicio}</div>
+							<div class="form-group"> <label>El temario sera:</label>${param.temario}</div>
+							<div class="form-group"> <label>El profesor es:</label>${param.profesor}</div>
+							<div class="form-group"> <label>Dificultad del curso:</label>${param.dificultad}</div>
+							<div class="form-group"> <label>El curso se cerrara:</label>${param.cierre_curso}</div>
+							<div class="form-group"> <label>Precio:</label>${param.precio}</div>
 
 
 
 
-							<a href="matriculacionDeCurso.jsp"><button type="button"
-									class="btn btn-default">Matricularse</button></a>
+							
 						</div>
 					</div>
 

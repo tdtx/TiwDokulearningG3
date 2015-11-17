@@ -5,6 +5,7 @@
 <html lang="es">
 
 
+<script src="js/contanto.js"></script>
 
 <body>
 
@@ -23,31 +24,38 @@
 						Formulario de <strong>contacto</strong>
 					</h2>
 					<hr>
-					<form role="form">
+					
 						<div class="row">
+						
+						<form onSubmit="return validarK(this)" id="formularioCon" 
+							enctype="multipart/form-data">
+							
+							<input type="text" name="distribucionMatriculacion"
+								value="crearMatriculacion" style="display: none" />
 							<div class="form-group col-lg-4">
-								<label>Nombre</label> <input type="text" class="form-control"
+								<label id="etiqNombre" >Nombre *</label> <input type="text"  id="nombreC" class="form-control"
 									placeholder="ej.: David">
 							</div>
 							<div class="form-group col-lg-4">
-								<label>Correo electonico</label> <input type="email"
+								<label  id="etiqCorreo">Correo electonico *</label> <input type="email" id="correoC"
 									class="form-control" placeholder="ej.: algo@algo.es">
 							</div>
 							<div class="form-group col-lg-4">
-								<label>Numero de telefono</label> <input type="tel"
-									class="form-control" placeholder="9 digitos">
+								<label  id="etiqTLF">Numero de telefono *</label> <input type="tel" id="telefonoC" 
+									class="form-control" maxlength="9" placeholder="9 digitos">
 							</div>
 							<div class="clearfix"></div>
 							<div class="form-group col-lg-12">
-								<label>Mensaje</label>
-								<textarea class="form-control" rows="6"></textarea>
+								<label  id="etiqMEnsaj">Mensaje *</label>
+								<textarea class="form-control" id="mensajeC" rows="6"></textarea>
 							</div>
 							<div class="form-group col-lg-12">
 								<input type="hidden" name="save" value="contact">
 								<button type="submit" class="btn btn-default">Enviar</button>
 							</div>
+							</form>
 						</div>
-					</form>
+					
 				</div>
 			</div>
 		</div>
