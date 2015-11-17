@@ -16,6 +16,9 @@
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="js/jquery.js"></script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script src="js/validarCurso2.js"></script>
@@ -101,23 +104,49 @@
 								name="profesor" id="profesor" placeholder="Ej.: Pepe"> <br />
 							<label>Fecha inicio del curso</label> <input class="form-control"
 								type="text" name="f_inicio" id="f_inicio"
-								placeholder="01/01/2016"> <br /> <label>Fecha
+								placeholder="Ej: 20/11/2015"> <br /> <label>Fecha
 								fin del curso</label> <input class="form-control" type="text"
-								name="f_fin" id="f_fin" placeholder="01/02/2016"> <br />
+								name="f_fin" id="f_fin" placeholder="Ej: 01/12/2015"> <br />
 							<label>Fecha de cierre del curso</label> <input
 								class="form-control" type="text" name="cierre_curso"
-								id="cierre_curso" placeholder="01/03/2016"> <br /> <label>Categoria
+								id="cierre_curso" placeholder="Ej: 02/12/2015"> <br /> <label>Categoria
 								del curso</label> <input class="form-control" type="text"
 								name="categoria" id="categoria" placeholder="Rama del curso">
-							<br /> <label>Dificultad del curso</label> <input
+							<!-- <br /> <label>Dificultad del curso</label> <input
 								class="form-control" type="text" name="dificultad"
-								id="dificultad" placeholder="Alta, Media o Baja"> <br />
-
+								id="dificultad" placeholder="Alta, Media o Baja"> <br /> -->
+								
+								<label>Dificultad del curso</label><br>
+								<input type="radio" name="dificultad" id="dificultad" value="Baja">Baja<br>
+								<input type="radio" name="dificultad" id="dificultad" value="Media">Media<br>
+								<input type="radio" name="dificultad" id="dificultad" value="Alta">Alta<br>
 
 							<label>Acepto los terminos&nbsp;&nbsp;</label> <label>
 								<input type="checkbox" name="terminos" id="terminos">
 							</label>
+						<!-- Trigger the modal with a button -->
+  <button type="button" data-toggle="modal" data-target="#Modal">Mostrar Terminos y Condiciones de creacion de curso</button>
 
+  <!-- Modal -->
+  <div class="modal" id="Modal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Terminos y condiciones de creacion de curso</h4>
+        </div>
+        <div class="modal-body">
+          <p>-Para la creacion de un curso en nuestro portal se deberan cumplir las siguientes normas:</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 						</div>
 
