@@ -2,25 +2,15 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
-import javax.annotation.Resource;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.transaction.UserTransaction;
-
 import dominio.usuarioRegistro;
 
-//import es.uc3m.tiw.model.daos.UsuarioDAO;
 
-
-
-//import dominio.validaciones;
 
 /**
  * Servlet implementation class registroWeb
@@ -31,7 +21,6 @@ public class registroWeb extends HttpServlet {
 	public static ArrayList<usuarioRegistro> registrados;
 	private static final String formularioReg = "/registro.jsp";
 	private static final String indexJSP = "/index.jsp";
-	private usuarioRegistro usuarioReg;
 	/**	@PersistenceContext(unitName="Administracion-model")
 	EntityManager em;
 	@Resource
@@ -62,7 +51,7 @@ public class registroWeb extends HttpServlet {
 			registrados.add(ur1);
 			registrados.add(ur2);
 		}
-	//	udao = new UsuarioDAO(em, ut);
+	
 	}
 
 	/**
@@ -210,7 +199,6 @@ public class registroWeb extends HttpServlet {
 				
 					usuarioRegistro u = comprobarUsuario(correo, clave1);
 					sesion.setAttribute("usuarioReg", u);
-					//sesion.setAttribute("acceso", correo);
 					request.setAttribute("registrados", registrados);
 					
 			
@@ -242,41 +230,7 @@ public class registroWeb extends HttpServlet {
 				.forward(request, response);
 		
 		
-		// String terminos = request.getParameter("terminos");
-		// String mayoredad = request.getParameter("mayoredad");
-				
 		
-	
-		
-
-		/*
-		 * usuarioRegistro usr = new usuarioRegistro();
-		 * 
-		 * usr.nick = request.getParameter("nick"); usr.nombre =
-		 * request.getParameter("nombre"); usr.apellido1 =
-		 * request.getParameter("apellido1"); usr.apellido2 =
-		 * request.getParameter("apellido2"); usr.clave1 =
-		 * request.getParameter("clave1"); usr.clave2 =
-		 * request.getParameter("clave2"); usr.correo =
-		 * request.getParameter("correo"); usr.terminos = false; if
-		 * (request.getParameter("terminos") != null) usr.terminos = true;
-		 * 
-		 * usr.mayoredad = false; if (request.getParameter("mayoredad") != null)
-		 * usr.mayoredad = true;
-		 * 
-		 * String mensaje = usr.Validar(); if (!mensaje.equals("")) { mensaje =
-		 * "<ul>" + mensaje + "</ul>"; request.setAttribute("mensaje", mensaje);
-		 * 
-		 * this.getServletContext().getRequestDispatcher("/registro.jsp")
-		 * .forward(request, response);
-		 * 
-		 * } else {
-		 * 
-		 * mensaje = "Te has registrado satisfactoriamente";
-		 * request.setAttribute("mensaje", mensaje);
-		 * this.getServletContext().getRequestDispatcher("/index.jsp")
-		 * .forward(request, response); }
-		 */
 	}
 
 	// editar
@@ -292,8 +246,7 @@ public class registroWeb extends HttpServlet {
 				perfil.setApellido2(apellido2);
 				perfil.setClave1(clave1);
 				perfil.setClave2(clave2);
-				// perfil.setTerminos(true);
-				// perfil.setMayoredad(true);
+			
 
 			}
 
@@ -310,8 +263,7 @@ public class registroWeb extends HttpServlet {
 				cc.setClave1(claveNueva);
 				cc.setClave2(claveNueva);
 
-				// perfil.setTerminos(true);
-				// perfil.setMayoredad(true);
+	
 
 			}
 

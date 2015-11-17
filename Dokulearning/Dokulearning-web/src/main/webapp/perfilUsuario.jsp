@@ -68,7 +68,13 @@
 							</br></br>
 								<a href="formularioCurso.jsp"><button type="button"
 								class="btn btn-default">Crear curso</button></a>
+							
+								</br></br>
 						
+						<button class="btn btn-default" 
+								title="mis cursos">
+								Mis Cursos
+							</button>
 					</div>
 
 

@@ -3,23 +3,18 @@ package servlets;
 import java.io.*;
 import java.util.ArrayList;
 
-import javax.annotation.Resource;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.transaction.UserTransaction;
+
 
 import dominio.FormularioCurso;
 
-//import es.uc3m.tiw.model.daos.CursoDAO;
 
-
-//import pruebasclase.Usuario;
 
 /**
  * Servlet implementation class Cursos
@@ -27,9 +22,7 @@ import dominio.FormularioCurso;
 @WebServlet("/Cursos")
 public class Cursos extends HttpServlet {
 
-	private static final String INDEX_JSP = "/index.jsp";
-	private static final String FORM_JSP = "/formularioCurso.jsp";
-	private FormularioCurso fcurso;
+
 	private ArrayList<FormularioCurso> cursos;
 	private static final long serialVersionUID = 1L;
 	public FormularioCurso cursoOferta;
@@ -60,7 +53,7 @@ public class Cursos extends HttpServlet {
 		cursos = new ArrayList<FormularioCurso>();
 		cursos.add(curso1);
 		cursos.add(curso2);
-		//cdao = new CursoDAO(em, ut);
+		
 	}
 	
 	public Cursos() {
@@ -143,22 +136,7 @@ public class Cursos extends HttpServlet {
 
 			switch (action) {
 			case "rellenar_formulario":
-/*
-				form.nom = request.getParameter("nom");
-				form.descripcion = request.getParameter("descripcion");
-				form.temario = request.getParameter("temario");
-				form.secciones = request.getParameter("secciones");
-				form.lecciones = request.getParameter("lecciones");
-				form.material = request.getParameter("material");
-				form.precio = request.getParameter("precio");
-				form.horas = request.getParameter("horas");
-				form.profesor = request.getParameter("profesor");
-				form.f_inicio = request.getParameter("f_inicio");
-				form.f_fin = request.getParameter("f_fin");
-				form.cierre_curso = request.getParameter("cierre_curso");
-				form.categoria = request.getParameter("categoria");
-				form.dificultad = request.getParameter("dificultad");
-				form.terminos = false;*/
+
 
 				this.getServletContext()
 						.getRequestDispatcher("/vistaPreviaCurso.jsp")
@@ -166,22 +144,7 @@ public class Cursos extends HttpServlet {
 
 				break;
 			case "vistaPrevia":
-/*
-				form.nom = request.getParameter("nom");
-				form.descripcion = request.getParameter("descripcion");
-				form.temario = request.getParameter("temario");
-				form.secciones = request.getParameter("secciones");
-				form.lecciones = request.getParameter("lecciones");
-				form.material = request.getParameter("material");
-				form.precio = request.getParameter("precio");
-				form.horas = request.getParameter("horas");
-				form.profesor = request.getParameter("profesor");
-				form.f_inicio = request.getParameter("f_inicio");
-				form.f_fin = request.getParameter("f_fin");
-				form.cierre_curso = request.getParameter("cierre_curso");
-				form.categoria = request.getParameter("categoria");
-				form.dificultad = request.getParameter("dificultad");
-				form.terminos = false;*/
+
 				this.getServletContext().getRequestDispatcher("/index.jsp")
 						.forward(request, response);
 				break;

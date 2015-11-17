@@ -3,25 +3,16 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
-import javax.annotation.Resource;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
-
 import javax.servlet.http.HttpSession;
-import javax.transaction.UserTransaction;
-
 import dominio.usuarioMatriculacion;
 
-//import es.uc3m.tiw.model.daos.UsuarioDAO;
+
 
 /**
  * Servlet implementation class controlMatriculacion
@@ -37,7 +28,7 @@ public class controlMatriculacion extends HttpServlet {
 	private ArrayList<usuarioMatriculacion> matriculados;
 	private static final String matriculacionDeCursoJSP = "/matriculacionDeCurso.jsp";
 	private static final String indexJSP = "/index.jsp";
-	private usuarioMatriculacion usuarioMat;
+
 
 	registroWeb rw = new registroWeb();
 	/**	@PersistenceContext(unitName="Administracion-model")
@@ -69,8 +60,6 @@ public class controlMatriculacion extends HttpServlet {
 		matriculados.add(um1);
 		matriculados.add(um2);
 
-
-	//	udao = new UsuarioDAO(em, ut);
 	}
 
 	/**
