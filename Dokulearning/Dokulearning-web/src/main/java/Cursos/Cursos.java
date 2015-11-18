@@ -31,7 +31,7 @@ public class Cursos extends HttpServlet {
 	private ArrayList<FormularioCurso> cursos;
 	private static final long serialVersionUID = 1L;
 	public FormularioCurso cursoOferta;
-	@PersistenceContext(unitName="Administracion-model")
+	/**	@PersistenceContext(unitName="Administracion-model")
 	EntityManager em;
 	@Resource
 	UserTransaction ut;
@@ -58,7 +58,7 @@ public class Cursos extends HttpServlet {
 		cursos = new ArrayList<FormularioCurso>();
 		cursos.add(curso1);
 		cursos.add(curso2);
-		cdao = new CursoDAO(em, ut);
+		//cdao = new CursoDAO(em, ut);
 	}
 
 	public Cursos() {

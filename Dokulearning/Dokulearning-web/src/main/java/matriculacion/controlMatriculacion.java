@@ -40,12 +40,12 @@ public class controlMatriculacion extends HttpServlet {
 	private usuarioMatriculacion usuarioMat;
 
 	registroWeb rw = new registroWeb();
-	@PersistenceContext(unitName="Administracion-model")
+	/**	@PersistenceContext(unitName="Administracion-model")
 	EntityManager em;
 	@Resource
 	UserTransaction ut;
 	UsuarioDAO udao;
-	/**
+
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public controlMatriculacion() {
@@ -70,7 +70,7 @@ public class controlMatriculacion extends HttpServlet {
 		matriculados.add(um2);
 
 
-		udao = new UsuarioDAO(em, ut);
+	//	udao = new UsuarioDAO(em, ut);
 	}
 
 	/**

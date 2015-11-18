@@ -30,13 +30,13 @@ public class registroWeb extends HttpServlet {
 	private static final String formularioReg = "/registro.jsp";
 	private static final String indexJSP = "/index.jsp";
 	private usuarioRegistro usuarioReg;
-	@PersistenceContext(unitName="Administracion-model")
+	/**	@PersistenceContext(unitName="Administracion-model")
 	EntityManager em;
 	@Resource
 	UserTransaction ut;
 	UsuarioDAO udao;
 
-	/**
+	
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public registroWeb() {
@@ -60,7 +60,7 @@ public class registroWeb extends HttpServlet {
 			registrados.add(ur1);
 			registrados.add(ur2);
 		}
-		udao = new UsuarioDAO(em, ut);
+	//	udao = new UsuarioDAO(em, ut);
 	}
 
 	/**
