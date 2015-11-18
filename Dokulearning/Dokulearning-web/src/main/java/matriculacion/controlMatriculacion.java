@@ -1,21 +1,27 @@
 package matriculacion;
 
-import java.io.File;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+
 
 import registro.registroWeb;
-import registro.usuarioRegistro;
+
 
 import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
+
+import es.uc3m.tiw.model.daos.UsuarioDAO;
 
 /**
  * Servlet implementation class controlMatriculacion
@@ -34,7 +40,11 @@ public class controlMatriculacion extends HttpServlet {
 	private usuarioMatriculacion usuarioMat;
 
 	registroWeb rw = new registroWeb();
-
+	@PersistenceContext(unitName="Administracion-model")
+	EntityManager em;
+	@Resource
+	UserTransaction ut;
+	UsuarioDAO udao;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -47,7 +57,7 @@ public class controlMatriculacion extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		// TODO Auto-generated method stub
-
+		super.init();
 		usuarioMatriculacion um1 = new usuarioMatriculacion("123123123",
 				"calle1", "madrid", "12345", "madrid", "holafechamal",
 				"123456789", true, "mujer", "transferencia");
@@ -59,7 +69,8 @@ public class controlMatriculacion extends HttpServlet {
 		matriculados.add(um1);
 		matriculados.add(um2);
 
-		super.init();
+
+		udao = new UsuarioDAO(em, ut);
 	}
 
 	/**
