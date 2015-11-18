@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
+import registro.usuarioRegistro;
 import es.uc3m.tiw.model.daos.CursoDAO;
 import matriculacion.usuarioMatriculacion;
 
@@ -49,7 +50,7 @@ public class Cursos extends HttpServlet {
 				"Aitor Tilla", "Heuristica y optimizacion",
 				"imagenes/addressbook_add_128.png", "Alta", "01-11-2015",
 				"01-12-2015", "02-12-2015", "12");
-		FormularioCurso curso2 = new FormularioCurso("Programacion en C++",
+		FormularioCurso curso2 = new FormularioCurso("Programacion en C",
 				"2334", "descripcion breve", "Tema1 Tema2 Tema3",
 				"Aitor Menta", "Programacion",
 				"imagenes/addressbook_add_128.png", "Alta", "01-11-2015",
@@ -73,23 +74,25 @@ public class Cursos extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sesion = request.getSession(true);
-		System.err.println("entro get");
-		String accion = request.getParameter("accion");
-		String pagina = "/index.jsp";
-		FormularioCurso a = null;
-		try {
-			a = comprobarUsuario(accion);
-			System.err.println("entro get 2" + a);
-		} catch (Exception e) {
-			System.err.println("Error");
-		}
 
-		if (a != null) {
-			sesion.setAttribute("cursoO", a);
-			request.setAttribute("cursos", cursos);
+		String accion = request.getParameter("accion");
+		System.err.println(accion);
+		String pagina = "/index.jsp";
+
+
+		if (accion != null) {
+			System.err.println("super5"+accion);
+			FormularioCurso u = comprobarNom(accion);
+			if( u!= null){
+	
+			sesion.setAttribute("perfilCurso", u);
 			pagina = "/resumenCurso.jsp";
 			System.err.println("entroooo");
+		}else{	System.err.println("malo");}
 		}
+	
+
+
 		if (accion.equals("ofertas")) {
 			request.setAttribute("cursos", cursos);
 			pagina = "/cursoOferta.jsp";
@@ -103,17 +106,17 @@ public class Cursos extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(pagina)
 				.forward(request, response);
 	}
-
-	private FormularioCurso comprobarUsuario(String horas) {
+	private FormularioCurso comprobarNom(String nom) {
 		FormularioCurso u = null;
 		for (FormularioCurso f : cursos) {
-			if (horas.equals(f.getHoras())) {
+			if (nom.equals(f.getNom())) {
 				u = f;
 				break;
 			}
 		}
 		return u;
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

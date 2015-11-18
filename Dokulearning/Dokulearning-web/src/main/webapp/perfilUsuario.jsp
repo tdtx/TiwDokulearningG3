@@ -227,7 +227,7 @@
 										<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 									</button>
 									<h4 class="modal-title" id="myModalLabel">Editar
-										contraseña de ${param.nick}</h4>
+										contraseña de ${registrado.nick}</h4>
 								</div>
 								<div class="modal-body">
 

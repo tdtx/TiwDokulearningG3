@@ -17,6 +17,7 @@
 	type="text/css">
 </head>
 <body>
+<c:set var="cursoS" scope="session" value="${perfilCurso}"></c:set>
 	<jsp:include page="header.jsp"></jsp:include>
 
 	<div class="container">
@@ -26,7 +27,7 @@
 				<div class="col-lg-12">
 					<hr>
 					<h2 class="intro-text text-center">
-						resumen del curso <strong>${param.nom}</strong>
+						resumen del curso <strong>${cursoS.nom}</strong>
 					</h2>
 					<hr>
 
@@ -56,16 +57,16 @@
 						<div class="form-group col-lg-4">
 
 							<!-- <div class="form-group"> <label>Nombre del curso:</label>${param.nom}</div> -->
-							<div class="form-group"> <label>Categoria:</label>${param.categoria}</div>
-							<div class="form-group"> <label>Descripcion:</label>${param.descripcion}</div>
-							<div class="form-group"> <label>Horas del curso:</label>${param.horas}</div>
-							<div class="form-group"> <label>Empieza el:</label>${param.f_inicio}</div>
-							<div class="form-group"> <label>Acaba el:</label>${param.f_inicio}</div>
-							<div class="form-group"> <label>El temario sera:</label>${param.temario}</div>
-							<div class="form-group"> <label>El profesor es:</label>${param.profesor}</div>
-							<div class="form-group"> <label>Dificultad del curso:</label>${param.dificultad}</div>
-							<div class="form-group"> <label>El curso se cerrara:</label>${param.cierre_curso}</div>
-							<div class="form-group"> <label>Precio:</label>${param.precio}</div>
+							<div class="form-group"> <label>Categoria:</label>${cursoS.categoria}</div>
+							<div class="form-group"> <label>Descripcion:</label>${cursoS.descripcion}</div>
+							<div class="form-group"> <label>Horas del curso:</label>${cursoS.horas}</div>
+							<div class="form-group"> <label>Empieza el:</label>${cursoS.f_inicio}</div>
+							<div class="form-group"> <label>Acaba el:</label>${cursoS.f_inicio}</div>
+							<div class="form-group"> <label>El temario sera:</label>${cursoS.temario}</div>
+							<div class="form-group"> <label>El profesor es:</label>${cursoS.profesor}</div>
+							<div class="form-group"> <label>Dificultad del curso:</label>${cursoS.dificultad}</div>
+							<div class="form-group"> <label>El curso se cerrara:</label>${cursoS.cierre_curso}</div>
+							<div class="form-group"> <label>Precio:</label>${cursoS.precio}</div>
 
 
 
