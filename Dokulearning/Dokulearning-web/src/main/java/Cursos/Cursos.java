@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 import registro.usuarioRegistro;
-import es.uc3m.tiw.model.daos.CursoDAO;
+//import es.uc3m.tiw.model.daos.CursoDAO;
 import matriculacion.usuarioMatriculacion;
 
 //import pruebasclase.Usuario;
