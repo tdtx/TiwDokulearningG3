@@ -29,9 +29,7 @@
 						
 						<form onSubmit="return validarK(this)" id="formularioCon" 
 							enctype="multipart/form-data">
-							
-							<input type="text" name="distribucionMatriculacion"
-								value="crearMatriculacion" style="display: none" />
+						
 							<div class="form-group col-lg-4">
 								<label id="etiqNombre" >Nombre *</label> <input type="text"  id="nombreC" class="form-control"
 									placeholder="ej.: David">

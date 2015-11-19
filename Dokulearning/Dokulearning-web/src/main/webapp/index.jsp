@@ -65,10 +65,11 @@
                         <strong>Nosotros</strong>
                     </h2>
                     <hr>
-                    <img class="img-responsive img-border img-left" src="images/logo.png" alt="">
+                    <img class="img-responsive img-border img-left" src="images/logo.png" alt="" width="20%">
                     <hr class="visible-xs">
-                   <p> Somos una empresa creada para hacer mas facil el hecho de poder aprender desde casa. Somos un portal de cursos on-line, en el que te podras matricular en cualquier curso, incluso podras crear tus propios cursos y convertirte en profesor.</p>                </div>
-                   
+                    
+                   <p></br>Somos una empresa creada para hacer mas facil el hecho de poder aprender desde casa. Somos un portal de cursos on-line, en el que te podras matricular en cualquier curso, incluso podras crear tus propios cursos y convertirte en profesor.</p>           </br></br>     </div>
+                  
                    </div>
             </div>
         </div>

@@ -4,6 +4,12 @@
 <!DOCTYPE html>
 <html lang="es">
 
+
+
+
+
+
+
 <head>
 <link rel="shotcut icon"
 	href="fonts/Captura_de_pantallaico_2015-10-08_a_las_17.ico"
@@ -41,8 +47,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-
 
 </head>
 <body>
@@ -308,21 +312,15 @@
 
 
 
+<div class="logoilexion">
+
+			<a href="index.jsp"><img alt="logo" src="fonts/logoIlexion.png" width="18%"></a>
 
 
+</div> 
+	<!--<div class="address-bar">Aprende en un click</div>
 
-
-
-
-
-
-
-
-
-	<div class="brand">iLexion</div>
-	<div class="address-bar">Bienvenido a nuestro portal</div>
-
-	<!-- Navigation -->
+	 Navigation -->
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
