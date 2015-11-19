@@ -1,4 +1,4 @@
-package Cursos;
+package dominio;
 
 import dominio.validaciones;
 

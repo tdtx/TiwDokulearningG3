@@ -1,6 +1,6 @@
-package registro;
+package dominio;
 
-import matriculacion.usuarioMatriculacion;
+import dominio.usuarioMatriculacion;
 import dominio.validaciones;
 
 public class usuarioRegistro {

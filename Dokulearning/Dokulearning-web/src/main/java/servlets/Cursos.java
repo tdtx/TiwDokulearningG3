@@ -1,4 +1,4 @@
-package Cursos;
+package servlets;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -14,9 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
-import registro.usuarioRegistro;
+import dominio.FormularioCurso;
+
 //import es.uc3m.tiw.model.daos.CursoDAO;
-import matriculacion.usuarioMatriculacion;
+
 
 //import pruebasclase.Usuario;
 
@@ -136,7 +137,7 @@ public class Cursos extends HttpServlet {
 
 			switch (action) {
 			case "rellenar_formulario":
-
+/*
 				form.nom = request.getParameter("nom");
 				form.descripcion = request.getParameter("descripcion");
 				form.temario = request.getParameter("temario");
@@ -151,7 +152,7 @@ public class Cursos extends HttpServlet {
 				form.cierre_curso = request.getParameter("cierre_curso");
 				form.categoria = request.getParameter("categoria");
 				form.dificultad = request.getParameter("dificultad");
-				form.terminos = false;
+				form.terminos = false;*/
 
 				this.getServletContext()
 						.getRequestDispatcher("/vistaPreviaCurso.jsp")
@@ -159,7 +160,7 @@ public class Cursos extends HttpServlet {
 
 				break;
 			case "vistaPrevia":
-
+/*
 				form.nom = request.getParameter("nom");
 				form.descripcion = request.getParameter("descripcion");
 				form.temario = request.getParameter("temario");
@@ -174,7 +175,7 @@ public class Cursos extends HttpServlet {
 				form.cierre_curso = request.getParameter("cierre_curso");
 				form.categoria = request.getParameter("categoria");
 				form.dificultad = request.getParameter("dificultad");
-				form.terminos = false;
+				form.terminos = false;*/
 				this.getServletContext().getRequestDispatcher("/index.jsp")
 						.forward(request, response);
 				break;

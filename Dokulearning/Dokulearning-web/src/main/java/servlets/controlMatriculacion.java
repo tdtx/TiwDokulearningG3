@@ -1,4 +1,4 @@
-package matriculacion;
+package servlets;
 
 
 import java.io.IOException;
@@ -15,11 +15,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import registro.registroWeb;
-
 
 import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
+
+import dominio.usuarioMatriculacion;
 
 //import es.uc3m.tiw.model.daos.UsuarioDAO;
 

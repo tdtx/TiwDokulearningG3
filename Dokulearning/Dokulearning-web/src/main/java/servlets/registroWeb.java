@@ -1,4 +1,4 @@
-package registro;
+package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
+
+import dominio.usuarioRegistro;
 
 //import es.uc3m.tiw.model.daos.UsuarioDAO;
 
@@ -318,7 +320,6 @@ public class registroWeb extends HttpServlet {
 	}
 	
 	
-
 	// añadir registrados al array
 	public void registrarRegistrado(String nick, String nombre,
 			String apellido1, String apellido2, String clave1, String clave2,

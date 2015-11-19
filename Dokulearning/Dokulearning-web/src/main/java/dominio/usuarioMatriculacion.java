@@ -1,7 +1,7 @@
-package matriculacion;
+package dominio;
 
 import dominio.validaciones;
-import registro.usuarioRegistro;
+import dominio.usuarioRegistro;
 
 public class usuarioMatriculacion extends usuarioRegistro {
 
