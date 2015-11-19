@@ -62,7 +62,7 @@ public class Cursos extends HttpServlet {
 		cursos.add(curso2);
 		//cdao = new CursoDAO(em, ut);
 	}
-
+	
 	public Cursos() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -77,10 +77,11 @@ public class Cursos extends HttpServlet {
 		HttpSession sesion = request.getSession(true);
 
 		String accion = request.getParameter("accion");
+		String estado = request.getParameter("estado");
 		System.err.println(accion);
 		String pagina = "/index.jsp";
 
-
+		
 		if (accion != null) {
 			System.err.println("super5"+accion);
 			FormularioCurso u = comprobarNom(accion);
@@ -89,9 +90,14 @@ public class Cursos extends HttpServlet {
 			sesion.setAttribute("perfilCurso", u);
 			pagina = "/resumenCurso.jsp";
 			System.err.println("entroooo");
+			if (estado != null) {
+				if (estado.equals("matricularse")) {
+					sesion.setAttribute("perfilCurso", u);
+					pagina = "/matriculacionDeCurso.jsp";
+				}
+			}
 		}else{	System.err.println("malo");}
 		}
-	
 
 
 		if (accion.equals("ofertas")) {

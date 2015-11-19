@@ -35,6 +35,7 @@
 
 </head>
 <body>
+<c:set var="cursoS" scope="session" value="${perfilCurso}"></c:set>
 	<jsp:include page="header.jsp"></jsp:include>
 
 
@@ -115,7 +116,7 @@
 
 								<label id="lblprecio" for="precio">Precio</label> <input
 									type="text" class="form-control" name="precio" id="precio"
-									maxlength="8" readonly value="${param.precio}" /><br />
+									maxlength="8" readonly value="${cursoS.precio}€" /><br />
 								
 								
 								
@@ -161,7 +162,7 @@
 								<label id="lblnombreCurso" for="nombreCurso">Nombre del
 									curso</label> <input type="text" class="form-control"
 									name="nombreCurso" id="nombreCurso" maxlength="30" readonly
-									value="${param.nombreCurso}" /><br />
+									value="${cursoS.nom}" /><br />
 								<label id="txtCalle" for="calle">Calle *</label><input type="text"
 									placeholder="Ej.: avenida de la Universidad" class="form-control" name="calle" id="calle" maxlength="50" /><br />
 

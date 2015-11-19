@@ -49,7 +49,7 @@
 					</div>
 					<div>
 					<br /><br /><br /><br /><br /><br /><br />
-						<a href="matriculacionDeCurso.jsp"><button type="button"
+						<a href="Cursos?accion=${cursoS.nom}&estado=matricularse"><button type="button"
 									class="btn btn-default" style="text-align:center" >Matricularse</button></a>
 					</div>
 					</div>
