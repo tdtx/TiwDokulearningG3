@@ -25,11 +25,11 @@ private static final long serialVersionUID = 1L;
 	@Column(unique = false, nullable = true)
 	String descripcion;
 	
-	
+	/*
 	
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private  ResultadosPruebas rescultadosPruebas;
-	
+	*/
 	
 	
 	

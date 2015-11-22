@@ -24,11 +24,11 @@ public class Leccion implements Serializable {
 	String idSeccion;
 	String descripcion;
 	
-	
+	/*
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private  Material material;
 	
-	
+	*/
 	public Leccion() {
 		super();
 	}

@@ -20,10 +20,10 @@ public class Seccion implements Serializable {
 	String descripcion;
 	
 	
-	
+	/*
 	@OneToMany(fetch = LAZY, cascade = ALL)
     private  Leccion leccion;
-	
+	*/
 	
 	public Seccion() {
 		super();

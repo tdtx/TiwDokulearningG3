@@ -39,7 +39,7 @@ public class Curso implements Serializable {
 	String tipo;
 	String valor;
 	
-	
+	/*
 	
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private  Pruebas pruebas;
@@ -50,7 +50,7 @@ public class Curso implements Serializable {
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private Matriculados matriculados;
 	
-	
+	*/
 	
 	
 	public Curso() {
