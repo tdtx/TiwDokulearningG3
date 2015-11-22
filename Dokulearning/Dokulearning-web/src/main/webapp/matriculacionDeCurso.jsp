@@ -65,15 +65,7 @@
 
 
 
-					<!-- <label for="nick">Nick:</label><input type="text" name="nick" id="nick"/><br/>
-<label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombre" /><br/>
-<label for="apellido1">Primer apellido:</label><input type="text" name="apellido1" id="apellido1" /><br/>
-<label for="apellido2">Segundo apellido:</label><input type="text" name="apellido2" id="apellido2" /><br/>
-<label for="correo">Correo electronico:</label><input type="text" name="correo" id="correa" /><br/>
-<label for="clave1">Contraseña:</label><input type="password" name="clave1" id="clave1" /><br/>
-<label for="clave2">Repita su contraseña:</label><input type="password" name="clave2" id="clave2" /><br/>
-<label for="terminos">Acepto los terminos:</label><input type="checkbox" value="SI" name="terminos" id="terminos" /><br/> -->
-
+				
 
 
 
@@ -83,35 +75,7 @@
 							<input type="text" name="distribucionMatriculacion"
 								value="crearMatriculacion" style="display: none" />
 
-							<%-- 
-						<label id="lblclave1" for="clave1">Correo electronico:</label><input
-							type="text" name="clave1" id="clave1" maxlength="30"
-							value="${sparam.clave1}"/><br />
 							
-							<label id="lblcorreoo" for="correoo">Correo electronico:</label><input
-							type="text" name="correoo" id="correoo" maxlength="30"
-							value="${sparam.correo}"/><br />
-							<br />
-							<br />
-							<br />
-							<br />
- --%>
-
-
-							<%-- <label id="lblnick" for="nick">Nick:</label><input type="text"
-							name="nick" id="nick" maxlength="8" value="${param.nick}"
-							readonly /><br /> <label id="lblnombre" for="nombre">Nombre:</label><input
-							type="text" name="nombre" id="nombre" maxlength="20"
-							value="${param.nombre}" readonly /><br /> <label
-							id="lblapellido1" for="apellido1">Primer apellido:</label><input
-							type="text" name="apellido1" id="apellido1" maxlength="20"
-							value="${param.apellido1}" readonly /><br /> <label
-							id="lblapellido2" for="apellido2">Segundo apellido:</label><input
-							type="text" name="apellido2" id="apellido2" maxlength="20"
-							value="${sparam.apellido2}" readonly /><br /> <label
-							id="lblcorreo" for="correo">Correo electronico:</label><input
-							type="text" name="correo" id="correo" maxlength="30"
-							value="${sparam.correo}" readonly /><br />  --%>
 							<div class="form-group col-lg-4">
 
 								<label id="lblprecio" for="precio">Precio</label> <input
@@ -147,9 +111,6 @@
 									Perfil</label><input type="file" name="imagen" id="imagen" size="60" /><br />
 
 
-								<!--  <label
-							id="txtFecha" for="fecha">Fecha de Nacimiento:</label><input
-							type="text" name="fecha" id="fecha" /><br />  -->
 
 
 								
@@ -210,17 +171,7 @@
 
 
 
-	<!-- /.row -->
-
-	<!-- /.container-fluid -->
-
-
-	<!-- <div id="dialogo" title="Hay Errores en el Formulario">
-		<p>Por favor, corrija los siguientes errores y reenvíe el
-			formulario:</p>
-		<ul id="ulErrores"></ul>
-	</div> -->
-	<!-- jQuery -->
+	
 	<script src="js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
