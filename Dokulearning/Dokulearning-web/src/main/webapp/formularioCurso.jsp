@@ -130,26 +130,40 @@
 							</label>
 						<!-- Trigger the modal with a button -->
 
-  <!-- Modal -->
-  <div class="modal" id="Modal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Terminos y condiciones de creacion de curso</h4>
-        </div>
-        <div class="modal-body">
-          <p>-Para la creacion de un curso en nuestro portal se deberan cumplir las siguientes normas:</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+  <div class="modal fade" id="Modal" tabindex="-1" role="dialog"
+								aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="container">
+
+									<!-- Modal content-->
+									<div id="loginbox" style="margin-top: 50px;"
+										class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+										<div class="panel dialog-info">
+											<div class="cabeceraDialog">
+												<button type="button" class="close" data-dismiss="modal">
+													<span aria-hidden="true">&times;</span><span
+														class="sr-only">Close</span>
+												</button>
+												<div class="dialog-title">Terminos y condiciones de
+													uso</div>
+											</div>
+											<div class="modal-body">
+											<div style="height:400px; overflow:scroll" > 
+												<p>Las presentes condiciones generales de uso del portal regulan el acceso y la utilización del portal, incluyendo los contenidos y los servicios puestos a disposición de los usuarios en y/o a través del portal, bien por el portal, bien por sus usuarios, bien por terceros. No obstante, el acceso y la utilización de ciertos contenidos y/o servicios puede encontrarse sometido a determinadas condiciones específicas.</p>
+												<p>La empresa se reserva la facultad de modificar en cualquier momento las condiciones generales de uso del portal. En todo caso, se recomienda que consulte periódicamente los presentes términos de uso del portal, ya que pueden ser modificados.</p>
+											<p>El usuario deberá respetar en todo momento los términos y condiciones establecidos en las presentes condiciones generales de uso del portal. De forma expresa el usuario manifiesta que utilizará el portal de forma diligente y asumiendo cualquier responsabilidad que pudiera derivarse del incumplimiento de las normas.
+
+Así mismo, el usuario no podrá utilizar el portal para transmitir, almacenar, divulgar promover o distribuir datos o contenidos que sean portadores de virus o cualquier otro código informático, archivos o programas diseñados para interrumpir, destruir o perjudicar el funcionamiento de cualquier programa o equipo informático o de telecomunicaciones.</p>
+											</div>
+											<br><button type="button" class="btn boton-secundario" data-dismiss="modal">
+															Cerrar </button>
+											</div>
+											
+										</div>
+
+									</div>
+								</div>
+
+							</div>
 
 						</div>
 
