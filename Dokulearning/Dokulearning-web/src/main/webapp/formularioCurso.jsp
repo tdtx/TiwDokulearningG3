@@ -116,13 +116,17 @@
 								class="form-control" type="text" name="dificultad"
 								id="dificultad" placeholder="Alta, Media o Baja"> <br /> -->
 								
-								<label>Dificultad del curso</label><br>
-								<input type="radio" name="dificultad" id="dificultad" value="Baja">Baja<br>
-								<input type="radio" name="dificultad" id="dificultad" value="Media">Media<br>
-								<input type="radio" name="dificultad" id="dificultad" value="Alta">Alta<br>
-
-							<label>Acepto los <a data-toggle="modal" data-target="#Modal">terminos</a></label> <label>
-								<input type="checkbox" name="terminos" id="terminos">
+								<br /><label id="txtDif" for="dificultad">Dificultad del curso</label>
+								<select id="dificultad" name="dificultad" class="form-control">
+									<option value="">--Seleccione--</option>
+									<option  value="Baja">Baja</option>
+									<option  value="Media">Media</option>
+									<option  value="Alta">Alta</option>
+									
+								</select>
+<br />
+							<input type="checkbox" name="terminos" id="terminos"><label> &nbsp; &nbsp;Acepto los <a data-toggle="modal" data-target="#Modal">t&eacute;rminos</a></label> <label>
+								
 							</label>
 						<!-- Trigger the modal with a button -->
 

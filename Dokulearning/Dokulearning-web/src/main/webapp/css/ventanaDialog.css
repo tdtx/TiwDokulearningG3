@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+.cabeceraDialog{
+	background-color:#DDB888;
+	border-color:#DDB888;
+	color:white;
+	
+	padding: 10px 15px;
+border-bottom: 1px solid transparent;
+border-top-left-radius: 3px;
+border-top-right-radius: 3px;
+}
+.dialog-title{
+	font-size:16px;
+	font-weight:bold;
+}
+
+.boton-secundario{
+	background-color:#CED0D2;
+	border-color:#CED0D2;
+	color:white;
+		font-weight:bold;
+	
+}
+
+.boton-principal{
+	background-color:#ECD5A8;
+	border-color:#ECD5A8;
+	color:white;
+		font-weight:bold;
+	
+}
+
+
+.dialog-info{
+		border-color:#DDB888;
+	
+}

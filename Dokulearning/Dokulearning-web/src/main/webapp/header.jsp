@@ -29,6 +29,8 @@
 <!-- Custom CSS -->
  <link href="css/business-casual.css" rel="stylesheet"> 
  <link href="css/otro.css" rel="stylesheet"> 
+
+ <link href="css/ventanaDialog.css" rel="stylesheet"> 
 <!-- Fonts -->
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
@@ -84,11 +86,11 @@
 		<div class="container">
 			<div id="loginbox" style="margin-top: 50px;"
 				class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<div class="panel panel-info">
-					<div class="panel-heading">
+				<div class="panel dialog-info">
+					<div class="cabeceraDialog">
 						<button type="button" class="close" data-dismiss="modal"
 							aria-hidden="true">&times;</button>
-						<div class="panel-title">Iniciar sesion</div>
+						<div class="dialog-title">Iniciar sesion</div>
 						<!-- para implementacion futura -->
 						<!-- <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div> -->
 
@@ -143,11 +145,11 @@
 
 
 								<div class="col-sm-12 controls centrado">
-									<button id="btn-login" class="btn btn-success" type="submit">
+									<button id="btn-login" class="btn boton-principal" type="submit">
 										<i class="icon-hand-right"></i> iniciar Sesion
 									</button>
 									<span style="margin-left: 8px;"></span> <a id="btn-fblogin"
-										href="#" class="btn btn-primary" data-dismiss="modal">
+										href="#" class="btn boton-secundario" data-dismiss="modal">
 										Cerrar </a>
 
 
@@ -169,11 +171,11 @@
 
 			<div id="signupbox" style="display: none; margin-top: 50px"
 				class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<div class="panel panel-info">
-					<div class="panel-heading">
+				<div class="panel dialog-info">
+					<div class="cabeceraDialog">
 						<button type="button" class="close" data-dismiss="modal"
 							aria-hidden="true">&times;</button>
-						<div class="panel-title">Registro</div>
+						<div class="dialog-title">Registro</div>
 
 
 					</div>
@@ -228,7 +230,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="clave1" class="col-md-3 control-label">Contrasenia</label>
+								<label for="clave1" class="col-md-3 control-label">Contrase&ntilde;a</label>
 								<div class="col-md-9">
 									<input type="password" class="form-control" name="clave1"
 										id="clave1" placeholder="Ej.: contraseniahipersegura">
@@ -236,7 +238,7 @@
 							</div>
 							<div class="form-group">
 								<label for="clave2" class="col-md-3 control-label">Repetir
-									ContraseÃ±a</label>
+									Contrase&ntilde;a</label>
 								<div class="col-md-9">
 									<input type="password" class="form-control" name="clave2"
 										id="clave2" placeholder="Ej.: contraseniahipersegura">
@@ -245,13 +247,12 @@
 
 							<div class="row centrado">
 								<div class="form-group col-md-3"></div>
-								<div class="form-group col-md-5" id="columnas62">
-									<label for="mayoredad">Declaro ser mayor de edad : </label> <input
-										type="checkbox" name="mayoredad" id="mayoredad">
-								</div>
-								<div class="form-group col-md-5">
-									<label for="terminos">Acepto los terminos web : </label> <input
-										type="checkbox" name="terminos" id="terminos">
+								<div class="form-group col-md-6" id="columnas62">
+									<input
+										type="checkbox" name="mayoredad" id="mayoredad"><label for="mayoredad"> &nbsp; &nbsp;Declaro ser mayor de edad </label> <br>
+								
+									<input
+										type="checkbox" name="terminos" id="terminos"><label for="terminos"> &nbsp; &nbsp;Acepto los terminos web </label> 
 								</div>
 							</div>
 
@@ -264,11 +265,11 @@
 						
 								<div>
 
-									<button type="submit" class="btn btn-info">
+									<button type="submit" class="btn boton-principal">
 										<i class="icon-hand-right"></i> Registrarse
 									</button>
 									<span style="margin-left: 8px;"></span> <a id="btn-fblogin"
-										href="#" class="btn btn-primary" data-dismiss="modal">
+										href="#" class="btn boton-secundario" data-dismiss="modal">
 										Cerrar </a>
 								</div>
 							</div>
