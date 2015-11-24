@@ -2,13 +2,21 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
+
 import dominio.usuarioRegistro;
+import es.uc3m.tiw.model.daos.UsuarioDAO;
+import es.uc3m.tiw.model.dominios.Usuarios;
 
 
 
@@ -21,13 +29,13 @@ public class registroWeb extends HttpServlet {
 	public static ArrayList<usuarioRegistro> registrados;
 	private static final String formularioReg = "/registro.jsp";
 	private static final String indexJSP = "/index.jsp";
-	/**	@PersistenceContext(unitName="Administracion-model")
+	@PersistenceContext(unitName="Dokulearning-model")
 	EntityManager em;
 	@Resource
 	UserTransaction ut;
 	UsuarioDAO udao;
 
-	
+	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
 	public registroWeb() {
@@ -40,8 +48,7 @@ public class registroWeb extends HttpServlet {
 		// TODO Auto-generated method stub
 		super.init();
 
-		if (registrados == null)
-		{
+		
 			usuarioRegistro ur1 = new usuarioRegistro("MCH", "Maria", "Cañizares",
 					"Holgado", "clavemch", "clavemch", "mch@mch.mch", true, true);
 			usuarioRegistro ur2 = new usuarioRegistro("CAS", "Carol", "Arredondo",
@@ -50,8 +57,14 @@ public class registroWeb extends HttpServlet {
 			registrados = new ArrayList<usuarioRegistro>();
 			registrados.add(ur1);
 			registrados.add(ur2);
-		}
-	
+		Usuarios usuario=new Usuarios("1111","m@m.m");
+		udao=new UsuarioDAO(em, ut);
+	try {
+		udao.guardarUsuario(usuario);
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	}
 
 	/**

@@ -20,7 +20,7 @@ public class Usuarios implements Serializable {
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
 	String rol;
-	@Column(unique = true, nullable = false)
+	//@Column(unique = true, nullable = false)
 	String nick;
 	String clave;
 	String nombre;
@@ -28,7 +28,7 @@ public class Usuarios implements Serializable {
 	@Column(unique = false, nullable = true)
 	String apellido2;
 	int telefono;
-	@Column(unique = true, nullable = false)
+	//@Column(unique = true, nullable = false)
 	String email;
 	String cuentaBancaria;
 	String idImagen;

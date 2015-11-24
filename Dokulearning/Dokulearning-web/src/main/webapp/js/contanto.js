@@ -1,5 +1,8 @@
 function validarK(formulario){
-    var contador = 0;
+   
+	
+	
+	var contador = 0;
     //var mensaje = "";
 
 	 
@@ -102,8 +105,19 @@ function validarK(formulario){
     
     
      
-    if(contador == 4){
-        alert("El mensaje se ha enviado con éxito");
+   
+    
+    if(contador == 4){  
+    	 $("#dialogo").dialog({
+             scrollable: true,
+             width: 650,
+             modal: true
+
+         });
+    	$("#dialogo").show;
+    		
+    	        
+   
         
     } else{
         //alert(mensaje);

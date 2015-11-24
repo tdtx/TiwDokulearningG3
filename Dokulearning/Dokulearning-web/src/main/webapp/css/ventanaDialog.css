@@ -36,3 +36,8 @@ border-top-right-radius: 3px;
 		border-color:#DDB888;
 	
 }
+
+
+#dialogo {
+    display: none;
+}
