@@ -69,7 +69,6 @@
 							<span>Editar Perfil</span>
 						</button>
 
-						</button>
 						</br> </br> <a href="formularioCurso.jsp"><button type="button"
 								class="btn btn-default">Crear curso</button></a> </br> </br>
 
@@ -198,7 +197,7 @@
 												</div>
 												<div class="form-group col-md-1"></div>
 												<div class="form-group col-md-1"></div>
-												
+
 
 												<div class="form-group col-md-6">
 													<label for="RclaveNueva">Repita la nueva contraseña</label>
@@ -270,9 +269,9 @@
 
 													</div>
 													<div>
-														<label for="correoActual"><br>Correo electronico: </label> <input
-															type="text" class="form-control" id="correoActual"
-															name="correoActual">
+														<label for="correoActual"><br>Correo
+															electronico: </label> <input type="text" class="form-control"
+															id="correoActual" name="correoActual">
 
 													</div>
 
@@ -282,19 +281,19 @@
 												<div class="form-group col-md-1"></div>
 
 												<div class="form-group col-md-6">
-												<div>
-													<label for="apellido1Nueva">Primer apellido: </label> <input
-														type="text" class="form-control" id="apellido1Nueva"
-														name="apellido1Nueva">
-												</div>
+													<div>
+														<label for="apellido1Nueva">Primer apellido: </label> <input
+															type="text" class="form-control" id="apellido1Nueva"
+															name="apellido1Nueva">
+													</div>
 
-												<div>
-													<label for="apellido2Nueva"><br>Segundo apellido: </label>
-													<input type="text" class="form-control"
-														id="apellido2Nueva" name="apellido2Nueva">
-												</div>
+													<div>
+														<label for="apellido2Nueva"><br>Segundo
+															apellido: </label> <input type="text" class="form-control"
+															id="apellido2Nueva" name="apellido2Nueva">
+													</div>
 
-	</div>
+												</div>
 												<div class="col-sm-12 controls centrado">
 													<div>
 														<br> <br>
@@ -305,7 +304,6 @@
 															class="btn boton-secundario" data-dismiss="modal">Cerrar</button>
 													</div>
 												</div>
-										
 										</form>
 
 
@@ -324,6 +322,7 @@
 			</div>
 
 		</div>
+	</div>
 	</div>
 
 

@@ -11,9 +11,9 @@ public class usuarioRegistro {
 	String apellido2;
 	String clave1;
 	String clave2;
+	String fechanac;
 	String correo;
 	boolean terminos;
-	boolean mayoredad;
 	usuarioMatriculacion matriculacion;
 
 	// constructor para iniciar sesion
@@ -30,7 +30,7 @@ public class usuarioRegistro {
 	// Constructor con todo menos apellido 2
 	public usuarioRegistro(String nick, String nombre, String apellido1,
 			String clave1, String clave2, String correo, boolean terminos,
-			boolean mayoredad) {
+			String fechanac) {
 		super();
 		this.nick = nick;
 		this.nombre = nombre;
@@ -39,13 +39,13 @@ public class usuarioRegistro {
 		this.clave2 = clave2;
 		this.correo = correo;
 		this.terminos = terminos;
-		this.mayoredad = mayoredad;
+		this.fechanac = fechanac;
 	}
 
-	// constructor con todo
+	// constructor con todo menos matric
 	public usuarioRegistro(String nick, String nombre, String apellido1,
-			String apellido2, String clave1, String clave2, String correo,
-			boolean terminos, boolean mayoredad) {
+			String apellido2, String clave1, String clave2, String fechanac,
+			String correo, boolean terminos) {
 		super();
 		this.nick = nick;
 		this.nombre = nombre;
@@ -53,9 +53,9 @@ public class usuarioRegistro {
 		this.apellido2 = apellido2;
 		this.clave1 = clave1;
 		this.clave2 = clave2;
+		this.fechanac = fechanac;
 		this.correo = correo;
 		this.terminos = terminos;
-		this.mayoredad = mayoredad;
 	}
 
 	public String getNick() {
@@ -114,6 +114,16 @@ public class usuarioRegistro {
 		this.correo = correo;
 	}
 
+	
+	
+	public String getFechanac() {
+		return fechanac;
+	}
+
+	public void setFechanac(String fechanac) {
+		this.fechanac = fechanac;
+	}
+
 	public boolean getTerminos() {
 		return terminos;
 	}
@@ -122,13 +132,6 @@ public class usuarioRegistro {
 		this.terminos = terminos;
 	}
 
-	public boolean getMayoredad() {
-		return mayoredad;
-	}
-
-	public void setMayoredad(boolean mayoredad) {
-		this.mayoredad = mayoredad;
-	}
 
 	public usuarioMatriculacion getMatriculacion() {
 		return matriculacion;
@@ -158,8 +161,8 @@ public class usuarioRegistro {
 			mensaje += "<li>Las claves no coinciden</li>";
 		if (!this.terminos)
 			mensaje += "<li>Debe aceptar los terminos y condiciones.</li>";
-		if (!this.mayoredad)
-			mensaje += "<li>Debe ser mayor de edad.</li>";
+		if (!val.oblogatorioMaxLength(fechanac, 12))
+			mensaje += "<li>El formato de la fecha no es correcto</li>";
 
 		return mensaje;
 	}

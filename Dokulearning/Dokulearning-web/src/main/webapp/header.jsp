@@ -27,10 +27,10 @@
 <!-- Custom CSS barra vetical-->
 <link href="css/sb-admin.css" rel="stylesheet">
 <!-- Custom CSS -->
- <link href="css/business-casual.css" rel="stylesheet"> 
- <link href="css/otro.css" rel="stylesheet"> 
+<link href="css/business-casual.css" rel="stylesheet">
+<link href="css/otro.css" rel="stylesheet">
 
- <link href="css/ventanaDialog.css" rel="stylesheet"> 
+<link href="css/ventanaDialog.css" rel="stylesheet">
 <!-- Fonts -->
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
@@ -47,40 +47,40 @@
 
 </head>
 <body>
-<c:set var="estVal" scope="session" value="${estadoValidacion}"></c:set>
+	<c:set var="estVal" scope="session" value="${estadoValidacion}"></c:set>
 	<!-- Navigation -->
-	  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<c:if test="${estadoValidacion==null}">
-		<div class="user-menu-small row tam">
-			<ul class="navbar-right top-nav">
-				<li><a href="#" data-toggle="modal"
-					title="Iniciar sesi&oacuten" data-target="#myModal"
-					onClick="$('#loginbox').show(); $('#signupbox').hide()"><i class="fa fa-user"></i> Iniciar
-						Sesion </a></li>
-			</ul>
-		</div>
-	</c:if>
-	<c:if test="${estadoValidacion!=null}">
-		<div class="user-menu-small row tam">
-			<ul class="navbar-right top-nav">
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"><i class="fa fa-user"></i> <c:out
-							value="${estVal}"></c:out> <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="registroWeb?action=perfil&estado=${estVal}"><i
-								class="fa fa-fw fa-user"></i> Perfil</a></li>
-						<li><a href="registroWeb?action=salir"><i
-								class="fa fa-fw fa-power-off"></i> Cerrar sesion</a></li>
-					</ul>
-			</ul>
-		</div>
-	</c:if>
-	
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<c:if test="${estadoValidacion==null}">
+			<div class="user-menu-small row tam">
+				<ul class="navbar-right top-nav">
+					<li><a href="#" data-toggle="modal"
+						title="Iniciar sesi&oacuten" data-target="#myModal"
+						onClick="$('#loginbox').show(); $('#signupbox').hide()"><i
+							class="fa fa-user"></i> Iniciar Sesion </a></li>
+				</ul>
+			</div>
+		</c:if>
+		<c:if test="${estadoValidacion!=null}">
+			<div class="user-menu-small row tam">
+				<ul class="navbar-right top-nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><i class="fa fa-user"></i> <c:out
+								value="${estVal}"></c:out> <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="registroWeb?action=perfil&estado=${estVal}"><i
+									class="fa fa-fw fa-user"></i> Perfil</a></li>
+							<li><a href="registroWeb?action=salir"><i
+									class="fa fa-fw fa-power-off"></i> Cerrar sesion</a></li>
+						</ul>
+				</ul>
+			</div>
+		</c:if>
+
 	</nav>
-<br>
-<br>
-<br>
-<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="container">
@@ -125,9 +125,7 @@
 
 
 							<div style="margin-bottom: 25px" class="input-group">
-								<a href="#"
-									onClick="$('#loginbox').hide(); $('#signupbox').show()">
-									Registrarse </a>
+								<a href="registro.jsp"> Registrarse </a>
 
 							</div>
 							<!-- Implementacion futura -->
@@ -145,7 +143,8 @@
 
 
 								<div class="col-sm-12 controls centrado">
-									<button id="btn-login" class="btn boton-principal" type="submit">
+									<button id="btn-login" class="btn boton-principal"
+										type="submit">
 										<i class="icon-hand-right"></i> iniciar Sesion
 									</button>
 									<span style="margin-left: 8px;"></span> <a id="btn-fblogin"
@@ -169,158 +168,14 @@
 				</div>
 			</div>
 
-			<div id="signupbox" style="display: none; margin-top: 50px"
-				class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<div class="panel dialog-info">
-					<div class="cabeceraDialog">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">&times;</button>
-						<div class="dialog-title">Registro</div>
 
-
-					</div>
-					<div class="panel-body">
-						<form onSubmit="return validarR(this)" action="registroWeb"
-							method="post" class="form-horizontal" role="form">
-							<input type="text" name="distribucion" value="crearRegistrado"
-								style="display: none" />
+			
 
 
 
 
-							<div class="form-group">
-								<label for="correoR" class="col-md-3 control-label">Correo</label>
-								<div class="col-md-9">
-									<input type="text" class="form-control" name="correoR"
-										id="correoR" placeholder="Ej.:algo@algo.es">
-								</div>
-							</div>
 
-							<div class="form-group">
-								<label for="nick" class="col-md-3 control-label">Nick</label>
-								<div class="col-md-9">
-									<input type="text" class="form-control" name="nick" id="nick"
-										placeholder="Ej.: Johny90">
-								</div>
-							</div>
-
-
-
-							<div class="form-group">
-								<label for="nombre" class="col-md-3 control-label">Nombre</label>
-								<div class="col-md-9">
-									<input type="text" class="form-control" name="nombre"
-										id="nombre" placeholder="Ej.: Juan">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="apellido1" class="col-md-3 control-label">1º
-									apellido</label>
-								<div class="col-md-9">
-									<input type="text" class="form-control" name="apellido1"
-										id="apellido1" placeholder="Ej.: Perez">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="apellido2" class="col-md-3 control-label">2º
-									apellido *</label>
-								<div class="col-md-9">
-									<input type="text" class="form-control" name="apellido2"
-										id="apellido2" placeholder="Ej.: Osborne">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="clave1" class="col-md-3 control-label">Contrase&ntilde;a</label>
-								<div class="col-md-9">
-									<input type="password" class="form-control" name="clave1"
-										id="clave1" placeholder="Ej.: contraseniahipersegura">
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="clave2" class="col-md-3 control-label">Repetir
-									Contrase&ntilde;a</label>
-								<div class="col-md-9">
-									<input type="password" class="form-control" name="clave2"
-										id="clave2" placeholder="Ej.: contraseniahipersegura">
-								</div>
-							</div>
-
-							<div class="row centrado">
-								<div class="form-group col-md-3"></div>
-								<div class="form-group col-md-8" id="columnas62">
-									<input
-										type="checkbox" name="mayoredad" id="mayoredad"><label for="mayoredad"> &nbsp; &nbsp;Declaro ser mayor de edad </label> <br>
-								
-									<input
-										type="checkbox" name="terminos" id="terminos"><label for="terminos"> &nbsp; &nbsp;Acepto los <a data-toggle="modal" data-target="#ModalReg">t&eacute;rminos y condiciones</a> </label> 
-								</div>
-							</div>
-
-<div class="modal fade" id="ModalReg" tabindex="-1" role="dialog"
-								aria-labelledby="myModalLabel" aria-hidden="true">
-								<div class="container">
-
-									<!-- Modal content-->
-									<div id="loginbox" style="margin-top: 50px;"
-										class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-										<div class="panel dialog-info">
-											<div class="cabeceraDialog">
-												<button type="button" class="close" data-dismiss="modal">
-													<span aria-hidden="true">&times;</span><span
-														class="sr-only">Close</span>
-												</button>
-												<div class="dialog-title">Terminos y condiciones de
-													uso</div>
-											</div>
-											<div class="modal-body">
-											<div style="height:450px; overflow:scroll" > 
-												<p>Las presentes condiciones generales de uso del portal regulan el acceso y la utilización del portal, incluyendo los contenidos y los servicios puestos a disposición de los usuarios en y/o a través del portal, bien por el portal, bien por sus usuarios, bien por terceros. No obstante, el acceso y la utilización de ciertos contenidos y/o servicios puede encontrarse sometido a determinadas condiciones específicas.</p>
-												<p>La empresa se reserva la facultad de modificar en cualquier momento las condiciones generales de uso del portal. En todo caso, se recomienda que consulte periódicamente los presentes términos de uso del portal, ya que pueden ser modificados.</p>
-											<p>El usuario deberá respetar en todo momento los términos y condiciones establecidos en las presentes condiciones generales de uso del portal. De forma expresa el usuario manifiesta que utilizará el portal de forma diligente y asumiendo cualquier responsabilidad que pudiera derivarse del incumplimiento de las normas.
-
-Así mismo, el usuario no podrá utilizar el portal para transmitir, almacenar, divulgar promover o distribuir datos o contenidos que sean portadores de virus o cualquier otro código informático, archivos o programas diseñados para interrumpir, destruir o perjudicar el funcionamiento de cualquier programa o equipo informático o de telecomunicaciones.</p>
-											</div>
-											<br><button type="button" class="btn boton-secundario" data-dismiss="modal">
-															Cerrar </button>
-											</div>
-											
-										</div>
-
-									</div>
-								</div>
-
-							</div>
-
-
-
-						
-							<div class="form-group centradro">
-						
-								<div>
-
-									<button type="submit" class="btn boton-principal">
-										<i class="icon-hand-right"></i> Registrarse
-									</button>
-									<span style="margin-left: 8px;"></span> <a id="btn-fblogin"
-										href="#" class="btn boton-secundario" data-dismiss="modal">
-										Cerrar </a>
-								</div>
-							</div>
-							<a href="#"
-								onClick="$('#loginbox').show(); $('#signupbox').hide()">
-								&lt&lt Atras </a>
-							
-
-
-
-						</form>
-					</div>
-				</div>
-
-
-
-
-			</div>
+			
 		</div>
 	</div>
 
@@ -329,12 +184,17 @@ Así mismo, el usuario no podrá utilizar el portal para transmitir, almacenar, 
 
 
 
-<div class="logoilexion">
-
-			<a href="index.jsp"><img alt="logo" src="fonts/logoIlexion.png" width="18%"></a>
 
 
-</div> 
+
+
+	<div class="logoilexion">
+
+		<a href="index.jsp"><img alt="logo" src="fonts/logoIlexion.png"
+			width="18%"></a>
+
+
+	</div>
 	<!--<div class="address-bar">Aprende en un click</div>
 
 	 Navigation -->

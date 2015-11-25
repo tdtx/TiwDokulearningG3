@@ -16,8 +16,10 @@
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script src="js/jquery.js"></script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
@@ -67,16 +69,11 @@
 
 							<label id="labelNombre" for="nom">Nombre de curso </label> <input
 								class="form-control" type="text" id="nom" name="nom"
-								placeholder="Ej.: Matematicas" /><br /> 
-								
-							<label id="labelDescripcion" >Descripcion
-								del curso</label>
+								placeholder="Ej.: Matematicas" /><br /> <label
+								id="labelDescripcion">Descripcion del curso</label>
 							<textarea class="form-control" rows="3" name="descripcion"
 								id="descripcion" placeholder="Ej.: bases de datos"></textarea>
-							<br /> 
-							
-							
-							<label>Listado del contenido del curso</label>
+							<br /> <label>Listado del contenido del curso</label>
 							<textarea class="form-control" rows="3" name="temario"
 								id="temario" placeholder="Ej.: titulos de los temas"></textarea>
 							<br /> <label>Listado de secciones del curso</label>
@@ -109,28 +106,29 @@
 								name="f_fin" id="f_fin" placeholder="Ej: 01/12/2015"> <br />
 							<label>Fecha de cierre del curso</label> <input
 								class="form-control" type="text" name="cierre_curso"
-								id="cierre_curso" placeholder="Ej: 02/12/2015"> <br /> <label>Categoria
-								del curso</label> <input class="form-control" type="text"
-								name="categoria" id="categoria" placeholder="Rama del curso">
+								id="cierre_curso" placeholder="Ej: 02/12/2015"> <br />
+							<label>Categoria del curso</label> <input class="form-control"
+								type="text" name="categoria" id="categoria"
+								placeholder="Rama del curso">
 							<!-- <br /> <label>Dificultad del curso</label> <input
 								class="form-control" type="text" name="dificultad"
 								id="dificultad" placeholder="Alta, Media o Baja"> <br /> -->
-								
-								<br /><label id="txtDif" for="dificultad">Dificultad del curso</label>
-								<select id="dificultad" name="dificultad" class="form-control">
-									<option value="">--Seleccione--</option>
-									<option  value="Baja">Baja</option>
-									<option  value="Media">Media</option>
-									<option  value="Alta">Alta</option>
-									
-								</select>
-<br />
-							<input type="checkbox" name="terminos" id="terminos"><label> &nbsp; &nbsp;Acepto los <a data-toggle="modal" data-target="#Modal">t&eacute;rminos</a></label> <label>
-								
-							</label>
-						<!-- Trigger the modal with a button -->
 
-  <div class="modal fade" id="Modal" tabindex="-1" role="dialog"
+							<br />
+							<label id="txtDif" for="dificultad">Dificultad del curso</label>
+							<select id="dificultad" name="dificultad" class="form-control">
+								<option value="">--Seleccione--</option>
+								<option value="Baja">Baja</option>
+								<option value="Media">Media</option>
+								<option value="Alta">Alta</option>
+
+							</select> <br /> <input type="checkbox" name="terminos" id="terminos"><label>
+								&nbsp; &nbsp;Acepto los <a data-toggle="modal"
+								data-target="#Modal">t&eacute;rminos</a>
+							</label>
+							<!-- Trigger the modal with a button -->
+
+							<div class="modal fade" id="Modal" tabindex="-1" role="dialog"
 								aria-labelledby="myModalLabel" aria-hidden="true">
 								<div class="container">
 
@@ -147,17 +145,39 @@
 													uso</div>
 											</div>
 											<div class="modal-body">
-											<div style="height:400px; overflow:scroll" > 
-												<p>Las presentes condiciones generales de uso del portal regulan el acceso y la utilización del portal, incluyendo los contenidos y los servicios puestos a disposición de los usuarios en y/o a través del portal, bien por el portal, bien por sus usuarios, bien por terceros. No obstante, el acceso y la utilización de ciertos contenidos y/o servicios puede encontrarse sometido a determinadas condiciones específicas.</p>
-												<p>La empresa se reserva la facultad de modificar en cualquier momento las condiciones generales de uso del portal. En todo caso, se recomienda que consulte periódicamente los presentes términos de uso del portal, ya que pueden ser modificados.</p>
-											<p>El usuario deberá respetar en todo momento los términos y condiciones establecidos en las presentes condiciones generales de uso del portal. De forma expresa el usuario manifiesta que utilizará el portal de forma diligente y asumiendo cualquier responsabilidad que pudiera derivarse del incumplimiento de las normas.
+												<div style="height: 400px; overflow: scroll">
+													<p>Las presentes condiciones generales de uso del
+														portal regulan el acceso y la utilización del portal,
+														incluyendo los contenidos y los servicios puestos a
+														disposición de los usuarios en y/o a través del portal,
+														bien por el portal, bien por sus usuarios, bien por
+														terceros. No obstante, el acceso y la utilización de
+														ciertos contenidos y/o servicios puede encontrarse
+														sometido a determinadas condiciones específicas.</p>
+													<p>La empresa se reserva la facultad de modificar en
+														cualquier momento las condiciones generales de uso del
+														portal. En todo caso, se recomienda que consulte
+														periódicamente los presentes términos de uso del portal,
+														ya que pueden ser modificados.</p>
+													<p>El usuario deberá respetar en todo momento los
+														términos y condiciones establecidos en las presentes
+														condiciones generales de uso del portal. De forma expresa
+														el usuario manifiesta que utilizará el portal de forma
+														diligente y asumiendo cualquier responsabilidad que
+														pudiera derivarse del incumplimiento de las normas. Así
+														mismo, el usuario no podrá utilizar el portal para
+														transmitir, almacenar, divulgar promover o distribuir
+														datos o contenidos que sean portadores de virus o
+														cualquier otro código informático, archivos o programas
+														diseñados para interrumpir, destruir o perjudicar el
+														funcionamiento de cualquier programa o equipo informático
+														o de telecomunicaciones.</p>
+												</div>
+												<br>
+												<button type="button" class="btn boton-secundario"
+													data-dismiss="modal">Cerrar</button>
+											</div>
 
-Así mismo, el usuario no podrá utilizar el portal para transmitir, almacenar, divulgar promover o distribuir datos o contenidos que sean portadores de virus o cualquier otro código informático, archivos o programas diseñados para interrumpir, destruir o perjudicar el funcionamiento de cualquier programa o equipo informático o de telecomunicaciones.</p>
-											</div>
-											<br><button type="button" class="btn boton-secundario" data-dismiss="modal">
-															Cerrar </button>
-											</div>
-											
 										</div>
 
 									</div>

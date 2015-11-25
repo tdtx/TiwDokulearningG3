@@ -137,6 +137,9 @@
 									id="txtProvincia" for="provincia">Provincia *</label><input
 									type="text" placeholder="Ej.: Madrid" class="form-control" name="provincia"
 									id="provincia" maxlength="30" /><br />
+									
+									
+									
 									<label id="txtAceptar" for="aceptar">Acepto los
 									terminos *&nbsp;&nbsp; </label><input type="checkbox" value="SI" name="aceptar"
 									id="aceptar" /><br />

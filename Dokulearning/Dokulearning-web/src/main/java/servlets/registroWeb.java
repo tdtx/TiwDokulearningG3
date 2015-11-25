@@ -49,10 +49,11 @@ public class registroWeb extends HttpServlet {
 		super.init();
 
 		
-			usuarioRegistro ur1 = new usuarioRegistro("MCH", "Maria", "Cañizares",
-					"Holgado", "clavemch", "clavemch", "mch@mch.mch", true, true);
+			usuarioRegistro ur1 = new usuarioRegistro("MCH", "Maria", "Canizares",
+					"Holgado", "clavemch", "clavemch","05-12-1992","mch@mch.mch", true);
+			
 			usuarioRegistro ur2 = new usuarioRegistro("CAS", "Carol", "Arredondo",
-					"Silo", "clavecas", "clavecas", "cas@cas.cas", true, true);
+					"Silo", "clavecas", "clavecas", "cas@cas.cas", "20-09-1999", true);
 	
 			registrados = new ArrayList<usuarioRegistro>();
 			registrados.add(ur1);
@@ -146,6 +147,7 @@ public class registroWeb extends HttpServlet {
 		
 		HttpSession sesion = request.getSession();
 		String distribucion = request.getParameter("distribucion");
+		System.err.println("entro bien +"+distribucion);
 		String pagina = indexJSP;
 		String clave1 = null;
 		String correo = null;
@@ -198,17 +200,20 @@ public class registroWeb extends HttpServlet {
 			case "crearRegistrado":
 				
 				String nick = request.getParameter("nick");
-				String nombre = request.getParameter("nombre");
 				String apellido1 = request.getParameter("apellido1");
-				String apellido2 = request.getParameter("apellido2");
-				 clave1 = request.getParameter("clave1");
-				String clave2 = request.getParameter("clave2");
 				 correo = request.getParameter("correoR");
+				 clave1 = request.getParameter("clave1");
+				String nombre = request.getParameter("nombre");
+				String apellido2 = request.getParameter("apellido2");
+				String fechanac= request.getParameter("fechaR");
+				String clave2 = request.getParameter("clave2");
+				String aceptarterm = request.getParameter("aceptarterm");
 				
 				
 				if (comprobarUsuario(correo, clave1) == null) {
-					registrarRegistrado(nick, nombre, apellido1, apellido2, clave1,
-							clave2, correo);
+					System.err.println("entro bien");
+					registrarRegistrado(nick, apellido1, correo, clave1, nombre,
+							apellido2, fechanac, clave2);
 				
 					usuarioRegistro u = comprobarUsuario(correo, clave1);
 					sesion.setAttribute("usuarioReg", u);
@@ -218,10 +223,10 @@ public class registroWeb extends HttpServlet {
 					pagina = "/perfilUsuario.jsp";
 					
 				} else {
-
+					System.err.println("entro mal");
 					try {
 						RegistrarUser(nick, nombre, apellido1, apellido2, clave1,
-								clave2, correo);
+								clave2, fechanac, correo);
 						request.setAttribute("registrados", registrados);
 						pagina = formularioReg;
 					} catch (Exception e) {
@@ -248,7 +253,7 @@ public class registroWeb extends HttpServlet {
 
 	// editar
 	public void RegistrarUser(String nick, String nombre, String apellido1,
-			String apellido2, String clave1, String clave2, String correo) {
+			String apellido2, String clave1, String clave2, String fechanac,String correo) {
 		// TODO Auto-generated method stub
 
 		for (usuarioRegistro perfil : registrados) {
@@ -287,11 +292,11 @@ public class registroWeb extends HttpServlet {
 	
 	// añadir registrados al array
 	public void registrarRegistrado(String nick, String nombre,
-			String apellido1, String apellido2, String clave1, String clave2,
+			String apellido1, String apellido2, String clave1, String clave2, String fechanac,
 			String correo) {
 		// TODO Auto-generated method stub
 		registrados.add(new usuarioRegistro(nick, nombre, apellido1, apellido2,
-				clave1, clave2, correo,true, true));
+				clave1, clave2, fechanac, correo, true));
 	}
 
 	// comprueba el array list y devuelve solo el que buscas
