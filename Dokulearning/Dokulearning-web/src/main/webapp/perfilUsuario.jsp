@@ -91,6 +91,8 @@
 								<label>Segundo apellido:&nbsp;&nbsp;</label>${registrado.apellido2}</div>
 							<div class="form-group">
 								<label>Correo electronico:&nbsp;&nbsp;</label>${registrado.correo}</div>
+							<div class="form-group">
+								<label>Fecha de nacimiento:&nbsp;&nbsp;</label>${registrado.fechanac}</div>
 
 
 

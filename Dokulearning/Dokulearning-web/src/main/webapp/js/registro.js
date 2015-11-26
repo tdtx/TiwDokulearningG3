@@ -2,12 +2,14 @@ function pwdIguales(){ //Antes de validar el resto del formulario, es indispensa
     var pwd1 = document.getElementById("clave1").value;
     var pwd2 = document.getElementById("clave2").value;
     if(pwd1==pwd2 && pwd1 != null && pwd1 != "" && pwd2 != null && pwd2 != ""){
-        return validarF();
+        return validarR();
     } else {
         document.getElementById("clave1").style.borderColor="red";
         document.getElementById("clave1").style.borderStyle="dotted";
+		document.getElementById("txtclave1Reg").style.color="red";
         document.getElementById("clave2").style.borderColor="red";
         document.getElementById("clave2").style.borderStyle="dotted";
+		document.getElementById("txtclave2Reg").style.color="red";
         alert("Las contraseñas no son iguales. Por favor, introduzca la misma contraseña en ambos campos.");
         return false;
     }
@@ -129,12 +131,86 @@ function validarR(formulario){
         contador = contador + 1;
     }
 
+    
+    
+    
+    
+    
+    
+  //Validado el campo fecha de registrado
+	var fechaNcRegistrado = document.getElementById("fechanac").value;
+	var fechaNcR = fechaNcRegistrado.toString();
+	    hoy=new Date() 
+	    var array_fecha = fechaNcR.split("/") 
+	    var ano 
+	    ano = parseInt(array_fecha[2]); 
+	    var mes 
+	    mes = parseInt(array_fecha[1]); 
+	    var dia 
+	    dia = parseInt(array_fecha[0]); 
+	    edad=hoy.getYear()- ano - 1; 
+	    if (array_fecha.length!=3) {
+	    	 document.getElementById("fechanac").style.borderColor="red";
+	         document.getElementById("fechanac").style.borderStyle="dotted";
+	 		document.getElementById("txtFechaReg").style.color="red";
+
+//	         mensaje = mensaje.concat("La fecha no tiene el formato dd/mm/aaaa" + '\n');
+	    }else if (isNaN(ano)) {
+	    	 document.getElementById("fechanac").style.borderColor="red";
+	         document.getElementById("fechanac").style.borderStyle="dotted";
+		 		document.getElementById("txtFechaReg").style.color="red";
+
+//	         mensaje = mensaje.concat("El año es incorrecto" + '\n');
+	    }else if (isNaN(mes)) {
+	    	 document.getElementById("fechanac").style.borderColor="red";
+	         document.getElementById("fechanac").style.borderStyle="dotted";
+		 		document.getElementById("txtFechaReg").style.color="red";
+
+//	         mensaje = mensaje.concat("El mes es incorrecto" + '\n');
+	    }else if (isNaN(dia)) {
+	    	 document.getElementById("fechanac").style.borderColor="red";
+	         document.getElementById("fechanac").style.borderStyle="dotted";
+		 		document.getElementById("txtFechaReg").style.color="red";
+
+//	         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
+	    }else if (ano<=99) {
+	        ano +=1900 
+	    }else if (hoy.getMonth() + 1 - mes < 0) {
+	    	 document.getElementById("fechanac").style.borderColor="red";
+	         document.getElementById("fechanac").style.borderStyle="dotted";
+		 		document.getElementById("txtFechaReg").style.color="red";
+
+//	         mensaje = mensaje.concat("Eres menor de edad" + '\n');
+	    }else if (hoy.getMonth() + 1 - mes > 0) {
+	    	 document.getElementById("fechanac").style.borderColor="green";
+	         document.getElementById("fechanac").style.borderStyle="dotted";
+		 		document.getElementById("txtFechaReg").style.color="green";
+
+	         contador = contador + 1;
+	    }else if (hoy.getUTCDate() - dia >= 0) {
+		   	 document.getElementById("fechanac").style.borderColor="red";
+	         document.getElementById("fechanac").style.borderStyle="dotted";
+		 		document.getElementById("txtFechaReg").style.color="red";
+
+//	         mensaje = mensaje.concat("Eres menor de edad por dia" + '\n');
+	    }else{
+	    	document.getElementById("fechanac").style.borderColor="red";
+	         document.getElementById("fechanac").style.borderStyle="dotted";
+		 		document.getElementById("txtFechaReg").style.color="red";
+
+//	         mensaje = mensaje.concat("La fecha no tiene el formato dd/mm/aaaa" + '\n');
+	    }
+
+    
+    
+    
+    
 
            
     //Valido el campo 'confirmar contrasena'
     var pwd2Usuario = document.getElementById("clave2").value;
     var pwd2 = pwd2Usuario.toString();
-    if (pwd2.match(/[^\w\d-.@$%&#€/¡!¿?ñÑáéíóúüçÁÉÍÓÚÇÜ]/g)|| pwd == null || pwd == ""){
+    if (pwd2.match(/[^\w\d-.@$%&#€/¡!¿?ñÑáéíóúüçÁÉÍÓÚÇÜ]/g)|| pwd2 == null || pwd2 == ""){
         document.getElementById("clave2").style.borderColor="red";
         document.getElementById("clave2").style.borderStyle="dotted";
 		document.getElementById("txtclave2Reg").style.color="red";
@@ -149,7 +225,8 @@ function validarR(formulario){
         contador = contador + 1;
     }
 
-  
+ 
+    
     
 //Valido el terminos
     
@@ -166,7 +243,7 @@ function validarR(formulario){
  
 
      
-    if(contador == 7){
+    if(contador == 8){
         alert("Usuario registrado con éxito");
     } else{
         //alert(mensaje);

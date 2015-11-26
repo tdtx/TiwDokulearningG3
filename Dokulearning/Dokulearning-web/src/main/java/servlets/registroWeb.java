@@ -50,10 +50,10 @@ public class registroWeb extends HttpServlet {
 
 		
 			usuarioRegistro ur1 = new usuarioRegistro("MCH", "Maria", "Canizares",
-					"Holgado", "clavemch", "clavemch","05-12-1992","mch@mch.mch", true);
+					"Holgado", "clavemch", "clavemch","05/12/1992","mch@mch.mch", true);
 			
 			usuarioRegistro ur2 = new usuarioRegistro("CAS", "Carol", "Arredondo",
-					"Silo", "clavecas", "clavecas", "cas@cas.cas", "20-09-1999", true);
+					"Silo", "clavecas", "clavecas", "cas@cas.cas", "20/09/1999", true);
 	
 			registrados = new ArrayList<usuarioRegistro>();
 			registrados.add(ur1);
@@ -88,7 +88,7 @@ public class registroWeb extends HttpServlet {
 			request.getSession().invalidate();
 		}
 		
-	
+	//para loguearse
 		if (action != null && action.equals("perfil")&& estado!=null) {
 
 			usuarioRegistro u=comprobarNick(estado);
@@ -101,7 +101,7 @@ public class registroWeb extends HttpServlet {
 			
 			
 		}
-
+	//
 		if (action != null && action.equals("eliminarReg")) {
 			String correo = request.getParameter("correo");
 			eliminarRegistrado(correo);
@@ -183,7 +183,7 @@ public class registroWeb extends HttpServlet {
 			case "cambiarClave":
 				String claveActual = request.getParameter("claveActual");
 				String claveNueva = request.getParameter("claveNueva");
-				String RclaveNueva = request.getParameter("RclaveNueva");
+				//String RclaveNueva = request.getParameter("RclaveNueva");
 				if (claveActual != null) {
 
 				
@@ -205,9 +205,9 @@ public class registroWeb extends HttpServlet {
 				 clave1 = request.getParameter("clave1");
 				String nombre = request.getParameter("nombre");
 				String apellido2 = request.getParameter("apellido2");
-				String fechanac= request.getParameter("fechaR");
+				String fechanac= request.getParameter("fechanac");
 				String clave2 = request.getParameter("clave2");
-				String aceptarterm = request.getParameter("aceptarterm");
+				//String aceptarterm = request.getParameter("aceptarterm");
 				
 				
 				if (comprobarUsuario(correo, clave1) == null) {
@@ -220,7 +220,7 @@ public class registroWeb extends HttpServlet {
 					request.setAttribute("registrados", registrados);
 					
 			
-					pagina = "/perfilUsuario.jsp";
+					pagina = "/index.jsp";
 					
 				} else {
 					System.err.println("entro mal");
@@ -264,12 +264,9 @@ public class registroWeb extends HttpServlet {
 				perfil.setApellido2(apellido2);
 				perfil.setClave1(clave1);
 				perfil.setClave2(clave2);
-			
-
+				perfil.setFechanac(fechanac);
 			}
-
 		}
-
 	}
 	
 	
@@ -280,13 +277,8 @@ public class registroWeb extends HttpServlet {
 			if (claveActual.equals(cc.getClave1())) {
 				cc.setClave1(claveNueva);
 				cc.setClave2(claveNueva);
-
-	
-
 			}
-
 		}
-
 	}
 	
 	
@@ -311,5 +303,4 @@ public class registroWeb extends HttpServlet {
 		}
 		return u;
 	}
-
 }

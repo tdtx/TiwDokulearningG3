@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -139,10 +139,74 @@
 									id="provincia" maxlength="30" /><br />
 									
 									
+								
 									
-									<label id="txtAceptar" for="aceptar">Acepto los
-									terminos *&nbsp;&nbsp; </label><input type="checkbox" value="SI" name="aceptar"
-									id="aceptar" /><br />
+									
+									
+									<input type="checkbox" id="aceptarterm" value="SI" name="aceptar" ><label id="txtAceptar"
+									for="aceptar"> &nbsp; &nbsp;Acepto <a
+									data-toggle="modal" data-target="#ModalMatric">t&eacute;rminos
+										y condiciones</a> *
+								</label> 
+									
+									
+									
+									<div class="modal fade" id="ModalMatric" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="container">
+
+					<div id="loginbox" style="margin-top: 50px;"
+						class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+						<div class="panel dialog-info">
+							<div class="cabeceraDialog">
+								<button type="button" class="close" data-dismiss="modal">
+									<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+								</button>
+								<div class="dialog-title">Terminos y condiciones de uso</div>
+							</div>
+							<div class="modal-body">
+								<div style="height: 450px; overflow: scroll" >
+									<p>Las presentes condiciones generales de uso del portal
+										regulan el acceso y la utilización del portal, incluyendo los
+										contenidos y los servicios puestos a disposición de los
+										usuarios en y/o a través del portal, bien por el portal, bien
+										por sus usuarios, bien por terceros. No obstante, el acceso y
+										la utilización de ciertos contenidos y/o servicios puede
+										encontrarse sometido a determinadas condiciones específicas.</p>
+									<p>La empresa se reserva la facultad de modificar en
+										cualquier momento las condiciones generales de uso del portal.
+										En todo caso, se recomienda que consulte periódicamente los
+										presentes términos de uso del portal, ya que pueden ser
+										modificados.</p>
+									<p>El usuario deberá respetar en todo momento los términos
+										y condiciones establecidos en las presentes condiciones
+										generales de uso del portal. De forma expresa el usuario
+										manifiesta que utilizará el portal de forma diligente y
+										asumiendo cualquier responsabilidad que pudiera derivarse del
+										incumplimiento de las normas. Así mismo, el usuario no podrá
+										utilizar el portal para transmitir, almacenar, divulgar
+										promover o distribuir datos o contenidos que sean portadores
+										de virus o cualquier otro código informático, archivos o
+										programas diseñados para interrumpir, destruir o perjudicar el
+										funcionamiento de cualquier programa o equipo informático o de
+										telecomunicaciones.</p>
+								</div>
+								<br>
+										<button type="button" class="btn boton-secundario"
+													data-dismiss="modal">Cerrar</button>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+									
+									
+									
+									
 									
 									</div>
 									<div class="form-group col-lg-12" style="margin: 0px 0px 0px 300px">

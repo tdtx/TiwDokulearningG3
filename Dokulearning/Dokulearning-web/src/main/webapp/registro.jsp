@@ -64,7 +64,7 @@
 					</c:choose>
 
 					<div style="margin: 0px 0px 0px 200px">
-						<form onSubmit="return validarR(this)" id="formularioMat"
+						<form onSubmit="return pwdIguales(this)" id="formularioMat"
 							action="registroWeb" method="post" >
 							<input type="text" name="distribucion" value="crearRegistrado"
 								style="display: none" />                  
@@ -100,10 +100,10 @@
 									id="txtApellido2Reg" for="apellido2">Segundo apellido</label> <input
 									type="text" class="form-control" name="apellido2"
 									id="apellido2" maxlength="30" placeholder="Ej.: Osborne">
-								<br /> <label id="txtFechaReg" for="fechaR">Fecha de
+								<br /> <label id="txtFechaReg" for="fechanac">Fecha de
 									nacimiento</label> <input type="text" class="form-control"
-									name="fechaR" id="fechaR" maxlength="10"
-									placeholder="Ej.:DD-MM-AAAA"> <br /> <label
+									name="fechanac" id="fechanac" maxlength="10"
+									placeholder="Ej.:DD/MM/AAAA"> <br /> <label
 									id="txtclave2Reg" for="clave2">Repita la contraseña *</label> <input
 									type="password" class="form-control" name="clave2" id="clave2"
 									maxlength="30" placeholder="Ej.: contraseniahipersegura">

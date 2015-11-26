@@ -57,7 +57,8 @@ public class usuarioRegistro {
 		this.correo = correo;
 		this.terminos = terminos;
 	}
-
+	
+	
 	public String getNick() {
 		return nick;
 	}
