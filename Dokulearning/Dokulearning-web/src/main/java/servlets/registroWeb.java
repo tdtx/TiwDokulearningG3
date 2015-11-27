@@ -220,13 +220,19 @@ public class registroWeb extends HttpServlet {
 			
 			case "cambiarClave":
 				String claveActual = request.getParameter("claveActual");
+				String nickC = request.getParameter("nickClave");
 				String claveNueva = request.getParameter("claveNueva");
 				//String RclaveNueva = request.getParameter("RclaveNueva");
 				if (claveActual != null) {
-
-				
-					cambiarClave(claveActual, claveNueva);
-					request.setAttribute("registrados", registrados);
+					Usuarios u=udao.actualizarClave(nickC, claveActual);
+					u.setClave(claveNueva);
+					try {
+						udao.actualizarUsuario(u);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					sesion.setAttribute("perfilRegistrado", u);
 					pagina = "/perfilUsuario.jsp";
 				}else{
 					System.err.println("he petao");
@@ -318,7 +324,7 @@ public class registroWeb extends HttpServlet {
 	}
 	
 	
-	public void cambiarClave(String claveActual, String claveNueva) {
+	/*public void cambiarClave(String claveActual, String claveNueva) {
 		// TODO Auto-generated method stub
 
 		for (usuarioRegistro cc : registrados) {
@@ -328,7 +334,7 @@ public class registroWeb extends HttpServlet {
 			}
 		}
 	}
-	
+	*/
 	
 	// añadir registrados al array
 	public void registrarRegistrado(String nick, String nombre,

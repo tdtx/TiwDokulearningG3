@@ -182,7 +182,19 @@
 												style="display: none">
 
 
+											
 											<div class="row">
+											
+											
+											
+											
+											<div class="form-group col-md-6">
+													<label for="nickClave">Nick </label> <input
+														type="text" class="form-control" id="nickClave"
+														name="nickClave" readonly value="${registrado.nick}">
+												</div>
+											<div class="form-group col-md-1"></div>
+												<div class="form-group col-md-1"></div>
 												<div class="form-group col-md-6">
 													<label for="claveActual">Contraseña actual </label> <input
 														type="password" class="form-control" id="claveActual"

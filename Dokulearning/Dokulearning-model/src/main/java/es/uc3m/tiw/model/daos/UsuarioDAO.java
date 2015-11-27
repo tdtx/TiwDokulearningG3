@@ -54,6 +54,25 @@ public class UsuarioDAO {
 		
 	}
     
+    
+    //cambiar clave
+    public Usuarios actualizarClave(String nick, String clave) {
+		
+		Query query =  em.createQuery("SELECT u FROM Usuarios u where u.nick=:nick and u.clave=:clave", Usuarios.class);
+		query.setParameter("nick", nick);
+		query.setParameter("clave", clave);
+		List resultList = query.getResultList();
+		if (resultList.isEmpty()) {
+			return null;
+		}else{
+		
+			return (Usuarios) query.getSingleResult();
+		}
+		
+	}
+    
+    
+    
     //buscar por nick
 	public Usuarios buscarNick(String nick) {
 			
