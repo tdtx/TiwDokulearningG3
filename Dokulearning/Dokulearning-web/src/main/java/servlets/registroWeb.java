@@ -51,7 +51,7 @@ public class registroWeb extends HttpServlet {
 		super.init();
 
 		
-			
+		//usuarios registrados	
 		Usuarios usuario1=new Usuarios("MariaC", "clavemch", "Maria", "Canizares", "Holgado", "mch@mch.mch", "01/04/1992");
 		Usuarios usuario2=new Usuarios("CarolAs", "clavecas", "Carolina", "Arredondo", "Silo", "cas@cas.cas", "20/06/1993");
 		Usuarios usuario3=new Usuarios("TomasDTX", "clavetdtx", "Tomas", "Tee", "Xia", "tdtx@tdtx.tdtxc", "23/09/1990");
@@ -63,6 +63,31 @@ public class registroWeb extends HttpServlet {
 		Usuarios usuario9=new Usuarios("Layos", "clavealm", "Alejandro", "Layos", "Montero", "alm@alm.alm", "23/06/1993");
 		Usuarios usuario10=new Usuarios("DPalomar", "clavedpal", "David", "Palomar", null, "dpal@dpal.dpal", "01/11/1967");
 
+		
+		
+		
+		/*
+		String rol, String nick, String clave, String nombre,
+		String apellido1, String apellido2, int telefono, String correo,
+		String cuentaBancaria, String idImagen, String fechanac,
+		String descripcion, String aficiones, String calle, String localidad,
+		int codigoPostal, String provincia, String pais)
+		*/
+		
+		
+		
+		//usuarios matriculados
+		Usuarios usuario11=new Usuarios("profesor", "Marquitos", "soymarcos", "Marcos", "Gonzalez", "Silo", 290909876, "mgs@mgs.mgs", "B9876pl9plok409876543", "fonts/users_folder_128.png", "05/09/1975", "Trabajo en Colme","me gusta ver partidos","Marques de torres", "Madrid", 28097, "Madrid", "Espanya");
+		Usuarios usuario12=new Usuarios("profesor", "MarinaCL", "soymarina", "Marina", "Candela", "Lopez", 298709876, "mcl@mcl.mcl", "B9876789plok409876543", "fonts/users_folder_128.png", "05/09/1995", "Trabajo en Las rozas","me gusta el futbol","Marques de corbera", "Madrid", 28017, "Madrid", "Espanya");
+		Usuarios usuario13=new Usuarios("profesor", "LauRF", "soylau", "Laura", "Ruiz", "Fernandez", 675453234, "lrf@lrf.lrf", "A5675tghy7865tghy4321", "fonts/users_folder_128.png", "06/04/1995", "vivo cerca","me gusta bailar"," De la vega", "Sanse", 78987, "Madrid", "Espanya");
+		Usuarios usuario14=new Usuarios("profesor", "SaraTG", "soysara", "Sara", "Tena", "Garcia", 786543210, "stg@stg.stg", "Bjkiu7898ikju7876yhgt", "fonts/users_folder_128.png", "07/07/1990", "quiero ser programadora","me gusta el tenis","De las cercas", "Colme", 89076, "Madrid", "Espanya");
+		Usuarios usuario15=new Usuarios("profesor", "PabloGH", "soypablo", "Pablo", "Garcia", "Hernandez", 390456238, "pgh@pgh.pgh", "A1234olki0987ujhy6789", "fonts/users_folder_128.png", "17/07/1991", "vivo en Colmenarejo","me gusta el baloncesto","Del abeto", "Leganes", 23098, "Madrid", "Espanya");
+		Usuarios usuario16=new Usuarios("estudiante", "Sofi", "soysofi", "Sofia", "Rodriguez", "Marcos", 907879676, "srm@srm.srm", "B7897ujhy6543erfg4567", "fonts/users_folder_128.png", "18/10/1987", "hago pulseras","me gusta salir de fiesta","De las heras", "Salamanca", 23567, "Madrid", "Espanya");
+		Usuarios usuario17=new Usuarios("estudiante", "Carmen", "soycarmen", "Carmen", "Alameda", "Muñoz", 900989765, "cam@cam.cam", "A12343456tghy789olkiu", "fonts/users_folder_128.png", "20/04/1900", "mi estuche es azul","me gustan las matematicas","Del martillo", "Las Rozas", 90897, "Madrid", "Espanya");
+		Usuarios usuario18=new Usuarios("estudiante", "Ali", "soyali", "Alicia", "Pais", "Maravillas", 800900700, "apm@apm.apm", "Biolkolki89096787yhju", "fonts/users_folder_128.png", "12/12/1985", "me encanta el carlin","me gusta la programacion","San Ambrosio", "El Molar", 20986, "Madrid", "Espanya");
+		Usuarios usuario19=new Usuarios("estudiante", "Alex", "soyalex", "Alejandro", "Fernandez", "Juarez", 567689733, "amj@amj.amj", "A09oi89iut56y4edfolki", "fonts/users_folder_128.png", "01/07/1993", "tengo bolis que se borran","me gusta ir al cine","Perez Herrera", "Sanagus", 12345, "Madrid", "Espanya");
+		Usuarios usuario20=new Usuarios("estudiante", "Fran", "soyfran", "Francisco", "Martin", "Palacios", 908987123, "fmp@fmp.fmp", "Bhjui9876rfgt4321qas3", "fonts/users_folder_128.png", "19/11/1995", "estudio ade","me gusta ver la television","Sol", "Madrid", 13245, "Madrid", "Espanya");
+		
 		udao=new UsuarioDAO(em, ut);
 	try {
 		udao.guardarUsuario(usuario1);
