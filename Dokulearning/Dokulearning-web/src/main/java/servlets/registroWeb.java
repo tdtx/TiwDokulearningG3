@@ -66,27 +66,21 @@ public class registroWeb extends HttpServlet {
 		
 		
 		
-		/*
-		String rol, String nick, String clave, String nombre,
-		String apellido1, String apellido2, int telefono, String correo,
-		String cuentaBancaria, String idImagen, String fechanac,
-		String descripcion, String aficiones, String calle, String localidad,
-		int codigoPostal, String provincia, String pais)
-		*/
-		
-		
-		
 		//usuarios matriculados
-		Usuarios usuario11=new Usuarios("profesor", "Marquitos", "soymarcos", "Marcos", "Gonzalez", "Silo", 290909876, "mgs@mgs.mgs", "B9876pl9plok409876543", "fonts/users_folder_128.png", "05/09/1975", "Trabajo en Colme","me gusta ver partidos","Marques de torres", "Madrid", 28097, "Madrid", "Espanya");
-		Usuarios usuario12=new Usuarios("profesor", "MarinaCL", "soymarina", "Marina", "Candela", "Lopez", 298709876, "mcl@mcl.mcl", "B9876789plok409876543", "fonts/users_folder_128.png", "05/09/1995", "Trabajo en Las rozas","me gusta el futbol","Marques de corbera", "Madrid", 28017, "Madrid", "Espanya");
-		Usuarios usuario13=new Usuarios("profesor", "LauRF", "soylau", "Laura", "Ruiz", "Fernandez", 675453234, "lrf@lrf.lrf", "A5675tghy7865tghy4321", "fonts/users_folder_128.png", "06/04/1995", "vivo cerca","me gusta bailar"," De la vega", "Sanse", 78987, "Madrid", "Espanya");
-		Usuarios usuario14=new Usuarios("profesor", "SaraTG", "soysara", "Sara", "Tena", "Garcia", 786543210, "stg@stg.stg", "Bjkiu7898ikju7876yhgt", "fonts/users_folder_128.png", "07/07/1990", "quiero ser programadora","me gusta el tenis","De las cercas", "Colme", 89076, "Madrid", "Espanya");
-		Usuarios usuario15=new Usuarios("profesor", "PabloGH", "soypablo", "Pablo", "Garcia", "Hernandez", 390456238, "pgh@pgh.pgh", "A1234olki0987ujhy6789", "fonts/users_folder_128.png", "17/07/1991", "vivo en Colmenarejo","me gusta el baloncesto","Del abeto", "Leganes", 23098, "Madrid", "Espanya");
-		Usuarios usuario16=new Usuarios("estudiante", "Sofi", "soysofi", "Sofia", "Rodriguez", "Marcos", 907879676, "srm@srm.srm", "B7897ujhy6543erfg4567", "fonts/users_folder_128.png", "18/10/1987", "hago pulseras","me gusta salir de fiesta","De las heras", "Salamanca", 23567, "Madrid", "Espanya");
-		Usuarios usuario17=new Usuarios("estudiante", "Carmen", "soycarmen", "Carmen", "Alameda", "Muñoz", 900989765, "cam@cam.cam", "A12343456tghy789olkiu", "fonts/users_folder_128.png", "20/04/1900", "mi estuche es azul","me gustan las matematicas","Del martillo", "Las Rozas", 90897, "Madrid", "Espanya");
-		Usuarios usuario18=new Usuarios("estudiante", "Ali", "soyali", "Alicia", "Pais", "Maravillas", 800900700, "apm@apm.apm", "Biolkolki89096787yhju", "fonts/users_folder_128.png", "12/12/1985", "me encanta el carlin","me gusta la programacion","San Ambrosio", "El Molar", 20986, "Madrid", "Espanya");
-		Usuarios usuario19=new Usuarios("estudiante", "Alex", "soyalex", "Alejandro", "Fernandez", "Juarez", 567689733, "amj@amj.amj", "A09oi89iut56y4edfolki", "fonts/users_folder_128.png", "01/07/1993", "tengo bolis que se borran","me gusta ir al cine","Perez Herrera", "Sanagus", 12345, "Madrid", "Espanya");
-		Usuarios usuario20=new Usuarios("estudiante", "Fran", "soyfran", "Francisco", "Martin", "Palacios", 908987123, "fmp@fmp.fmp", "Bhjui9876rfgt4321qas3", "fonts/users_folder_128.png", "19/11/1995", "estudio ade","me gusta ver la television","Sol", "Madrid", 13245, "Madrid", "Espanya");
+		Usuarios usuario11=new Usuarios("LauLV", "clavelau", "Laura", "Lopez", "Vazquez", "20/08/1991", "llv@llv.llv", "Ayhju9876ujki8ujkujki", "fonts/users_folder_128.png", "Estudiante de cuarto curso de ADE", "La ciencia ficcion", "de las Heras", "Madrid", 28017, "Madrid", 786654321, "estudiante", "89776546y", "mujer");   
+		Usuarios usuario12=new Usuarios("LidiRG", "clavelidi", "Lidia", "Rodriguez", "Garcia", "25/09/1992", "lrg@lrg.lrg", "Bikj7kilo098u7y6t5r4e", "fonts/users_folder_128.png", "Profesora de ciencias tecnologicas", "La enseñanza y el deporte", "de la Vega", "Las Rozas", 25089, "Madrid", 987654789, "profesor", "87698423z", "mujer");
+		Usuarios usuario13=new Usuarios("RaulFJ", "soyraul", "Raul", "Fernandez", "Jimenez", "04/12/1985", "rfj@rfj.rfj", "Bikju7865tgh645rt3ew2", "fonts/users_folder_128.png", "Entusiasmado por el mundo sanitario", "El arte y viajar", "San Ambrosio", "Colmenarejo", 45367, "Madrid", 453567890, "profesor", "58754123p", "hombre");
+		Usuarios usuario14=new Usuarios("MartinMF", "soymartin", "Martin", "Marquez", "Frias", "01/06/1978", "mmf@mmf.mmf", "Blkoi9oi87uy8ujhy6tgh", "fonts/users_folder_128.png", "Persona sociable y trabajadora", "El mundo del motor", "del Abeto", "El Molar", 98765, "Madrid", 987654289, "profesor", "98712385t", "hombre");
+		Usuarios usuario15=new Usuarios("AliPM", "Soyali", "Alicia", "Pais", "Maravillas", "27/12/1992", "apm@apm.apm", "Bjkol0987ujhy6tgf4rfd", "fonts/users_folder_128.png", "Entusiasta y amable", "El mundo de la belleza", "Perez Herrera", "Leganes", 98765, "Madrid", 980765190, "estudiante", "90876123r", "mujer");
+		Usuarios usuario16=new Usuarios("AlbaMP", "soyalba", "Alba", "Marin", "Palacios", "30/08/1970", "amp@amp.amp", "Aikjl0987ujhy5645rfgt", "fonts/users_folder_128.png", "Profesora proactiva y sociable", "El deporte y la musica", "del Globo", "Gestafe", 98765, "Madrid", 786542134, "profesor", "98765398u", "mujer");
+		Usuarios usuario17=new Usuarios("MarcosGS", "soymarcos", "Marcos", "Gonzalez", "Silo", "30/12/1993", "mgs@mgs.mgs", "Akijl0987ujki6ygt54re", "fonts/users_folder_128.png", "Estudiante de ciencias de la salud", "Voluntariado en tiempo libre", "deL Martillo", "Alba de Tormes", 98709, "Salamanca", 908765123, "estudiante", "90878653g", "hombre");
+		Usuarios usuario18=new Usuarios("BelenNC", "soybelen", "Belen", "Nevado", "casado", "01/10/1986", "bnc@bnc.bnc", "Ajkiu8ui9oilk9ikj7ujh", "fonts/users_folder_128.png", "Interactiva y apasionada por la quimica ", "Cine y teatro", "de la sierra", "Colombres", 34567, "Asturias", 908987675, "profesor", "34567890o", "mujer");
+		Usuarios usuario19=new Usuarios("EliasGH", "soyelias", "Elias", "Gomez", "Herrero", "20/08/1990", "egh@egh.egh", "Bolkoilkoikjuujki9876", "fonts/users_folder_128.png", "Activo y curioso", "La teconologia", "MArques de las Vias", "Bollullos", 87987, "Huelva", 908787654, "estudiante", "98778765t", "hombre");
+		Usuarios usuario20=new Usuarios("PedroCM", "soypedro", "Pedro", "Cuco", "Martin", "08/09/1990", "pcm@pcm.pcm", "Acvbhnjmkilko98765432", "fonts/users_folder_128.png", "Responsable y extrovertido", "Futbol", "de los Molinos", "Santander", 90870, "Cantabria", 908765432, "estudiante", "54667890i", "hombre");
+		
+		
+		
+		
 		
 		udao=new UsuarioDAO(em, ut);
 	try {
@@ -100,6 +94,16 @@ public class registroWeb extends HttpServlet {
 		udao.guardarUsuario(usuario8);
 		udao.guardarUsuario(usuario9);
 		udao.guardarUsuario(usuario10);
+		udao.guardarUsuario(usuario11);
+		udao.guardarUsuario(usuario12);
+		udao.guardarUsuario(usuario13);
+		udao.guardarUsuario(usuario14);
+		udao.guardarUsuario(usuario15);
+		udao.guardarUsuario(usuario16);
+		udao.guardarUsuario(usuario17);
+		udao.guardarUsuario(usuario18);
+		udao.guardarUsuario(usuario19);
+		udao.guardarUsuario(usuario20);
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
