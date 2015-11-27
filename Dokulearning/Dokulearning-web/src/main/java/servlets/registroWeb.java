@@ -52,16 +52,16 @@ public class registroWeb extends HttpServlet {
 
 		
 		//usuarios registrados	
-		Usuarios usuario1=new Usuarios("MariaC", "clavemch", "Maria", "Canizares", "Holgado", "mch@mch.mch", "01/04/1992");
-		Usuarios usuario2=new Usuarios("CarolAs", "clavecas", "Carolina", "Arredondo", "Silo", "cas@cas.cas", "20/06/1993");
-		Usuarios usuario3=new Usuarios("TomasDTX", "clavetdtx", "Tomas", "Tee", "Xia", "tdtx@tdtx.tdtxc", "23/09/1990");
-		Usuarios usuario4=new Usuarios("Antonio", "claveaml", "Antonio", "Martinez", "Alvarez", "ama@ama.ama", "16/04/1993");
-		Usuarios usuario5=new Usuarios("ElsaCa", "claveecp", "Elsa", "Capunta", "Lapiz", "ecp@ecp.ecp", "08/11/1995");
-		Usuarios usuario6=new Usuarios("JoseChu", "clavejlr", "Josechu", "Leton", "Rojo", "jlr@jlr.jlr", "22/08/1995");
-		Usuarios usuario7=new Usuarios("AitorT", "claveat", "Aitor", "Tilla", null, "at@at.at", "09/09/1982");
-		Usuarios usuario8=new Usuarios("BenitoC", "clavebc", "Benito", "Camela", null, "bc@bc.bc", "06/12/1978");
-		Usuarios usuario9=new Usuarios("Layos", "clavealm", "Alejandro", "Layos", "Montero", "alm@alm.alm", "23/06/1993");
-		Usuarios usuario10=new Usuarios("DPalomar", "clavedpal", "David", "Palomar", null, "dpal@dpal.dpal", "01/11/1967");
+		Usuarios usuario1=new Usuarios("MariaC", "clavemch", "Maria", "Canizares", "Holgado", "mch@mch.mch", "01/04/1992","Alumno");
+		Usuarios usuario2=new Usuarios("CarolAs", "clavecas", "Carolina", "Arredondo", "Silo", "cas@cas.cas", "20/06/1993","Alumno");
+		Usuarios usuario3=new Usuarios("TomasDTX", "clavetdtx", "Tomas", "Tee", "Xia", "tdtx@tdtx.tdtxc", "23/09/1990","Alumno");
+		Usuarios usuario4=new Usuarios("Antonio", "claveaml", "Antonio", "Martinez", "Alvarez", "ama@ama.ama", "16/04/1993","Alumno");
+		Usuarios usuario5=new Usuarios("ElsaCa", "claveecp", "Elsa", "Capunta", "Lapiz", "ecp@ecp.ecp", "08/11/1995","Alumno");
+		Usuarios usuario6=new Usuarios("JoseChu", "clavejlr", "Josechu", "Leton", "Rojo", "jlr@jlr.jlr", "22/08/1995","Alumno");
+		Usuarios usuario7=new Usuarios("AitorT", "claveat", "Aitor", "Tilla", null, "at@at.at", "09/09/1982","Alumno");
+		Usuarios usuario8=new Usuarios("BenitoC", "clavebc", "Benito", "Camela", null, "bc@bc.bc", "06/12/1978","Alumno");
+		Usuarios usuario9=new Usuarios("Layos", "clavealm", "Alejandro", "Layos", "Montero", "alm@alm.alm", "23/06/1993","Alumno");
+		Usuarios usuario10=new Usuarios("DPalomar", "clavedpal", "David", "Palomar", null, "dpal@dpal.dpal", "01/11/1967","Alumno");
 
 		
 		
@@ -235,6 +235,7 @@ public class registroWeb extends HttpServlet {
 			
 				break;
 				
+	
 			case "crearRegistrado":
 				
 				String nick = request.getParameter("nick");
@@ -245,15 +246,21 @@ public class registroWeb extends HttpServlet {
 				String apellido2 = request.getParameter("apellido2");
 				String fechanac= request.getParameter("fechanac");
 				String clave2 = request.getParameter("clave2");
+				String rol="Alumno";
 				//String aceptarterm = request.getParameter("aceptarterm");
 				
 				
-				if (comprobarUsuario(correo, clave1) == null) {
-					System.err.println("entro bien");
-					registrarRegistrado(nick, apellido1, correo, clave1, nombre,
-							apellido2, fechanac, clave2);
+				if (udao.buscarLogin(correo, clave1) == null) {
+					Usuarios nuevoUsuario=new Usuarios(nick, clave1, nombre, apellido1, apellido2,correo, fechanac, rol);
+
+					try {
+						udao.guardarUsuario(nuevoUsuario);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				
-					usuarioRegistro u = comprobarUsuario(correo, clave1);
+					Usuarios u =udao.buscarLogin(correo, clave1);
 					sesion.setAttribute("usuarioReg", u);
 					request.setAttribute("registrados", registrados);
 					
@@ -263,8 +270,10 @@ public class registroWeb extends HttpServlet {
 				} else {
 					System.err.println("entro mal");
 					try {
-						RegistrarUser(nick, nombre, apellido1, apellido2, clave1,
-								clave2, fechanac, correo);
+						Usuarios nuevoUsuario=new Usuarios(nick, clave1, nombre, apellido1, apellido2,correo, fechanac, rol);
+				
+
+						udao.actualizarUsuario(nuevoUsuario);
 						request.setAttribute("registrados", registrados);
 						pagina = formularioReg;
 					} catch (Exception e) {
@@ -274,6 +283,7 @@ public class registroWeb extends HttpServlet {
 				}
 				
 				break;
+			
 			
 			default:
 				

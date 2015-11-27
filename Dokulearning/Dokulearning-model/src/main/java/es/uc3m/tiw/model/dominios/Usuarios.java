@@ -54,9 +54,9 @@ public class Usuarios implements Serializable {
 	@Column(unique = false, nullable = true)
 	int telefono;
 	@Column(unique = false, nullable = true)
-
-	//es un estado
 	String rol;
+	//es un estado
+	
 
 	
 	/*
@@ -75,7 +75,7 @@ public class Usuarios implements Serializable {
 	}
 //para el registro	
 	public Usuarios(String nick, String clave, String nombre, String apellido1,
-			String apellido2, String correo, String fechanac) {
+			String apellido2, String correo, String fechanac, String rol) {
 		super();
 		this.nick = nick;
 		this.clave = clave;
@@ -84,6 +84,7 @@ public class Usuarios implements Serializable {
 		this.apellido2 = apellido2;
 		this.correo = correo;
 		this.fechanac = fechanac;
+		this.rol = rol;
 	}
 //para login	
 	public Usuarios(String clave, String correo) {
