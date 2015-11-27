@@ -19,62 +19,85 @@ public class Usuarios implements Serializable {
 	@Id
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
-	String rol;
-	//@Column(unique = true, nullable = false)
+	@Column(unique = true, nullable = false)
+	
+	//registrado
 	String nick;
 	String clave;
 	String nombre;
 	String apellido1;
 	@Column(unique = false, nullable = true)
 	String apellido2;
-	int telefono;
-	//@Column(unique = true, nullable = false)
-	String email;
+	String fechanac;
+	@Column(unique = true, nullable = false)
+	String correo;
+	
+	//matriculado
+	@Column(unique = false, nullable = true)
 	String cuentaBancaria;
+	@Column(unique = false, nullable = true)
 	String idImagen;
-	String fechaNacimiento;
+	@Column(unique = false, nullable = true)
 	String descripcion;
+	@Column(unique = false, nullable = true)
 	String aficiones;
+	@Column(unique = false, nullable = true)
 	String calle;
+	@Column(unique = false, nullable = true)
 	String localidad;
+	@Column(unique = false, nullable = true)
 	int codigoPostal;
+	@Column(unique = false, nullable = true)
 	String provincia;
+	@Column(unique = false, nullable = true)
 	String Pais;
+	@Column(unique = false, nullable = true)
+	int telefono;
+	@Column(unique = false, nullable = true)
+
+	//es un estado
+	String rol;
+
+	
 	/*
 	@OneToMany(fetch = LAZY, cascade = ALL)
     private  Matriculados matriculados;
 	
 	*/
 	
+	
+	
+	
+	
+	
 	public Usuarios() {
 		super();
 	}
 //para el registro	
 	public Usuarios(String nick, String clave, String nombre, String apellido1,
-			String apellido2, String email, String fechaNacimiento) {
+			String apellido2, String correo, String fechanac) {
 		super();
 		this.nick = nick;
 		this.clave = clave;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
-		this.email = email;
-		this.fechaNacimiento = fechaNacimiento;
+		this.correo = correo;
+		this.fechanac = fechanac;
 	}
 //para login	
-	public Usuarios(String clave, String email) {
+	public Usuarios(String clave, String correo) {
 		super();
 		this.clave = clave;
-		this.email = email;
+		this.correo = correo;
 	}
 //para perfil
-	public Usuarios(Long id, String rol, String nick, String clave, String nombre,
-			String apellido1, String apellido2, int telefono, String email,
-			String cuentaBancaria, String idImagen, String fechaNacimiento,
+	public Usuarios(String rol, String nick, String clave, String nombre,
+			String apellido1, String apellido2, int telefono, String correo,
+			String cuentaBancaria, String idImagen, String fechanac,
 			String descripcion, String aficiones, String calle, String localidad,
 			int codigoPostal, String provincia, String pais) {
 		super();
-		this.id = id;
 		this.rol = rol;
 		this.nick = nick;
 		this.clave = clave;
@@ -82,17 +105,17 @@ public class Usuarios implements Serializable {
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
 		this.telefono = telefono;
-		this.email = email;
+		this.correo = correo;
 		this.cuentaBancaria = cuentaBancaria;
 		this.idImagen = idImagen;
-		this.fechaNacimiento = fechaNacimiento;
+		this.fechanac = fechanac;
 		this.descripcion = descripcion;
 		this.aficiones = aficiones;
 		this.calle = calle;
 		this.localidad = localidad;
 		this.codigoPostal = codigoPostal;
 		this.provincia = provincia;
-		Pais = pais;
+		this.Pais = pais;
 	}
 	public Long getId() {
 		return id;
@@ -142,11 +165,11 @@ public class Usuarios implements Serializable {
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
 	}
-	public String getEmail() {
-		return email;
+	public String getCorreo() {
+		return correo;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 	public String getCuentaBancaria() {
 		return cuentaBancaria;
@@ -160,11 +183,11 @@ public class Usuarios implements Serializable {
 	public void setIdImagen(String idImagen) {
 		this.idImagen = idImagen;
 	}
-	public String getFechaNacimiento() {
-		return fechaNacimiento;
+	public String getFechanac() {
+		return fechanac;
 	}
-	public void setFechaNacimiento(String fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setFechanac(String fechanac) {
+		this.fechanac = fechanac;
 	}
 	public String getDescripcion() {
 		return descripcion;
@@ -211,11 +234,6 @@ public class Usuarios implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
-	
-	
-	
-	
+
 	
 }

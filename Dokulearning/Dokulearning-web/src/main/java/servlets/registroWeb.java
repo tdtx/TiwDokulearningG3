@@ -23,7 +23,9 @@ import es.uc3m.tiw.model.dominios.Usuarios;
 /**
  * Servlet implementation class registroWeb
  */
-@WebServlet("/registroWeb")
+//cuando arrancamos el servidor el servlet se llama a si mismo (loadOnStartUp
+//toda la base de datos de carga aqui porque es el unico q se va a arrancar solo
+@WebServlet(value="/registroWeb",loadOnStartup=1)
 public class registroWeb extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static ArrayList<usuarioRegistro> registrados;
@@ -49,19 +51,30 @@ public class registroWeb extends HttpServlet {
 		super.init();
 
 		
-			usuarioRegistro ur1 = new usuarioRegistro("MCH", "Maria", "Canizares",
-					"Holgado", "clavemch", "clavemch","05/12/1992","mch@mch.mch", true);
 			
-			usuarioRegistro ur2 = new usuarioRegistro("CAS", "Carol", "Arredondo",
-					"Silo", "clavecas", "clavecas", "cas@cas.cas", "20/09/1999", true);
-	
-			registrados = new ArrayList<usuarioRegistro>();
-			registrados.add(ur1);
-			registrados.add(ur2);
-		Usuarios usuario=new Usuarios("1111","m@m.m");
+		Usuarios usuario1=new Usuarios("MariaC", "clavemch", "Maria", "Canizares", "Holgado", "mch@mch.mch", "01/04/1992");
+		Usuarios usuario2=new Usuarios("CarolAs", "clavecas", "Carolina", "Arredondo", "Silo", "cas@cas.cas", "20/06/1993");
+		Usuarios usuario3=new Usuarios("TomasDTX", "clavetdtx", "Tomas", "Tee", "Xia", "tdtx@tdtx.tdtxc", "23/09/1990");
+		Usuarios usuario4=new Usuarios("Antonio", "claveaml", "Antonio", "Martinez", "Alvarez", "ama@ama.ama", "16/04/1993");
+		Usuarios usuario5=new Usuarios("ElsaCa", "claveecp", "Elsa", "Capunta", "Lapiz", "ecp@ecp.ecp", "08/11/1995");
+		Usuarios usuario6=new Usuarios("JoseChu", "clavejlr", "Josechu", "Leton", "Rojo", "jlr@jlr.jlr", "22/08/1995");
+		Usuarios usuario7=new Usuarios("AitorT", "claveat", "Aitor", "Tilla", null, "at@at.at", "09/09/1982");
+		Usuarios usuario8=new Usuarios("BenitoC", "clavebc", "Benito", "Camela", null, "bc@bc.bc", "06/12/1978");
+		Usuarios usuario9=new Usuarios("Layos", "clavealm", "Alejandro", "Layos", "Montero", "alm@alm.alm", "23/06/1993");
+		Usuarios usuario10=new Usuarios("DPalomar", "clavedpal", "David", "Palomar", null, "dpal@dpal.dpal", "01/11/1967");
+
 		udao=new UsuarioDAO(em, ut);
 	try {
-		udao.guardarUsuario(usuario);
+		udao.guardarUsuario(usuario1);
+		udao.guardarUsuario(usuario2);
+		udao.guardarUsuario(usuario3);
+		udao.guardarUsuario(usuario4);
+		udao.guardarUsuario(usuario5);
+		udao.guardarUsuario(usuario6);
+		udao.guardarUsuario(usuario7);
+		udao.guardarUsuario(usuario8);
+		udao.guardarUsuario(usuario9);
+		udao.guardarUsuario(usuario10);
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -91,7 +104,7 @@ public class registroWeb extends HttpServlet {
 	//para loguearse
 		if (action != null && action.equals("perfil")&& estado!=null) {
 
-			usuarioRegistro u=comprobarNick(estado);
+			Usuarios u=udao.buscarNick(estado);
 			if( u!= null){
 				pagina = "/perfilUsuario.jsp";
 				sesion.setAttribute("perfilRegistrado", u);
@@ -158,7 +171,7 @@ public class registroWeb extends HttpServlet {
 			correo = request.getParameter("correo");
 			
 			try {
-				usuarioRegistro u = comprobarUsuario(correo, clave1);
+				Usuarios u = udao.buscarLogin(correo, clave1);
 				if (u  != null) {
 					pagina = "/index.jsp";
 					request.setAttribute("registrados", registrados);
