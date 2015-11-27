@@ -15,7 +15,9 @@ import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 import dominio.usuarioRegistro;
+import es.uc3m.tiw.model.daos.CursoDAO;
 import es.uc3m.tiw.model.daos.UsuarioDAO;
+import es.uc3m.tiw.model.dominios.Curso;
 import es.uc3m.tiw.model.dominios.Usuarios;
 
 
@@ -36,7 +38,7 @@ public class registroWeb extends HttpServlet {
 	@Resource
 	UserTransaction ut;
 	UsuarioDAO udao;
-
+	CursoDAO cdao;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -78,10 +80,33 @@ public class registroWeb extends HttpServlet {
 		Usuarios usuario19=new Usuarios("EliasGH", "soyelias", "Elias", "Gomez", "Herrero", "20/08/1990", "egh@egh.egh", "Bolkoilkoikjuujki9876", "fonts/users_folder_128.png", "Activo y curioso", "La teconologia", "MArques de las Vias", "Bollullos", 87987, "Huelva", 908787654, "estudiante", "98778765t", "hombre");
 		Usuarios usuario20=new Usuarios("PedroCM", "soypedro", "Pedro", "Cuco", "Martin", "08/09/1990", "pcm@pcm.pcm", "Acvbhnjmkilko98765432", "fonts/users_folder_128.png", "Responsable y extrovertido", "Futbol", "de los Molinos", "Santander", 90870, "Cantabria", 908765432, "estudiante", "54667890i", "hombre");
 		
+		//Cursos
+				Curso curso1 = new Curso( "Estadistica", "Curso de estadistica", "0077","tema1 tema2 tema3 tema4", "123456789", "Medio","certificado", "Matematicas", "no","estado", 34, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso2 = new Curso("Fisica", "Curso de fisica", "0097","tema1 tema2 tema3 tema4 tema5", "223456789", "Medio","certificado", "Fisica", "no","estado", 23, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso3 = new Curso("Ingenieria del Software", "Curso de Ingenieria del Software", "0059","tema1 tema2 tema3 tema4", "323456789", "Medio","certificado", "Informatica", "no","estado", 34, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso4 = new Curso("Programacion", "Curso de programacion", "0077","tema1 tema2 tema3 tema4", "423456789", "Medio","certificado", "Informatica", "si","estado", 56, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso5 = new Curso("Literatura", "Curso de literatura", "0077","tema1 tema2 tema3 tema4", "523456789", "Medio","certificado", "Lengua y literatura", "no","estado", 32, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso6 = new Curso("Ingles", "Curso de ingles", "0077","tema1 tema2 tema3 tema4", "623456789", "Medio","certificado", "Idioma", "no","estado", 73, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso7 = new Curso("Frances", "Curso de Frances", "0077","tema1 tema2 tema3 tema4", "723456789", "Medio","certificado", "Idioma", "si","estado", 42, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso8 = new Curso( "Redes de computadoras", "Curso de redes", "0077","tema1 tema2 tema3 tema4", "823456789", "Medio","certificado", "Informatica", "no","estado", 16, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso9 = new Curso("Interfaces de usuario", "Curso de interfaces", "0077","tema1 tema2 tema3 tema4", "923456789", "Medio","certificado", "Informatica", "no","estado", 77, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso10 = new Curso( "Arquitectura de computadores", "Curso de arcos", "0077","tema1 tema2 tema3 tema4", "023456789", "Medio","certificado", "Informatica", "si","estado", 45, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
+				
+				Curso curso11 = new Curso("Italiano", "Curso de italiano", "0077","tema1 tema2 tema3 tema4", "133456789", "Medio","certificado", "Idiomas", "no","estado", 35, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso12 = new Curso("Chino", "Curso de chino", "0077","tema1 tema2 tema3 tema4", "143456789", "Medio","certificado", "Idiomas", "si","estado", 43, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso13 = new Curso("Criptografia", "Curso de criptografia", "0077","tema1 tema2 tema3 tema4", "153456789", "Medio","certificado", "Informatica", "no","estado", 55, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso14 = new Curso("SSOO", "Curso de SSOO", "0077","tema1 tema2 tema3 tema4", "163456789", "Medio","certificado", "Informatica", "no","estado", 73, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso15 = new Curso("Ficheros", "Curso de ficheros", "0077","tema1 tema2 tema3 tema4", "173456789", "Medio","certificado", "Informatica", "no","estado", 23, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso16 = new Curso("ADE", "Curso de ADE", "0077","tema1 tema2 tema3 tema4", "183456789", "Medio","certificado", "Empresa", "si","estado", 43, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso17 = new Curso("Algebra Lineal", "Curso de Algebra", "0077","tema1 tema2 tema3 tema4", "193456789", "Medio","certificado", "Matematicas", "no","estado", 36, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso18 = new Curso("Calculo", "Curso de calculo", "0077","tema1 tema2 tema3 tema4", "103456789", "Medio","certificado", "Matematicas", "si","estado", 85, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso19 = new Curso("Calculo Diferencial", "Curso de calculo diferencial", "0077","tema1 tema2 tema3 tema4", "113456789", "Medio","certificado", "Matematicas", "no","estado", 12, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				Curso curso20 = new Curso("Matematica Discreta", "Curso de matematica discreta", "0077","tema1 tema2 tema3 tema4", "124456789", "Medio","certificado", "Matematicas", "no","estado", 37, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
+				
+				
 		
 		
-		
-		
+		cdao=new CursoDAO(em, ut);
 		udao=new UsuarioDAO(em, ut);
 	try {
 		udao.guardarUsuario(usuario1);
@@ -104,6 +129,30 @@ public class registroWeb extends HttpServlet {
 		udao.guardarUsuario(usuario18);
 		udao.guardarUsuario(usuario19);
 		udao.guardarUsuario(usuario20);
+		
+		cdao.guardarCurso(curso1);
+		cdao.guardarCurso(curso2);
+		cdao.guardarCurso(curso3);
+		cdao.guardarCurso(curso4);
+		cdao.guardarCurso(curso5);
+		cdao.guardarCurso(curso6);
+		cdao.guardarCurso(curso7);
+		cdao.guardarCurso(curso8);
+		cdao.guardarCurso(curso9);
+		cdao.guardarCurso(curso10);
+		
+		cdao.guardarCurso(curso11);
+		cdao.guardarCurso(curso12);
+		cdao.guardarCurso(curso13);
+		cdao.guardarCurso(curso14);
+		cdao.guardarCurso(curso15);
+		cdao.guardarCurso(curso16);
+		cdao.guardarCurso(curso17);
+		cdao.guardarCurso(curso18);
+		cdao.guardarCurso(curso19);
+		cdao.guardarCurso(curso20);
+		
+		
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
