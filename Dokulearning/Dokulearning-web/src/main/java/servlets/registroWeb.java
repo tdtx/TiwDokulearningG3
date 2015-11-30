@@ -245,15 +245,52 @@ public class registroWeb extends HttpServlet {
 			
 				break;
 				
+				
+				
+				
+				
+			case "editarPerfil":
+			
+				String nick = request.getParameter("nickActual");
+				String nombre = request.getParameter("nombreActual");
+				String apellido1 = request.getParameter("apellido1Actual");
+				String apellido2 = request.getParameter("apellido2Actual");
+				correo = request.getParameter("correoActual");
+				String descripcion = request.getParameter("descripcionActual");
+				String aficiones = request.getParameter("aficionesActual");
+				Usuarios u = udao.buscarCorreo(correo);
+				u.setNick(nick);
+				u.setNombre(nombre);
+				u.setApellido1(apellido1);
+				u.setApellido2(apellido2);
+				u.setCorreo(correo);
+				u.setDescripcion(descripcion);
+				u.setAficiones(aficiones);	
+					try {
+						udao.actualizarUsuario(u);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					sesion.setAttribute("perfilRegistrado", u);
+					sesion.setAttribute("estadoValidacion", u.getNick());
+					pagina = "/perfilUsuario.jsp";
+				
+				
+			
+				break;
+				
+				
+				
 	
 			case "crearRegistrado":
 				
-				String nick = request.getParameter("nick");
-				String apellido1 = request.getParameter("apellido1");
-				 correo = request.getParameter("correoR");
-				 clave1 = request.getParameter("clave1");
-				String nombre = request.getParameter("nombre");
-				String apellido2 = request.getParameter("apellido2");
+				nick = request.getParameter("nick");
+				apellido1 = request.getParameter("apellido1");
+				correo = request.getParameter("correoR");
+				clave1 = request.getParameter("clave1");
+				nombre = request.getParameter("nombre");
+				apellido2 = request.getParameter("apellido2");
 				String fechanac= request.getParameter("fechanac");
 				String clave2 = request.getParameter("clave2");
 				String rol="Alumno";
@@ -270,14 +307,14 @@ public class registroWeb extends HttpServlet {
 						e.printStackTrace();
 					}
 				
-					Usuarios u =udao.buscarLogin(correo, clave1);
+					u =udao.buscarLogin(correo, clave1);
 					sesion.setAttribute("usuarioReg", u);
 					request.setAttribute("registrados", registrados);
 					
 			
 					pagina = "/index.jsp";
 					
-				} else {
+				} /*else {
 					System.err.println("entro mal");
 					try {
 						Usuarios nuevoUsuario=new Usuarios(nick, clave1, nombre, apellido1, apellido2,correo, fechanac, rol);
@@ -290,7 +327,7 @@ public class registroWeb extends HttpServlet {
 						e.printStackTrace();
 						System.out.println("ERROR");
 					}
-				}
+				}*/
 				
 				break;
 			
@@ -298,8 +335,8 @@ public class registroWeb extends HttpServlet {
 			default:
 				
 				break;
-				
-		}
+	}		
+		
 
 		response.setContentType("text/html");
 		this.getServletContext().getRequestDispatcher(pagina)
@@ -309,6 +346,17 @@ public class registroWeb extends HttpServlet {
 		
 	}
 
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
 	// editar
 	public void RegistrarUser(String nick, String nombre, String apellido1,
 			String apellido2, String clave1, String clave2, String fechanac,String correo) {
@@ -328,17 +376,6 @@ public class registroWeb extends HttpServlet {
 	}
 	
 	
-	/*public void cambiarClave(String claveActual, String claveNueva) {
-		// TODO Auto-generated method stub
-
-		for (usuarioRegistro cc : registrados) {
-			if (claveActual.equals(cc.getClave1())) {
-				cc.setClave1(claveNueva);
-				cc.setClave2(claveNueva);
-			}
-		}
-	}
-	*/
 	
 	// añadir registrados al array
 	public void registrarRegistrado(String nick, String nombre,

@@ -92,7 +92,14 @@
 							<div class="form-group">
 								<label>Correo electronico:&nbsp;&nbsp;</label>${registrado.correo}</div>
 							<div class="form-group">
-								<label>Fecha de nacimiento:&nbsp;&nbsp;</label>${registrado.fechanac}</div>
+								<label>Fecha de nacimiento:&nbsp;&nbsp;</label>${registrado.fechanac}</div>	
+							<div class="form-group">
+								<label>Descripcion:&nbsp;&nbsp;</label>${registrado.descripcion}</div>	
+							<div class="form-group">
+								<label>Aficiones:&nbsp;&nbsp;</label>${registrado.aficiones}</div>	
+							<div class="form-group">
+								<label>Rol:&nbsp;&nbsp;</label>${registrado.rol}</div>
+								
 
 
 
@@ -258,14 +265,14 @@
 											<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 										</button>
 										<div class="dialog-title">Editar perfil
-											${registrado.nick}</div>
+											</div>
 									</div>
 									<div class="modal-body">
 
 										<!---Form Registrado -------------------------->
 										<form action="registroWeb" method="post"
 											class="form-horizontal" role="form">
-											<input type="text" name="distribucion" value="cambiarClave"
+											<input type="text" name="distribucion" value="editarPerfil"
 												style="display: none">
 
 
@@ -273,19 +280,21 @@
 												<div class="form-group col-md-6">
 													<div>
 														<label for="nickActual">Nick: </label> <input type="text"
-															class="form-control" id="nickActual" name="nickActual">
+															class="form-control" id="nickActual" name="nickActual"
+															value="${registrado.nick}">
 
 													</div>
 													<div>
-														<label for="nombrActual"><br>Nombre: </label> <input
-															type="text" class="form-control" id="nombrActual"
-															name="nombrActual">
+														<label for="nombreActual"><br>Nombre: </label> <input
+															type="text" class="form-control" id="nombreActual"
+															name="nombreActual" value="${registrado.nombre}">
 
 													</div>
 													<div>
 														<label for="correoActual"><br>Correo
 															electronico: </label> <input type="text" class="form-control"
-															id="correoActual" name="correoActual">
+															id="correoActual" name="correoActual"
+															value="${registrado.correo}" readonly>
 
 													</div>
 
@@ -296,15 +305,31 @@
 
 												<div class="form-group col-md-6">
 													<div>
-														<label for="apellido1Nueva">Primer apellido: </label> <input
-															type="text" class="form-control" id="apellido1Nueva"
-															name="apellido1Nueva">
+														<label for="apellido1Actual">Primer apellido: </label> <input
+															type="text" class="form-control" id="apellido1Actual"
+															name="apellido1Actual"
+															value="${registrado.apellido1}">
 													</div>
 
 													<div>
-														<label for="apellido2Nueva"><br>Segundo
+														<label for="apellido2Actual"><br>Segundo
 															apellido: </label> <input type="text" class="form-control"
-															id="apellido2Nueva" name="apellido2Nueva">
+															id="apellido2Actual" name="apellido2Actual"
+															value="${registrado.apellido2}">
+													</div>
+													
+													<div>
+														<label for="descripcionActual"><br>Descripcion:
+														 </label> <input type="text" class="form-control"
+															id="descripcionActual" name="descripcionActual"
+															value="${registrado.descripcion}">
+													</div>
+																
+													<div>
+														<label for="aficionesActual"><br>Aficiones:
+														 </label> <input type="text" class="form-control"
+															id="aficionesActual" name="aficionesActual"
+															value="${registrado.aficiones}">
 													</div>
 
 												</div>

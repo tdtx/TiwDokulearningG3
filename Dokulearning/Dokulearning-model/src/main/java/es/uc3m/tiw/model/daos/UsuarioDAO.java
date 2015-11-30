@@ -88,6 +88,19 @@ public class UsuarioDAO {
 			
 		}
     
+	public Usuarios buscarCorreo(String correo) {
+		
+		Query query =  em.createQuery("SELECT u FROM Usuarios u where u.correo=:correo", Usuarios.class);
+		query.setParameter("correo",correo );
+		List resultList = query.getResultList();
+		if (resultList.isEmpty()) {
+			return null;
+		}else{
+		
+			return (Usuarios) query.getSingleResult();
+		}
+		
+	}
      
     public Usuarios buscarCliente(Long id) {
         return em.find(Usuarios.class, id);
