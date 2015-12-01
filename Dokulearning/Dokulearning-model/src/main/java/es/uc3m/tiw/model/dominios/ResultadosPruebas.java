@@ -19,7 +19,7 @@ private static final long serialVersionUID = 1L;
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
 	@Column(unique = true, nullable = false)
-	long id_prueba;
+	String id_prueba;
 	@Column(unique = true, nullable = false)
 	String id_matricula;
 	double nota;
@@ -32,10 +32,9 @@ private static final long serialVersionUID = 1L;
 	}
 	
 	
-	public ResultadosPruebas(Long id, long id_prueba, String id_matricula,
+	public ResultadosPruebas(String id_prueba, String id_matricula,
 			double nota, String comentario) {
 		super();
-		this.id = id;
 		this.id_prueba = id_prueba;
 		this.id_matricula = id_matricula;
 		this.nota = nota;
@@ -49,10 +48,10 @@ private static final long serialVersionUID = 1L;
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public long getId_prueba() {
+	public String getId_prueba() {
 		return id_prueba;
 	}
-	public void setId_prueba(long id_prueba) {
+	public void setId_prueba(String id_prueba) {
 		this.id_prueba = id_prueba;
 	}
 	public String getId_matricula() {

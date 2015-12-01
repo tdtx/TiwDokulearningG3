@@ -39,9 +39,8 @@ private static final long serialVersionUID = 1L;
 	}
 	
 	
-	public Pruebas(Long id, String id_curso, String descripcion) {
+	public Pruebas(String id_curso, String descripcion) {
 		super();
-		this.id = id;
 		this.id_curso = id_curso;
 		this.descripcion = descripcion;
 	}

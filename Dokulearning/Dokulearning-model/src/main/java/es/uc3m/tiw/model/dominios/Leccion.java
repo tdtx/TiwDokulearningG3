@@ -32,9 +32,8 @@ public class Leccion implements Serializable {
 	public Leccion() {
 		super();
 	}
-	public Leccion(Long id, String idCurso, String idSeccion, String descripcion) {
+	public Leccion(String idCurso, String idSeccion, String descripcion) {
 		super();
-		this.id = id;
 		this.idCurso = idCurso;
 		this.idSeccion = idSeccion;
 		this.descripcion = descripcion;

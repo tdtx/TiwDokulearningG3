@@ -15,9 +15,21 @@ import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 import dominio.usuarioRegistro;
+import es.uc3m.tiw.model.daos.CreadorCursoDAO;
 import es.uc3m.tiw.model.daos.CursoDAO;
+import es.uc3m.tiw.model.daos.ImagenDAO;
+import es.uc3m.tiw.model.daos.LeccionDAO;
+import es.uc3m.tiw.model.daos.PruebaDAO;
+import es.uc3m.tiw.model.daos.ResultadoPruebaDAO;
+import es.uc3m.tiw.model.daos.SeccionDAO;
 import es.uc3m.tiw.model.daos.UsuarioDAO;
+import es.uc3m.tiw.model.dominios.CreadorCurso;
 import es.uc3m.tiw.model.dominios.Curso;
+import es.uc3m.tiw.model.dominios.Imagenes;
+import es.uc3m.tiw.model.dominios.Leccion;
+import es.uc3m.tiw.model.dominios.Pruebas;
+import es.uc3m.tiw.model.dominios.ResultadosPruebas;
+import es.uc3m.tiw.model.dominios.Seccion;
 import es.uc3m.tiw.model.dominios.Usuarios;
 
 
@@ -39,6 +51,12 @@ public class registroWeb extends HttpServlet {
 	UserTransaction ut;
 	UsuarioDAO udao;
 	CursoDAO cdao;
+	ImagenDAO idao;
+	SeccionDAO sdao;
+	LeccionDAO ldao;
+	PruebaDAO pdao;
+	ResultadoPruebaDAO rpdao;
+	CreadorCursoDAO ccdao;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -91,7 +109,7 @@ public class registroWeb extends HttpServlet {
 				Curso curso8 = new Curso( "Redes de computadoras", "Curso de redes", "0077","tema1 tema2 tema3 tema4", "823456789", "Medio","certificado", "Informatica", "no","estado", 16, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
 				Curso curso9 = new Curso("Interfaces de usuario", "Curso de interfaces", "0077","tema1 tema2 tema3 tema4", "923456789", "Medio","certificado", "Informatica", "no","estado", 77, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
 				Curso curso10 = new Curso( "Arquitectura de computadores", "Curso de arcos", "0077","tema1 tema2 tema3 tema4", "023456789", "Medio","certificado", "Informatica", "si","estado", 45, "si", "fonts/users_folder_128.png", "23/12/15", "valor");
-				
+		
 				Curso curso11 = new Curso("Italiano", "Curso de italiano", "0077","tema1 tema2 tema3 tema4", "133456789", "Medio","certificado", "Idiomas", "no","estado", 35, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
 				Curso curso12 = new Curso("Chino", "Curso de chino", "0077","tema1 tema2 tema3 tema4", "143456789", "Medio","certificado", "Idiomas", "si","estado", 43, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
 				Curso curso13 = new Curso("Criptografia", "Curso de criptografia", "0077","tema1 tema2 tema3 tema4", "153456789", "Medio","certificado", "Informatica", "no","estado", 55, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
@@ -103,11 +121,134 @@ public class registroWeb extends HttpServlet {
 				Curso curso19 = new Curso("Calculo Diferencial", "Curso de calculo diferencial", "0077","tema1 tema2 tema3 tema4", "113456789", "Medio","certificado", "Matematicas", "no","estado", 12, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
 				Curso curso20 = new Curso("Matematica Discreta", "Curso de matematica discreta", "0077","tema1 tema2 tema3 tema4", "124456789", "Medio","certificado", "Matematicas", "no","estado", 37, "no", "fonts/users_folder_128.png", "23/12/15", "valor");
 				
-				
+		//imagenes
+		Imagenes imagen1 = new Imagenes("fonts/users_folder_128.png");
+		Imagenes imagen2 = new Imagenes("imagenes/addressbook_add_128.png");
+		
+		//secciones
+		Seccion seccion1 = new Seccion("Electricidad fisica");
+		Seccion seccion2 = new Seccion("Fuerzas magneticas");
+		Seccion seccion3 = new Seccion("Italiano practico");
+		Seccion seccion4 = new Seccion("Teoria francesa");
+		Seccion seccion5 = new Seccion("Teoria italiana");
+		Seccion seccion6 = new Seccion("Metodos en java");
+		Seccion seccion7 = new Seccion("Teoria de grafos");
+		Seccion seccion8 = new Seccion("El Modelo relacional");
+		Seccion seccion9 = new Seccion("Historia del chino");
+		Seccion seccion10 = new Seccion("Integrales");
+		Seccion seccion11 = new Seccion("Derivadas");
+		Seccion seccion12 = new Seccion("Sistemas operativos monoliticos");
+		Seccion seccion13 = new Seccion("Ataques criptograficos");
+		Seccion seccion14 = new Seccion("Historia de España");
+		Seccion seccion15 = new Seccion("El arte moderno");
+		Seccion seccion16 = new Seccion("Literatura francesa");
+		Seccion seccion17 = new Seccion("Clases y objetos en java");
+		Seccion seccion18 = new Seccion("Ejercicios practicos de C++");
+		Seccion seccion19 = new Seccion("Combinatoria basica");
+		Seccion seccion20 = new Seccion("Combinatoria avanzada");
 		
 		
+		//Lecciones  
+		Leccion leccion1=new Leccion("idcurso1","idseccion1","Introduccion a la electricidad");
+		Leccion leccion2=new Leccion("idcurso2","idseccion2","Introduccion al electromagnetismo");
+		Leccion leccion3=new Leccion("idcurso3","idseccion3","La economia clasica");
+		Leccion leccion4=new Leccion("idcurso4","idseccion4","Indicadores macroeconomicos");
+		Leccion leccion5=new Leccion("idcurso5","idseccion5","Vocabulario italiano de negocios");
+		Leccion leccion6=new Leccion("idcurso6","idseccion6","Los metodos get y post");
+		Leccion leccion7=new Leccion("idcurso7","idseccion7","Memoria RAM");
+		Leccion leccion8=new Leccion("idcurso8","idseccion8","Memoria Cache");
+		Leccion leccion9=new Leccion("idcurso9","idseccion9","Memoria Virtual");
+		Leccion leccion10=new Leccion("idcurso10","idseccion10","Grafos eulerianos");
+		Leccion leccion11=new Leccion("idcurso11","idseccion11","Grafos hamiltonianos");
+		Leccion leccion12=new Leccion("idcurso12","idseccion12","Museos en el mundo moderno");
+		Leccion leccion13=new Leccion("idcurso13","idseccion13","La posesia moderna");
+		Leccion leccion14=new Leccion("idcurso14","idseccion14","virus informaticos");
+		Leccion leccion15=new Leccion("idcurso15","idseccion15","Campos electricos");
+		Leccion leccion16=new Leccion("idcurso16","idseccion16","Campos magneticos");
+		Leccion leccion17=new Leccion("idcurso17","idseccion17","Gauss");
+		Leccion leccion18=new Leccion("idcurso18","idseccion18","Verbos italianos");
+		Leccion leccion19=new Leccion("idcurso19","idseccion19","Vocabulario chino de ocio");
+		Leccion leccion20=new Leccion("idcurso20","idseccion20","teorema de Euler");
+		
+		//pruebas 
+		Pruebas prueba1=new Pruebas ("idcursoo1","Examen de combinatoria basica");
+		Pruebas prueba2=new Pruebas ("idcursoo1","Examen de combinatoria avanzada");
+		Pruebas prueba3=new Pruebas ("idcursoo3","Examen de redes");
+		Pruebas prueba4=new Pruebas ("idcursoo4","Examen de grafos eulerianos y hamiltonianos");
+		Pruebas prueba5=new Pruebas ("idcursoo5","Examen de algebra lineal");
+		Pruebas prueba6=new Pruebas ("idcursoo6","Examen de vocabulario chino");
+		Pruebas prueba7=new Pruebas ("idcursoo7","Examen de vocabulario italiano");
+		Pruebas prueba8=new Pruebas ("idcursoo8","Examen practico de chino");
+		Pruebas prueba9=new Pruebas ("idcursoo9","Examen practico de italiano");
+		Pruebas prueba10=new Pruebas ("idcursoo10","Examen de electricidad fisica");
+		Pruebas prueba11=new Pruebas ("idcursoo11","Examen de ficheros");
+		Pruebas prueba12=new Pruebas ("idcursoo12","Examen de historia");
+		Pruebas prueba13=new Pruebas ("idcursoo13","Examen de calculo diferencial aplicado");
+		Pruebas prueba14=new Pruebas ("idcursoo14","Examen de ADE");
+		Pruebas prueba15=new Pruebas ("idcursoo15","Exmamen de estadisitca");
+		Pruebas prueba16=new Pruebas ("idcursoo16","Examen de virus informaticos");
+		Pruebas prueba17=new Pruebas ("idcursoo17","Examen de ejercicios de memoria cache");
+		Pruebas prueba18=new Pruebas ("idcursoo18","Examen teorico de memoria cache");
+		Pruebas prueba19=new Pruebas ("idcursoo19","Examen de ejercicios de memoria virtual");
+		Pruebas prueba20=new Pruebas ("idcursoo20","Examen teorico de memoria virtual");
+		
+		//resultados pruebas
+		ResultadosPruebas resultado1=new ResultadosPruebas("idprueba1", "idmatricula1", 3.0, "suspenso");
+		ResultadosPruebas resultado2=new ResultadosPruebas("idprueba2", "idmatricula2", 3.98, "suspenso");
+		ResultadosPruebas resultado3=new ResultadosPruebas("idprueba3", "idmatricula3", 4.5, "suspenso");
+		ResultadosPruebas resultado4=new ResultadosPruebas("idprueba4", "idmatricula4", 5.1, "aprobado");
+		ResultadosPruebas resultado5=new ResultadosPruebas("idprueba5", "idmatricula5", 9.45, "sobresaliente");
+		ResultadosPruebas resultado6=new ResultadosPruebas("idprueba6", "idmatricula6", 3.75, "suspenso");
+		ResultadosPruebas resultado7=new ResultadosPruebas("idprueba7", "idmatricula7", 3.9, "suspenso");
+		ResultadosPruebas resultado8=new ResultadosPruebas("idprueba8", "idmatricula8", 8.0, "notable");
+		ResultadosPruebas resultado9=new ResultadosPruebas("idprueba9", "idmatricula9", 7.7, "notable");
+		ResultadosPruebas resultado10=new ResultadosPruebas("idprueba10", "idmatricula10", 6.75, "bien");
+		ResultadosPruebas resultado11=new ResultadosPruebas("idprueba11", "idmatricula11", 1.95, "suspenso");
+		ResultadosPruebas resultado12=new ResultadosPruebas("idprueba12", "idmatricula12", 8.9, "notable");
+		ResultadosPruebas resultado13=new ResultadosPruebas("idprueba13", "idmatricula13", 9.25, "sobresaliente");
+		ResultadosPruebas resultado14=new ResultadosPruebas("idprueba14", "idmatricula14", 2.6, "suspenso");
+		ResultadosPruebas resultado15=new ResultadosPruebas("idprueba15", "idmatricula15", 7.5, "notable");
+		ResultadosPruebas resultado16=new ResultadosPruebas("idprueba16", "idmatricula16", 8.3, "notable");
+		ResultadosPruebas resultado17=new ResultadosPruebas("idprueba17", "idmatricula17", 4.5, "suspenso");
+		ResultadosPruebas resultado18=new ResultadosPruebas("idprueba18", "idmatricula18", 6.75, "bien");
+		ResultadosPruebas resultado19=new ResultadosPruebas("idprueba19", "idmatricula19", 6.01, "bien");
+		ResultadosPruebas resultado20=new ResultadosPruebas("idprueba20", "idmatricula20", 3.9, "suspenso");
+		
+		//profesores
+		CreadorCurso profesor1=new CreadorCurso("Estadistica","LidiRG",125.8);
+		CreadorCurso profesor2=new CreadorCurso("Fisica","LidiRG",130.2);
+		CreadorCurso profesor3=new CreadorCurso("Ingenieria del Software","LidiRG",115.3);
+		CreadorCurso profesor4=new CreadorCurso("Programacion","LidiRG",136.9);
+		CreadorCurso profesor5=new CreadorCurso("Literatura", "RaulFJ",150.9);
+		CreadorCurso profesor6=new CreadorCurso("Ingles", "RaulFJ",160.8);
+		CreadorCurso profesor7=new CreadorCurso("Frances", "RaulFJ", 100.30);
+		CreadorCurso profesor8=new CreadorCurso( "Redes de computadoras","RaulFJ", 200.5);
+		CreadorCurso profesor9=new CreadorCurso("Interfaces de usuario", "MartinMF", 300.4);
+		CreadorCurso profesor10=new CreadorCurso("Arquitectura de computadores", "MartinMF", 280.9);
+		CreadorCurso profesor11=new CreadorCurso("Italiano", "MartinMF", 198.3);
+		CreadorCurso profesor12=new CreadorCurso("Chino","MartinMF", 120.6);
+		CreadorCurso profesor13=new CreadorCurso("Criptografia", "AlbaMP", 200.4);
+		CreadorCurso profesor14=new CreadorCurso("SSOO", "AlbaMP", 321.6);
+		CreadorCurso profesor15=new CreadorCurso("Ficheros", "AlbaMP", 123.4);
+		CreadorCurso profesor16=new CreadorCurso("ADE", "AlbaMP", 176.9);
+		CreadorCurso profesor17=new CreadorCurso("Algebra Lineal", "BelenNC", 120.2);
+		CreadorCurso profesor18=new CreadorCurso("Calculo", "BelenNC",190.5);
+		CreadorCurso profesor19=new CreadorCurso("Calculo Diferencial", "BelenNC", 120.8);
+		CreadorCurso profesor20=new CreadorCurso("Matematica Discreta", "BelenNC", 215.8);
+		
+
+	
+		
+		
+		ccdao= new CreadorCursoDAO(em,ut);
+		rpdao=new ResultadoPruebaDAO(em, ut);
+		pdao=new PruebaDAO(em, ut);
+		ldao=new LeccionDAO(em,ut);
+		sdao=new SeccionDAO(em,ut);
+		idao=new ImagenDAO(em, ut);
 		cdao=new CursoDAO(em, ut);
 		udao=new UsuarioDAO(em, ut);
+		
 	try {
 		udao.guardarUsuario(usuario1);
 		udao.guardarUsuario(usuario2);
@@ -151,6 +292,118 @@ public class registroWeb extends HttpServlet {
 		cdao.guardarCurso(curso18);
 		cdao.guardarCurso(curso19);
 		cdao.guardarCurso(curso20);
+		
+		idao.guardarImagen(imagen1);
+		idao.guardarImagen(imagen2);
+		
+		sdao.guardarSeccion(seccion1);
+		sdao.guardarSeccion(seccion2);
+		sdao.guardarSeccion(seccion3);
+		sdao.guardarSeccion(seccion4);
+		sdao.guardarSeccion(seccion5);
+		sdao.guardarSeccion(seccion6);
+		sdao.guardarSeccion(seccion7);
+		sdao.guardarSeccion(seccion8);
+		sdao.guardarSeccion(seccion9);
+		sdao.guardarSeccion(seccion10);
+		sdao.guardarSeccion(seccion11);
+		sdao.guardarSeccion(seccion12);
+		sdao.guardarSeccion(seccion13);
+		sdao.guardarSeccion(seccion14);
+		sdao.guardarSeccion(seccion15);
+		sdao.guardarSeccion(seccion16);
+		sdao.guardarSeccion(seccion17);
+		sdao.guardarSeccion(seccion18);
+		sdao.guardarSeccion(seccion19);
+		sdao.guardarSeccion(seccion20);
+		
+		ldao.guardarLeccion(leccion1);
+		ldao.guardarLeccion(leccion2);
+		ldao.guardarLeccion(leccion3);
+		ldao.guardarLeccion(leccion4);
+		ldao.guardarLeccion(leccion5);
+		ldao.guardarLeccion(leccion6);
+		ldao.guardarLeccion(leccion7);
+		ldao.guardarLeccion(leccion8);
+		ldao.guardarLeccion(leccion9);
+		ldao.guardarLeccion(leccion10);
+		ldao.guardarLeccion(leccion11);
+		ldao.guardarLeccion(leccion12);
+		ldao.guardarLeccion(leccion13);
+		ldao.guardarLeccion(leccion14);
+		ldao.guardarLeccion(leccion15);
+		ldao.guardarLeccion(leccion16);
+		ldao.guardarLeccion(leccion17);
+		ldao.guardarLeccion(leccion18);
+		ldao.guardarLeccion(leccion19);
+		ldao.guardarLeccion(leccion20);
+		
+		pdao.guardarPrueba(prueba1);
+		pdao.guardarPrueba(prueba2);
+		pdao.guardarPrueba(prueba3);
+		pdao.guardarPrueba(prueba4);
+		pdao.guardarPrueba(prueba5);
+		pdao.guardarPrueba(prueba6);
+		pdao.guardarPrueba(prueba7);
+		pdao.guardarPrueba(prueba8);
+		pdao.guardarPrueba(prueba9);
+		pdao.guardarPrueba(prueba10);
+		pdao.guardarPrueba(prueba11);
+		pdao.guardarPrueba(prueba12);
+		pdao.guardarPrueba(prueba13);
+		pdao.guardarPrueba(prueba14);
+		pdao.guardarPrueba(prueba15);
+		pdao.guardarPrueba(prueba16);
+		pdao.guardarPrueba(prueba17);
+		pdao.guardarPrueba(prueba18);
+		pdao.guardarPrueba(prueba19);
+		pdao.guardarPrueba(prueba20);
+		
+		rpdao.guardarResultadoPrueba(resultado1);
+		rpdao.guardarResultadoPrueba(resultado2);
+		rpdao.guardarResultadoPrueba(resultado3);
+		rpdao.guardarResultadoPrueba(resultado4);
+		rpdao.guardarResultadoPrueba(resultado5);
+		rpdao.guardarResultadoPrueba(resultado6);
+		rpdao.guardarResultadoPrueba(resultado7);
+		rpdao.guardarResultadoPrueba(resultado8);
+		rpdao.guardarResultadoPrueba(resultado9);
+		rpdao.guardarResultadoPrueba(resultado10);
+		rpdao.guardarResultadoPrueba(resultado11);
+		rpdao.guardarResultadoPrueba(resultado12);
+		rpdao.guardarResultadoPrueba(resultado13);
+		rpdao.guardarResultadoPrueba(resultado14);
+		rpdao.guardarResultadoPrueba(resultado15);
+		rpdao.guardarResultadoPrueba(resultado17);
+		rpdao.guardarResultadoPrueba(resultado18);
+		rpdao.guardarResultadoPrueba(resultado19);
+		rpdao.guardarResultadoPrueba(resultado20);
+		
+		ccdao.guardarProfesor(profesor1);
+		ccdao.guardarProfesor(profesor2);
+		ccdao.guardarProfesor(profesor3);
+		ccdao.guardarProfesor(profesor4);
+		ccdao.guardarProfesor(profesor5);
+		ccdao.guardarProfesor(profesor6);
+		ccdao.guardarProfesor(profesor7);
+		ccdao.guardarProfesor(profesor8);
+		ccdao.guardarProfesor(profesor9);
+		ccdao.guardarProfesor(profesor10);
+		ccdao.guardarProfesor(profesor11);
+		ccdao.guardarProfesor(profesor12);
+		ccdao.guardarProfesor(profesor13);
+		ccdao.guardarProfesor(profesor14);
+		ccdao.guardarProfesor(profesor15);
+		ccdao.guardarProfesor(profesor16);
+		ccdao.guardarProfesor(profesor17);
+		ccdao.guardarProfesor(profesor18);
+		ccdao.guardarProfesor(profesor19);
+		ccdao.guardarProfesor(profesor20);
+		
+		
+		
+		
+		
 		
 		
 	} catch (Exception e) {

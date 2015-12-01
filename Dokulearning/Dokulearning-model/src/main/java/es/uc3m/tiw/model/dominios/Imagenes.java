@@ -36,9 +36,8 @@ public class Imagenes  implements Serializable{
 		super();
 	}
 	
-	public Imagenes(Long id, String imagen) {
+	public Imagenes(String imagen) {
 		super();
-		this.id = id;
 		this.imagen = imagen;
 	}
 

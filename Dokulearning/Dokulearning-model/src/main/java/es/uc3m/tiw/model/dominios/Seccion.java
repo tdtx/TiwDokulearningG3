@@ -28,9 +28,8 @@ public class Seccion implements Serializable {
 	public Seccion() {
 		super();
 	}
-	public Seccion(Long id, String descripcion) {
+	public Seccion(String descripcion) {
 		super();
-		this.id = id;
 		this.descripcion = descripcion;
 	}
 	public Long getId() {
