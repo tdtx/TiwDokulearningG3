@@ -195,11 +195,7 @@
 											
 											
 											
-											<div class="form-group col-md-6">
-													<label for="nickClave">Nick </label> <input
-														type="text" class="form-control" id="nickClave"
-														name="nickClave" readonly value="${registrado.nick}">
-												</div>
+										
 											<div class="form-group col-md-1"></div>
 												<div class="form-group col-md-1"></div>
 												<div class="form-group col-md-6">
@@ -343,6 +339,7 @@
 															class="btn boton-secundario" data-dismiss="modal">Cerrar</button>
 													</div>
 												</div>
+													</div>
 										</form>
 
 
@@ -362,7 +359,7 @@
 
 		</div>
 	</div>
-	</div>
+
 
 
 	<jsp:include page="footer.jsp"></jsp:include>

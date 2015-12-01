@@ -226,12 +226,14 @@ public class registroWeb extends HttpServlet {
 			
 			case "cambiarClave":
 				String claveActual = request.getParameter("claveActual");
-				String nickC = request.getParameter("nickClave");
 				String claveNueva = request.getParameter("claveNueva");
 				//String RclaveNueva = request.getParameter("RclaveNueva");
 				if (claveActual != null) {
-					Usuarios u=udao.actualizarClave(nickC, claveActual);
-					u.setClave(claveNueva);
+					Long idUsuario = (Long) sesion.getAttribute("idUsuario");
+					Usuarios u = udao.buscarId(idUsuario);
+					if (claveActual.equals(u.getClave())) {
+						u.setClave(claveNueva);
+					}					
 					try {
 						udao.actualizarUsuario(u);
 					} catch (Exception e) {
