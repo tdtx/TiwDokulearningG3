@@ -69,7 +69,7 @@
 							<span>Editar Perfil</span>
 						</button>
 
-						</br> </br> <a href="formularioCurso.jsp"><button type="button"
+						</br> </br> <a href="Cursos?accion=crearCurso&estado=${registrado.nick}"><button type="button"
 								class="btn btn-default">Crear curso</button></a> </br> </br>
 
 						<button class="btn btn-default" title="mis cursos">Mis

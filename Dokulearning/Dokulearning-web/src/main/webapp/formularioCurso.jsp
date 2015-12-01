@@ -24,6 +24,7 @@
 <script src="js/jquery.js"></script>
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script src="js/validarCurso2.js"></script>
+
 <style type="text/css">
 .error {
 	color: red;
@@ -38,6 +39,8 @@
 
 </head>
 <body>
+<c:set var="miperfil" scope="session" value="${cursos}"></c:set>
+
 	<jsp:include page="header.jsp"></jsp:include>
 
 
@@ -69,20 +72,30 @@
 
 							<label id="labelNombre" for="nom">Nombre de curso </label> <input
 								class="form-control" type="text" id="nom" name="nom"
-								placeholder="Ej.: Matematicas" /><br /> <label
+								placeholder="Ej.: Matematicas" /><br /> 
+								
+							<label
 								id="labelDescripcion">Descripcion del curso</label>
 							<textarea class="form-control" rows="3" name="descripcion"
 								id="descripcion" placeholder="Ej.: bases de datos"></textarea>
-							<br /> <label>Listado del contenido del curso</label>
+							<br />
+							
+							<label id="labelListado">Listado del contenido del curso</label>
 							<textarea class="form-control" rows="3" name="temario"
 								id="temario" placeholder="Ej.: titulos de los temas"></textarea>
-							<br /> <label>Listado de secciones del curso</label>
+							<br /> 
+							
+							<label id="labelListadoSec">Listado de secciones del curso</label>
 							<textarea class="form-control" rows="3" name="secciones"
 								id="secciones" placeholder="Ej.: bloque 1, bloque2,..."></textarea>
-							<br /> <label>Listado de lecciones del curso</label>
+							<br />
+							
+							 <label id="labelListadoLec">Listado de lecciones del curso</label>
 							<textarea class="form-control" rows="3" name="lecciones"
 								id="lecciones" placeholder="Ej.: tema1, tema2,..."></textarea>
-							<br /> <label>Imagen del curso</label> <input type="file"
+							<br />
+							
+							<label>Imagen del curso</label> <input type="file"
 								name="imagen" id="imagen">
 
 
@@ -91,29 +104,33 @@
 
 						<div class="form-group col-lg-4">
 
-							<label>Precio</label> <input class="form-control" type="number"
+							<label id="labelPrecio">Precio</label> <input class="form-control" type="text"
 								name="precio" id="precio" placeholder="Ej.: 300"> <br />
 
-							<label>Numero de horas</label> <input class="form-control"
-								type="number" name="horas" id="horas"
-								placeholder="Ej.: 0053 (cuatro digitos)"> <br /> <label>Nombre
+							<label id="labelNumHoras">Numero de horas</label> <input class="form-control"
+								type="text" name="horas" id="horas"
+								placeholder="Ej.: 0053 (cuatro digitos)"> <br /> 
+								
+							<label id="labelNombreProf">Nombre
 								del profesor</label> <input class="form-control" type="text"
-								name="profesor" id="profesor" placeholder="Ej.: Pepe"> <br />
-							<label>Fecha inicio del curso</label> <input class="form-control"
+								name="profesor" id="profesor" readonly value="${miperfil.nick}"> <br />
+				
+							
+							<label id="labelFechaIni">Fecha inicio del curso</label> <input class="form-control"
 								type="text" name="f_inicio" id="f_inicio"
-								placeholder="Ej: 20/11/2015"> <br /> <label>Fecha
+								placeholder="Ej: 20/11/2015"> <br /> 
+								
+							<label id="labelFechaFin">Fecha
 								fin del curso</label> <input class="form-control" type="text"
 								name="f_fin" id="f_fin" placeholder="Ej: 01/12/2015"> <br />
-							<label>Fecha de cierre del curso</label> <input
+							
+							<label id="labelFechaCierre">Fecha de cierre del curso</label> <input
 								class="form-control" type="text" name="cierre_curso"
 								id="cierre_curso" placeholder="Ej: 02/12/2015"> <br />
-							<label>Categoria del curso</label> <input class="form-control"
+							
+							<label id="labelCategoria">Categoria del curso</label> <input class="form-control"
 								type="text" name="categoria" id="categoria"
 								placeholder="Rama del curso">
-							<!-- <br /> <label>Dificultad del curso</label> <input
-								class="form-control" type="text" name="dificultad"
-								id="dificultad" placeholder="Alta, Media o Baja"> <br /> -->
-
 							<br />
 							<label id="txtDif" for="dificultad">Dificultad del curso</label>
 							<select id="dificultad" name="dificultad" class="form-control">
@@ -122,7 +139,7 @@
 								<option value="Media">Media</option>
 								<option value="Alta">Alta</option>
 
-							</select> <br /> <input type="checkbox" name="terminos" id="terminos"><label>
+							</select> <br /> <input type="checkbox" name="terminos" id="terminos"><label id="lblTerminos">
 								&nbsp; &nbsp;Acepto los <a data-toggle="modal"
 								data-target="#Modal">t&eacute;rminos</a>
 							</label>

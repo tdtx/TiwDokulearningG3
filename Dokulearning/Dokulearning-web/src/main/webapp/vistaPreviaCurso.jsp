@@ -45,102 +45,100 @@
 				<div class="col-lg-12">
 					<hr>
 					<h2 class="intro-text text-center">
-						Vista previa del curso <strong>del curso</strong>
+						Vista previa <strong>del curso</strong>
 					</h2>
 					<hr>
-				
+
 					<div class="form-group col-lg-4">
-						<h2 class="intro-text"> Nombre del curso </h2><label>nombre aqui${param.nom}</label>
-						<h2 class="intro-text">Categoria</h2><label>categoria aqui ${param.categoria}</label>
-						
+						<h2 class="intro-text">Nombre del curso</h2>
+						<label>${param.nom}</label>
+						<h2 class="intro-text">Categoria</h2>
+						<label> ${param.categoria}</label>
+
 						<div>
-						<br />
-							<img alt="Foto" src="imagenes/addressbook_add_128.png" width=60%>
+							<br /> <img alt="Foto" src="imagenes/addressbook_add_128.png"
+								width=60%>
 						</div>
-						
-						
-						</div>
-							<div class="form-group col-lg-4">
 
-								<!-- <div class="container" style="margin-right: 300px"> -->
-								<h2 class="intro-text">Temario</h2>
-								<div class="panel-group">
-									<div class="panel panel-default">
-										<div class="panel-heading">secciones ${param.secciones}</div>
-										<div class="panel-body">
-											lecciones ${param.lecciones}</div>
-										<div class="panel-body">
-											lecciones ${param.lecciones}</div>
-										<div class="panel-body">
-											lecciones ${param.lecciones}</div>
-									</div>
-									<div class="panel panel-default">
-										<div class="panel-heading">secciones ${param.secciones}</div>
-										<div class="panel-body" >
-											lecciones ${param.lecciones}</div>
-										<div class="panel-body">
-											lecciones ${param.lecciones}</div>
-									</div>
-									<div class="panel panel-default">
-										<div class="panel-heading">secciones ${param.secciones}</div>
-										<div class="panel-body">
-											lecciones ${param.lecciones}</div>
-									</div>
-								</div>
+
+					</div>
+					<div class="form-group col-lg-4">
+
+						<!-- <div class="container" style="margin-right: 300px"> -->
+						<h2 class="intro-text">Temario</h2>
+						<div class="panel-group">
+							<div class="panel panel-default">
+								<div class="panel-heading">Secci&oacute;n:
+									${param.secciones}</div>
+								<div class="panel-body">Lecci&oacute;n: ${param.lecciones}</div>
+								<div class="panel-body">Lecci&oacute;n: ${param.lecciones}</div>
+								<div class="panel-body">Lecci&oacute;n: ${param.lecciones}</div>
 							</div>
-								<div class="form-group col-lg-4">
-<h2 class="intro-text">Informacion</h2>
-												<div class="panel panel-default">
-																				
-												<div class="panel-heading">Profesor: ${param.profesor}</div>
-													<div class="panel-body" >Fecha
-														inicio curso: ${param.f_inicio}</div>
-													<div class="panel-body">Fecha
-														fin curso: ${param.f_fin}</div>
-													<div class="panel-body">Numero
-														de horas: ${param.horas}</div>
-													<div class="panel-body">Dificultad
-														del curso: ${param.dificultad}</div>
-												
 
-								</div>
+						</div>
+					</div>
+					<div class="form-group col-lg-4">
+						<h2 class="intro-text">Informacion</h2>
+						<div class="panel panel-default">
 
-												</div>
-											</div>
-										</div>
-									</div>
-									<nav class=" navbar-foot  navbar-fixed-bottom">
+							<div class="panel-heading">Profesor: ${param.profesor}</div>
+							<div class="panel-body">Fecha inicio curso:
+								${param.f_inicio}</div>
+							<div class="panel-body">Fecha fin curso: ${param.f_fin}</div>
+							<div class="panel-body">Numero de horas: ${param.horas}</div>
+							<div class="panel-body">Dificultad del curso:
+								${param.dificultad}</div>
+
+
+						</div>
+
+					</div>
+
+					
+
+				</div>
+				<div class="col-lg-12">
+						<form onSubmit="return validarCurso(this)" role="form"
+							action="Cursos" method="post">
+							
+							<input type="text" name="action" value="vistaPrevia"
+								style="display: none">
+
+							<div style="text-align: center">
+								<a href="formularioCurso.jsp"><button type="button"
+								class="btn btn-secundario" style="margin:0px 30px 0px 0px">Volver
+										atras</button></a>
+								
+								
+								<button type="submit" class="btn btn-default"
+									name="enviarValidar" id="enviarValidar" OnClick="val()">Enviar
+									a validar</button>
+								
+								
+							
+							</div>
+						</form>
+					</div>
+			</div>
+		</div>
+		<!-- <nav class=" navbar-foot  navbar-fixed-bottom">
 											
-											<div>
-												<form onSubmit="return validarCurso(this)" role="form"
-													action="Cursos" method="post">
-													<input type="text" name="action" value="vistaPrevia"
-														style="display: none">
-														
-													<div style="text-align: center" >
-														<button type="submit" class="btn btn-default" name="enviarValidar"
-															id="enviarValidar" OnClick="val()">Enviar a
-															validar</button>
-														<a href="formularioCurso.jsp" style="color: white"><strong>Volver atras</strong></a>
-													</div>
-												</form>
-											</div>
+											
 
-									</nav>
-																			</div>
-									
+									</nav> -->
+	</div>
 
 
-	
-</div>  -->
-
-					<!-- jQuery -->
-					<script src="js/jquery.js"></script>
-
-					<!-- Bootstrap Core JavaScript -->
-					<script src="js/bootstrap.min.js"></script>
 
 
-					<jsp:include page="footer.jsp"></jsp:include>
+
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
