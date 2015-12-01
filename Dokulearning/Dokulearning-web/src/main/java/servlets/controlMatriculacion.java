@@ -126,6 +126,7 @@ public class controlMatriculacion extends HttpServlet {
 			String formaPago = request.getParameter("formaPago");
 			String precio = request.getParameter("precio");
 			String nombreCurso = request.getParameter("nombreCurso");
+			String imagen= "fonts/users_folder_128.png";
 
 			if (comprobarUsuario(telefono)!=null) {
 				registrarMatriculacion(telefono, calle, localidad,
