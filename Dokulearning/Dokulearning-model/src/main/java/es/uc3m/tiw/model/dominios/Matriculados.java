@@ -38,10 +38,9 @@ private static final long serialVersionUID = 1L;
 	}
 	
 	
-	public Matriculados(Long id, String id_curso, String id_usuario,
+	public Matriculados(String id_curso, String id_usuario,
 			String cupon, double precio_final, double nota) {
 		super();
-		this.id = id;
 		this.id_curso = id_curso;
 		this.id_usuario = id_usuario;
 		this.cupon = cupon;

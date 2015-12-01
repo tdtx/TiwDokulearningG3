@@ -3,11 +3,13 @@ package es.uc3m.tiw.model.dominios;
 import static javax.persistence.GenerationType.AUTO;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import static javax.persistence.FetchType.LAZY;
@@ -38,18 +40,21 @@ public class Curso implements Serializable {
 	String fechaCaducidad;
 	String valor;
 	
+	
 	/*
-	
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private  Pruebas pruebas;
+	    private  List <Pruebas> pruebas;
 	 
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private Leccion leccion;
+	    private List<Leccion> leccion;
 	 
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private Matriculados matriculados;
+	    private List <Matriculados> matriculados; 
+	 
+	 @ManyToOne(fetch = LAZY, cascade = ALL)
+	    private Imagenes Imagenes;*/
 	
-	*/
+	
 	
 	
 	public Curso() {
