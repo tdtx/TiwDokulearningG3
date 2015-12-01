@@ -294,7 +294,7 @@
 														<label for="correoActual"><br>Correo
 															electronico: </label> <input type="text" class="form-control"
 															id="correoActual" name="correoActual"
-															value="${registrado.correo}" readonly>
+															value="${registrado.correo}" >
 
 													</div>
 

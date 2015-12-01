@@ -102,7 +102,7 @@ public class UsuarioDAO {
 		
 	}
      
-    public Usuarios buscarCliente(Long id) {
+    public Usuarios buscarId(Long id) {
         return em.find(Usuarios.class, id);
     } 
 }

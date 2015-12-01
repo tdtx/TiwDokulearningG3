@@ -127,6 +127,7 @@ public class registroWeb extends HttpServlet {
 		System.err.println("valor" + estado);
 		if (action != null && action.equals("salir")) {
 			pagina = indexJSP;
+			sesion.setAttribute("idUsuario",null);
 			request.getSession().invalidate();
 		}
 		
@@ -208,6 +209,7 @@ public class registroWeb extends HttpServlet {
 					sesion.setAttribute("acceso", "ok");
 					sesion.setAttribute("correo", u.getCorreo());
 					sesion.setAttribute("estadoValidacion", u.getNick());
+					sesion.setAttribute("idUsuario",u.getId());
 					System.err.println("entro");
 				}
 				else {
@@ -258,7 +260,10 @@ public class registroWeb extends HttpServlet {
 				correo = request.getParameter("correoActual");
 				String descripcion = request.getParameter("descripcionActual");
 				String aficiones = request.getParameter("aficionesActual");
-				Usuarios u = udao.buscarCorreo(correo);
+				
+				Long idUsuario = (Long) sesion.getAttribute("idUsuario");
+				Usuarios u = udao.buscarId(idUsuario);
+				
 				u.setNick(nick);
 				u.setNombre(nombre);
 				u.setApellido1(apellido1);
