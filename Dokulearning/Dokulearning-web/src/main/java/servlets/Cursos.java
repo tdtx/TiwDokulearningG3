@@ -93,6 +93,10 @@ public class Cursos extends HttpServlet {
 		}
 
 
+		if (accion.equals("cursos")) {
+			request.setAttribute("cursos", cursos);
+			pagina = "/todosLosCursos.jsp";
+		}
 		if (accion.equals("ofertas")) {
 			request.setAttribute("cursos", cursos);
 			pagina = "/cursoOferta.jsp";
