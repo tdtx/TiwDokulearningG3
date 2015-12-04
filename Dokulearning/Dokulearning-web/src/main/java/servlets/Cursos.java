@@ -3,16 +3,20 @@ package servlets;
 import java.io.*;
 import java.util.ArrayList;
 
-
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import javax.transaction.UserTransaction;
 
 import dominio.FormularioCurso;
+import es.uc3m.tiw.model.daos.UsuarioDAO;
+import es.uc3m.tiw.model.dominios.Usuarios;
 
 
 
@@ -26,11 +30,11 @@ public class Cursos extends HttpServlet {
 	private ArrayList<FormularioCurso> cursos;
 	private static final long serialVersionUID = 1L;
 	public FormularioCurso cursoOferta;
-	/**	@PersistenceContext(unitName="Administracion-model")
+	@PersistenceContext(unitName="Dokulearning-model")
 	EntityManager em;
 	@Resource
 	UserTransaction ut;
-	CursoDAO cdao;
+	UsuarioDAO udao;
 	/**
 	 * 
 	 * @see HttpServlet#HttpServlet()
@@ -53,7 +57,7 @@ public class Cursos extends HttpServlet {
 		cursos = new ArrayList<FormularioCurso>();
 		cursos.add(curso1);
 		cursos.add(curso2);
-		
+		udao=new UsuarioDAO(em, ut);
 	}
 	
 	public Cursos() {
@@ -74,6 +78,15 @@ public class Cursos extends HttpServlet {
 		System.err.println(accion);
 		String pagina = "/index.jsp";
 
+		
+		
+		if(accion.equals("crearCurso")){
+			Usuarios u =udao.buscarNick(estado); 
+			
+			sesion.setAttribute("cursos", u);
+			pagina = "/formularioCurso.jsp";
+			
+		}
 		
 		if (accion != null) {
 			System.err.println("super5"+accion);
