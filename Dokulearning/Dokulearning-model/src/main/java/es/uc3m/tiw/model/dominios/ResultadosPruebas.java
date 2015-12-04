@@ -6,7 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 @Entity
@@ -26,6 +29,15 @@ private static final long serialVersionUID = 1L;
 	@Column(unique = false, nullable = true)
 	String comentario;
 	
+	
+	
+	 @ManyToOne(fetch = LAZY, cascade = ALL)
+	    private Matriculados matriculado;
+	 
+	@ManyToOne(fetch = LAZY, cascade = ALL)
+	    private Pruebas prueba;
+	 
+	 
 	
 	public ResultadosPruebas() {
 		super();

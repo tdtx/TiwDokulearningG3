@@ -217,8 +217,8 @@
 				<ul class="nav navbar-nav">
 					<li><a href="index.jsp">Inicio</a></li>
 					<li><a href="Cursos?accion=cursos">Cursos</a></li>
-					<li><a href="Cursos?accion=ofertas">Ofertas</a></li>
-					<li><a href="Cursos?accion=destacados">Destacados</a></li>
+					<!-- <li><a href="Cursos?accion=ofertas">Ofertas</a></li> -->
+					<li><a href="Cursos?accion=destacados">Cursos destacados</a></li>
 					<li><a href="contacto.jsp">Contacto</a></li>
 				</ul>
 			</div>

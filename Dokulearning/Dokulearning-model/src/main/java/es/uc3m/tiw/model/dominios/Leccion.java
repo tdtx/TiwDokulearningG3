@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -24,11 +25,13 @@ public class Leccion implements Serializable {
 	String idSeccion;
 	String descripcion;
 	
-	/*
-	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private  Material material;
 	
-	*/
+	 @ManyToOne(fetch = LAZY, cascade = ALL)
+	    private  Curso curso;
+	
+	 @ManyToOne(fetch = LAZY, cascade = ALL)
+	    private  Seccion seccion;
+	
 	public Leccion() {
 		super();
 	}

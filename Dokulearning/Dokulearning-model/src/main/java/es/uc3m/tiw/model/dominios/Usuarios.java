@@ -1,10 +1,12 @@
 package es.uc3m.tiw.model.dominios;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import static javax.persistence.CascadeType.ALL;
@@ -59,11 +61,16 @@ public class Usuarios implements Serializable {
 		String genero;
 
 
-		/*
-		@OneToMany(fetch = LAZY, cascade = ALL)
-	    private  Matriculados matriculados;
 		
-		*/
+		@OneToMany(fetch = LAZY, cascade = ALL)
+	    private  List <Matriculados> matriculados;
+		
+		@ManyToOne(fetch = LAZY, cascade = ALL)
+	    private  Imagenes imagenes;
+		
+		
+		
+		
 		public Usuarios() {
 			super();
 		}

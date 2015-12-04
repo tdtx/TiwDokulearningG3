@@ -17,6 +17,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/ventanaDialog.css" rel="stylesheet">
 
+<script src="js/ValidacionPwd.js"></script>
 
 <!-- Custom Fonts icono-->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
@@ -173,6 +174,13 @@
 								class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
 								<div class="panel dialog-info">
+								
+								<%-- 
+								<c:when test="${not empty mensaje }">
+		<p class="error">${mensaje }</p>
+	</c:when>
+								 --%>
+								
 									<div class="cabeceraDialog">
 										<button type="button" class="close" data-dismiss="modal">
 											<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
@@ -182,8 +190,12 @@
 									</div>
 									<div class="modal-body">
 
-										<!---Form Registrado -------------------------->
-										<form action="registroWeb" method="post"
+										<!---Form Registrado ------------------------
+										
+										<form onSubmit="return pwdIguales(this)" id="formularioMat"
+							action="registroWeb" method="post" >-->
+										
+										<form onSubmit="return validarPassword(this)" action="registroWeb" method="post"
 											class="form-horizontal" role="form">
 											<input type="text" name="distribucion" value="cambiarClave"
 												style="display: none">
@@ -199,7 +211,7 @@
 											<div class="form-group col-md-1"></div>
 												<div class="form-group col-md-1"></div>
 												<div class="form-group col-md-6">
-													<label for="claveActual">Contraseña actual </label> <input
+													<label for="lblClaveActual">Contraseña actual </label> <input
 														type="password" class="form-control" id="claveActual"
 														name="claveActual">
 												</div>
@@ -208,7 +220,7 @@
 												<div class="form-group col-md-12"></div>
 
 												<div class="form-group col-md-6">
-													<label for="claveNueva">Nueva contraseña </label> <input
+													<label for="lblClaveNueva">Nueva contraseña </label> <input
 														type="password" class="form-control" id="claveNueva"
 														name="claveNueva">
 												</div>
@@ -217,7 +229,7 @@
 
 
 												<div class="form-group col-md-6">
-													<label for="RclaveNueva">Repita la nueva contraseña</label>
+													<label for="lblRClaveNueva">Repita la nueva contraseña</label>
 													<input type="password" class="form-control"
 														id="RclaveNueva" name="RclaveNueva">
 												</div>

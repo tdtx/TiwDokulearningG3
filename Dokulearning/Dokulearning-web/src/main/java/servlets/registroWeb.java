@@ -73,61 +73,79 @@ public class registroWeb extends HttpServlet {
 
 		
 		//usuarios registrados	
-		Usuarios usuario1=new Usuarios("MariaC", "Clavemch", "Maria", "Canizares", "Holgado", "mch@mch.mch", "01/04/1992","Alumno");
-		Usuarios usuario2=new Usuarios("CarolAs", "Clavecas", "Carolina", "Arredondo", "Silo", "cas@cas.cas", "20/06/1993","Alumno");
-		Usuarios usuario3=new Usuarios("TomasDTX", "Clavetdtx", "Tomas", "Tee", "Xia", "tdtx@tdtx.tdtxc", "23/09/1990","Alumno");
-		Usuarios usuario4=new Usuarios("Antonio", "Claveaml", "Antonio", "Martinez", "Alvarez", "ama@ama.ama", "16/04/1993","Alumno");
-		Usuarios usuario5=new Usuarios("ElsaCa", "Claveecp", "Elsa", "Capunta", "Lapiz", "ecp@ecp.ecp", "08/11/1995","Alumno");
-		Usuarios usuario6=new Usuarios("JoseChu", "Clavejlr", "Josechu", "Leton", "Rojo", "jlr@jlr.jlr", "22/08/1995","Alumno");
-		Usuarios usuario7=new Usuarios("AitorT", "Claveat", "Aitor", "Tilla", null, "at@at.at", "09/09/1982","Alumno");
-		Usuarios usuario8=new Usuarios("BenitoC", "Clavebc", "Benito", "Camela", null, "bc@bc.bc", "06/12/1978","Alumno");
-		Usuarios usuario9=new Usuarios("Layos", "Clavealm", "Alejandro", "Layos", "Montero", "alm@alm.alm", "23/06/1993","Alumno");
-		Usuarios usuario10=new Usuarios("DPalomar", "Clavedpal", "David", "Palomar", null, "dpal@dpal.dpal", "01/11/1967","Alumno");
+		Usuarios usuario1=new Usuarios("MariaC", "clavemch", "Maria", "Canizares", "Holgado", "mch@mch.mch", "01/04/1992","Alumno");
+		Usuarios usuario2=new Usuarios("CarolAs", "clavecas", "Carolina", "Arredondo", "Silo", "cas@cas.cas", "20/06/1993","Alumno");
+		Usuarios usuario3=new Usuarios("TomasDTX", "clavetdtx", "Tomas", "Tee", "Xia", "tdtx@tdtx.tdtxc", "23/09/1990","Alumno");
+		Usuarios usuario4=new Usuarios("Antonio", "claveaml", "Antonio", "Martinez", "Alvarez", "ama@ama.ama", "16/04/1993","Alumno");
+		Usuarios usuario5=new Usuarios("ElsaCa", "claveecp", "Elsa", "Capunta", "Lapiz", "ecp@ecp.ecp", "08/11/1995","Alumno");
+		Usuarios usuario6=new Usuarios("JoseChu", "clavejlr", "Josechu", "Leton", "Rojo", "jlr@jlr.jlr", "22/08/1995","Alumno");
+		Usuarios usuario7=new Usuarios("AitorT", "claveat", "Aitor", "Tilla", null, "at@at.at", "09/09/1982","Alumno");
+		Usuarios usuario8=new Usuarios("BenitoC", "clavebc", "Benito", "Camela", null, "bc@bc.bc", "06/12/1978","Alumno");
+		Usuarios usuario9=new Usuarios("Layos", "clavealm", "Alejandro", "Layos", "Montero", "alm@alm.alm", "23/06/1993","Alumno");
+		Usuarios usuario10=new Usuarios("DPalomar", "clavedpal", "David", "Palomar", null, "dpal@dpal.dpal", "01/11/1967","Alumno");
 
 		
 		
 		
 		//usuarios con perfil matriculados
-		Usuarios usuario11=new Usuarios("LauLV", "Clavelau", "Laura", "Lopez", "Vazquez", "20/08/1991", "llv@llv.llv", "Ayhju9876ujki8ujkujki", "fonts/users_folder_128.png", "Estudiante de cuarto curso de ADE", "La ciencia ficcion", "De las Heras", "Madrid", 28017, "Madrid", 786654321, "Estudiante", "89776546y", "Mujer");   
-		Usuarios usuario12=new Usuarios("LidiRG", "Clavelidi", "Lidia", "Rodriguez", "Garcia", "25/09/1992", "lrg@lrg.lrg", "Bikj7kilo098u7y6t5r4e", "fonts/users_folder_128.png", "Profesora de ciencias tecnologicas", "La enseñanza y el deporte", "De la Vega", "Las Rozas", 25089, "Madrid", 987654789, "Profesor", "87698423z", "Mujer");
-		Usuarios usuario13=new Usuarios("RaulFJ", "Soyraul", "Raul", "Fernandez", "Jimenez", "04/12/1985", "rfj@rfj.rfj", "Bikju7865tgh645rt3ew2", "fonts/users_folder_128.png", "Entusiasmado por el mundo sanitario", "El arte y viajar", "San Ambrosio", "Colmenarejo", 45367, "Madrid", 453567890, "Profesor", "58754123p", "Hombre");
-		Usuarios usuario14=new Usuarios("MartinMF", "Soymartin", "Martin", "Marquez", "Frias", "01/06/1978", "mmf@mmf.mmf", "Blkoi9oi87uy8ujhy6tgh", "fonts/users_folder_128.png", "Persona sociable y trabajadora", "El mundo del motor", "Del Abeto", "El Molar", 98765, "Madrid", 987654289, "Profesor", "98712385t", "Hombre");
-		Usuarios usuario15=new Usuarios("AliPM", "Soyali", "Alicia", "Pais", "Maravillas", "27/12/1992", "apm@apm.apm", "Bjkol0987ujhy6tgf4rfd", "fonts/users_folder_128.png", "Entusiasta y amable", "El mundo de la belleza", "Perez Herrera", "Leganes", 98765, "Madrid", 980765190, "Estudiante", "90876123r", "Mujer");
-		Usuarios usuario16=new Usuarios("AlbaMP", "Soyalba", "Alba", "Marin", "Palacios", "30/08/1970", "amp@amp.amp", "Aikjl0987ujhy5645rfgt", "fonts/users_folder_128.png", "Profesora proactiva y sociable", "El deporte y la musica", "Del Globo", "Getafe", 98765, "Madrid", 786542134, "Profesor", "98765398u", "Mujer");
-		Usuarios usuario17=new Usuarios("MarcosGS", "Soymarcos", "Marcos", "Gonzalez", "Silo", "30/12/1993", "mgs@mgs.mgs", "Akijl0987ujki6ygt54re", "fonts/users_folder_128.png", "Estudiante de ciencias de la salud", "Voluntariado en tiempo libre", "DeL Martillo", "Alba de Tormes", 98709, "Salamanca", 908765123, "Estudiante", "90878653g", "Hombre");
-		Usuarios usuario18=new Usuarios("BelenNC", "Soybelen", "Belen", "Nevado", "casado", "01/10/1986", "bnc@bnc.bnc", "Ajkiu8ui9oilk9ikj7ujh", "fonts/users_folder_128.png", "Interactiva y apasionada por la quimica ", "Cine y teatro", "De la sierra", "Colombres", 34567, "Asturias", 908987675, "Profesor", "34567890o", "Mujer");
-		Usuarios usuario19=new Usuarios("EliasGH", "Soyelias", "Elias", "Gomez", "Herrero", "20/08/1990", "egh@egh.egh", "Bolkoilkoikjuujki9876", "fonts/users_folder_128.png", "Activo y curioso", "La teconologia", "Marques de las Vias", "Bollullos", 87987, "Huelva", 908787654, "Estudiante", "98778765t", "Hombre");
-		Usuarios usuario20=new Usuarios("PedroCM", "Soypedro", "Pedro", "Cuco", "Martin", "08/09/1990", "pcm@pcm.pcm", "Acvbhnjmkilko98765432", "fonts/users_folder_128.png", "Responsable y extrovertido", "Futbol", "De los Molinos", "Santander", 90870, "Cantabria", 908765432, "Estudiante", "54667890i", "Hombre");
+		Usuarios usuario11=new Usuarios("LauLV", "clavelau", "Laura", "Lopez", "Vazquez", "20/08/1991", "llv@llv.llv", "Ayhju9876ujki8ujkujki", "fonts/users_folder_128.png", "Estudiante de cuarto curso de ADE", "La ciencia ficcion", "De las Heras", "Madrid", 28017, "Madrid", 786654321, "Estudiante", "89776546y", "Mujer");   
+		Usuarios usuario12=new Usuarios("LidiRG", "clavelidi", "Lidia", "Rodriguez", "Garcia", "25/09/1992", "lrg@lrg.lrg", "Bikj7kilo098u7y6t5r4e", "fonts/users_folder_128.png", "Profesora de ciencias tecnologicas", "La enseñanza y el deporte", "De la Vega", "Las Rozas", 25089, "Madrid", 987654789, "Profesor", "87698423z", "Mujer");
+		Usuarios usuario13=new Usuarios("RaulFJ", "soyraul", "Raul", "Fernandez", "Jimenez", "04/12/1985", "rfj@rfj.rfj", "Bikju7865tgh645rt3ew2", "fonts/users_folder_128.png", "Entusiasmado por el mundo sanitario", "El arte y viajar", "San Ambrosio", "Colmenarejo", 45367, "Madrid", 453567890, "Profesor", "58754123p", "Hombre");
+		Usuarios usuario14=new Usuarios("MartinMF", "soymartin", "Martin", "Marquez", "Frias", "01/06/1978", "mmf@mmf.mmf", "Blkoi9oi87uy8ujhy6tgh", "fonts/users_folder_128.png", "Persona sociable y trabajadora", "El mundo del motor", "Del Abeto", "El Molar", 98765, "Madrid", 987654289, "Profesor", "98712385t", "Hombre");
+		Usuarios usuario15=new Usuarios("AliPM", "soyali", "Alicia", "Pais", "Maravillas", "27/12/1992", "apm@apm.apm", "Bjkol0987ujhy6tgf4rfd", "fonts/users_folder_128.png", "Entusiasta y amable", "El mundo de la belleza", "Perez Herrera", "Leganes", 98765, "Madrid", 980765190, "Estudiante", "90876123r", "Mujer");
+		Usuarios usuario16=new Usuarios("AlbaMP", "soyalba", "Alba", "Marin", "Palacios", "30/08/1970", "amp@amp.amp", "Aikjl0987ujhy5645rfgt", "fonts/users_folder_128.png", "Profesora proactiva y sociable", "El deporte y la musica", "Del Globo", "Getafe", 98765, "Madrid", 786542134, "Profesor", "98765398u", "Mujer");
+		Usuarios usuario17=new Usuarios("MarcosGS", "soymarcos", "Marcos", "Gonzalez", "Silo", "30/12/1993", "mgs@mgs.mgs", "Akijl0987ujki6ygt54re", "fonts/users_folder_128.png", "Estudiante de ciencias de la salud", "Voluntariado en tiempo libre", "DeL Martillo", "Alba de Tormes", 98709, "Salamanca", 908765123, "Estudiante", "90878653g", "Hombre");
+		Usuarios usuario18=new Usuarios("BelenNC", "soybelen", "Belen", "Nevado", "casado", "01/10/1986", "bnc@bnc.bnc", "Ajkiu8ui9oilk9ikj7ujh", "fonts/users_folder_128.png", "Interactiva y apasionada por la quimica ", "Cine y teatro", "De la sierra", "Colombres", 34567, "Asturias", 908987675, "Profesor", "34567890o", "Mujer");
+		Usuarios usuario19=new Usuarios("EliasGH", "soyelias", "Elias", "Gomez", "Herrero", "20/08/1990", "egh@egh.egh", "Bolkoilkoikjuujki9876", "fonts/users_folder_128.png", "Activo y curioso", "La teconologia", "Marques de las Vias", "Bollullos", 87987, "Huelva", 908787654, "Estudiante", "98778765t", "Hombre");
+		Usuarios usuario20=new Usuarios("PedroCM", "soypedro", "Pedro", "Cuco", "Martin", "08/09/1990", "pcm@pcm.pcm", "Acvbhnjmkilko98765432", "fonts/users_folder_128.png", "Responsable y extrovertido", "Futbol", "De los Molinos", "Santander", 90870, "Cantabria", 908765432, "Estudiante", "54667890i", "Hombre");
 		
 		
 		//matriculados
 		
-		
+		Matriculados matriculado1=new Matriculados("idcurso1", "iduser1", "cupon1", 128.90, 2.8);
+		Matriculados matriculado2=new Matriculados("idcurso2", "iduser2", "cupon2", 128.90, 2.8 );
+		Matriculados matriculado3=new Matriculados("idcurso3", "iduser3", "cupon3", 128.90, 2.8);
+		Matriculados matriculado4=new Matriculados("idcurso4", "iduser4", "cupon4", 128.90, 2.8);
+		Matriculados matriculado5=new Matriculados("idcurso5", "iduser5", "cupon5", 128.90, 2.8);
+		Matriculados matriculado6=new Matriculados("idcurso6", "iduser6", "cupon6", 128.90, 2.8);
+		Matriculados matriculado7=new Matriculados("idcurso7", "iduser7", "cupon7", 128.90, 2.8);
+		Matriculados matriculado8=new Matriculados("idcurso8", "iduser8", "cupon8", 128.90, 2.8);
+		Matriculados matriculado9=new Matriculados("idcurso9", "iduser9", "cupon9", 128.90, 2.8);
+		Matriculados matriculado10=new Matriculados("idcurso10", "iduser10", "cupon10", 128.90, 2.8);
+		Matriculados matriculado11=new Matriculados("idcurso11", "iduser11", "cupon11", 128.90, 2.8);
+		Matriculados matriculado12=new Matriculados("idcurso12", "iduser12", "cupon12", 128.90, 2.8);
+		Matriculados matriculado13=new Matriculados("idcurso13", "iduser13", "cupon13", 128.90, 2.8);
+		Matriculados matriculado14=new Matriculados("idcurso14", "iduser14", "cupon14", 128.90, 2.8);
+		Matriculados matriculado15=new Matriculados("idcurso15", "iduser15", "cupon15", 128.90, 2.8);
+		Matriculados matriculado16=new Matriculados("idcurso16", "iduser16", "cupon16", 128.90, 2.8);
+		Matriculados matriculado17=new Matriculados("idcurso17", "iduser17", "cupon17", 128.90, 2.8);
+		Matriculados matriculado18=new Matriculados("idcurso18", "iduser18", "cupon18", 128.90, 2.8);
+		Matriculados matriculado19=new Matriculados("idcurso19", "iduser19", "cupon19", 128.90, 2.8);
+		Matriculados matriculado20=new Matriculados("idcurso20", "iduser20", "cupon20", 128.90, 2.8);
 		
 		
 		
 		//Cursos
-				Curso curso1 = new Curso( "Estadistica", "Curso de estadistica", "0077","Tema1 tema2 tema3 tema4", "123456789", "Medio","Certificado", "Matematicas", "No","Estado", 34, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso2 = new Curso("Fisica", "Curso de fisica", "0097","Tema1 tema2 tema3 tema4 tema5", "223456789", "Medio","Certificado", "Fisica", "No","Estado", 23, "Si", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso3 = new Curso("Ingenieria del Software", "Curso de Ingenieria del Software", "0059","Tema1 tema2 tema3 tema4", "323456789", "Medio","Certificado", "Informatica", "No","Estado", 34, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso4 = new Curso("Programacion", "Curso de programacion", "0077","Tema1 tema2 tema3 tema4", "423456789", "Medio","Certificado", "Informatica", "Si","Estado", 56, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso5 = new Curso("Literatura", "Curso de literatura", "0077","Tema1 tema2 tema3 tema4", "523456789", "Medio","Certificado", "Lengua y literatura", "No","Estado", 32, "Si", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso6 = new Curso("Ingles", "Curso de ingles", "0077","Tema1 tema2 tema3 tema4", "623456789", "Medio","Certificado", "Idioma", "No","Estado", 73, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso7 = new Curso("Frances", "Curso de Frances", "0077","Tema1 tema2 tema3 tema4", "723456789", "Medio","Certificado", "Idioma", "Si","Estado", 42, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso8 = new Curso( "Redes de computadoras", "Curso de redes", "0077","Tema1 tema2 tema3 tema4", "823456789", "Medio","Certificado", "Informatica", "No","Estado", 16, "Si", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso9 = new Curso("Interfaces de usuario", "Curso de interfaces", "0077","Tema1 tema2 tema3 tema4", "923456789", "Medio","Certificado", "Informatica", "No","Estado", 77, "Si", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso10 = new Curso( "Arquitectura de computadores", "Curso de arcos", "0077","Tema1 tema2 tema3 tema4", "023456789", "Medio","Certificado", "Informatica", "Si","Estado", 45, "Si", "fonts/users_folder_128.png", "23/12/15", "Valor");
-		
-				Curso curso11 = new Curso("Italiano", "Curso de italiano", "0077","Tema1 tema2 tema3 tema4", "133456789", "Medio","Certificado", "Idiomas", "No","Estado", 35, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso12 = new Curso("Chino", "Curso de chino", "0077","Tema1 tema2 tema3 tema4", "143456789", "Medio","Certificado", "Idiomas", "Si","Estado", 43, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso13 = new Curso("Criptografia", "Curso de criptografia", "0077","Tema1 tema2 tema3 tema4", "153456789", "Medio","Certificado", "Informatica", "No","Estado", 55, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso14 = new Curso("SSOO", "Curso de SSOO", "0077","Tema1 tema2 tema3 tema4", "163456789", "Medio","Certificado", "Informatica", "No","Estado", 73, "Si", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso15 = new Curso("Ficheros", "Curso de ficheros", "0077","Tema1 tema2 tema3 tema4", "173456789", "Medio","Certificado", "Informatica", "No","Estado", 23, "Si", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso16 = new Curso("ADE", "Curso de ADE", "0077","Tema1 tema2 tema3 tema4", "183456789", "Medio","Certificado", "Empresa", "Si","Estado", 43, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso17 = new Curso("Algebra Lineal", "Curso de Algebra", "0077","Tema1 tema2 tema3 tema4", "193456789", "Medio","Certificado", "Matematicas", "No","Estado", 36, "Si", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso18 = new Curso("Calculo", "Curso de calculo", "0077","Tema1 tema2 tema3 tema4", "103456789", "Medio","Certificado", "Matematicas", "Si","Estado", 85, "Si", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso19 = new Curso("Calculo Diferencial", "Curso de calculo diferencial", "0077","Tema1 tema2 tema3 tema4", "113456789", "Medio","Certificado", "Matematicas", "No","Estado", 12, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
-				Curso curso20 = new Curso("Matematica Discreta", "Curso de matematica discreta", "0077","Tema1 tema2 tema3 tema4", "124456789", "Medio","Certificado", "Matematicas", "No","Estado", 37, "No", "fonts/users_folder_128.png", "23/12/15", "Valor");
+		Curso curso1 = new Curso( "Estadistica", "Curso de estadistica", "0077","Tema1 tema2 tema3 tema4", "123456789", "Medio","Certificado", "Matematicas", "No","A eliminar", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
+		Curso curso2 = new Curso("Fisica", "Curso de fisica", "0097","Tema1 tema2 tema3 tema4 tema5", "223456789", "Medio","Certificado", "Fisica", "No","Pendiente", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso3 = new Curso("Ingenieria del Software", "Curso de Ingenieria del Software", "0059","Tema1 tema2 tema3 tema4", "323456789", "Medio","Certificado", "Informatica", "No","Estado", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso4 = new Curso("Programacion", "Curso de programacion", "0077","Tema1 tema2 tema3 tema4", "423456789", "Medio","Certificado", "Informatica", "Si","Validado", 56, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso5 = new Curso("Literatura", "Curso de literatura", "0077","Tema1 tema2 tema3 tema4", "523456789", "Medio","Certificado", "Lengua y literatura", "No","Validado", 32, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso6 = new Curso("Ingles", "Curso de ingles", "0077","Tema1 tema2 tema3 tema4", "623456789", "Medio","Certificado", "Idioma", "No","Validado", 73, "No", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
+		Curso curso7 = new Curso("Frances", "Curso de Frances", "0077","Tema1 tema2 tema3 tema4", "723456789", "Medio","Certificado", "Idioma", "Si","Validado", 42, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso8 = new Curso( "Redes de computadoras", "Curso de redes", "0077","Tema1 tema2 tema3 tema4", "823456789", "Medio","Certificado", "Informatica", "No","Validado", 16, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
+		Curso curso9 = new Curso("Interfaces de usuario", "Curso de interfaces", "0077","Tema1 tema2 tema3 tema4", "923456789", "Medio","Certificado", "Informatica", "No","Validado", 77, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
+		Curso curso10 = new Curso( "Arquitectura de computadores", "Curso de arcos", "0077","Tema1 tema2 tema3 tema4", "023456789", "Medio","Certificado", "Informatica", "Si","Validado", 45, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso11 = new Curso("Italiano", "Curso de italiano", "0077","Tema1 tema2 tema3 tema4", "133456789", "Medio","Certificado", "Idiomas", "No","Validado", 35, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso12 = new Curso("Chino", "Curso de chino", "0077","Tema1 tema2 tema3 tema4", "143456789", "Medio","Certificado", "Idiomas", "Si","Validado", 43, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso13 = new Curso("Criptografia", "Curso de criptografia", "0077","Tema1 tema2 tema3 tema4", "153456789", "Medio","Certificado", "Informatica", "No","Validado", 55, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso14 = new Curso("SSOO", "Curso de SSOO", "0077","Tema1 tema2 tema3 tema4", "163456789", "Medio","Certificado", "Informatica", "No","Validado", 73, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
+		Curso curso15 = new Curso("Ficheros", "Curso de ficheros", "0077","Tema1 tema2 tema3 tema4", "173456789", "Medio","Certificado", "Informatica", "No","Validado", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso16 = new Curso("ADE", "Curso de ADE", "0077","Tema1 tema2 tema3 tema4", "183456789", "Medio","Certificado", "Empresa", "Si","Validado", 43, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso17 = new Curso("Algebra Lineal", "Curso de Algebra", "0077","Tema1 tema2 tema3 tema4", "193456789", "Medio","Certificado", "Matematicas", "No","Validado", 36, "Si", "imagenes/addressbook_add_128.png", "23/12/15",20, "01/12/15");
+		Curso curso18 = new Curso("Calculo", "Curso de calculo", "0077","Tema1 tema2 tema3 tema4", "103456789", "Medio","Certificado", "Matematicas", "Si","Validado", 85, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso19 = new Curso("Calculo Diferencial", "Curso de calculo diferencial", "0077","Tema1 tema2 tema3 tema4", "113456789", "Medio","Certificado", "Matematicas", "No","Validado", 12, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso20 = new Curso("Matematica Discreta", "Curso de matematica discreta", "0077","Tema1 tema2 tema3 tema4", "124456789", "Medio","Certificado", "Matematicas", "No","Validado", 37, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
 				
 		//imagenes
 		Imagenes imagen1 = new Imagenes("fonts/users_folder_128.png");
@@ -512,7 +530,7 @@ public class registroWeb extends HttpServlet {
 			
 			try {
 				Usuarios u = udao.buscarLogin(correo, clave1);
-				if (u  != null) {
+				if (u  != null &&clave1.equals(u.getClave())) {
 					pagina = "/index.jsp";
 					request.setAttribute("registrados", registrados);
 					sesion.setAttribute("usuario", u);
