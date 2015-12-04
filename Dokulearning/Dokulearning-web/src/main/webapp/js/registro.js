@@ -182,17 +182,16 @@ function validarR(formulario){
 
 //	         mensaje = mensaje.concat("Eres menor de edad" + '\n');
 	    }else if (hoy.getMonth() + 1 - mes > 0) {
-	    	 document.getElementById("fechanac").style.borderColor="green";
-	         document.getElementById("fechanac").style.borderStyle="dotted";
-		 		document.getElementById("txtFechaReg").style.color="green";
-
-	         contador = contador + 1;
-	    }else if (hoy.getUTCDate() - dia >= 0) {
-		   	 document.getElementById("fechanac").style.borderColor="red";
+	    	 document.getElementById("fechanac").style.borderColor="red";
 	         document.getElementById("fechanac").style.borderStyle="dotted";
 		 		document.getElementById("txtFechaReg").style.color="red";
-
-//	         mensaje = mensaje.concat("Eres menor de edad por dia" + '\n');
+		 		if (hoy.getUTCDate() - dia < 0) {
+				   	 document.getElementById("fechanac").style.borderColor="green";
+			         document.getElementById("fechanac").style.borderStyle="dotted";
+				 		document.getElementById("txtFechaReg").style.color="green";
+				 		  contador = contador + 1;
+		 		}
+	       
 	    }else{
 	    	document.getElementById("fechanac").style.borderColor="red";
 	         document.getElementById("fechanac").style.borderStyle="dotted";
