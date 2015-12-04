@@ -2,10 +2,6 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-
 <body>
     <footer>
         <div class="container">
@@ -30,7 +26,6 @@
         interval: 5000 //changes the speed
     })
     </script>
-
 </body>
 
 </html>
