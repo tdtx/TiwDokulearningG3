@@ -512,7 +512,7 @@ public class registroWeb extends HttpServlet {
 			
 			try {
 				Usuarios u = udao.buscarLogin(correo, clave1);
-				if (u  != null) {
+				if (u  != null &&clave1.equals(u.getClave())) {
 					pagina = "/index.jsp";
 					request.setAttribute("registrados", registrados);
 					sesion.setAttribute("usuario", u);
