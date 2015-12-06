@@ -5,6 +5,7 @@ import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,10 +21,10 @@ public class Seccion implements Serializable {
 	String descripcion;
 	
 	
-	/*
+	
 	@OneToMany(fetch = LAZY, cascade = ALL)
-    private  Leccion leccion;
-	*/
+    private  List <Leccion> leccion;
+	
 	
 	public Seccion() {
 		super();

@@ -1,12 +1,17 @@
 package es.uc3m.tiw.model.dominios;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 public class CreadorCurso implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -20,6 +25,16 @@ public class CreadorCurso implements Serializable{
 	double precio;
 	
 //faltan las relaciones, seran igual que matriculados
+	
+	 @ManyToOne(fetch = LAZY, cascade = ALL)
+	 	private Usuarios usuarios;
+	 
+	 @ManyToOne(fetch = LAZY, cascade = ALL)
+	 	private Curso curso;
+	
+	 
+	
+	
 	
 	public CreadorCurso(String titulo, String nickUsuario, double precio) {
 		super();

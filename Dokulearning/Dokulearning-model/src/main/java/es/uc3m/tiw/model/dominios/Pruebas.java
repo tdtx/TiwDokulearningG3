@@ -1,11 +1,13 @@
 package es.uc3m.tiw.model.dominios;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import static javax.persistence.CascadeType.ALL;
@@ -25,11 +27,16 @@ private static final long serialVersionUID = 1L;
 	@Column(unique = false, nullable = true)
 	String descripcion;
 	
-	/*
+	
 	
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private  ResultadosPruebas rescultadosPruebas;
-	*/
+	    private List <ResultadosPruebas> resultadosPruebas;
+	 
+	 @ManyToOne(fetch = LAZY, cascade = ALL)
+	    private Curso curso;
+	 
+	 
+	
 	
 	
 	

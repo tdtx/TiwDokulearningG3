@@ -1,6 +1,7 @@
 package es.uc3m.tiw.model.dominios;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,15 +23,15 @@ public class Imagenes  implements Serializable{
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
 	String imagen;
-	/*
+	
 	
 
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private  Usuarios usuarios;
+	    private  List <Usuarios> usuarios;
 	 
 	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private Curso curso;
-	*/
+	    private List <Curso> cursos;
+	
 	
 	public Imagenes() {
 		super();

@@ -43,7 +43,7 @@ public class Curso implements Serializable {
 
 	
 	
-	/*
+	
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private  List <Pruebas> pruebas;
 	 
@@ -54,7 +54,7 @@ public class Curso implements Serializable {
 	    private List <Matriculados> matriculados; 
 	 
 	 @ManyToOne(fetch = LAZY, cascade = ALL)
-	    private Imagenes Imagenes;*/
+	    private Imagenes imagenes;
 	
 	
 	
