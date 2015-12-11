@@ -3,6 +3,7 @@ package servlets;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 import dominio.FormularioCurso;
+import es.uc3m.tiw.model.daos.CursoDAO;
 import es.uc3m.tiw.model.daos.UsuarioDAO;
 import es.uc3m.tiw.model.dominios.Usuarios;
 
@@ -36,6 +38,7 @@ public class Cursos extends HttpServlet {
 	@Resource
 	UserTransaction ut;
 	UsuarioDAO udao;
+	CursoDAO cdao;
 	/**
 	 * 
 	 * @see HttpServlet#HttpServlet()
@@ -59,6 +62,7 @@ public class Cursos extends HttpServlet {
 		cursos.add(curso1);
 		cursos.add(curso2);
 		udao=new UsuarioDAO(em, ut);
+		cdao=new CursoDAO(em, ut);
 	}
 	
 	public Cursos() {
@@ -73,7 +77,7 @@ public class Cursos extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sesion = request.getSession(true);
-
+		List cursos = null;
 		String accion = request.getParameter("accion");
 		String estado = request.getParameter("estado");
 		System.err.println(accion);
@@ -107,11 +111,14 @@ public class Cursos extends HttpServlet {
 		}
 
 
+
 		if (accion.equals("cursos")) {
-			request.setAttribute("cursos", cursos);
-			pagina = "/todosLosCursos.jsp";
-		}
-		if (accion.equals("ofertas")) {
+			try {
+				cursos = cdao.buscarCursos();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			request.setAttribute("cursos", cursos);
 			pagina = "/cursoOferta.jsp";
 

@@ -1,10 +1,10 @@
 package es.uc3m.tiw.model.daos;
 
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
-
 import javax.transaction.UserTransaction;
-
 
 import es.uc3m.tiw.model.dominios.Curso;
 
@@ -45,20 +45,7 @@ public class CursoDAO{
 	    public Curso buscarCurso(Long id) {
 	        return em.find(Curso.class, id);
 	    } 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-
-
-
-
+		 public List<Curso> buscarCursos()throws Exception{
+		        return em.createQuery("SELECT u FROM Curso u",Curso.class).getResultList();
+			 }
 }

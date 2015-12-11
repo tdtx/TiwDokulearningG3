@@ -33,7 +33,7 @@
 								<tbody>
                                <c:forEach items="${cursos }" var="cursoD">
                                     <tr>
-                                        <td><a href="Cursos?accion=${cursoD.nom}">${cursoD.nom}</a></td>
+                                        <td><a href="Cursos?accion=${cursoD.titulo}">${cursoD.titulo}</a></td>
                                         <td>${cursoD.precio} €</td>
                                     </tr>
                                   
