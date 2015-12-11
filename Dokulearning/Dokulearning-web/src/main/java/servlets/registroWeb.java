@@ -429,7 +429,27 @@ public class registroWeb extends HttpServlet {
 		ccdao.guardarProfesor(profesor19);
 		ccdao.guardarProfesor(profesor20);
 		
-		
+		mdao.guardarMatriculado(matriculado1);
+		mdao.guardarMatriculado(matriculado2);
+		mdao.guardarMatriculado(matriculado3);
+		mdao.guardarMatriculado(matriculado4);
+		mdao.guardarMatriculado(matriculado5);
+		mdao.guardarMatriculado(matriculado6);
+		mdao.guardarMatriculado(matriculado7);
+		mdao.guardarMatriculado(matriculado8);
+		mdao.guardarMatriculado(matriculado9);
+		mdao.guardarMatriculado(matriculado10);
+		mdao.guardarMatriculado(matriculado11);
+		mdao.guardarMatriculado(matriculado12);
+		mdao.guardarMatriculado(matriculado13);
+		mdao.guardarMatriculado(matriculado14);
+		mdao.guardarMatriculado(matriculado15);
+		mdao.guardarMatriculado(matriculado16);
+		mdao.guardarMatriculado(matriculado17);
+		mdao.guardarMatriculado(matriculado18);
+		mdao.guardarMatriculado(matriculado19);
+		mdao.guardarMatriculado(matriculado20);
+
 		
 		
 		
