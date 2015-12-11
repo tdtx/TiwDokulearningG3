@@ -19,6 +19,7 @@ import es.uc3m.tiw.model.daos.CreadorCursoDAO;
 import es.uc3m.tiw.model.daos.CursoDAO;
 import es.uc3m.tiw.model.daos.ImagenDAO;
 import es.uc3m.tiw.model.daos.LeccionDAO;
+import es.uc3m.tiw.model.daos.MatriculadoDAO;
 import es.uc3m.tiw.model.daos.PruebaDAO;
 import es.uc3m.tiw.model.daos.ResultadoPruebaDAO;
 import es.uc3m.tiw.model.daos.SeccionDAO;
@@ -58,6 +59,7 @@ public class registroWeb extends HttpServlet {
 	PruebaDAO pdao;
 	ResultadoPruebaDAO rpdao;
 	CreadorCursoDAO ccdao;
+	MatriculadoDAO mdao;
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -274,6 +276,7 @@ public class registroWeb extends HttpServlet {
 		idao=new ImagenDAO(em, ut);
 		cdao=new CursoDAO(em, ut);
 		udao=new UsuarioDAO(em, ut);
+		mdao=new MatriculadoDAO(em,ut);
 		
 	try {
 		udao.guardarUsuario(usuario1);
