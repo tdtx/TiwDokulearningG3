@@ -28,7 +28,7 @@ public class Curso implements Serializable {
 	String descripcion;
 	String horas;
 	String temario;
-	String idProfesor;
+	CreadorCurso profesor;
 	String nivel;
 	String certificado;
 	String categoria;
@@ -63,7 +63,7 @@ public class Curso implements Serializable {
 		super();
 	}
 	public Curso(String titulo, String descripcion, String horas,
-			String temario, String idProfesor, String nivel,
+			String temario, CreadorCurso profesor, String nivel,
 			String certificado, String categoria, String destacado,
 			String validacion, double precio, String tipoOferta, String idImagen,
 			String fechaCaducidad, int descuentoCupon, String fechaInicio ) {
@@ -73,7 +73,7 @@ public class Curso implements Serializable {
 		this.descripcion = descripcion;
 		this.horas = horas;
 		this.temario = temario;
-		this.idProfesor = idProfesor;
+		this.profesor = profesor;
 		this.nivel = nivel;
 		this.certificado = certificado;
 		this.categoria = categoria;
@@ -117,11 +117,12 @@ public class Curso implements Serializable {
 	public void setTemario(String temario) {
 		this.temario = temario;
 	}
-	public String getIdProfesor() {
-		return idProfesor;
+	
+	public CreadorCurso getProfesor() {
+		return profesor;
 	}
-	public void setIdProfesor(String idProfesor) {
-		this.idProfesor = idProfesor;
+	public void setProfesor(CreadorCurso profesor) {
+		this.profesor = profesor;
 	}
 	public String getNivel() {
 		return nivel;
