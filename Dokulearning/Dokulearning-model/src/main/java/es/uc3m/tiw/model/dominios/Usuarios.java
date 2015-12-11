@@ -68,6 +68,9 @@ public class Usuarios implements Serializable {
 		@ManyToOne(fetch = LAZY, cascade = ALL)
 	    private  Imagenes imagenes;
 		
+		@OneToMany(fetch = LAZY, cascade = ALL)
+	    private  List <Curso> curso;
+		
 		
 		
 		

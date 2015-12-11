@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 import dominio.usuarioRegistro;
-import es.uc3m.tiw.model.daos.CreadorCursoDAO;
+//import es.uc3m.tiw.model.daos.CreadorCursoDAO;
 import es.uc3m.tiw.model.daos.CursoDAO;
 import es.uc3m.tiw.model.daos.ImagenDAO;
 import es.uc3m.tiw.model.daos.LeccionDAO;
@@ -24,7 +24,7 @@ import es.uc3m.tiw.model.daos.PruebaDAO;
 import es.uc3m.tiw.model.daos.ResultadoPruebaDAO;
 import es.uc3m.tiw.model.daos.SeccionDAO;
 import es.uc3m.tiw.model.daos.UsuarioDAO;
-import es.uc3m.tiw.model.dominios.CreadorCurso;
+//import es.uc3m.tiw.model.dominios.CreadorCurso;
 import es.uc3m.tiw.model.dominios.Curso;
 import es.uc3m.tiw.model.dominios.Imagenes;
 import es.uc3m.tiw.model.dominios.Leccion;
@@ -58,7 +58,7 @@ public class registroWeb extends HttpServlet {
 	LeccionDAO ldao;
 	PruebaDAO pdao;
 	ResultadoPruebaDAO rpdao;
-	CreadorCursoDAO ccdao;
+	//CreadorCursoDAO ccdao;
 	MatriculadoDAO mdao;
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -104,7 +104,7 @@ public class registroWeb extends HttpServlet {
 		
 	
 		//profesores
-		CreadorCurso profesor1=new CreadorCurso("Estadistica","LidiRG",125.8);
+		/*CreadorCurso profesor1=new CreadorCurso("Estadistica","LidiRG",125.8);
 		CreadorCurso profesor2=new CreadorCurso("Fisica","LidiRG",130.2);
 		CreadorCurso profesor3=new CreadorCurso("Ingenieria del Software","LidiRG",115.3);
 		CreadorCurso profesor4=new CreadorCurso("Programacion","LidiRG",136.9);
@@ -124,28 +124,30 @@ public class registroWeb extends HttpServlet {
 		CreadorCurso profesor18=new CreadorCurso("Calculo", "BelenNC",190.5);
 		CreadorCurso profesor19=new CreadorCurso("Calculo Diferencial", "BelenNC", 120.8);
 		CreadorCurso profesor20=new CreadorCurso("Matematica Discreta", "BelenNC", 215.8);
+		*/
+		
 		
 		//Cursos
-		Curso curso1 = new Curso( "Estadistica", "Curso de estadistica", "0077","Tema1 tema2 tema3 tema4", profesor1, "Medio","Certificado", "Matematicas", "No","A eliminar", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
-		Curso curso2 = new Curso("Fisica", "Curso de fisica", "0097","Tema1 tema2 tema3 tema4 tema5", profesor2, "Medio","Certificado", "Fisica", "No","Pendiente", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso3 = new Curso("Ingenieria del Software", "Curso de Ingenieria del Software", "0059","Tema1 tema2 tema3 tema4", profesor3, "Medio","Certificado", "Informatica", "No","Estado", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso4 = new Curso("Programacion", "Curso de programacion", "0077","Tema1 tema2 tema3 tema4", profesor4, "Medio","Certificado", "Informatica", "Si","Validado", 56, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso5 = new Curso("Literatura", "Curso de literatura", "0077","Tema1 tema2 tema3 tema4", profesor5, "Medio","Certificado", "Lengua y literatura", "No","Validado", 32, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
-		Curso curso6 = new Curso("Ingles", "Curso de ingles", "0077","Tema1 tema2 tema3 tema4", profesor6, "Medio","Certificado", "Idioma", "No","Validado", 73, "No", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
-		Curso curso7 = new Curso("Frances", "Curso de Frances", "0077","Tema1 tema2 tema3 tema4", profesor7, "Medio","Certificado", "Idioma", "Si","Validado", 42, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
-		Curso curso8 = new Curso( "Redes de computadoras", "Curso de redes", "0077","Tema1 tema2 tema3 tema4", profesor8, "Medio","Certificado", "Informatica", "No","Validado", 16, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
-		Curso curso9 = new Curso("Interfaces de usuario", "Curso de interfaces", "0077","Tema1 tema2 tema3 tema4", profesor9, "Medio","Certificado", "Informatica", "No","Validado", 77, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
-		Curso curso10 = new Curso( "Arquitectura de computadores", "Curso de arcos", "0077","Tema1 tema2 tema3 tema4", profesor10, "Medio","Certificado", "Informatica", "Si","Validado", 45, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
-		Curso curso11 = new Curso("Italiano", "Curso de italiano", "0077","Tema1 tema2 tema3 tema4", profesor11, "Medio","Certificado", "Idiomas", "No","Validado", 35, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso12 = new Curso("Chino", "Curso de chino", "0077","Tema1 tema2 tema3 tema4", profesor12, "Medio","Certificado", "Idiomas", "Si","Validado", 43, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso13 = new Curso("Criptografia", "Curso de criptografia", "0077","Tema1 tema2 tema3 tema4", profesor13, "Medio","Certificado", "Informatica", "No","Validado", 55, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso14 = new Curso("SSOO", "Curso de SSOO", "0077","Tema1 tema2 tema3 tema4", profesor14, "Medio","Certificado", "Informatica", "No","Validado", 73, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
-		Curso curso15 = new Curso("Ficheros", "Curso de ficheros", "0077","Tema1 tema2 tema3 tema4", profesor15, "Medio","Certificado", "Informatica", "No","Validado", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
-		Curso curso16 = new Curso("ADE", "Curso de ADE", "0077","Tema1 tema2 tema3 tema4", profesor16, "Medio","Certificado", "Empresa", "Si","Validado", 43, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
-		Curso curso17 = new Curso("Algebra Lineal", "Curso de Algebra", "0077","Tema1 tema2 tema3 tema4", profesor17, "Medio","Certificado", "Matematicas", "No","Validado", 36, "Si", "imagenes/addressbook_add_128.png", "23/12/15",20, "01/12/15");
-		Curso curso18 = new Curso("Calculo", "Curso de calculo", "0077","Tema1 tema2 tema3 tema4", profesor18, "Medio","Certificado", "Matematicas", "Si","Validado", 85, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso19 = new Curso("Calculo Diferencial", "Curso de calculo diferencial", "0077","Tema1 tema2 tema3 tema4", profesor19, "Medio","Certificado", "Matematicas", "No","Validado", 12, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso20 = new Curso("Matematica Discreta", "Curso de matematica discreta", "0077","Tema1 tema2 tema3 tema4", profesor20, "Medio","Certificado", "Matematicas", "No","Validado", 37, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso1 = new Curso( "Estadistica", "Curso de estadistica", "0077","Tema1 tema2 tema3 tema4", usuario1, "Medio","Certificado", "Matematicas", "No","A eliminar", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
+		Curso curso2 = new Curso("Fisica", "Curso de fisica", "0097","Tema1 tema2 tema3 tema4 tema5", usuario2, "Medio","Certificado", "Fisica", "No","Pendiente", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso3 = new Curso("Ingenieria del Software", "Curso de Ingenieria del Software", "0059","Tema1 tema2 tema3 tema4", usuario3, "Medio","Certificado", "Informatica", "No","Estado", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso4 = new Curso("Programacion", "Curso de programacion", "0077","Tema1 tema2 tema3 tema4", usuario4, "Medio","Certificado", "Informatica", "Si","Validado", 56, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso5 = new Curso("Literatura", "Curso de literatura", "0077","Tema1 tema2 tema3 tema4", usuario5, "Medio","Certificado", "Lengua y literatura", "No","Validado", 32, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso6 = new Curso("Ingles", "Curso de ingles", "0077","Tema1 tema2 tema3 tema4", usuario6, "Medio","Certificado", "Idioma", "No","Validado", 73, "No", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
+		Curso curso7 = new Curso("Frances", "Curso de Frances", "0077","Tema1 tema2 tema3 tema4", usuario7, "Medio","Certificado", "Idioma", "Si","Validado", 42, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso8 = new Curso( "Redes de computadoras", "Curso de redes", "0077","Tema1 tema2 tema3 tema4", usuario8, "Medio","Certificado", "Informatica", "No","Validado", 16, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
+		Curso curso9 = new Curso("Interfaces de usuario", "Curso de interfaces", "0077","Tema1 tema2 tema3 tema4", usuario9, "Medio","Certificado", "Informatica", "No","Validado", 77, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
+		Curso curso10 = new Curso( "Arquitectura de computadores", "Curso de arcos", "0077","Tema1 tema2 tema3 tema4", usuario10, "Medio","Certificado", "Informatica", "Si","Validado", 45, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso11 = new Curso("Italiano", "Curso de italiano", "0077","Tema1 tema2 tema3 tema4", usuario11, "Medio","Certificado", "Idiomas", "No","Validado", 35, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso12 = new Curso("Chino", "Curso de chino", "0077","Tema1 tema2 tema3 tema4", usuario12, "Medio","Certificado", "Idiomas", "Si","Validado", 43, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso13 = new Curso("Criptografia", "Curso de criptografia", "0077","Tema1 tema2 tema3 tema4", usuario13, "Medio","Certificado", "Informatica", "No","Validado", 55, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso14 = new Curso("SSOO", "Curso de SSOO", "0077","Tema1 tema2 tema3 tema4", usuario14, "Medio","Certificado", "Informatica", "No","Validado", 73, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
+		Curso curso15 = new Curso("Ficheros", "Curso de ficheros", "0077","Tema1 tema2 tema3 tema4", usuario15, "Medio","Certificado", "Informatica", "No","Validado", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso16 = new Curso("ADE", "Curso de ADE", "0077","Tema1 tema2 tema3 tema4", usuario16, "Medio","Certificado", "Empresa", "Si","Validado", 43, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso17 = new Curso("Algebra Lineal", "Curso de Algebra", "0077","Tema1 tema2 tema3 tema4", usuario17, "Medio","Certificado", "Matematicas", "No","Validado", 36, "Si", "imagenes/addressbook_add_128.png", "23/12/15",20, "01/12/15");
+		Curso curso18 = new Curso("Calculo", "Curso de calculo", "0077","Tema1 tema2 tema3 tema4", usuario18, "Medio","Certificado", "Matematicas", "Si","Validado", 85, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso19 = new Curso("Calculo Diferencial", "Curso de calculo diferencial", "0077","Tema1 tema2 tema3 tema4", usuario19, "Medio","Certificado", "Matematicas", "No","Validado", 12, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso20 = new Curso("Matematica Discreta", "Curso de matematica discreta", "0077","Tema1 tema2 tema3 tema4", usuario20, "Medio","Certificado", "Matematicas", "No","Validado", 37, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
 				
 		
 		
@@ -272,7 +274,7 @@ public class registroWeb extends HttpServlet {
 	
 		
 		
-		ccdao= new CreadorCursoDAO(em,ut);
+		//ccdao= new CreadorCursoDAO(em,ut);
 		rpdao=new ResultadoPruebaDAO(em, ut);
 		pdao=new PruebaDAO(em, ut);
 		ldao=new LeccionDAO(em,ut);
@@ -412,7 +414,7 @@ public class registroWeb extends HttpServlet {
 		rpdao.guardarResultadoPrueba(resultado19);
 		rpdao.guardarResultadoPrueba(resultado20);
 		
-		ccdao.guardarProfesor(profesor1);
+		/*ccdao.guardarProfesor(profesor1);
 		ccdao.guardarProfesor(profesor2);
 		ccdao.guardarProfesor(profesor3);
 		ccdao.guardarProfesor(profesor4);
@@ -431,7 +433,7 @@ public class registroWeb extends HttpServlet {
 		ccdao.guardarProfesor(profesor17);
 		ccdao.guardarProfesor(profesor18);
 		ccdao.guardarProfesor(profesor19);
-		ccdao.guardarProfesor(profesor20);
+		ccdao.guardarProfesor(profesor20);*/
 		
 		mdao.guardarMatriculado(matriculado1);
 		mdao.guardarMatriculado(matriculado2);

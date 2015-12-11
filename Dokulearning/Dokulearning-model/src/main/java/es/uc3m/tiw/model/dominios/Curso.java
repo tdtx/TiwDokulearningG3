@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.CascadeType.ALL;
@@ -28,7 +29,6 @@ public class Curso implements Serializable {
 	String descripcion;
 	String horas;
 	String temario;
-	CreadorCurso profesor;
 	String nivel;
 	String certificado;
 	String categoria;
@@ -55,6 +55,11 @@ public class Curso implements Serializable {
 	 
 	 @ManyToOne(fetch = LAZY, cascade = ALL)
 	    private Imagenes imagenes;
+	 
+	 @OneToOne(fetch = LAZY, cascade = ALL)
+	    private Usuarios usuario;
+	 
+	 
 	
 	
 	
@@ -63,7 +68,7 @@ public class Curso implements Serializable {
 		super();
 	}
 	public Curso(String titulo, String descripcion, String horas,
-			String temario, CreadorCurso profesor, String nivel,
+			String temario, Usuarios usuario, String nivel,
 			String certificado, String categoria, String destacado,
 			String validacion, double precio, String tipoOferta, String idImagen,
 			String fechaCaducidad, int descuentoCupon, String fechaInicio ) {
@@ -73,7 +78,7 @@ public class Curso implements Serializable {
 		this.descripcion = descripcion;
 		this.horas = horas;
 		this.temario = temario;
-		this.profesor = profesor;
+		this.usuario = usuario;
 		this.nivel = nivel;
 		this.certificado = certificado;
 		this.categoria = categoria;
@@ -118,12 +123,8 @@ public class Curso implements Serializable {
 		this.temario = temario;
 	}
 	
-	public CreadorCurso getProfesor() {
-		return profesor;
-	}
-	public void setProfesor(CreadorCurso profesor) {
-		this.profesor = profesor;
-	}
+	
+
 	public String getNivel() {
 		return nivel;
 	}

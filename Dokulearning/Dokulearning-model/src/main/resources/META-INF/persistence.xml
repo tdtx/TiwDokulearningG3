@@ -13,7 +13,6 @@
 		<class>es.uc3m.tiw.model.dominios.Matriculados</class>
 		<class>es.uc3m.tiw.model.dominios.Seccion</class>
 		<class>es.uc3m.tiw.model.dominios.Usuarios</class>
-		<class>es.uc3m.tiw.model.dominios.CreadorCurso</class>
 		<properties>
 			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
 		</properties>
