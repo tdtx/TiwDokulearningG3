@@ -102,28 +102,8 @@ public class registroWeb extends HttpServlet {
 		Usuarios usuario20=new Usuarios("PedroCM", "soypedro", "Pedro", "Cuco", "Martin", "08/09/1990", "pcm@pcm.pcm", "Acvbhnjmkilko98765432", "fonts/users_folder_128.png", "Responsable y extrovertido", "Futbol", "De los Molinos", "Santander", 90870, "Cantabria", 908765432, "Estudiante", "54667890i", "Hombre");
 		
 		
-		//matriculados
 		
-		Matriculados matriculado1=new Matriculados("idcurso1", "iduser1", "cupon1", 128.90, 2.8);
-		Matriculados matriculado2=new Matriculados("idcurso2", "iduser2", "cupon2", 128.90, 2.8 );
-		Matriculados matriculado3=new Matriculados("idcurso3", "iduser3", "cupon3", 128.90, 2.8);
-		Matriculados matriculado4=new Matriculados("idcurso4", "iduser4", "cupon4", 128.90, 2.8);
-		Matriculados matriculado5=new Matriculados("idcurso5", "iduser5", "cupon5", 128.90, 2.8);
-		Matriculados matriculado6=new Matriculados("idcurso6", "iduser6", "cupon6", 128.90, 2.8);
-		Matriculados matriculado7=new Matriculados("idcurso7", "iduser7", "cupon7", 128.90, 2.8);
-		Matriculados matriculado8=new Matriculados("idcurso8", "iduser8", "cupon8", 128.90, 2.8);
-		Matriculados matriculado9=new Matriculados("idcurso9", "iduser9", "cupon9", 128.90, 2.8);
-		Matriculados matriculado10=new Matriculados("idcurso10", "iduser10", "cupon10", 128.90, 2.8);
-		Matriculados matriculado11=new Matriculados("idcurso11", "iduser11", "cupon11", 128.90, 2.8);
-		Matriculados matriculado12=new Matriculados("idcurso12", "iduser12", "cupon12", 128.90, 2.8);
-		Matriculados matriculado13=new Matriculados("idcurso13", "iduser13", "cupon13", 128.90, 2.8);
-		Matriculados matriculado14=new Matriculados("idcurso14", "iduser14", "cupon14", 128.90, 2.8);
-		Matriculados matriculado15=new Matriculados("idcurso15", "iduser15", "cupon15", 128.90, 2.8);
-		Matriculados matriculado16=new Matriculados("idcurso16", "iduser16", "cupon16", 128.90, 2.8);
-		Matriculados matriculado17=new Matriculados("idcurso17", "iduser17", "cupon17", 128.90, 2.8);
-		Matriculados matriculado18=new Matriculados("idcurso18", "iduser18", "cupon18", 128.90, 2.8);
-		Matriculados matriculado19=new Matriculados("idcurso19", "iduser19", "cupon19", 128.90, 2.8);
-		Matriculados matriculado20=new Matriculados("idcurso20", "iduser20", "cupon20", 128.90, 2.8);
+		
 		
 		
 		
@@ -148,6 +128,32 @@ public class registroWeb extends HttpServlet {
 		Curso curso18 = new Curso("Calculo", "Curso de calculo", "0077","Tema1 tema2 tema3 tema4", "103456789", "Medio","Certificado", "Matematicas", "Si","Validado", 85, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
 		Curso curso19 = new Curso("Calculo Diferencial", "Curso de calculo diferencial", "0077","Tema1 tema2 tema3 tema4", "113456789", "Medio","Certificado", "Matematicas", "No","Validado", 12, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
 		Curso curso20 = new Curso("Matematica Discreta", "Curso de matematica discreta", "0077","Tema1 tema2 tema3 tema4", "124456789", "Medio","Certificado", "Matematicas", "No","Validado", 37, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+				
+		
+		
+		//matriculados
+				Matriculados matriculado1=new Matriculados(curso1, "iduser1", "cupon1", 128.90, 2.8);
+				Matriculados matriculado2=new Matriculados(curso2, "iduser2", "cupon2", 128.90, 2.8 );
+				Matriculados matriculado3=new Matriculados(curso3, "iduser3", "cupon3", 128.90, 2.8);
+				Matriculados matriculado4=new Matriculados(curso4, "iduser4", "cupon4", 128.90, 2.8);
+				Matriculados matriculado5=new Matriculados(curso5, "iduser5", "cupon5", 128.90, 2.8);
+				Matriculados matriculado6=new Matriculados(curso6, "iduser6", "cupon6", 128.90, 2.8);
+				Matriculados matriculado7=new Matriculados(curso7, "iduser7", "cupon7", 128.90, 2.8);
+				Matriculados matriculado8=new Matriculados(curso8, "iduser8", "cupon8", 128.90, 2.8);
+				Matriculados matriculado9=new Matriculados(curso9, "iduser9", "cupon9", 128.90, 2.8);
+				Matriculados matriculado10=new Matriculados(curso10, "iduser10", "cupon10", 128.90, 2.8);
+				Matriculados matriculado11=new Matriculados(curso11, "iduser11", "cupon11", 128.90, 2.8);
+				Matriculados matriculado12=new Matriculados(curso12, "iduser12", "cupon12", 128.90, 2.8);
+				Matriculados matriculado13=new Matriculados(curso13, "iduser13", "cupon13", 128.90, 2.8);
+				Matriculados matriculado14=new Matriculados(curso14, "iduser14", "cupon14", 128.90, 2.8);
+				Matriculados matriculado15=new Matriculados(curso15, "iduser15", "cupon15", 128.90, 2.8);
+				Matriculados matriculado16=new Matriculados(curso16, "iduser16", "cupon16", 128.90, 2.8);
+				Matriculados matriculado17=new Matriculados(curso17, "iduser17", "cupon17", 128.90, 2.8);
+				Matriculados matriculado18=new Matriculados(curso18, "iduser18", "cupon18", 128.90, 2.8);
+				Matriculados matriculado19=new Matriculados(curso19, "iduser19", "cupon19", 128.90, 2.8);
+				Matriculados matriculado20=new Matriculados(curso20, "iduser20", "cupon20", 128.90, 2.8);
+				
+				
 				
 		//imagenes
 		Imagenes imagen1 = new Imagenes("fonts/users_folder_128.png");

@@ -49,10 +49,10 @@ private static final long serialVersionUID = 1L;
 	}
 	
 	
-	public Matriculados(String id_curso, String id_usuario,
+	public Matriculados(Curso curso, String id_usuario,
 			String cupon, double precio_final, double nota) {
 		super();
-		this.id_curso = id_curso;
+		this.curso = curso;
 		this.id_usuario = id_usuario;
 		this.cupon = cupon;
 		this.precio_final = precio_final;
@@ -66,12 +66,17 @@ private static final long serialVersionUID = 1L;
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getId_curso() {
-		return id_curso;
+	
+	public Curso getCurso() {
+		return curso;
 	}
-	public void setId_curso(String id_curso) {
-		this.id_curso = id_curso;
+
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
+
+
 	public String getId_usuario() {
 		return id_usuario;
 	}
