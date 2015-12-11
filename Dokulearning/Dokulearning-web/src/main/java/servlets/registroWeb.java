@@ -102,9 +102,7 @@ public class registroWeb extends HttpServlet {
 		Usuarios usuario20=new Usuarios("PedroCM", "soypedro", "Pedro", "Cuco", "Martin", "08/09/1990", "pcm@pcm.pcm", "Acvbhnjmkilko98765432", "fonts/users_folder_128.png", "Responsable y extrovertido", "Futbol", "De los Molinos", "Santander", 90870, "Cantabria", 908765432, "Estudiante", "54667890i", "Hombre");
 		
 		
-		
-		
-		
+	
 		
 		
 		//Cursos
@@ -132,26 +130,26 @@ public class registroWeb extends HttpServlet {
 		
 		
 		//matriculados
-				Matriculados matriculado1=new Matriculados(curso1, "iduser1", "cupon1", 128.90, 2.8);
-				Matriculados matriculado2=new Matriculados(curso2, "iduser2", "cupon2", 128.90, 2.8 );
-				Matriculados matriculado3=new Matriculados(curso3, "iduser3", "cupon3", 128.90, 2.8);
-				Matriculados matriculado4=new Matriculados(curso4, "iduser4", "cupon4", 128.90, 2.8);
-				Matriculados matriculado5=new Matriculados(curso5, "iduser5", "cupon5", 128.90, 2.8);
-				Matriculados matriculado6=new Matriculados(curso6, "iduser6", "cupon6", 128.90, 2.8);
-				Matriculados matriculado7=new Matriculados(curso7, "iduser7", "cupon7", 128.90, 2.8);
-				Matriculados matriculado8=new Matriculados(curso8, "iduser8", "cupon8", 128.90, 2.8);
-				Matriculados matriculado9=new Matriculados(curso9, "iduser9", "cupon9", 128.90, 2.8);
-				Matriculados matriculado10=new Matriculados(curso10, "iduser10", "cupon10", 128.90, 2.8);
-				Matriculados matriculado11=new Matriculados(curso11, "iduser11", "cupon11", 128.90, 2.8);
-				Matriculados matriculado12=new Matriculados(curso12, "iduser12", "cupon12", 128.90, 2.8);
-				Matriculados matriculado13=new Matriculados(curso13, "iduser13", "cupon13", 128.90, 2.8);
-				Matriculados matriculado14=new Matriculados(curso14, "iduser14", "cupon14", 128.90, 2.8);
-				Matriculados matriculado15=new Matriculados(curso15, "iduser15", "cupon15", 128.90, 2.8);
-				Matriculados matriculado16=new Matriculados(curso16, "iduser16", "cupon16", 128.90, 2.8);
-				Matriculados matriculado17=new Matriculados(curso17, "iduser17", "cupon17", 128.90, 2.8);
-				Matriculados matriculado18=new Matriculados(curso18, "iduser18", "cupon18", 128.90, 2.8);
-				Matriculados matriculado19=new Matriculados(curso19, "iduser19", "cupon19", 128.90, 2.8);
-				Matriculados matriculado20=new Matriculados(curso20, "iduser20", "cupon20", 128.90, 2.8);
+				Matriculados matriculado1=new Matriculados(curso1, usuario11, "cupon1", 128.90, 2.8);
+				Matriculados matriculado2=new Matriculados(curso2, usuario12, "cupon2", 128.90, 2.8 );
+				Matriculados matriculado3=new Matriculados(curso3, usuario13, "cupon3", 128.90, 2.8);
+				Matriculados matriculado4=new Matriculados(curso4, usuario14, "cupon4", 128.90, 2.8);
+				Matriculados matriculado5=new Matriculados(curso5, usuario15, "cupon5", 128.90, 2.8);
+				Matriculados matriculado6=new Matriculados(curso6, usuario16, "cupon6", 128.90, 2.8);
+				Matriculados matriculado7=new Matriculados(curso7, usuario17, "cupon7", 128.90, 2.8);
+				Matriculados matriculado8=new Matriculados(curso8, usuario18, "cupon8", 128.90, 2.8);
+				Matriculados matriculado9=new Matriculados(curso9, usuario19, "cupon9", 128.90, 2.8);
+				Matriculados matriculado10=new Matriculados(curso10, usuario20, "cupon10", 128.90, 2.8);
+				Matriculados matriculado11=new Matriculados(curso11, usuario11, "cupon11", 128.90, 2.8);
+				Matriculados matriculado12=new Matriculados(curso12, usuario12, "cupon12", 128.90, 2.8);
+				Matriculados matriculado13=new Matriculados(curso13, usuario13, "cupon13", 128.90, 2.8);
+				Matriculados matriculado14=new Matriculados(curso14, usuario14, "cupon14", 128.90, 2.8);
+				Matriculados matriculado15=new Matriculados(curso15,usuario15 , "cupon15", 128.90, 2.8);
+				Matriculados matriculado16=new Matriculados(curso16,usuario16 , "cupon16", 128.90, 2.8);
+				Matriculados matriculado17=new Matriculados(curso17, usuario17, "cupon17", 128.90, 2.8);
+				Matriculados matriculado18=new Matriculados(curso18, usuario18, "cupon18", 128.90, 2.8);
+				Matriculados matriculado19=new Matriculados(curso19, usuario19, "cupon19", 128.90, 2.8);
+				Matriculados matriculado20=new Matriculados(curso20, usuario20, "cupon20", 128.90, 2.8);
 				
 				
 				
