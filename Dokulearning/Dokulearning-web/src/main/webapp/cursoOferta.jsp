@@ -35,7 +35,7 @@
                                <c:forEach items="${cursos }" var="curso">
                                     <tr>
                                         <td><a href="Cursos?accion=${curso.titulo}">${curso.titulo}</a></td>
-                                        <td>${curso.titulo} €</td>
+                                        <td>${curso.precio} €</td>
                                     </tr>
                                   
                                     </c:forEach>
