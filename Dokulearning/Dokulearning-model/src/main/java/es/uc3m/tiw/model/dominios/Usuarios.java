@@ -61,7 +61,7 @@ public class Usuarios implements Serializable {
 
 
 		
-		@OneToMany(fetch = LAZY, cascade = ALL)
+	/*	@OneToMany(fetch = LAZY, cascade = ALL)
 	    private  List <Matriculados> matriculados;
 		
 		@ManyToOne(fetch = LAZY, cascade = ALL)
@@ -71,7 +71,7 @@ public class Usuarios implements Serializable {
 	    private  List <Curso> curso;
 		
 		
-		
+		*/
 		
 		public Usuarios() {
 			super();

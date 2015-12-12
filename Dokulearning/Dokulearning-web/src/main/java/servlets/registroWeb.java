@@ -128,7 +128,7 @@ public class registroWeb extends HttpServlet {
 		
 		
 		//matriculados
-				Matriculados matriculado1=new Matriculados(curso1, usuario11, "cupon1", 128.90, 2.8);
+				/*Matriculados matriculado1=new Matriculados(curso1, usuario11, "cupon1", 128.90, 2.8);
 				Matriculados matriculado2=new Matriculados(curso2, usuario12, "cupon2", 128.90, 2.8 );
 				Matriculados matriculado3=new Matriculados(curso3, usuario13, "cupon3", 128.90, 2.8);
 				Matriculados matriculado4=new Matriculados(curso4, usuario14, "cupon4", 128.90, 2.8);
@@ -147,16 +147,16 @@ public class registroWeb extends HttpServlet {
 				Matriculados matriculado17=new Matriculados(curso17, usuario17, "cupon17", 128.90, 2.8);
 				Matriculados matriculado18=new Matriculados(curso18, usuario18, "cupon18", 128.90, 2.8);
 				Matriculados matriculado19=new Matriculados(curso19, usuario19, "cupon19", 128.90, 2.8);
-				Matriculados matriculado20=new Matriculados(curso20, usuario20, "cupon20", 128.90, 2.8);
+				Matriculados matriculado20=new Matriculados(curso20, usuario20, "cupon20", 128.90, 2.8);*/
 				
 				
 				
 		//imagenes
-		Imagenes imagen1 = new Imagenes("fonts/users_folder_128.png");
-		Imagenes imagen2 = new Imagenes("imagenes/addressbook_add_128.png");
+/*		Imagenes imagen1 = new Imagenes("fonts/users_folder_128.png");
+		Imagenes imagen2 = new Imagenes("imagenes/addressbook_add_128.png");*/
 		
 		//secciones
-		Seccion seccion1 = new Seccion("Electricidad fisica");
+	/*	Seccion seccion1 = new Seccion("Electricidad fisica");
 		Seccion seccion2 = new Seccion("Fuerzas magneticas");
 		Seccion seccion3 = new Seccion("Italiano practico");
 		Seccion seccion4 = new Seccion("Teoria francesa");
@@ -177,9 +177,9 @@ public class registroWeb extends HttpServlet {
 		Seccion seccion19 = new Seccion("Combinatoria basica");
 		Seccion seccion20 = new Seccion("Combinatoria avanzada");
 		
-		
+		*/
 		//Lecciones  
-		Leccion leccion1=new Leccion("idcurso1","idseccion1","Introduccion a la electricidad");
+	/*	Leccion leccion1=new Leccion("idcurso1","idseccion1","Introduccion a la electricidad");
 		Leccion leccion2=new Leccion("idcurso2","idseccion2","Introduccion al electromagnetismo");
 		Leccion leccion3=new Leccion("idcurso3","idseccion3","La economia clasica");
 		Leccion leccion4=new Leccion("idcurso4","idseccion4","Indicadores macroeconomicos");
@@ -199,9 +199,9 @@ public class registroWeb extends HttpServlet {
 		Leccion leccion18=new Leccion("idcurso18","idseccion18","Verbos italianos");
 		Leccion leccion19=new Leccion("idcurso19","idseccion19","Vocabulario chino de ocio");
 		Leccion leccion20=new Leccion("idcurso20","idseccion20","teorema de Euler");
-		
+		*/
 		//pruebas 
-		Pruebas prueba1=new Pruebas ("idcursoo1","Examen de combinatoria basica");
+		/*Pruebas prueba1=new Pruebas ("idcursoo1","Examen de combinatoria basica");
 		Pruebas prueba2=new Pruebas ("idcursoo1","Examen de combinatoria avanzada");
 		Pruebas prueba3=new Pruebas ("idcursoo3","Examen de redes");
 		Pruebas prueba4=new Pruebas ("idcursoo4","Examen de grafos eulerianos y hamiltonianos");
@@ -221,9 +221,9 @@ public class registroWeb extends HttpServlet {
 		Pruebas prueba18=new Pruebas ("idcursoo18","Examen teorico de memoria cache");
 		Pruebas prueba19=new Pruebas ("idcursoo19","Examen de ejercicios de memoria virtual");
 		Pruebas prueba20=new Pruebas ("idcursoo20","Examen teorico de memoria virtual");
-		
+		*/
 		//resultados pruebas
-		ResultadosPruebas resultado1=new ResultadosPruebas("idprueba1", "idmatricula1", 3.0, "Suspenso");
+	/*	ResultadosPruebas resultado1=new ResultadosPruebas("idprueba1", "idmatricula1", 3.0, "Suspenso");
 		ResultadosPruebas resultado2=new ResultadosPruebas("idprueba2", "idmatricula2", 3.98, "Suspenso");
 		ResultadosPruebas resultado3=new ResultadosPruebas("idprueba3", "idmatricula3", 4.5, "Suspenso");
 		ResultadosPruebas resultado4=new ResultadosPruebas("idprueba4", "idmatricula4", 5.1, "Aprobado");
@@ -242,7 +242,7 @@ public class registroWeb extends HttpServlet {
 		ResultadosPruebas resultado17=new ResultadosPruebas("idprueba17", "idmatricula17", 4.5, "Suspenso");
 		ResultadosPruebas resultado18=new ResultadosPruebas("idprueba18", "idmatricula18", 6.75, "Bien");
 		ResultadosPruebas resultado19=new ResultadosPruebas("idprueba19", "idmatricula19", 6.01, "Bien");
-		ResultadosPruebas resultado20=new ResultadosPruebas("idprueba20", "idmatricula20", 3.9, "uspenso");
+		ResultadosPruebas resultado20=new ResultadosPruebas("idprueba20", "idmatricula20", 3.9, "uspenso");*/
 		
 	
 		
@@ -251,14 +251,15 @@ public class registroWeb extends HttpServlet {
 		
 		
 		//ccdao= new CreadorCursoDAO(em,ut);
+		/*mdao=new MatriculadoDAO(em,ut);
 		rpdao=new ResultadoPruebaDAO(em, ut);
 		pdao=new PruebaDAO(em, ut);
 		ldao=new LeccionDAO(em,ut);
 		sdao=new SeccionDAO(em,ut);
-		idao=new ImagenDAO(em, ut);
+		idao=new ImagenDAO(em, ut);*/
 		cdao=new CursoDAO(em, ut);
 		udao=new UsuarioDAO(em, ut);
-		mdao=new MatriculadoDAO(em,ut);
+
 		
 	try {
 		udao.guardarUsuario(usuario1);
@@ -304,7 +305,7 @@ public class registroWeb extends HttpServlet {
 		cdao.guardarCurso(curso19);
 		cdao.guardarCurso(curso20);
 		
-		idao.guardarImagen(imagen1);
+	/*	idao.guardarImagen(imagen1);
 		idao.guardarImagen(imagen2);
 		
 		sdao.guardarSeccion(seccion1);
@@ -389,7 +390,7 @@ public class registroWeb extends HttpServlet {
 		rpdao.guardarResultadoPrueba(resultado18);
 		rpdao.guardarResultadoPrueba(resultado19);
 		rpdao.guardarResultadoPrueba(resultado20);
-		
+		*/
 		/*ccdao.guardarProfesor(profesor1);
 		ccdao.guardarProfesor(profesor2);
 		ccdao.guardarProfesor(profesor3);
@@ -411,7 +412,7 @@ public class registroWeb extends HttpServlet {
 		ccdao.guardarProfesor(profesor19);
 		ccdao.guardarProfesor(profesor20);*/
 		
-		mdao.guardarMatriculado(matriculado1);
+		/*mdao.guardarMatriculado(matriculado1);
 		mdao.guardarMatriculado(matriculado2);
 		mdao.guardarMatriculado(matriculado3);
 		mdao.guardarMatriculado(matriculado4);
@@ -430,7 +431,7 @@ public class registroWeb extends HttpServlet {
 		mdao.guardarMatriculado(matriculado17);
 		mdao.guardarMatriculado(matriculado18);
 		mdao.guardarMatriculado(matriculado19);
-		mdao.guardarMatriculado(matriculado20);
+		mdao.guardarMatriculado(matriculado20);*/
 
 		
 		
