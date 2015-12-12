@@ -40,7 +40,7 @@ public class Curso implements Serializable {
 	String fechaCaducidad;
 	int descuentoCupon;
 	String fechaInicio;
-
+	String usuario;
 	
 	
 	
@@ -56,19 +56,14 @@ public class Curso implements Serializable {
 	 @ManyToOne(fetch = LAZY, cascade = ALL)
 	    private Imagenes imagenes;
 	 
-	 @OneToOne(fetch = LAZY, cascade = ALL)
-	    private Usuarios usuario;
 	 
 	 
-	
-	
-	
 	
 	public Curso() {
 		super();
 	}
 	public Curso(String titulo, String descripcion, String horas,
-			String temario, Usuarios usuario, String nivel,
+			String temario, String usuario, String nivel,
 			String certificado, String categoria, String destacado,
 			String validacion, double precio, String tipoOferta, String idImagen,
 			String fechaCaducidad, int descuentoCupon, String fechaInicio ) {
@@ -196,6 +191,12 @@ public class Curso implements Serializable {
 	}
 	public void setFechaInicio(String fechaInicio) {
 		this.fechaInicio = fechaInicio;
+	}
+	public String getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 	
 }

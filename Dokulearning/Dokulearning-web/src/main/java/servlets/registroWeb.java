@@ -102,52 +102,28 @@ public class registroWeb extends HttpServlet {
 		Usuarios usuario20=new Usuarios("PedroCM", "soypedro", "Pedro", "Cuco", "Martin", "08/09/1990", "pcm@pcm.pcm", "Acvbhnjmkilko98765432", "fonts/users_folder_128.png", "Responsable y extrovertido", "Futbol", "De los Molinos", "Santander", 90870, "Cantabria", 908765432, "Estudiante", "54667890i", "Hombre");
 		
 		
-	
-		//profesores
-		/*CreadorCurso profesor1=new CreadorCurso("Estadistica","LidiRG",125.8);
-		CreadorCurso profesor2=new CreadorCurso("Fisica","LidiRG",130.2);
-		CreadorCurso profesor3=new CreadorCurso("Ingenieria del Software","LidiRG",115.3);
-		CreadorCurso profesor4=new CreadorCurso("Programacion","LidiRG",136.9);
-		CreadorCurso profesor5=new CreadorCurso("Literatura", "RaulFJ",150.9);
-		CreadorCurso profesor6=new CreadorCurso("Ingles", "RaulFJ",160.8);
-		CreadorCurso profesor7=new CreadorCurso("Frances", "RaulFJ", 100.30);
-		CreadorCurso profesor8=new CreadorCurso( "Redes de computadoras","RaulFJ", 200.5);
-		CreadorCurso profesor9=new CreadorCurso("Interfaces de usuario", "MartinMF", 300.4);
-		CreadorCurso profesor10=new CreadorCurso("Arquitectura de computadores", "MartinMF", 280.9);
-		CreadorCurso profesor11=new CreadorCurso("Italiano", "MartinMF", 198.3);
-		CreadorCurso profesor12=new CreadorCurso("Chino","MartinMF", 120.6);
-		CreadorCurso profesor13=new CreadorCurso("Criptografia", "AlbaMP", 200.4);
-		CreadorCurso profesor14=new CreadorCurso("SSOO", "AlbaMP", 321.6);
-		CreadorCurso profesor15=new CreadorCurso("Ficheros", "AlbaMP", 123.4);
-		CreadorCurso profesor16=new CreadorCurso("ADE", "AlbaMP", 176.9);
-		CreadorCurso profesor17=new CreadorCurso("Algebra Lineal", "BelenNC", 120.2);
-		CreadorCurso profesor18=new CreadorCurso("Calculo", "BelenNC",190.5);
-		CreadorCurso profesor19=new CreadorCurso("Calculo Diferencial", "BelenNC", 120.8);
-		CreadorCurso profesor20=new CreadorCurso("Matematica Discreta", "BelenNC", 215.8);
-		*/
-		
 		
 		//Cursos
-		Curso curso1 = new Curso( "Estadistica", "Curso de estadistica", "0077","Tema1 tema2 tema3 tema4", usuario1, "Medio","Certificado", "Matematicas", "No","A eliminar", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
-		Curso curso2 = new Curso("Fisica", "Curso de fisica", "0097","Tema1 tema2 tema3 tema4 tema5", usuario2, "Medio","Certificado", "Fisica", "No","Pendiente", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso3 = new Curso("Ingenieria del Software", "Curso de Ingenieria del Software", "0059","Tema1 tema2 tema3 tema4", usuario3, "Medio","Certificado", "Informatica", "No","Estado", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso4 = new Curso("Programacion", "Curso de programacion", "0077","Tema1 tema2 tema3 tema4", usuario4, "Medio","Certificado", "Informatica", "Si","Validado", 56, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso5 = new Curso("Literatura", "Curso de literatura", "0077","Tema1 tema2 tema3 tema4", usuario5, "Medio","Certificado", "Lengua y literatura", "No","Validado", 32, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
-		Curso curso6 = new Curso("Ingles", "Curso de ingles", "0077","Tema1 tema2 tema3 tema4", usuario6, "Medio","Certificado", "Idioma", "No","Validado", 73, "No", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
-		Curso curso7 = new Curso("Frances", "Curso de Frances", "0077","Tema1 tema2 tema3 tema4", usuario7, "Medio","Certificado", "Idioma", "Si","Validado", 42, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
-		Curso curso8 = new Curso( "Redes de computadoras", "Curso de redes", "0077","Tema1 tema2 tema3 tema4", usuario8, "Medio","Certificado", "Informatica", "No","Validado", 16, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
-		Curso curso9 = new Curso("Interfaces de usuario", "Curso de interfaces", "0077","Tema1 tema2 tema3 tema4", usuario9, "Medio","Certificado", "Informatica", "No","Validado", 77, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
-		Curso curso10 = new Curso( "Arquitectura de computadores", "Curso de arcos", "0077","Tema1 tema2 tema3 tema4", usuario10, "Medio","Certificado", "Informatica", "Si","Validado", 45, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
-		Curso curso11 = new Curso("Italiano", "Curso de italiano", "0077","Tema1 tema2 tema3 tema4", usuario11, "Medio","Certificado", "Idiomas", "No","Validado", 35, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso12 = new Curso("Chino", "Curso de chino", "0077","Tema1 tema2 tema3 tema4", usuario12, "Medio","Certificado", "Idiomas", "Si","Validado", 43, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso13 = new Curso("Criptografia", "Curso de criptografia", "0077","Tema1 tema2 tema3 tema4", usuario13, "Medio","Certificado", "Informatica", "No","Validado", 55, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso14 = new Curso("SSOO", "Curso de SSOO", "0077","Tema1 tema2 tema3 tema4", usuario14, "Medio","Certificado", "Informatica", "No","Validado", 73, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
-		Curso curso15 = new Curso("Ficheros", "Curso de ficheros", "0077","Tema1 tema2 tema3 tema4", usuario15, "Medio","Certificado", "Informatica", "No","Validado", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
-		Curso curso16 = new Curso("ADE", "Curso de ADE", "0077","Tema1 tema2 tema3 tema4", usuario16, "Medio","Certificado", "Empresa", "Si","Validado", 43, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
-		Curso curso17 = new Curso("Algebra Lineal", "Curso de Algebra", "0077","Tema1 tema2 tema3 tema4", usuario17, "Medio","Certificado", "Matematicas", "No","Validado", 36, "Si", "imagenes/addressbook_add_128.png", "23/12/15",20, "01/12/15");
-		Curso curso18 = new Curso("Calculo", "Curso de calculo", "0077","Tema1 tema2 tema3 tema4", usuario18, "Medio","Certificado", "Matematicas", "Si","Validado", 85, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso19 = new Curso("Calculo Diferencial", "Curso de calculo diferencial", "0077","Tema1 tema2 tema3 tema4", usuario19, "Medio","Certificado", "Matematicas", "No","Validado", 12, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
-		Curso curso20 = new Curso("Matematica Discreta", "Curso de matematica discreta", "0077","Tema1 tema2 tema3 tema4", usuario20, "Medio","Certificado", "Matematicas", "No","Validado", 37, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso1 = new Curso( "Estadistica", "Curso de estadistica", "0077","Tema1 tema2 tema3 tema4", "MariaC", "Medio","Certificado", "Matematicas", "No","A eliminar", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
+		Curso curso2 = new Curso("Fisica", "Curso de fisica", "0097","Tema1 tema2 tema3 tema4 tema5", "CarolAs", "Medio","Certificado", "Fisica", "No","Pendiente", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso3 = new Curso("Ingenieria del Software", "Curso de Ingenieria del Software", "0059","Tema1 tema2 tema3 tema4", "TomasDTX", "Medio","Certificado", "Informatica", "No","Estado", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso4 = new Curso("Programacion", "Curso de programacion", "0077","Tema1 tema2 tema3 tema4", "Antonio", "Medio","Certificado", "Informatica", "Si","Validado", 56, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso5 = new Curso("Literatura", "Curso de literatura", "0077","Tema1 tema2 tema3 tema4", "ElsaCa", "Medio","Certificado", "Lengua y literatura", "No","Validado", 32, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso6 = new Curso("Ingles", "Curso de ingles", "0077","Tema1 tema2 tema3 tema4", "JoseChu", "Medio","Certificado", "Idioma", "No","Validado", 73, "No", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
+		Curso curso7 = new Curso("Frances", "Curso de Frances", "0077","Tema1 tema2 tema3 tema4", "AitorT", "Medio","Certificado", "Idioma", "Si","Validado", 42, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso8 = new Curso( "Redes de computadoras", "Curso de redes", "0077","Tema1 tema2 tema3 tema4", "BenitoC", "Medio","Certificado", "Informatica", "No","Validado", 16, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
+		Curso curso9 = new Curso("Interfaces de usuario", "Curso de interfaces", "0077","Tema1 tema2 tema3 tema4", "Layos", "Medio","Certificado", "Informatica", "No","Validado", 77, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 0, "01/12/15");
+		Curso curso10 = new Curso( "Arquitectura de computadores", "Curso de arcos", "0077","Tema1 tema2 tema3 tema4", "DPalomar", "Medio","Certificado", "Informatica", "Si","Validado", 45, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso11 = new Curso("Italiano", "Curso de italiano", "0077","Tema1 tema2 tema3 tema4", "LauLV", "Medio","Certificado", "Idiomas", "No","Validado", 35, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso12 = new Curso("Chino", "Curso de chino", "0077","Tema1 tema2 tema3 tema4", "LidiRG", "Medio","Certificado", "Idiomas", "Si","Validado", 43, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso13 = new Curso("Criptografia", "Curso de criptografia", "0077","Tema1 tema2 tema3 tema4", "RaulFJ", "Medio","Certificado", "Informatica", "No","Validado", 55, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso14 = new Curso("SSOO", "Curso de SSOO", "0077","Tema1 tema2 tema3 tema4", "MartinMF", "Medio","Certificado", "Informatica", "No","Validado", 73, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
+		Curso curso15 = new Curso("Ficheros", "Curso de ficheros", "0077","Tema1 tema2 tema3 tema4", "AliPM", "Medio","Certificado", "Informatica", "No","Validado", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso16 = new Curso("ADE", "Curso de ADE", "0077","Tema1 tema2 tema3 tema4", "AlbaMP", "Medio","Certificado", "Empresa", "Si","Validado", 43, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
+		Curso curso17 = new Curso("Algebra Lineal", "Curso de Algebra", "0077","Tema1 tema2 tema3 tema4", "MarcosGS", "Medio","Certificado", "Matematicas", "No","Validado", 36, "Si", "imagenes/addressbook_add_128.png", "23/12/15",20, "01/12/15");
+		Curso curso18 = new Curso("Calculo", "Curso de calculo", "0077","Tema1 tema2 tema3 tema4", "BelenNC", "Medio","Certificado", "Matematicas", "Si","Validado", 85, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso19 = new Curso("Calculo Diferencial", "Curso de calculo diferencial", "0077","Tema1 tema2 tema3 tema4", "EliasGH", "Medio","Certificado", "Matematicas", "No","Validado", 12, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
+		Curso curso20 = new Curso("Matematica Discreta", "Curso de matematica discreta", "0077","Tema1 tema2 tema3 tema4", "PedroCM", "Medio","Certificado", "Matematicas", "No","Validado", 37, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10, "01/12/15");
 				
 		
 		

@@ -21,9 +21,8 @@ public class Usuarios implements Serializable {
 	@Id
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
-	@Column(unique = true, nullable = false)
-	
 	//registrado
+	@Column(unique = true, nullable = false)
 		String nick;
 		String clave;
 		String nombre;
