@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+.altura{
+	 	height: 400px;
+}
+
+.botones{
+	text-align:center;
+	margin-top: 30px;
+	
+}
+#atras{
+	margin-right: 25px;
+}
+
+#registrarse{
+	margin-left: 25px;
+}
