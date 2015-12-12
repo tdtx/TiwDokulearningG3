@@ -41,6 +41,7 @@ public class Curso implements Serializable {
 	String fechaCaducidad;
 	int descuentoCupon;
 	String fechaInicio;
+	int contador;
 	
 	
 	
@@ -70,7 +71,7 @@ public class Curso implements Serializable {
 			String temario, String usuario, String nivel, String certificado,
 			String categoria, String destacado, String validacion,
 			double precio, String tipoOferta, String idImagen,
-			String fechaCaducidad, int descuentoCupon, String fechaInicio) {
+			String fechaCaducidad, int descuentoCupon, String fechaInicio, int contador) {
 		super();
 		this.titulo = titulo;
 		this.descripcion = descripcion;
@@ -88,6 +89,19 @@ public class Curso implements Serializable {
 		this.fechaCaducidad = fechaCaducidad;
 		this.descuentoCupon = descuentoCupon;
 		this.fechaInicio = fechaInicio;
+		this.contador = contador;
+	}
+
+
+
+	public int getContador() {
+		return contador;
+	}
+
+
+
+	public void setContador(int contador) {
+		this.contador = contador;
 	}
 
 

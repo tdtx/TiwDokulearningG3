@@ -25,7 +25,6 @@ import javax.transaction.SystemException;
 import javax.transaction.UserTransaction;
 
 import es.uc3m.tiw.model.dominios.Mensaje;
-
 import es.uc3m.tiw.model.dominios.Usuario;
 import es.uc3m.tiw.model.daos.IMensajes;
 import es.uc3m.tiw.model.daos.IPersona;
