@@ -22,11 +22,8 @@ private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
-	@Column(unique = true, nullable = false)
 	String curso;
-	@Column(unique = true, nullable = false)
 	String usuario;
-	@Column(unique = true, nullable = false)
 	String cupon;
 	double precio_final;
 	double nota;

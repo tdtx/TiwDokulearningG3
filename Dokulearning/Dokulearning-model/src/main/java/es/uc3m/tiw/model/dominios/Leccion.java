@@ -19,9 +19,7 @@ public class Leccion implements Serializable {
 	@Id
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
-	@Column(unique = true, nullable = false)
 	String idCurso;
-	@Column(unique = true, nullable = false)
 	String idSeccion;
 	String descripcion;
 	

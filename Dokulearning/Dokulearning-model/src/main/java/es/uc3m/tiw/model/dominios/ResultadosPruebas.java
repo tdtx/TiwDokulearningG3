@@ -21,12 +21,9 @@ private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
-	@Column(unique = true, nullable = false)
 	String id_prueba;
-	@Column(unique = true, nullable = false)
 	String id_matricula;
 	double nota;
-	@Column(unique = false, nullable = true)
 	String comentario;
 	
 	
