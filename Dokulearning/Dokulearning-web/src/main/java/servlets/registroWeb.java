@@ -104,7 +104,7 @@ public class registroWeb extends HttpServlet {
 		
 		
 		//Cursos
-		Curso curso1 = new Curso( "Estadistica", "Curso de estadistica", "0077","Tema1 tema2 tema3 tema4", "MariaC", "Medio","Certificado", "Matematicas", "No","A eliminar", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
+		Curso curso1 = new Curso("Estadistica", "Curso de estadistica", "0077","Tema1 tema2 tema3 tema4", "MariaC", "Medio","Certificado", "Matematicas", "No","A eliminar", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 10,"01/12/15");
 		Curso curso2 = new Curso("Fisica", "Curso de fisica", "0097","Tema1 tema2 tema3 tema4 tema5", "CarolAs", "Medio","Certificado", "Fisica", "No","Pendiente", 23, "Si", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
 		Curso curso3 = new Curso("Ingenieria del Software", "Curso de Ingenieria del Software", "0059","Tema1 tema2 tema3 tema4", "TomasDTX", "Medio","Certificado", "Informatica", "No","Estado", 34, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
 		Curso curso4 = new Curso("Programacion", "Curso de programacion", "0077","Tema1 tema2 tema3 tema4", "Antonio", "Medio","Certificado", "Informatica", "Si","Validado", 56, "No", "imagenes/addressbook_add_128.png", "23/12/15", 20, "01/12/15");
@@ -128,35 +128,35 @@ public class registroWeb extends HttpServlet {
 		
 		
 		//matriculados
-				/*Matriculados matriculado1=new Matriculados(curso1, usuario11, "cupon1", 128.90, 2.8);
-				Matriculados matriculado2=new Matriculados(curso2, usuario12, "cupon2", 128.90, 2.8 );
-				Matriculados matriculado3=new Matriculados(curso3, usuario13, "cupon3", 128.90, 2.8);
-				Matriculados matriculado4=new Matriculados(curso4, usuario14, "cupon4", 128.90, 2.8);
-				Matriculados matriculado5=new Matriculados(curso5, usuario15, "cupon5", 128.90, 2.8);
-				Matriculados matriculado6=new Matriculados(curso6, usuario16, "cupon6", 128.90, 2.8);
-				Matriculados matriculado7=new Matriculados(curso7, usuario17, "cupon7", 128.90, 2.8);
-				Matriculados matriculado8=new Matriculados(curso8, usuario18, "cupon8", 128.90, 2.8);
-				Matriculados matriculado9=new Matriculados(curso9, usuario19, "cupon9", 128.90, 2.8);
-				Matriculados matriculado10=new Matriculados(curso10, usuario20, "cupon10", 128.90, 2.8);
-				Matriculados matriculado11=new Matriculados(curso11, usuario11, "cupon11", 128.90, 2.8);
-				Matriculados matriculado12=new Matriculados(curso12, usuario12, "cupon12", 128.90, 2.8);
-				Matriculados matriculado13=new Matriculados(curso13, usuario13, "cupon13", 128.90, 2.8);
-				Matriculados matriculado14=new Matriculados(curso14, usuario14, "cupon14", 128.90, 2.8);
-				Matriculados matriculado15=new Matriculados(curso15,usuario15 , "cupon15", 128.90, 2.8);
-				Matriculados matriculado16=new Matriculados(curso16,usuario16 , "cupon16", 128.90, 2.8);
-				Matriculados matriculado17=new Matriculados(curso17, usuario17, "cupon17", 128.90, 2.8);
-				Matriculados matriculado18=new Matriculados(curso18, usuario18, "cupon18", 128.90, 2.8);
-				Matriculados matriculado19=new Matriculados(curso19, usuario19, "cupon19", 128.90, 2.8);
-				Matriculados matriculado20=new Matriculados(curso20, usuario20, "cupon20", 128.90, 2.8);*/
+	Matriculados matriculado1=new Matriculados("Estadistica", "LauLV", "cupon1", 128.90, 2.8);
+	Matriculados matriculado2=new Matriculados("Fisica", "LidiRG", "cupon2", 128.90, 2.8 );
+	Matriculados matriculado3=new Matriculados("Ingenieria del Software", "RaulFJ", "cupon3", 128.90, 2.8);
+	Matriculados matriculado4=new Matriculados("Programacion", "MartinMF", "cupon4", 128.90, 2.8);
+	Matriculados matriculado5=new Matriculados("Literatura", "AliPM", "cupon5", 128.90, 2.8);
+	Matriculados matriculado6=new Matriculados("Ingles", "AlbaMP", "cupon6", 128.90, 2.8);
+	Matriculados matriculado7=new Matriculados("Frances", "MarcosGS", "cupon7", 128.90, 2.8);
+	Matriculados matriculado8=new Matriculados("Redes de computadoras", "BelenNC", "cupon8", 128.90, 2.8);
+	Matriculados matriculado9=new Matriculados("Interfaces de usuario", "EliasGH", "cupon9", 128.90, 2.8);
+	Matriculados matriculado10=new Matriculados("Arquitectura de computadores", "PedroCM", "cupon10", 128.90, 2.8);
+	Matriculados matriculado11=new Matriculados("Italiano", "LauLV", "cupon11", 128.90, 2.8);
+	Matriculados matriculado12=new Matriculados("Chino", "LidiRG", "cupon12", 128.90, 2.8);
+	Matriculados matriculado13=new Matriculados("Criptografia", "RaulFJ", "cupon13", 128.90, 2.8);
+	Matriculados matriculado14=new Matriculados("SSOO", "MartinMF", "cupon14", 128.90, 2.8);
+	Matriculados matriculado15=new Matriculados("Ficheros","AliPM" , "cupon15", 128.90, 2.8);
+	Matriculados matriculado16=new Matriculados("ADE","AlbaMP" , "cupon16", 128.90, 2.8);
+	Matriculados matriculado17=new Matriculados("Algebra Lineal", "MarcosGS", "cupon17", 128.90, 2.8);
+	Matriculados matriculado18=new Matriculados("Calculo", "BelenNC", "cupon18", 128.90, 2.8);
+	Matriculados matriculado19=new Matriculados("Calculo Diferencial", "EliasGH", "cupon19", 128.90, 2.8);
+	Matriculados matriculado20=new Matriculados("Matematica Discreta", "PedroCM", "cupon20", 128.90, 2.8);
 				
 				
 				
 		//imagenes
-/*		Imagenes imagen1 = new Imagenes("fonts/users_folder_128.png");
-		Imagenes imagen2 = new Imagenes("imagenes/addressbook_add_128.png");*/
+		Imagenes imagen1 = new Imagenes("fonts/users_folder_128.png");
+		Imagenes imagen2 = new Imagenes("imagenes/addressbook_add_128.png");
 		
 		//secciones
-	/*	Seccion seccion1 = new Seccion("Electricidad fisica");
+		Seccion seccion1 = new Seccion("Electricidad fisica");
 		Seccion seccion2 = new Seccion("Fuerzas magneticas");
 		Seccion seccion3 = new Seccion("Italiano practico");
 		Seccion seccion4 = new Seccion("Teoria francesa");
@@ -177,9 +177,9 @@ public class registroWeb extends HttpServlet {
 		Seccion seccion19 = new Seccion("Combinatoria basica");
 		Seccion seccion20 = new Seccion("Combinatoria avanzada");
 		
-		*/
+	
 		//Lecciones  
-	/*	Leccion leccion1=new Leccion("idcurso1","idseccion1","Introduccion a la electricidad");
+		Leccion leccion1=new Leccion("idcurso1","idseccion1","Introduccion a la electricidad");
 		Leccion leccion2=new Leccion("idcurso2","idseccion2","Introduccion al electromagnetismo");
 		Leccion leccion3=new Leccion("idcurso3","idseccion3","La economia clasica");
 		Leccion leccion4=new Leccion("idcurso4","idseccion4","Indicadores macroeconomicos");
@@ -199,10 +199,10 @@ public class registroWeb extends HttpServlet {
 		Leccion leccion18=new Leccion("idcurso18","idseccion18","Verbos italianos");
 		Leccion leccion19=new Leccion("idcurso19","idseccion19","Vocabulario chino de ocio");
 		Leccion leccion20=new Leccion("idcurso20","idseccion20","teorema de Euler");
-		*/
+		
 		//pruebas 
-		/*Pruebas prueba1=new Pruebas ("idcursoo1","Examen de combinatoria basica");
-		Pruebas prueba2=new Pruebas ("idcursoo1","Examen de combinatoria avanzada");
+		Pruebas prueba1=new Pruebas ("idcursoo1","Examen de combinatoria basica");
+		Pruebas prueba2=new Pruebas ("idcursoo2","Examen de combinatoria avanzada");
 		Pruebas prueba3=new Pruebas ("idcursoo3","Examen de redes");
 		Pruebas prueba4=new Pruebas ("idcursoo4","Examen de grafos eulerianos y hamiltonianos");
 		Pruebas prueba5=new Pruebas ("idcursoo5","Examen de algebra lineal");
@@ -221,9 +221,9 @@ public class registroWeb extends HttpServlet {
 		Pruebas prueba18=new Pruebas ("idcursoo18","Examen teorico de memoria cache");
 		Pruebas prueba19=new Pruebas ("idcursoo19","Examen de ejercicios de memoria virtual");
 		Pruebas prueba20=new Pruebas ("idcursoo20","Examen teorico de memoria virtual");
-		*/
+		
 		//resultados pruebas
-	/*	ResultadosPruebas resultado1=new ResultadosPruebas("idprueba1", "idmatricula1", 3.0, "Suspenso");
+		ResultadosPruebas resultado1=new ResultadosPruebas("idprueba1", "idmatricula1", 3.0, "Suspenso");
 		ResultadosPruebas resultado2=new ResultadosPruebas("idprueba2", "idmatricula2", 3.98, "Suspenso");
 		ResultadosPruebas resultado3=new ResultadosPruebas("idprueba3", "idmatricula3", 4.5, "Suspenso");
 		ResultadosPruebas resultado4=new ResultadosPruebas("idprueba4", "idmatricula4", 5.1, "Aprobado");
@@ -242,7 +242,7 @@ public class registroWeb extends HttpServlet {
 		ResultadosPruebas resultado17=new ResultadosPruebas("idprueba17", "idmatricula17", 4.5, "Suspenso");
 		ResultadosPruebas resultado18=new ResultadosPruebas("idprueba18", "idmatricula18", 6.75, "Bien");
 		ResultadosPruebas resultado19=new ResultadosPruebas("idprueba19", "idmatricula19", 6.01, "Bien");
-		ResultadosPruebas resultado20=new ResultadosPruebas("idprueba20", "idmatricula20", 3.9, "uspenso");*/
+		ResultadosPruebas resultado20=new ResultadosPruebas("idprueba20", "idmatricula20", 3.9, "uspenso");
 		
 	
 		
@@ -250,17 +250,17 @@ public class registroWeb extends HttpServlet {
 	
 		
 		
-		//ccdao= new CreadorCursoDAO(em,ut);
-		/*mdao=new MatriculadoDAO(em,ut);
+		
+		mdao=new MatriculadoDAO(em,ut);
 		rpdao=new ResultadoPruebaDAO(em, ut);
 		pdao=new PruebaDAO(em, ut);
 		ldao=new LeccionDAO(em,ut);
-		sdao=new SeccionDAO(em,ut);
-		idao=new ImagenDAO(em, ut);*/
+	
+
 		cdao=new CursoDAO(em, ut);
 		udao=new UsuarioDAO(em, ut);
-
-		
+		idao=new ImagenDAO(em, ut);
+		sdao=new SeccionDAO(em,ut);
 	try {
 		udao.guardarUsuario(usuario1);
 		udao.guardarUsuario(usuario2);
@@ -305,7 +305,7 @@ public class registroWeb extends HttpServlet {
 		cdao.guardarCurso(curso19);
 		cdao.guardarCurso(curso20);
 		
-	/*	idao.guardarImagen(imagen1);
+		idao.guardarImagen(imagen1);
 		idao.guardarImagen(imagen2);
 		
 		sdao.guardarSeccion(seccion1);
@@ -328,7 +328,7 @@ public class registroWeb extends HttpServlet {
 		sdao.guardarSeccion(seccion18);
 		sdao.guardarSeccion(seccion19);
 		sdao.guardarSeccion(seccion20);
-		
+	
 		ldao.guardarLeccion(leccion1);
 		ldao.guardarLeccion(leccion2);
 		ldao.guardarLeccion(leccion3);
@@ -390,29 +390,10 @@ public class registroWeb extends HttpServlet {
 		rpdao.guardarResultadoPrueba(resultado18);
 		rpdao.guardarResultadoPrueba(resultado19);
 		rpdao.guardarResultadoPrueba(resultado20);
-		*/
-		/*ccdao.guardarProfesor(profesor1);
-		ccdao.guardarProfesor(profesor2);
-		ccdao.guardarProfesor(profesor3);
-		ccdao.guardarProfesor(profesor4);
-		ccdao.guardarProfesor(profesor5);
-		ccdao.guardarProfesor(profesor6);
-		ccdao.guardarProfesor(profesor7);
-		ccdao.guardarProfesor(profesor8);
-		ccdao.guardarProfesor(profesor9);
-		ccdao.guardarProfesor(profesor10);
-		ccdao.guardarProfesor(profesor11);
-		ccdao.guardarProfesor(profesor12);
-		ccdao.guardarProfesor(profesor13);
-		ccdao.guardarProfesor(profesor14);
-		ccdao.guardarProfesor(profesor15);
-		ccdao.guardarProfesor(profesor16);
-		ccdao.guardarProfesor(profesor17);
-		ccdao.guardarProfesor(profesor18);
-		ccdao.guardarProfesor(profesor19);
-		ccdao.guardarProfesor(profesor20);*/
 		
-		/*mdao.guardarMatriculado(matriculado1);
+		
+		
+		mdao.guardarMatriculado(matriculado1);
 		mdao.guardarMatriculado(matriculado2);
 		mdao.guardarMatriculado(matriculado3);
 		mdao.guardarMatriculado(matriculado4);
@@ -431,7 +412,7 @@ public class registroWeb extends HttpServlet {
 		mdao.guardarMatriculado(matriculado17);
 		mdao.guardarMatriculado(matriculado18);
 		mdao.guardarMatriculado(matriculado19);
-		mdao.guardarMatriculado(matriculado20);*/
+		mdao.guardarMatriculado(matriculado20);
 
 		
 		

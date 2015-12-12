@@ -29,11 +29,11 @@ private static final long serialVersionUID = 1L;
 	
 	
 	
-	 @OneToMany(fetch = LAZY, cascade = ALL)
+	 /*@OneToMany(fetch = LAZY, cascade = ALL)
 	    private List <ResultadosPruebas> resultadosPruebas;
 	 
 	 @ManyToOne(fetch = LAZY, cascade = ALL)
-	    private Curso curso;
+	    private Curso curso;*/
 	 
 	 
 	

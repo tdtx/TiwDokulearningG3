@@ -31,11 +31,11 @@ private static final long serialVersionUID = 1L;
 	
 	
 	
-	 @ManyToOne(fetch = LAZY, cascade = ALL)
+	/* @ManyToOne(fetch = LAZY, cascade = ALL)
 	    private Matriculados matriculado;
 	 
 	@ManyToOne(fetch = LAZY, cascade = ALL)
-	    private Pruebas prueba;
+	    private Pruebas prueba;*/
 	 
 	 
 	

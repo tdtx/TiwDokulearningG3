@@ -21,10 +21,10 @@ public class Seccion implements Serializable {
 	String descripcion;
 	
 	
-	
+	/*
 	@OneToMany(fetch = LAZY, cascade = ALL)
     private  List <Leccion> leccion;
-	
+	*/
 	
 	public Seccion() {
 		super();

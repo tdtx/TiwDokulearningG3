@@ -26,11 +26,11 @@ public class Leccion implements Serializable {
 	String descripcion;
 	
 	
-	 @ManyToOne(fetch = LAZY, cascade = ALL)
+	/* @ManyToOne(fetch = LAZY, cascade = ALL)
 	    private  Curso curso;
 	
 	 @ManyToOne(fetch = LAZY, cascade = ALL)
-	    private  Seccion seccion;
+	    private  Seccion seccion;*/
 	
 	public Leccion() {
 		super();

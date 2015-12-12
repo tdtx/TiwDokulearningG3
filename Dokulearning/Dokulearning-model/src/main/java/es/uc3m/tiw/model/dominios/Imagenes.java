@@ -25,13 +25,13 @@ public class Imagenes  implements Serializable{
 	String imagen;
 	
 	
-
+/*
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private  List <Usuarios> usuarios;
 	 
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private List <Curso> cursos;
-	
+	*/
 	
 	public Imagenes() {
 		super();

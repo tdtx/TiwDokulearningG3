@@ -23,22 +23,22 @@ private static final long serialVersionUID = 1L;
 	@GeneratedValue(strategy = AUTO)
 	private Long id;
 	@Column(unique = true, nullable = false)
-	String id_curso;
+	String curso;
 	@Column(unique = true, nullable = false)
-	String id_usuario;
+	String usuario;
 	@Column(unique = true, nullable = false)
 	String cupon;
 	double precio_final;
 	double nota;
 	
-	 @ManyToOne(fetch = LAZY, cascade = ALL)
+	/* @ManyToOne(fetch = LAZY, cascade = ALL)
 	 	private Usuarios usuarios;
 	
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private  List <ResultadosPruebas> resultadosPruebas;
 	 
 	 @ManyToOne(fetch = LAZY, cascade = ALL)
-	 	private Curso curso;
+	 	private Curso curso;*/
 	
 	
 	
@@ -49,11 +49,11 @@ private static final long serialVersionUID = 1L;
 	}
 	
 	
-	public Matriculados(Curso curso, Usuarios usuario,
+	public Matriculados(String curso, String usuario,
 			String cupon, double precio_final, double nota) {
 		super();
 		this.curso = curso;
-		this.usuarios = usuario;
+		this.usuario = usuario;
 		this.cupon = cupon;
 		this.precio_final = precio_final;
 		this.nota = nota;
@@ -67,24 +67,25 @@ private static final long serialVersionUID = 1L;
 		this.id = id;
 	}
 	
-	public Curso getCurso() {
+	
+
+	public String getCurso() {
 		return curso;
 	}
 
 
-	public void setCurso(Curso curso) {
+	public void setCurso(String curso) {
 		this.curso = curso;
 	}
 
 
-	
-	public Usuarios getUsuarios() {
-		return usuarios;
+	public String getUsuario() {
+		return usuario;
 	}
 
 
-	public void setUsuarios(Usuarios usuarios) {
-		this.usuarios = usuarios;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 
