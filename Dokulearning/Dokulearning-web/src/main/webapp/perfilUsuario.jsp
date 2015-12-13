@@ -208,8 +208,7 @@
 											
 											
 										
-											<div class="form-group col-md-1"></div>
-												<div class="form-group col-md-1"></div>
+											<div class="form-group col-md-12"></div>
 												<div class="form-group col-md-6">
 													<label for="lblClaveActual">Contraseña actual </label> <input
 														type="password" class="form-control" id="claveActual"
@@ -235,15 +234,13 @@
 												</div>
 
 
-												<div class="col-sm-12 controls centrado">
-													<div>
-														<br> <br>
-
+					<div class="form-group col-lg-12 botones">
+					
+													
 														<button type="submit" class="btn boton-principal">Guardar
 															cambios</button>
 														<button type="button" style="margin-left: 8px"
 															class="btn boton-secundario" data-dismiss="modal">Cerrar</button>
-													</div>
 												</div>
 											</div>
 										</form>

@@ -1,4 +1,9 @@
 @CHARSET "UTF-8";
+.botones{
+	text-align:center;
+	margin-top: 30px;
+	
+}
 
 .cabeceraDialog{
 	background-color:#DDB888;

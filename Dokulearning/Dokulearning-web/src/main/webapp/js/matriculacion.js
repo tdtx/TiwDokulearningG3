@@ -1,10 +1,3 @@
-/**
- * 
- */
-
-
-
-
 
 function comprobarMatriculacion(formularioMat){
     var contador = 0;
@@ -203,14 +196,15 @@ function comprobarMatriculacion(formularioMat){
 				
 				 //Valido el campo terminos
 			    
-			    if (!document.getElementById("aceptar").checked){
-			        
+			    if (!document.getElementById("aceptarterm").checked){
+			    	document.getElementById("aceptarterm").style.color="red";
 					document.getElementById("txtAceptar").style.color="red";
 
 			        //mensaje = mensaje.concat("El campo Contraseña del proveedor no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 			    } else {
 			        
 					document.getElementById("txtAceptar").style.color="green";
+			    	document.getElementById("aceptarterm").style.color="green";
 
 			        contador = contador + 1;
 			    }
