@@ -73,7 +73,7 @@ function validarR(formulario){
     //Validado el campo correo de registrado
     var correoRegistrado = document.getElementById("correoR").value;
     var correoR = correoRegistrado.toString();
-    if (correoR.match(/[^\w\d.@-_ñÑ&#/]/g)|| correoR == null || correoR == ""){
+    if (!correoR.match(/\S+@\S+\.\S+/g)|| correoR == null || correoR == ""){
         document.getElementById("correoR").style.borderColor="red";
         document.getElementById("correoR").style.borderStyle="dotted";
 		document.getElementById("txtCorreoReg").style.color="red";
@@ -170,13 +170,14 @@ function validarR(formulario){
 	    }else if (isNaN(mes)) {
 	    	 document.getElementById("fechanac").style.borderColor="red";
 	         document.getElementById("fechanac").style.borderStyle="dotted";
+	         
 		 		document.getElementById("txtFechaReg").style.color="red";
 
 //	         mensaje = mensaje.concat("El mes es incorrecto" + '\n');
 	    }else if (isNaN(dia)) {
 	    	 document.getElementById("fechanac").style.borderColor="red";
-	         document.getElementById("fechanac").style.borderStyle="dotted";
-		 		document.getElementById("txtFechaReg").style.color="red";
+	         document.getElementById("fechanac").style.borderStyle="dotted";	 		
+	         document.getElementById("txtFechaReg").style.color="red";
 
 //	         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 	    }else if (ano<=99) {
@@ -188,25 +189,25 @@ function validarR(formulario){
 
 //	         mensaje = mensaje.concat("Eres menor de edad" + '\n');
 	    }else if (hoy.getMonth() + 1 - mes > 0) {
-	    	 document.getElementById("fechanac").style.borderColor="red";
+	    	 document.getElementById("fechanac").style.borderColor="green";
+	         document.getElementById("fechanac").style.borderStyle="dotted";
+		 		document.getElementById("txtFechaReg").style.color="green";
+
+	         contador = contador + 1;
+	    }else if (hoy.getUTCDate() - dia >= 0) {
+		   	 document.getElementById("fechanac").style.borderColor="red";
 	         document.getElementById("fechanac").style.borderStyle="dotted";
 		 		document.getElementById("txtFechaReg").style.color="red";
-		 		if (hoy.getUTCDate() - dia < 0) {
-				   	 document.getElementById("fechanac").style.borderColor="green";
-			         document.getElementById("fechanac").style.borderStyle="dotted";
-				 		document.getElementById("txtFechaReg").style.color="green";
-				 		  contador = contador + 1;
-		 		}
-	       
+
+//	         mensaje = mensaje.concat("Eres menor de edad por dia" + '\n');
 	    }else{
 	    	document.getElementById("fechanac").style.borderColor="red";
 	         document.getElementById("fechanac").style.borderStyle="dotted";
+	         
 		 		document.getElementById("txtFechaReg").style.color="red";
 
 //	         mensaje = mensaje.concat("La fecha no tiene el formato dd/mm/aaaa" + '\n');
-	    }
-
-    
+	    }    
     
     
     

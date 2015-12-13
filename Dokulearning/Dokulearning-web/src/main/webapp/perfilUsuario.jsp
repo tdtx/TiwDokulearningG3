@@ -70,8 +70,8 @@
 							<span>Editar Perfil</span>
 						</button>
 
-						</br> </br> <a href="Cursos?accion=crearCurso&estado=${registrado.nick}"><button type="button"
-								class="btn btn-default">Crear curso</button></a> </br> </br>
+						</br> </br> <a href="Cursos?accion=crearCurso&estado=${registrado.nick}"><button
+								type="button" class="btn btn-default">Crear curso</button></a> </br> </br>
 
 						<button class="btn btn-default" title="mis cursos">Mis
 							Cursos</button>
@@ -93,14 +93,14 @@
 							<div class="form-group">
 								<label>Correo electronico:&nbsp;&nbsp;</label>${registrado.correo}</div>
 							<div class="form-group">
-								<label>Fecha de nacimiento:&nbsp;&nbsp;</label>${registrado.fechanac}</div>	
+								<label>Fecha de nacimiento:&nbsp;&nbsp;</label>${registrado.fechanac}</div>
 							<div class="form-group">
-								<label>Descripcion:&nbsp;&nbsp;</label>${registrado.descripcion}</div>	
+								<label>Descripcion:&nbsp;&nbsp;</label>${registrado.descripcion}</div>
 							<div class="form-group">
-								<label>Aficiones:&nbsp;&nbsp;</label>${registrado.aficiones}</div>	
+								<label>Aficiones:&nbsp;&nbsp;</label>${registrado.aficiones}</div>
 							<div class="form-group">
 								<label>Rol:&nbsp;&nbsp;</label>${registrado.rol}</div>
-								
+
 
 
 
@@ -174,13 +174,13 @@
 								class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
 								<div class="panel dialog-info">
-								
-								<%-- 
+
+									<%-- 
 								<c:when test="${not empty mensaje }">
 		<p class="error">${mensaje }</p>
 	</c:when>
 								 --%>
-								
+
 									<div class="cabeceraDialog">
 										<button type="button" class="close" data-dismiss="modal">
 											<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
@@ -194,21 +194,22 @@
 										
 										<form onSubmit="return pwdIguales(this)" id="formularioMat"
 							action="registroWeb" method="post" >-->
-										
-										<form onSubmit="return validarPassword(this)" action="registroWeb" method="post"
-											class="form-horizontal" role="form">
+
+										<form onSubmit="return validarPassword(this)"
+											action="registroWeb" method="post" class="form-horizontal"
+											role="form">
 											<input type="text" name="distribucion" value="cambiarClave"
 												style="display: none">
 
 
-											
+
 											<div class="row">
-											
-											
-											
-											
-										
-											<div class="form-group col-md-12"></div>
+
+
+
+
+
+												<div class="form-group col-md-12"></div>
 												<div class="form-group col-md-6">
 													<label for="lblClaveActual">Contraseña actual </label> <input
 														type="password" class="form-control" id="claveActual"
@@ -228,19 +229,19 @@
 
 
 												<div class="form-group col-md-6">
-													<label for="lblRClaveNueva">Repita la nueva contraseña</label>
-													<input type="password" class="form-control"
+													<label for="lblRClaveNueva">Repita la nueva
+														contraseña</label> <input type="password" class="form-control"
 														id="RclaveNueva" name="RclaveNueva">
 												</div>
 
 
-					<div class="form-group col-lg-12 botones">
-					
-													
-														<button type="submit" class="btn boton-principal">Guardar
-															cambios</button>
-														<button type="button" style="margin-left: 8px"
-															class="btn boton-secundario" data-dismiss="modal">Cerrar</button>
+												<div class="form-group col-lg-12 botones">
+
+
+													<button type="submit" class="btn boton-principal">Guardar
+														cambios</button>
+													<button type="button" style="margin-left: 8px"
+														class="btn boton-secundario" data-dismiss="modal">Cerrar</button>
 												</div>
 											</div>
 										</form>
@@ -269,8 +270,7 @@
 										<button type="button" class="close" data-dismiss="modal">
 											<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 										</button>
-										<div class="dialog-title">Editar perfil
-											</div>
+										<div class="dialog-title">Editar perfil</div>
 									</div>
 									<div class="modal-body">
 
@@ -299,7 +299,7 @@
 														<label for="correoActual"><br>Correo
 															electronico: </label> <input type="text" class="form-control"
 															id="correoActual" name="correoActual"
-															value="${registrado.correo}" >
+															value="${registrado.correo}">
 
 													</div>
 
@@ -312,8 +312,7 @@
 													<div>
 														<label for="apellido1Actual">Primer apellido: </label> <input
 															type="text" class="form-control" id="apellido1Actual"
-															name="apellido1Actual"
-															value="${registrado.apellido1}">
+															name="apellido1Actual" value="${registrado.apellido1}">
 													</div>
 
 													<div>
@@ -322,25 +321,24 @@
 															id="apellido2Actual" name="apellido2Actual"
 															value="${registrado.apellido2}">
 													</div>
-													
+
 													<div>
 														<label for="descripcionActual"><br>Descripcion:
-														 </label> <input type="text" class="form-control"
+														</label> <input type="text" class="form-control"
 															id="descripcionActual" name="descripcionActual"
 															value="${registrado.descripcion}">
 													</div>
-																
+
 													<div>
-														<label for="aficionesActual"><br>Aficiones:
-														 </label> <input type="text" class="form-control"
+														<label for="aficionesActual"><br>Aficiones: </label>
+														<input type="text" class="form-control"
 															id="aficionesActual" name="aficionesActual"
 															value="${registrado.aficiones}">
 													</div>
 
 												</div>
-												<div class="col-sm-12 controls centrado">
+												<div class="form-group col-lg-12 botones">
 													<div>
-														<br> <br>
 
 														<button type="submit" class="btn boton-principal">Guardar
 															cambios</button>
@@ -348,7 +346,7 @@
 															class="btn boton-secundario" data-dismiss="modal">Cerrar</button>
 													</div>
 												</div>
-													</div>
+											</div>
 										</form>
 
 
