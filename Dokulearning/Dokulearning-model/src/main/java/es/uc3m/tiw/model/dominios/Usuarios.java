@@ -73,6 +73,8 @@ public class Usuarios implements Serializable {
 		
 		*/
 		
+		
+		
 		public Usuarios() {
 			super();
 		}

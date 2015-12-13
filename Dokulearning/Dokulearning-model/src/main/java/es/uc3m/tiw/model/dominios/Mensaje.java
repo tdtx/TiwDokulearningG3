@@ -17,20 +17,20 @@ import javax.persistence.OneToOne;
  	private Long id;
  	private String mensaje;
 	@OneToOne
-	private Usuarios from;
+	private Usuario from;
 	@OneToOne
-	private Usuarios to;
+	private Usuario to;
 	
 	
 	
  	public Mensaje() {
  		// TODO Auto-generated constructor stub
  	}
- 	public Mensaje(String mensaje2) {
+ 	public Mensaje(String mensaje) {
  		this.mensaje = mensaje;
  	}
 
-	public Mensaje(String mensaje, Usuarios from, Usuarios to) {
+	public Mensaje(String mensaje, Usuario from, Usuario to) {
 		super();
 		
 		this.mensaje = mensaje;
@@ -49,16 +49,16 @@ import javax.persistence.OneToOne;
  	public void setId(Long id) {
  		this.id = id;
  	}
-	public Usuarios getTo() {
+	public Usuario getTo() {
 		return to;
 	}
-	public void setTo(Usuarios to) {
+	public void setTo(Usuario to) {
 		this.to = to;
 	}
-	public Usuarios getFrom() {
+	public Usuario getFrom() {
 		return from;
 	}
-	public void setFrom(Usuarios from) {
+	public void setFrom(Usuario from) {
 		this.from = from;
 	}
  	
