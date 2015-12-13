@@ -1,5 +1,5 @@
 package servlets;
-
+/*
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,15 +15,15 @@ import javax.servlet.http.HttpServlet;
 
 import jhc.info.InformacionProperties;
 
-/**
+*//**
  * @version 1.0
  * @author Jesus Hernando
- */
+ *//*
 public class chatEnviarColaServlet extends HttpServlet {
 
-	/**
+	*//**
 	 * 
-	 */
+	 *//*
 	
 	private static final long serialVersionUID = 6598296317492442565L;
 
@@ -119,4 +119,4 @@ public class chatEnviarColaServlet extends HttpServlet {
 
 	}
 
-}
+}*/

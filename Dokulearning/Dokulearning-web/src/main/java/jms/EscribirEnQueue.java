@@ -1,7 +1,7 @@
 package jms;
 
 
-
+/*
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,7 +21,7 @@ import es.uc3m.tiw.model.dominios.Mensaje;
 import es.uc3m.tiw.model.dominios.Usuario;
 
 
-/**
+*//**
  * Esta clase muestra distintos ejemplos de codigo.
  * Por un lado y comentado esta el codigo clasico de acceso a recursos JMS via JNDI
  * Por otro se hace uso de CDI y se muestra como inyectar recursos {@link Queue} y {@link JMSContext}
@@ -32,7 +32,7 @@ import es.uc3m.tiw.model.dominios.Usuario;
  * inyectando el {@link ConnectionFactory}</strong>
  * @author David Palomar
  * @see UsuarioServlet
- */
+ *//*
 public class EscribirEnQueue {
 
     // Usando CDI no es necesario inyectar el ConnectionFactory
@@ -111,4 +111,4 @@ public class EscribirEnQueue {
        
         // ESTO SOLO CON JEE7   jmsContext.createProducer().send(queue, mensaje);
         
-      }}
+      }}*/
