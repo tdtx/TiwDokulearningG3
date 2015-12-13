@@ -19,6 +19,7 @@ import javax.transaction.UserTransaction;
 import dominio.FormularioCurso;
 import es.uc3m.tiw.model.daos.CursoDAO;
 import es.uc3m.tiw.model.daos.UsuarioDAO;
+import es.uc3m.tiw.model.dominios.Curso;
 import es.uc3m.tiw.model.dominios.Usuarios;
 
 
@@ -95,7 +96,7 @@ public class Cursos extends HttpServlet {
 		
 		if (accion != null) {
 			System.err.println("super5"+accion);
-			FormularioCurso u = comprobarNom(accion);
+			Curso u = cdao.buscarTitulo(accion);
 			if( u!= null){
 	
 			sesion.setAttribute("perfilCurso", u);

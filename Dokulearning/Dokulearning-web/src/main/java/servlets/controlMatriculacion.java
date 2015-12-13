@@ -81,6 +81,8 @@ public class controlMatriculacion extends HttpServlet {
             request.setAttribute("matriculados", matriculados);
             pagina = matriculacionDeCursoJSP;
         }
+       
+        
 		response.setContentType("text/html");
 		this.getServletContext().getRequestDispatcher(pagina)
 				.forward(request, response);

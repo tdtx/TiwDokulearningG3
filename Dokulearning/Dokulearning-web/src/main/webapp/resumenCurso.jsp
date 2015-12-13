@@ -27,7 +27,7 @@
 				<div class="col-lg-12">
 					<hr>
 					<h2 class="intro-text text-center">
-						resumen del curso <strong>${cursoS.nom}</strong>
+						resumen del curso <strong>${cursoS.titulo}</strong>
 					</h2>
 					<hr>
 
@@ -49,24 +49,26 @@
 					</div>
 					<div>
 					<br /><br /><br /><br /><br /><br /><br />
-						<a href="Cursos?accion=${cursoS.nom}&estado=matricularse"><button type="button"
+						<a href="Cursos?accion=${cursoS.titulo}&estado=matricularse"><button type="button"
 									class="btn btn-default" style="text-align:center" >Matricularse</button></a>
 					</div>
 					</div>
 					<div>
 						<div class="form-group col-lg-4">
 
-							<!-- <div class="form-group"> <label>Nombre del curso:</label>${param.nom}</div> -->
+							<!-- <div class="form-group"> <label>Nombre del curso:</label>${param.titulo}</div> -->
+							
 							<div class="form-group"> <label>Categoria:</label>${cursoS.categoria}</div>
 							<div class="form-group"> <label>Descripcion:</label>${cursoS.descripcion}</div>
 							<div class="form-group"> <label>Horas del curso:</label>${cursoS.horas}</div>
-							<div class="form-group"> <label>Empieza el:</label>${cursoS.f_inicio}</div>
-							<div class="form-group"> <label>Acaba el:</label>${cursoS.f_inicio}</div>
+							<div class="form-group"> <label>Empieza el:</label>${cursoS.fechaInicio}</div>
 							<div class="form-group"> <label>El temario sera:</label>${cursoS.temario}</div>
-							<div class="form-group"> <label>El profesor es:</label>${cursoS.profesor}</div>
-							<div class="form-group"> <label>Dificultad del curso:</label>${cursoS.dificultad}</div>
-							<div class="form-group"> <label>El curso se cerrara:</label>${cursoS.cierre_curso}</div>
+							<div class="form-group"> <label>Profesor:</label>${cursoS.usuario}</div>
+							<div class="form-group"> <label>Nivel del curso:</label>${cursoS.nivel}</div>
 							<div class="form-group"> <label>Precio:</label>${cursoS.precio}</div>
+						
+						
+							
 
 
 

@@ -4,6 +4,7 @@ package es.uc3m.tiw.model.daos;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.transaction.UserTransaction;
 
 import es.uc3m.tiw.model.dominios.Curso;
@@ -42,6 +43,20 @@ public class CursoDAO{
         return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",usuarios.class).getSingleResult();
      }
 	  */
+	 
+	 public Curso buscarTitulo(String titulo) {
+			
+			Query query =  em.createQuery("SELECT u FROM Curso u where u.titulo=:titulo", Curso.class);
+			query.setParameter("titulo", titulo);
+			List resultList = query.getResultList();
+			if (resultList.isEmpty()) {
+				return null;
+			}else{
+			
+				return (Curso) query.getSingleResult();
+			}
+			
+		}
 	    public Curso buscarCurso(Long id) {
 	        return em.find(Curso.class, id);
 	    } 

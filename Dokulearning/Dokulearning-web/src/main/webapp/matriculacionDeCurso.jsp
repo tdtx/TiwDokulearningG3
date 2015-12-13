@@ -123,7 +123,7 @@
 								<label id="lblnombreCurso" for="nombreCurso">Nombre del
 									curso</label> <input type="text" class="form-control"
 									name="nombreCurso" id="nombreCurso" maxlength="30" readonly
-									value="${cursoS.nom}" /><br />
+									value="${cursoS.titulo}" /><br />
 								<label id="txtCalle" for="calle">Calle *</label><input type="text"
 									placeholder="Ej.: avenida de la Universidad" class="form-control" name="calle" id="calle" maxlength="50" /><br />
 
