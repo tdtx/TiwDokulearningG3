@@ -38,6 +38,7 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
 	rel="stylesheet" type="text/css">
+<script src="js/inicioSesion.js"></script>
 
 <!-- Custom Fonts icono-->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
@@ -102,8 +103,8 @@
 							class="alert alert-danger col-sm-12"></div>
 
 
-						<form action="registroWeb" method="post" class="form-horizontal"
-							role="form">
+						<form action="registroWeb" onSubmit="return validarInicioSesion(this)" method="post" class="form-horizontal"
+							id="formularioInicioSesion" role="form">
 							<input type="text" name="distribucion" value="iniciarSesion"
 								style="display: none" />
 
@@ -118,7 +119,7 @@
 							<div style="margin-bottom: 25px" class="input-group">
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-lock"></i></span> <input
-									id="login-password" type="password" class="form-control"
+									type="password" class="form-control"
 									name="clave1" id="clave1" placeholder="contrasenia">
 
 							</div>
@@ -145,7 +146,7 @@
 								<div class="col-sm-12 controls centrado">
 									<button id="btn-login" class="btn boton-principal"
 										type="submit">
-										<i class="icon-hand-right"></i> iniciar Sesion
+										Iniciar Sesion
 									</button>
 									<span style="margin-left: 8px;"></span> <a id="btn-fblogin"
 										href="#" class="btn boton-secundario" data-dismiss="modal">

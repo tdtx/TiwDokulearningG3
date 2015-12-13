@@ -49,7 +49,6 @@ function validarPassword(formulario) {
 		alert("Las contraseñas no son iguales. Por favor, introduzca la misma contraseña en ambos campos.");
 	}
 
-	alert("contador:  " +contador);
 	if (contador == 4) {
 		alert("Contraseña modificada");
 	} else {
