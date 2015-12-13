@@ -32,7 +32,7 @@
 					<div class="row">
 					
 					
-					<div class="panel panel-primary" style="border-color:#DDB888">
+					<div class="panel panel-primary" style="border-color:#DDB888; margin:20px 40px 20px 35px">
                 <div class="panel-heading" style="background-color:#DDB888; border-color:#DDB888">
                     <span class="glyphicon glyphicon-comment"></span> Chat
                    
@@ -53,6 +53,9 @@
                                 </p>
                             </div>
                         </li>
+                        
+                        
+                        
                         <li class="right clearfix"><span class="chat-img pull-right">
                             <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
                         </span>
@@ -67,6 +70,9 @@
                                 </p>
                             </div>
                         </li>
+                        
+                        
+                        
                         <li class="left clearfix"><span class="chat-img pull-left">
                             <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
                         </span>
@@ -80,6 +86,9 @@
                                     dolor, quis ullamcorper ligula sodales.
                                 </p>
                             </div>
+                            
+                            
+                            
                         </li>
                         <li class="right clearfix"><span class="chat-img pull-right">
                             <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
@@ -97,33 +106,21 @@
                         </li>
                     </ul>
                 </div>
+                
+                
+                
                 <div class="panel-footer">
                     <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Escriba su mensaje aqui..." />
                         <span class="input-group-btn">
                             <button class="btn btn-warning btn-sm" id="btn-chat" style="background-color:#DDB888">
-                                Send</button>
+                                Enviar</button>
                         </span>
                     </div>
                 </div>
             </div>
-					
-					
-					
 						
 					</div>
-
-
-					
-				
-
-
-
-
-
-
-
-
 
 				</div>
 			</div>

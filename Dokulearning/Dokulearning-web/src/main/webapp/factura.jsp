@@ -14,6 +14,13 @@
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
 
+<style type="text/css">
+a:link {text-decoration:none; color: #DDB888;  font-weight: bold; font-size: 18px;} /* Link no visitado*/
+a:visited {text-decoration:none; color:#DDB888;   font-weight: bold;font-size: 18px;} /*Link visitado*/
+a:active {text-decoration:none; color:#DDB888; font-weight: bold; font-size: 18px;} /*Link activo*/
+a:hover {text-decoration:none; color:#DDB888;  font-weight: bold; font-size: 18px;} /*Mause sobre el link*/
+</style>
+
 <body>
 
 
@@ -27,10 +34,10 @@
 			<div class="box">
 				<div class="col-lg-12">
 				
-				<ol class="breadcrumb">
-  <li><a href="#">Matriculacion</a></li>
+				<ol class="breadcrumb" style="background-color:#F9F4EF">
+  <li><a href="#" class="letras">Matriculacion</a></li>
   <li><a href="#">Datos de pago</a></li>
-  <li class="active"> Resumen</li>
+  <li class="active" style="text-decoration:bold; font-size: 18px"> Resumen</li>
 </ol>
 				
 				

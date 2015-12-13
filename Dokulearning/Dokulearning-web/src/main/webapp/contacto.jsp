@@ -7,6 +7,8 @@
 
 <script src="js/contanto.js"></script>
 <link href="css/ventanaDialog.css" rel="stylesheet">
+<link href="css/clienteNV.css" rel="stylesheet">
+
   
     
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
@@ -54,7 +56,7 @@
 								<label id="etiqMEnsaj">Mensaje *</label>
 								<textarea class="form-control" id="mensajeC" rows="6"></textarea>
 							</div>
-							<div class="form-group col-lg-12">
+							<div class="form-group col-lg-12 botones">
 								<input type="hidden" name="save" value="contact">
 								<button type="submit" class="btn btn-default">Enviar</button>
 							</div>

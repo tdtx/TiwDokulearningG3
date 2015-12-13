@@ -92,13 +92,19 @@ function validarR(formulario){
     //Valido el campo 'contrasena'
     var pwdUsuario = document.getElementById("clave1").value;
     var pwd = pwdUsuario.toString();
+	var pwd1Long = pwd.length;
     if (pwd.match(/[^\w\d-.@$%&#€/¡!¿?ñÑáéíóúüçÁÉÍÓÚÇÜ]/g)|| pwd == null || pwd == ""){
         document.getElementById("clave1").style.borderColor="red";
         document.getElementById("clave1").style.borderStyle="dotted";
 		document.getElementById("txtclave1Reg").style.color="red";
 
         //mensaje = mensaje.concat("El campo Contraseña del proveedor no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
-    } else {
+    } else if(pwd1Long < 4){
+    	document.getElementById("clave1").style.borderColor="red";
+        document.getElementById("clave1").style.borderStyle="dotted";
+		document.getElementById("txtclave1Reg").style.color="red";
+		alert("la contraseña debe tener minimo 4 caracteres");
+	}else {
         document.getElementById("clave1").style.borderColor="green";
         document.getElementById("clave1").style.borderStyle="dotted";
 		document.getElementById("txtclave1Reg").style.color="green";
@@ -209,18 +215,20 @@ function validarR(formulario){
     //Valido el campo 'confirmar contrasena'
     var pwd2Usuario = document.getElementById("clave2").value;
     var pwd2 = pwd2Usuario.toString();
+	var pwd2Long = pwd2.length;
     if (pwd2.match(/[^\w\d-.@$%&#€/¡!¿?ñÑáéíóúüçÁÉÍÓÚÇÜ]/g)|| pwd2 == null || pwd2 == ""){
         document.getElementById("clave2").style.borderColor="red";
         document.getElementById("clave2").style.borderStyle="dotted";
 		document.getElementById("txtclave2Reg").style.color="red";
-
         //mensaje = mensaje.concat("El campo Contraseña del proveedor no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
-    } else {
+    }  else if(pwd2Long < 4){
+    	 document.getElementById("clave2").style.borderColor="red";
+         document.getElementById("clave2").style.borderStyle="dotted";
+ 		document.getElementById("txtclave2Reg").style.color="red";
+	}else {
         document.getElementById("clave2").style.borderColor="green";
         document.getElementById("clave2").style.borderStyle="dotted";
-        
 		document.getElementById("txtclave2Reg").style.color="green";
-
         contador = contador + 1;
     }
 

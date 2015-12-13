@@ -1,61 +1,58 @@
 function validarPassword(formulario) {
 	var contador = 0;
+//comprobamos que se introduce clave actual
+	var pwdActual = document.getElementById("claveActual").value;
+	var pwdA = pwdActual.toString();
+	if (pwdA == null || pwdA == "") {
+		document.getElementById("claveActual").style.borderColor = "red";
+	} else {
+		document.getElementById("claveActual").style.borderColor = "green";
+		contador = contador + 1;
+	}
 
+	
+//comprobamos que clave nueva no esta vacio	
 	var pwdUsuario1 = document.getElementById("claveNueva").value;
 	var pwdUno = pwdUsuario1.toString();
+	var pwdUnoLong = pwdUno.length;
+	if (pwdUno == null || pwdUno == "") {
+		document.getElementById("claveNueva").style.borderColor = "red";
+	}else if(pwdUnoLong < 4){
+		document.getElementById("RclaveNueva").style.borderColor = "red";
+	}else {
+		document.getElementById("claveNueva").style.borderColor = "green";
+		contador = contador + 1;
+	}
+
+	
+	
+//comprobamos que repetir clave nueva no esta vacio	
 	var pwdUsuario2 = document.getElementById("RclaveNueva").value;
 	var pwdDos = pwdUsuario2.toString();
-	if (pwdUno == null
-			|| pwdUno == "") {
-		alert("uno");
-
-		alert("La contraseña actual es incorrecta");
-	} else {
-		alert("bien uno");
-
+	var pwdDosLong = pwdDos.length;
+	if (pwdDos == null || pwdDos == "") {
+		document.getElementById("RclaveNueva").style.borderColor = "red";
+	} else if(pwdDosLong < 4){
+		document.getElementById("RclaveNueva").style.borderColor = "red";
+	}else {
+		document.getElementById("RclaveNueva").style.borderColor = "green";
 		contador = contador + 1;
 	}
 
-	if (pwdDos == null
-			|| pwdDos == "") {
-		alert("dos");
-
-		/*document.getElementById("claveNueva").style.borderColor = "red";
-		document.getElementById("claveNueva").style.borderStyle = "dotted";
-		document.getElementById("lblClaveNueva").style.color = "red";
-		document.getElementById("RclaveNueva").style.borderColor = "red";
-		document.getElementById("RclaveNueva").style.borderStyle = "dotted";
-		document.getElementById("lblRClaveNueva").style.color = "red";*/
-
-		alert("La contraseña actual es incorrecta");
-	} else {
-		
-		alert("bien dos");
-
-		contador = contador + 1;
-	}
-
-	var pwd1 = document.getElementById("claveNueva").value;
-	var pwd2 = document.getElementById("RclaveNueva").value;
-	if (pwd1 == pwd2 && pwd1 != null && pwd1 != "" && pwd2 != null
-			&& pwd2 != "") {
-		alert("bien tres");
-
+//comprobamos que ambas contraseñas coinciden
+	if (pwdUno == pwdDos && pwdUno != null && pwdUno != "" && pwdDos != null && pwdDos != "") {
+		document.getElementById("claveNueva").style.borderColor = "green";
+		document.getElementById("RclaveNueva").style.borderColor = "green";
 		contador = contador + 1;
 	} else {
-		/*document.getElementById("claveNueva").style.borderColor = "red";
-		document.getElementById("claveNueva").style.borderStyle = "dotted";
-		document.getElementById("lblClaveNueva").style.color = "red";
 		document.getElementById("RclaveNueva").style.borderColor = "red";
-		document.getElementById("RclaveNueva").style.borderStyle = "dotted";
-		document.getElementById("lblRClaveNueva").style.color = "red";*/
 		alert("Las contraseñas no son iguales. Por favor, introduzca la misma contraseña en ambos campos.");
 	}
 
-	if (contador == 3) {
+	alert("contador:  " +contador);
+	if (contador == 4) {
 		alert("Contraseña modificada");
 	} else {
-		alert("MAAAAALLL");
 		return false;
 	}
 }

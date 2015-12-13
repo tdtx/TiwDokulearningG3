@@ -5,13 +5,19 @@
 <html lang="es">
 
 
-<link href="css/chat.css" rel="stylesheet">
+<link href="css/clienteNV.css" rel="stylesheet">
+<link href="css/migasPan.css" rel="stylesheet">
   
     
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-    
+   <style type="text/css">
+a:link {text-decoration:none; color: #DDB888;  font-weight: bold; font-size: 18px;} /* Link no visitado*/
+a:visited {text-decoration:none; color:#DDB888;   font-weight: bold;font-size: 18px;} /*Link visitado*/
+a:active {text-decoration:none; color:#DDB888; font-weight: bold; font-size: 18px;} /*Link activo*/
+a:hover {text-decoration:none; color:#DDB888;  font-weight: bold; font-size: 18px;} /*Mause sobre el link*/
+</style> 
 
 <body>
 
@@ -126,6 +132,14 @@
 		<div class="row">
 			<div class="box altura">
 				<div class="col-lg-12">
+				
+				
+				
+				<ol class="breadcrumb" style="background-color: #F9F4EF">
+						<li class="active" style="text-decoration: bold; font-size: 18px">Matriculacion</li>
+						<li class="desactivado">Datos de pago</li>
+						<li class="desactivado">Resumen</li>
+					</ol>
 					<hr>
 					<h2 class="intro-text text-center">
 						debe <strong>iniciar sesion</strong>

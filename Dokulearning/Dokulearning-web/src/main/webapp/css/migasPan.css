@@ -14,3 +14,12 @@
   left: 100%;
   z-index: 3;
 }before {color: rgba(204, 204, 204, 1); }
+
+.letras{
+	text-decoration:none; color: #DDB888;  font-weight: bold; font-size: 18px;
+}
+
+
+.desactivado{
+	text-decoration:none; color: #DDB888; font-size: 18px;
+}
