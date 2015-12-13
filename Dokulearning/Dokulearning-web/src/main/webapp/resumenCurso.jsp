@@ -58,14 +58,14 @@
 
 							<!-- <div class="form-group"> <label>Nombre del curso:</label>${param.titulo}</div> -->
 							
-							<div class="form-group"> <label>Categoria:</label>${cursoS.categoria}</div>
-							<div class="form-group"> <label>Descripcion:</label>${cursoS.descripcion}</div>
-							<div class="form-group"> <label>Horas del curso:</label>${cursoS.horas}</div>
-							<div class="form-group"> <label>Empieza el:</label>${cursoS.fechaInicio}</div>
-							<div class="form-group"> <label>El temario sera:</label>${cursoS.temario}</div>
-							<div class="form-group"> <label>Profesor:</label>${cursoS.usuario}</div>
-							<div class="form-group"> <label>Nivel del curso:</label>${cursoS.nivel}</div>
-							<div class="form-group"> <label>Precio:</label>${cursoS.precio}</div>
+							<div class="form-group"> <label>Categoria:</label> ${cursoS.categoria}</div>
+							<div class="form-group"> <label>Descripcion:</label> ${cursoS.descripcion}</div>
+							<div class="form-group"> <label>Horas del curso:</label> ${cursoS.horas}</div>
+							<div class="form-group"> <label>Empieza el:</label> ${cursoS.fechaInicio}</div>
+							<div class="form-group"> <label>El temario sera:</label> ${cursoS.temario}</div>
+							<div class="form-group"> <label>Profesor:</label> ${cursoS.usuario}</div>
+							<div class="form-group"> <label>Nivel del curso:</label> ${cursoS.nivel}</div>
+							<div class="form-group"> <label>Precio:</label> ${cursoS.precio} €</div>
 						
 						
 							

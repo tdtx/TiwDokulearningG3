@@ -95,13 +95,8 @@
 									class="form-control" name="DNI" id="DNI" maxlength="10" /><br />
 
 
-								<label id="txtFormaPago" for="formaPago">Forma de pago *</label>
-								<select class="form-control" id="formaPago" name="formaPago">
-									<option value="">Elija una forma de pago</option>
-									<option value="Transferencia">Transferencia</option>
-									<option value="Tarjeta">Tarjeta</option>
-									<option value="Paypal">Paypal</option>
-								</select><br /> <label id="txtImagen" for="fecha">Imagen de
+					
+								<br /> <label id="txtImagen" for="fecha">Imagen de
 									Perfil</label><input type="file" name="imagen" id="imagen" size="60" /><br />
 
 
@@ -202,17 +197,17 @@
 
 
 							</div>
-
+				<div class="form-group col-lg-12" style="text-align: center">
+			
+								<input id="btnEnviar" type="submit" class="btn btn-default"
+									value="Enviar" />
+							</div>
 						</form>
 					</div>
 				</div>
 
 
-				<div class="form-group col-lg-12" style="text-align: center">
-
-					<input id="btnEnviar" type="submit" class="btn btn-default"
-						value="Enviar" />
-				</div>
+			
 
 			</div>
 		</div>

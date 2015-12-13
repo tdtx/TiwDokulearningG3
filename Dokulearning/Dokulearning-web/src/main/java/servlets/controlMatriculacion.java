@@ -3,6 +3,7 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import dominio.usuarioMatriculacion;
 
 
@@ -109,28 +111,31 @@ public class controlMatriculacion extends HttpServlet {
 
 		String distribucionMatriculacion = request
 				.getParameter("distribucionMatriculacion");
-		HttpSession sesion = request.getSession(true);
+		HttpSession sesion = request.getSession();
 		String pagina = indexJSP;
 
 		switch (distribucionMatriculacion) {
 
 		case "crearMatriculacion":
-			
+			Long idUsuario = (Long) sesion.getAttribute("idUsuario");
 			String telefono = request.getParameter("telefono");
-			String calle = request.getParameter("calle");
+			String genero = request.getParameter("genero");
+			String DNI = request.getParameter("DNI");
+			String calle = request.getParameter("calle");			
 			String localidad = request.getParameter("localidad");
 			String codigopostal = request.getParameter("codigopostal");
-			String provincia = request.getParameter("provincia");
-			String fechanacimiento = request.getParameter("fechaNacimiento");
-			String DNI = request.getParameter("DNI");
-			Boolean aceptar = true;
-			String genero = request.getParameter("genero");
-			String formaPago = request.getParameter("formaPago");
-			String precio = request.getParameter("precio");
+			String provincia = request.getParameter("provincia");			
+			Boolean aceptar = true;		
 			String nombreCurso = request.getParameter("nombreCurso");
+			
+			if (idUsuario != null) {
+				
 
-			if (comprobarUsuario(telefono)!=null) {
-				registrarMatriculacion(telefono, calle, localidad,
+				
+
+			} else {
+				
+				/*registrarMatriculacion(telefono, calle, localidad,
 						codigopostal, provincia, fechanacimiento, DNI, aceptar,
 						genero, formaPago, precio, nombreCurso);
 
@@ -139,9 +144,6 @@ public class controlMatriculacion extends HttpServlet {
 				sesion.setAttribute("acceso", telefono);
 
 				request.setAttribute("matriculados", matriculados);
-
-			} else {
-
 				try {
 					editarUsuarioMatriculacion(telefono, calle, localidad,
 							codigopostal, provincia, fechanacimiento, DNI,
@@ -151,7 +153,7 @@ public class controlMatriculacion extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 					System.out.println("error");
-				}
+				}*/
 			}
 
 			break;
@@ -162,7 +164,7 @@ public class controlMatriculacion extends HttpServlet {
 
 		}
 		response.setContentType("text/html");
-		this.getServletContext().getRequestDispatcher("perfilUsuario.jsp")
+		this.getServletContext().getRequestDispatcher(pagina)
 				.forward(request, response);
 
 	}

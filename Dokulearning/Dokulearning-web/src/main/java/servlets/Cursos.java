@@ -77,10 +77,11 @@ public class Cursos extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		HttpSession sesion = request.getSession(true);
+		HttpSession sesion = request.getSession();
 		List cursos = null;
 		String accion = request.getParameter("accion");
 		String estado = request.getParameter("estado");
+		Long idUsuario = (Long) sesion.getAttribute("idUsuario");
 		System.err.println(accion);
 		String pagina = "/index.jsp";
 
@@ -103,9 +104,11 @@ public class Cursos extends HttpServlet {
 			pagina = "/resumenCurso.jsp";
 			System.err.println("entroooo");
 			if (estado != null) {
-				if (estado.equals("matricularse")) {
+				if (estado.equals("matricularse") && idUsuario != null) {
 					sesion.setAttribute("perfilCurso", u);
 					pagina = "/matriculacionDeCurso.jsp";
+				}else{
+					pagina = "/clienteNoValidado.jsp";
 				}
 			}
 		}else{	System.err.println("malo");}
