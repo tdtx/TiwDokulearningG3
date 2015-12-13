@@ -4,6 +4,9 @@ package servlets;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -11,8 +14,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.transaction.UserTransaction;
 
 import dominio.usuarioMatriculacion;
+import es.uc3m.tiw.model.daos.CursoDAO;
+import es.uc3m.tiw.model.daos.MatriculadoDAO;
+import es.uc3m.tiw.model.daos.UsuarioDAO;
+import es.uc3m.tiw.model.dominios.Curso;
+import es.uc3m.tiw.model.dominios.Matriculados;
+import es.uc3m.tiw.model.dominios.Usuarios;
 
 
 
@@ -30,7 +40,13 @@ public class controlMatriculacion extends HttpServlet {
 	private ArrayList<usuarioMatriculacion> matriculados;
 	private static final String matriculacionDeCursoJSP = "/matriculacionDeCurso.jsp";
 	private static final String indexJSP = "/index.jsp";
-
+	@PersistenceContext(unitName="Dokulearning-model")
+	EntityManager em;
+	@Resource
+	UserTransaction ut;
+	UsuarioDAO udao;
+	CursoDAO cdao;
+	MatriculadoDAO mdao;
 
 	registroWeb rw = new registroWeb();
 	/**	@PersistenceContext(unitName="Administracion-model")
@@ -62,6 +78,10 @@ public class controlMatriculacion extends HttpServlet {
 		matriculados.add(um1);
 		matriculados.add(um2);
 
+	
+		udao=new UsuarioDAO(em, ut);
+		cdao=new CursoDAO(em, ut);
+		mdao=new MatriculadoDAO(em,ut);
 	}
 
 	/**
@@ -108,56 +128,79 @@ public class controlMatriculacion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
+	
 		String distribucionMatriculacion = request
 				.getParameter("distribucionMatriculacion");
 		HttpSession sesion = request.getSession();
 		String pagina = indexJSP;
-
+		Long  idUsuario = (Long) sesion.getAttribute("idUsuario");
+		String nombreCurso = null;
 		switch (distribucionMatriculacion) {
 
 		case "crearMatriculacion":
-			Long idUsuario = (Long) sesion.getAttribute("idUsuario");
-			String telefono = request.getParameter("telefono");
+			
+			double precio = Double.parseDouble(request.getParameter("precio"));
+			int telefono = Integer.parseInt(request.getParameter("telefono"));
 			String genero = request.getParameter("genero");
 			String DNI = request.getParameter("DNI");
 			String calle = request.getParameter("calle");			
 			String localidad = request.getParameter("localidad");
-			String codigopostal = request.getParameter("codigopostal");
+			int codigopostal = Integer.parseInt(request.getParameter("codigopostal"));
 			String provincia = request.getParameter("provincia");			
 			Boolean aceptar = true;		
-			String nombreCurso = request.getParameter("nombreCurso");
+			 nombreCurso = request.getParameter("nombreCurso");
 			
 			if (idUsuario != null) {
+				Usuarios u = udao.buscarId(idUsuario);
+				Curso c = cdao.buscarTitulo(nombreCurso);
+			
 				
-
-				
-
-			} else {
-				
-				/*registrarMatriculacion(telefono, calle, localidad,
-						codigopostal, provincia, fechanacimiento, DNI, aceptar,
-						genero, formaPago, precio, nombreCurso);
-
-				usuarioMatriculacion u = comprobarUsuario(telefono);
-				sesion.setAttribute("usuarioMat", u);
-				sesion.setAttribute("acceso", telefono);
-
-				request.setAttribute("matriculados", matriculados);
+				u.setDni(DNI);
+				u.setGenero(genero);
+				u.setTelefono(telefono);
+				u.setCalle(calle);
+				u.setLocalidad(localidad);
+				u.setCodigoPostal(codigopostal);
+				u.setProvincia(provincia);
+				Matriculados nuevoMatriculado = new Matriculados(nombreCurso, u.getNick(), null, precio, 0);
 				try {
-					editarUsuarioMatriculacion(telefono, calle, localidad,
-							codigopostal, provincia, fechanacimiento, DNI,
-							aceptar, genero, formaPago );
-					request.setAttribute("matriculados", matriculados);
-					pagina = matriculacionDeCursoJSP;
-				} catch (Exception e) {
-					e.printStackTrace();
-					System.out.println("error");
-				}*/
+					mdao.guardarMatriculado(nuevoMatriculado);
+					udao.actualizarUsuario(u);
+					
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				sesion.setAttribute("perfilCurso", c);
+					pagina = "/datosPago.jsp";
+
+	
+			}else {
+				pagina = "/clienteNoValidado.jsp";
 			}
 
 			break;
+		case "pagar":
+			nombreCurso = request.getParameter("nombreCurso");
+			String tarjeta = request.getParameter("tarjeta");
+			Usuarios u = udao.buscarId(idUsuario);
+			Curso c = cdao.buscarTitulo(nombreCurso);
 
+			u.setTarjeta(tarjeta);;
+			try {
+				udao.actualizarUsuario(u);
+				
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
+			sesion.setAttribute("perfilCurso", c);
+			sesion.setAttribute("perfilusu", u);
+				pagina = "/factura.jsp";
+			break;
+			
 		default:
 
 			break;
@@ -169,7 +212,7 @@ public class controlMatriculacion extends HttpServlet {
 
 	}
 
-	private void registrarMatriculacion(String telefono, String calle,
+/*	private void registrarMatriculacion(String telefono, String calle,
 			String localidad, String codigopostal, String provincia,
 			String fechanacimiento, String dNI, Boolean aceptar, String genero,
 			String formPago, String precio, String nombreCurso) {
@@ -180,9 +223,9 @@ public class controlMatriculacion extends HttpServlet {
 				aceptar, "mujer", "transferencia" );
 
 		matriculados.add(um1);
-	}
+	}*/
 
-	private void editarUsuarioMatriculacion(String telefono, String calle,
+	/*private void editarUsuarioMatriculacion(String telefono, String calle,
 			String localidad, String codigopostal, String provincia,
 			String fechanacimiento, String dNI, boolean aceptar, String genero,
 			String formaPago) {
@@ -203,7 +246,7 @@ public class controlMatriculacion extends HttpServlet {
 		}
 		// TODO Auto-generated method stub
 
-	}
+	}*/
 
 	private usuarioMatriculacion comprobarUsuario(String telefono) {
 		usuarioMatriculacion u = null;

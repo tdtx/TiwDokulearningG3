@@ -40,15 +40,7 @@ function validacionDatosPago(formularioPago){
     var dVale = document.getElementById("vale").value;
 	var datosVale = dVale.toString();
 	var valeLongLong = datosVale.length;
-	if (datosVale == null || datosVale == "") {
-
-		//mensaje = mensaje.concat("El campo telefono  debe rellenarse" + '\n');
-		document.getElementById("vale").style.borderColor="red";
-		document.getElementById("vale").style.borderStyle="dotted";
-		document.getElementById("txtVale").style.color="red";
-//d{16}(PM|AM)d{10|20}
-		
-	} else if (!datosVale.match(/^(VALE)[0-9]*$/)){
+	 if (!datosVale.match(/^(VALE)[0-9]*$/)){
 		alert("mal");
 		document.getElementById("vale").style.borderColor="red";
 		document.getElementById("vale").style.borderStyle="dotted";

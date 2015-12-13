@@ -25,9 +25,9 @@ a:hover {text-decoration:none; color:#DDB888;  font-weight: bold; font-size: 18p
 
 
 	<jsp:include page="header.jsp"></jsp:include>
+	<c:set var="cursoS" scope="session" value="${perfilCurso}"></c:set>
 
-
-
+	<c:set var="usu" scope="session" value="${perfilusu}"></c:set>
 	<div class="container">
 
 		<div class="row">
@@ -61,14 +61,14 @@ a:hover {text-decoration:none; color:#DDB888;  font-weight: bold; font-size: 18p
 						<div class="panel-group">
 							<div class="panel panel-default">
 								<div class="panel-heading">Resumen</div>
-								<div class="panel-body">Nick de usuario: ${param.lecciones}</div>
-								<div class="panel-body">Nombre del curso: ${param.lecciones}</div>
-								<div class="panel-body">Importe del curso: ${param.lecciones}</div>
-								<div class="panel-body">C&oacute;digo de la operaci&oacute;n: ${param.lecciones}</div>
-								<div class="panel-body">C&oacute;digo de pedido: ${param.lecciones}</div>
-								<div class="panel-body">Tarjeta: ${param.lecciones}</div>
-								<div class="panel-body">Fecha: ${param.lecciones}</div>
-								<div class="panel-body">Vale aplicado: ${param.lecciones}</div>
+								<div class="panel-body">Nick de usuario: ${estVal}</div>
+								<div class="panel-body">Nombre del curso: ${cursoS.titulo}</div>
+								<div class="panel-body">Importe del curso: ${cursoS.precio} €</div>
+							<!--  	<div class="panel-body">C&oacute;digo de la operaci&oacute;n: </div>
+								<div class="panel-body">C&oacute;digo de pedido: </div>-->
+								<div class="panel-body">Tarjeta: ${usu.tarjeta}</div>
+								<div class="panel-body">Fecha: Hoy</div>
+								<div class="panel-body">Vale aplicado: No</div>
 								
 							</div>
 

@@ -95,19 +95,17 @@ a:hover {
 						<form onSubmit="return validacionDatosPago(this)"
 							id="formularioPago" action="controlMatriculacion" method="post">
 							<input type="text" name="distribucionMatriculacion"
-								value="crearMatriculacion" style="display: none" />
+								value="pagar" style="display: none" />
 
 
 							<div class="form-group col-lg-4">
-
 								<label id="lblnickUsuario" for="nickUsuario">Nick de
 									usuario</label> <input type="text" class="form-control"
 									name="nickUsuario" id="nickUsuario" readonly
-									value="${cursoS.nick}" /><br /> <label id="txtTarjeta"
+									value="${estVal}" /><br /> <label id="txtTarjeta"
 									for="tarjeta">Tarjeta *</label> <input type="text"
 									class="form-control" name="tarjeta" id="tarjeta" maxlength="20"
 									placeholder="Ej.: A1111111111111111111" /> <br />
-
 							</div>
 							<div class="form-group col-lg-1"></div>
 
@@ -116,8 +114,8 @@ a:hover {
 								<label id="lblnombreCurso" for="nombreCurso">Nombre del
 									curso</label> <input type="text" class="form-control"
 									name="nombreCurso" id="nombreCurso" maxlength="30" readonly
-									value="${cursoS.nom}" /><br /> <label id="txtVale" for="vale">Vale
-									de descuento</label><input type="text"
+									value="${cursoS.titulo}" /><br /> <label id="txtVale"
+									for="vale">Vale de descuento</label><input type="text"
 									placeholder="Ej.: VALEyyyymmddhhssSSSSXXZZ"
 									class="form-control" name="vale" id="vale" maxlength="24" /><br />
 							</div>
@@ -127,9 +125,9 @@ a:hover {
 								<div class="form-group col-lg-3">
 
 
-									<label id="lblprecio" for="precio">Precio</label> <input
+									<label id="lblprecio" for="precio">Precio en €</label> <input
 										type="text" class="form-control" name="precio" id="precio"
-										maxlength="8" readonly value="${cursoS.precio} €" /><br />
+										maxlength="8" readonly value="${cursoS.precio}" /><br />
 								</div>
 
 								<div class="form-group col-lg-12"

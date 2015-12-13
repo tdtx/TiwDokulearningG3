@@ -79,9 +79,9 @@
 
 							<div class="form-group col-lg-4">
 
-								<label id="lblprecio" for="precio">Precio</label> <input
+								<label id="lblprecio" for="precio">Precio en €</label> <input
 									type="text" class="form-control" name="precio" id="precio"
-									maxlength="8" readonly value="${cursoS.precio}€" /><br /> <label
+									maxlength="8" readonly value="${cursoS.precio}" /><br /> <label
 									id="txtTelefono" for="telefono">Telefono *</label> <input
 									type="text" class="form-control" name="telefono" id="telefono"
 									maxlength="9" placeholder="Ej.: 123456789" /> <br /> <label
