@@ -1,14 +1,14 @@
-package servlets;
+/*package servlets;
 
 
-/*	
-	import java.io.IOException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-	import javax.annotation.Resource;
+import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -22,16 +22,16 @@ import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 import jms.EscribirEnQueue;
-	import es.uc3m.tiw.model.dominios.Mensaje;
+import es.uc3m.tiw.model.dominios.Mensaje;
 import es.uc3m.tiw.model.dominios.Usuario;
 import es.uc3m.tiw.model.daos.IPersona;
 import es.uc3m.tiw.model.daos.MensajesDAO;
 import es.uc3m.tiw.model.daos.PersonaDAO;
 	
 	
-	*//**
-	* Servlet implementation class MensajesServlet
-	*//*
+	
+	// Servlet implementation class MensajesServlet
+	
 	@WebServlet("/mensajes")
 	public class Mensajes extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -45,9 +45,9 @@ import es.uc3m.tiw.model.daos.PersonaDAO;
 	private EscribirEnQueue colaMensajes;
 	
 	
-	*//**
-	* @see Servlet#init(ServletConfig)
-	*//*
+
+	//@see Servlet#init(ServletConfig)
+	
 	public void init() throws ServletException {
 	dao = new PersonaDAO(em, ut);
 	msgDao = new MensajesDAO(em, ut);
@@ -67,9 +67,9 @@ import es.uc3m.tiw.model.daos.PersonaDAO;
 	
 	
 	}
-	*//**
-	* @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	*//*
+	
+	//@see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	
@@ -87,7 +87,7 @@ import es.uc3m.tiw.model.daos.PersonaDAO;
 	
 	
 	
-	}
+	}}
+	*/
 	
-	}
-*/
+
