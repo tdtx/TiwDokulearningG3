@@ -44,13 +44,15 @@
 							
 
 					<div class="form-group col-lg-4">
-					<div>
+					<div  style="text-align:center">
 						<img alt="Foto" src="imagenes/addressbook_add_128.png" width=60%>
 					</div>
-					<div>
-					<br /><br /><br /><br /><br /><br /><br />
+					<div style="text-align:center">
+					<br /><br /><br /><br />
 						<a href="Cursos?accion=${cursoS.titulo}&estado=matricularse"><button type="button"
 									class="btn btn-default" style="text-align:center" >Matricularse</button></a>
+						<a href="#"><button type="button"
+									class="btn btn-default" style="text-align:center" >Chat</button></a>
 					</div>
 					</div>
 					<div>

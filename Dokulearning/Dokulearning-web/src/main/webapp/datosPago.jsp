@@ -28,26 +28,22 @@
 a:link {
 	text-decoration: none;
 	color: #DDB888;
-	font-weight: bold;
-	font-size: 18px;
+	
 } /* Link no visitado*/
 a:visited {
 	text-decoration: none;
 	color: #DDB888;
-	font-weight: bold;
-	font-size: 18px;
+	
 } /*Link visitado*/
 a:active {
 	text-decoration: none;
 	color: #DDB888;
-	font-weight: bold;
-	font-size: 18px;
+	
 } /*Link activo*/
 a:hover {
 	text-decoration: none;
 	color: #DDB888;
-	font-weight: bold;
-	font-size: 18px;
+
 } /*Mause sobre el link*/
 </style>
 
@@ -74,7 +70,7 @@ a:hover {
 					<ol class="breadcrumb" style="background-color: #F9F4EF">
 						<li><a href="matriculacionDeCurso.jsp" class="letras">Matriculacion</a></li>
 						<li class="active" style="text-decoration: bold; font-size: 18px">Datos de pago</li>
-						<li class="desactivado">Resumen</li>
+						<li class="desactivado"  style="font-size: 18px" >Resumen</li>
 					</ol>
 					<hr>
 					<h2 class="intro-text text-center">

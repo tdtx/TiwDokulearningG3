@@ -10,6 +10,7 @@
 <!-- Bootstrap Core CSS formato-->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
+<link href="css/migasPan.css" rel="stylesheet">
 
 
 <!-- Custom CSS barra vetical-->
@@ -25,6 +26,28 @@
 .error {
 	color: red;
 }
+</style>
+<style type="text/css">
+a:link {
+	text-decoration: none;
+	color: #DDB888;
+	
+} /* Link no visitado*/
+a:visited {
+	text-decoration: none;
+	color: #DDB888;
+	
+} /*Link visitado*/
+a:active {
+	text-decoration: none;
+	color: #DDB888;
+	
+} /*Link activo*/
+a:hover {
+	text-decoration: none;
+	color: #DDB888;
+
+} /*Mause sobre el link*/
 </style>
 
 
@@ -46,6 +69,12 @@
 			<div class="box">
 				<!-- /.row -->
 				<div class="col-lg-12">
+				
+				<ol class="breadcrumb" style="background-color: #F9F4EF">
+						<li class="active" style="text-decoration: bold; font-size: 18px">Matriculacion</li>
+						<li class="desactivado" style="text-decoration: bold; font-size: 18px">Datos de pago</li>
+						<li class="desactivado">Resumen</li>
+					</ol>
 					<hr>
 					<h2 class="intro-text text-center">
 						matriculacion de <strong>curso</strong>
@@ -197,9 +226,9 @@
 
 
 							</div>
-				<div class="form-group col-lg-12" style="text-align: center">
+				<div class="form-group col-lg-12" >
 			
-								<input id="btnEnviar" type="submit" class="btn btn-default"
+								<input id="btnEnviar" style="margin:0px 0px 0px 280px" type="submit" class="btn btn-default"
 									value="Enviar" />
 							</div>
 						</form>
