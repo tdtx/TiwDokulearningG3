@@ -35,10 +35,10 @@ a:hover {text-decoration:none; color:#DDB888; } /*Mause sobre el link*/
 				<div class="col-lg-12">
 				
 				<ol class="breadcrumb" style="background-color:#F9F4EF">
-  <li><a href="matriculacionDeCurso.jsp" class="letras">Matriculacion</a></li>
-  <li><a href="datosPago.jsp" style=" font-weight: bold; font-size: 18px;">Datos de pago</a></li>
-  <li class="active" style="text-decoration:bold; font-size: 18px"> Resumen</li>
-</ol>
+				  <li class="letras">Matriculaci&oacute;n</li>
+				  <li class="letras">Datos de pago</li>
+				  <li class="active" style="text-decoration:bold; font-size: 18px"> Resumen</li>
+				</ol>
 				
 				
 					<hr>
@@ -50,7 +50,7 @@ a:hover {text-decoration:none; color:#DDB888; } /*Mause sobre el link*/
 					<div class="row"></div>
 					<br>
 					<h2 class="intro-text" style="text-align: center">La
-						operaci&oacute;n de ha realizado con exito</h2>
+						operaci&oacute;n de ha realizado con &eacute;xito</h2>
 					<br>
 					<div class="form-group col-lg-3"></div>
 

@@ -75,6 +75,12 @@
 
 						<button class="btn btn-default" title="mis cursos">Mis
 							Cursos</button>
+
+
+						</br> </br> <a href="#"><button type="button" class="btn btn-default">Mis
+								alumnos</button></a> </br> </br>
+
+
 					</div>
 
 
@@ -101,17 +107,7 @@
 							<div class="form-group">
 								<label>Rol:&nbsp;&nbsp;</label>${registrado.rol}</div>
 
-
-
-
-
-
-
 						</div>
-
-
-
-
 
 						<div class="signupboxt">
 							<div class="form-group col-lg-4">

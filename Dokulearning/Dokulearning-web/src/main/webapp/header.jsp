@@ -57,7 +57,7 @@
 					<li><a href="#" data-toggle="modal"
 						title="Iniciar sesi&oacuten" data-target="#myModal"
 						onClick="$('#loginbox').show(); $('#signupbox').hide()"><i
-							class="fa fa-user"></i> Iniciar Sesion </a></li>
+							class="fa fa-user"></i> Iniciar Ses&oacute;n </a></li>
 				</ul>
 			</div>
 		</c:if>
@@ -71,7 +71,7 @@
 							<li><a href="registroWeb?action=perfil&estado=${estVal}"><i
 									class="fa fa-fw fa-user"></i> Perfil</a></li>
 							<li><a href="registroWeb?action=salir"><i
-									class="fa fa-fw fa-power-off"></i> Cerrar sesion</a></li>
+									class="fa fa-fw fa-power-off"></i> Cerrar sesi&oacute;n</a></li>
 						</ul>
 				</ul>
 			</div>
@@ -91,7 +91,7 @@
 					<div class="cabeceraDialog">
 						<button type="button" class="close" data-dismiss="modal"
 							aria-hidden="true">&times;</button>
-						<div class="dialog-title">Iniciar sesion</div>
+						<div class="dialog-title">Iniciar sesi&oacute;n</div>
 						<!-- para implementacion futura -->
 						<!-- <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div> -->
 
@@ -146,7 +146,7 @@
 								<div class="col-sm-12 controls centrado">
 									<button id="btn-login" class="btn boton-principal"
 										type="submit">
-										Iniciar Sesion
+										Iniciar Sesi&oacute;n
 									</button>
 									<span style="margin-left: 8px;"></span> <a id="btn-fblogin"
 										href="#" class="btn boton-secundario" data-dismiss="modal">

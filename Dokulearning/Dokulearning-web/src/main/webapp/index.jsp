@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<link href="css/imagen_index.css" rel="stylesheet">
 
 <body>
    <jsp:include page="header.jsp"></jsp:include>
