@@ -15,10 +15,10 @@
 
 
 <style type="text/css">
-a:link {text-decoration:none; color: #DDB888;  font-weight: bold; font-size: 18px;} /* Link no visitado*/
-a:visited {text-decoration:none; color:#DDB888;   font-weight: bold;font-size: 18px;} /*Link visitado*/
-a:active {text-decoration:none; color:#DDB888; font-weight: bold; font-size: 18px;} /*Link activo*/
-a:hover {text-decoration:none; color:#DDB888;  font-weight: bold; font-size: 18px;} /*Mause sobre el link*/
+a:link {text-decoration:none; color: #DDB888; } /* Link no visitado*/
+a:visited {text-decoration:none; color:#DDB888;} /*Link visitado*/
+a:active {text-decoration:none; color:#DDB888;} /*Link activo*/
+a:hover {text-decoration:none; color:#DDB888; } /*Mause sobre el link*/
 </style>
 
 <body>
@@ -35,8 +35,8 @@ a:hover {text-decoration:none; color:#DDB888;  font-weight: bold; font-size: 18p
 				<div class="col-lg-12">
 				
 				<ol class="breadcrumb" style="background-color:#F9F4EF">
-  <li><a href="#" class="letras">Matriculacion</a></li>
-  <li><a href="#">Datos de pago</a></li>
+  <li><a href="matriculacionDeCurso.jsp" class="letras">Matriculacion</a></li>
+  <li><a href="datosPago.jsp" style=" font-weight: bold; font-size: 18px;">Datos de pago</a></li>
   <li class="active" style="text-decoration:bold; font-size: 18px"> Resumen</li>
 </ol>
 				

@@ -162,9 +162,9 @@ public class controlMatriculacion extends HttpServlet {
 				u.setLocalidad(localidad);
 				u.setCodigoPostal(codigopostal);
 				u.setProvincia(provincia);
-				Matriculados nuevoMatriculado = new Matriculados(nombreCurso, u.getNick(), null, precio, 0);
+
 				try {
-					mdao.guardarMatriculado(nuevoMatriculado);
+			
 					udao.actualizarUsuario(u);
 					
 				} catch (Exception e1) {
@@ -187,10 +187,12 @@ public class controlMatriculacion extends HttpServlet {
 			Usuarios u = udao.buscarId(idUsuario);
 			Curso c = cdao.buscarTitulo(nombreCurso);
 
-			u.setTarjeta(tarjeta);;
+			u.setTarjeta(tarjeta);
+			Matriculados nuevoMatriculado = new Matriculados(nombreCurso, u.getNick(), null, c.getPrecio(), 0);
 			try {
 				udao.actualizarUsuario(u);
-				
+				mdao.guardarMatriculado(nuevoMatriculado);
+
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
