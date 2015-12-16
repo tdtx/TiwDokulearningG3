@@ -34,7 +34,7 @@
 
 	<c:set var="registrado" scope="session" value="${perfilRegistrado}"></c:set>
 	<!-- Navigation -->
-
+<c:set var="estRol" scope="session" value="${estadoRol}"></c:set>
 
 	<div class="container">
 
@@ -72,14 +72,10 @@
 
 						</br> </br> <a href="Cursos?accion=crearCurso&estado=${registrado.nick}"><button
 								type="button" class="btn btn-default">Crear curso</button></a> </br> </br>
-
+<c:if test="${estadoRol!=null}">
 						<button class="btn btn-default" title="mis cursos">Mis
 							Cursos</button>
-
-
-						</br> </br> <a href="#"><button type="button" class="btn btn-default">Mis
-								alumnos</button></a> </br> </br>
-
+</c:if>
 
 					</div>
 

@@ -92,12 +92,12 @@ public class registroWeb extends HttpServlet {
 		//usuarios con perfil matriculados
 		Usuarios usuario11=new Usuarios("LauLV", "clavelau", "Laura", "Lopez", "Vazquez", "20/08/1991", "llv@llv.llv", "Ayhju9876ujki8ujkujki", "fonts/users_folder_128.png", "Estudiante de cuarto curso de ADE", "La ciencia ficcion", "De las Heras", "Madrid", 28017, "Madrid", 786654321, "Estudiante", "89776546y", "Mujer");   
 		Usuarios usuario12=new Usuarios("LidiRG", "clavelidi", "Lidia", "Rodriguez", "Garcia", "25/09/1992", "lrg@lrg.lrg", "Bikj7kilo098u7y6t5r4e", "fonts/users_folder_128.png", "Profesora de ciencias tecnologicas", "La enseñanza y el deporte", "De la Vega", "Las Rozas", 25089, "Madrid", 987654789, "Profesor", "87698423z", "Mujer");
-		Usuarios usuario13=new Usuarios("RaulFJ", "soyraul", "Raul", "Fernandez", "Jimenez", "04/12/1985", "rfj@rfj.rfj", "Bikju7865tgh645rt3ew2", "fonts/users_folder_128.png", "Entusiasmado por el mundo sanitario", "El arte y viajar", "San Ambrosio", "Colmenarejo", 45367, "Madrid", 453567890, "Profesor", "58754123p", "Hombre");
-		Usuarios usuario14=new Usuarios("MartinMF", "soymartin", "Martin", "Marquez", "Frias", "01/06/1978", "mmf@mmf.mmf", "Blkoi9oi87uy8ujhy6tgh", "fonts/users_folder_128.png", "Persona sociable y trabajadora", "El mundo del motor", "Del Abeto", "El Molar", 98765, "Madrid", 987654289, "Profesor", "98712385t", "Hombre");
+		Usuarios usuario13=new Usuarios("RaulFJ", "soyraul", "Raul", "Fernandez", "Jimenez", "04/12/1985", "rfj@rfj.rfj", "Bikju7865tgh645rt3ew2", "fonts/users_folder_128.png", "Entusiasmado por el mundo sanitario", "El arte y viajar", "San Ambrosio", "Colmenarejo", 45367, "Madrid", 453567890, "Estudiante", "58754123p", "Hombre");
+		Usuarios usuario14=new Usuarios("MartinMF", "soymartin", "Martin", "Marquez", "Frias", "01/06/1978", "mmf@mmf.mmf", "Blkoi9oi87uy8ujhy6tgh", "fonts/users_folder_128.png", "Persona sociable y trabajadora", "El mundo del motor", "Del Abeto", "El Molar", 98765, "Madrid", 987654289, "Estudiante", "98712385t", "Hombre");
 		Usuarios usuario15=new Usuarios("AliPM", "soyali", "Alicia", "Pais", "Maravillas", "27/12/1992", "apm@apm.apm", "Bjkol0987ujhy6tgf4rfd", "fonts/users_folder_128.png", "Entusiasta y amable", "El mundo de la belleza", "Perez Herrera", "Leganes", 98765, "Madrid", 980765190, "Estudiante", "90876123r", "Mujer");
-		Usuarios usuario16=new Usuarios("AlbaMP", "soyalba", "Alba", "Marin", "Palacios", "30/08/1970", "amp@amp.amp", "Aikjl0987ujhy5645rfgt", "fonts/users_folder_128.png", "Profesora proactiva y sociable", "El deporte y la musica", "Del Globo", "Getafe", 98765, "Madrid", 786542134, "Profesor", "98765398u", "Mujer");
+		Usuarios usuario16=new Usuarios("AlbaMP", "soyalba", "Alba", "Marin", "Palacios", "30/08/1970", "amp@amp.amp", "Aikjl0987ujhy5645rfgt", "fonts/users_folder_128.png", "Profesora proactiva y sociable", "El deporte y la musica", "Del Globo", "Getafe", 98765, "Madrid", 786542134, "Estudiante", "98765398u", "Mujer");
 		Usuarios usuario17=new Usuarios("MarcosGS", "soymarcos", "Marcos", "Gonzalez", "Silo", "30/12/1993", "mgs@mgs.mgs", "Akijl0987ujki6ygt54re", "fonts/users_folder_128.png", "Estudiante de ciencias de la salud", "Voluntariado en tiempo libre", "DeL Martillo", "Alba de Tormes", 98709, "Salamanca", 908765123, "Estudiante", "90878653g", "Hombre");
-		Usuarios usuario18=new Usuarios("BelenNC", "soybelen", "Belen", "Nevado", "casado", "01/10/1986", "bnc@bnc.bnc", "Ajkiu8ui9oilk9ikj7ujh", "fonts/users_folder_128.png", "Interactiva y apasionada por la quimica ", "Cine y teatro", "De la sierra", "Colombres", 34567, "Asturias", 908987675, "Profesor", "34567890o", "Mujer");
+		Usuarios usuario18=new Usuarios("BelenNC", "soybelen", "Belen", "Nevado", "casado", "01/10/1986", "bnc@bnc.bnc", "Ajkiu8ui9oilk9ikj7ujh", "fonts/users_folder_128.png", "Interactiva y apasionada por la quimica ", "Cine y teatro", "De la sierra", "Colombres", 34567, "Asturias", 908987675, "Estudiante", "34567890o", "Mujer");
 		Usuarios usuario19=new Usuarios("EliasGH", "soyelias", "Elias", "Gomez", "Herrero", "20/08/1990", "egh@egh.egh", "Bolkoilkoikjuujki9876", "fonts/users_folder_128.png", "Activo y curioso", "La teconologia", "Marques de las Vias", "Bollullos", 87987, "Huelva", 908787654, "Estudiante", "98778765t", "Hombre");
 		Usuarios usuario20=new Usuarios("PedroCM", "soypedro", "Pedro", "Cuco", "Martin", "08/09/1990", "pcm@pcm.pcm", "Acvbhnjmkilko98765432", "fonts/users_folder_128.png", "Responsable y extrovertido", "Futbol", "De los Molinos", "Santander", 90870, "Cantabria", 908765432, "Estudiante", "54667890i", "Hombre");
 		
@@ -386,6 +386,7 @@ public class registroWeb extends HttpServlet {
 		rpdao.guardarResultadoPrueba(resultado13);
 		rpdao.guardarResultadoPrueba(resultado14);
 		rpdao.guardarResultadoPrueba(resultado15);
+		rpdao.guardarResultadoPrueba(resultado16);
 		rpdao.guardarResultadoPrueba(resultado17);
 		rpdao.guardarResultadoPrueba(resultado18);
 		rpdao.guardarResultadoPrueba(resultado19);
@@ -524,6 +525,9 @@ public class registroWeb extends HttpServlet {
 					sesion.setAttribute("acceso", "ok");
 					sesion.setAttribute("correo", u.getCorreo());
 					sesion.setAttribute("estadoValidacion", u.getNick());
+					if (u.getRol().equals("Profesor")) {
+						sesion.setAttribute("estadoRol", u.getNick());
+					}
 					sesion.setAttribute("idUsuario",u.getId());
 					System.err.println("entro");
 				}

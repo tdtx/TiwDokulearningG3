@@ -49,10 +49,14 @@
 					</div>
 					<div style="text-align:center">
 					<br /><br /><br /><br />
+					<c:if test="${estadoValidacion==null}">
 						<a href="Cursos?accion=${cursoS.titulo}&estado=matricularse"><button type="button"
 									class="btn btn-default" style="text-align:center" >Matricularse</button></a>
-						<a href="#"><button type="button"
+									</c:if>
+									<c:if test="${estadoValidacion!=null}">
+						<a href="chat.jsp"><button type="button"
 									class="btn btn-default" style="text-align:center" >Chat</button></a>
+									</c:if>
 					</div>
 					</div>
 					<div>
