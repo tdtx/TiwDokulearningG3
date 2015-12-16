@@ -128,26 +128,26 @@ public class registroWeb extends HttpServlet {
 		
 		
 		//matriculados
-	Matriculados matriculado1=new Matriculados("Estadistica", "LauLV", "cupon1", 128.90, 2.8);
-	Matriculados matriculado2=new Matriculados("Estadistica", "LidiRG", "cupon2", 128.90, 2.8 );
-	Matriculados matriculado3=new Matriculados("Ingenieria del Software", "RaulFJ", "cupon3", 128.90, 2.8);
-	Matriculados matriculado4=new Matriculados("Programacion", "MartinMF", "cupon4", 128.90, 2.8);
-	Matriculados matriculado5=new Matriculados("Literatura", "AliPM", "cupon5", 128.90, 2.8);
-	Matriculados matriculado6=new Matriculados("Ingles", "AlbaMP", "cupon6", 128.90, 2.8);
-	Matriculados matriculado7=new Matriculados("Frances", "MarcosGS", "cupon7", 128.90, 2.8);
-	Matriculados matriculado8=new Matriculados("Redes de computadoras", "BelenNC", "cupon8", 128.90, 2.8);
-	Matriculados matriculado9=new Matriculados("Interfaces de usuario", "EliasGH", "cupon9", 128.90, 2.8);
-	Matriculados matriculado10=new Matriculados("Arquitectura de computadores", "PedroCM", "cupon10", 128.90, 2.8);
-	Matriculados matriculado11=new Matriculados("Italiano", "LauLV", "cupon11", 128.90, 2.8);
-	Matriculados matriculado12=new Matriculados("Chino", "LidiRG", "cupon12", 128.90, 2.8);
-	Matriculados matriculado13=new Matriculados("Criptografia", "RaulFJ", "cupon13", 128.90, 2.8);
-	Matriculados matriculado14=new Matriculados("SSOO", "MartinMF", "cupon14", 128.90, 2.8);
-	Matriculados matriculado15=new Matriculados("Ficheros","AliPM" , "cupon15", 128.90, 2.8);
-	Matriculados matriculado16=new Matriculados("ADE","AlbaMP" , "cupon16", 128.90, 2.8);
-	Matriculados matriculado17=new Matriculados("Algebra Lineal", "MarcosGS", "cupon17", 128.90, 2.8);
-	Matriculados matriculado18=new Matriculados("Calculo", "BelenNC", "cupon18", 128.90, 2.8);
-	Matriculados matriculado19=new Matriculados("Calculo Diferencial", "EliasGH", "cupon19", 128.90, 2.8);
-	Matriculados matriculado20=new Matriculados("Matematica Discreta", "PedroCM", "cupon20", 128.90, 2.8);
+	Matriculados matriculado1=new Matriculados("Estadistica", "LauLV", "cupon1", 34, 0);
+	Matriculados matriculado2=new Matriculados("Estadistica", "LidiRG", "cupon2", 34, 0 );
+	Matriculados matriculado3=new Matriculados("Ingenieria del Software", "RaulFJ", "cupon3", 34, 0);
+	Matriculados matriculado4=new Matriculados("Programacion", "MartinMF", "cupon4", 56, 0);
+	Matriculados matriculado5=new Matriculados("Literatura", "AliPM", "cupon5", 32, 0);
+	Matriculados matriculado6=new Matriculados("Ingles", "AlbaMP", "cupon6", 73, 0);
+	Matriculados matriculado7=new Matriculados("Frances", "MarcosGS", "cupon7", 42, 0);
+	Matriculados matriculado8=new Matriculados("Redes de computadoras", "BelenNC", "cupon8", 16, 0);
+	Matriculados matriculado9=new Matriculados("Interfaces de usuario", "EliasGH", "cupon9", 77, 0);
+	Matriculados matriculado10=new Matriculados("Arquitectura de computadores", "PedroCM", "cupon10", 45, 0);
+	Matriculados matriculado11=new Matriculados("Italiano", "LauLV", "cupon11", 35, 0);
+	Matriculados matriculado12=new Matriculados("Chino", "LidiRG", "cupon12", 43, 0);
+	Matriculados matriculado13=new Matriculados("Criptografia", "RaulFJ", "cupon13", 55, 0);
+	Matriculados matriculado14=new Matriculados("SSOO", "MartinMF", "cupon14", 73, 0);
+	Matriculados matriculado15=new Matriculados("Ficheros","AliPM" , "cupon15", 23, 0);
+	Matriculados matriculado16=new Matriculados("ADE","AlbaMP" , "cupon16", 43, 0);
+	Matriculados matriculado17=new Matriculados("Algebra Lineal", "MarcosGS", "cupon17", 36, 0);
+	Matriculados matriculado18=new Matriculados("Calculo", "BelenNC", "cupon18", 85, 0);
+	Matriculados matriculado19=new Matriculados("Calculo Diferencial", "EliasGH", "cupon19", 12, 0);
+	Matriculados matriculado20=new Matriculados("Matematica Discreta", "PedroCM", "cupon20", 37, 0);
 				
 				
 				
