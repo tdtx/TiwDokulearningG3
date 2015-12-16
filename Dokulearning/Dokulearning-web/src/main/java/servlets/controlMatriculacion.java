@@ -3,6 +3,7 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
@@ -92,7 +93,31 @@ public class controlMatriculacion extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String accion = request.getParameter("accion");
+		String estado = request.getParameter("estado");
+		List cursos = null;
+		List matriculados = null;
 		String pagina = indexJSP;
+		if (accion != null && estado.equals("misCursos")) {
+			Usuarios u=udao.buscarNick(accion);
+			try {
+				cursos = cdao.buscarProfesor(u.getNick());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			for (int i = 0; i < cursos.size(); i++) {
+				Curso c = (Curso) cursos.get(i);
+				try {
+					matriculados = mdao.buscarCurso(c.getTitulo());
+				
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			request.setAttribute("matriculados", matriculados);
+            pagina = "/misCursos.jsp";
+        }
 		if (accion != null && accion.equals("perfil")) {
             request.setAttribute("matriculados", matriculados);
             pagina = matriculacionDeCursoJSP;

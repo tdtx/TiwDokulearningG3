@@ -31,10 +31,10 @@
 									</tr>
 								</thead>
 								<tbody>
-                               <c:forEach items="${cursos}" var="cursoD">
+                               <c:forEach items="${matriculados}" var="matriculadosM">
                                     <tr>
-                                        <td><a href="Cursos?accion=${cursoD.curso}&estado=${cursoD.usuario}">${cursoD.curso}</a></td>
-                                        <td>${cursoD.usuario}</td>
+                                        <td><a href="Cursos?accion=${matriculadosM.curso}&estado=${matriculadosM.usuario}">${matriculadosM.curso}</a></td>
+                                        <td>${matriculadosM.usuario}</td>
                                     </tr>
                                   
                                     </c:forEach>

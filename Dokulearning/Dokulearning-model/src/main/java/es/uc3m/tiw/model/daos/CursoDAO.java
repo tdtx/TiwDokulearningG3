@@ -57,6 +57,10 @@ public class CursoDAO{
 			}
 			
 		}
+
+	 public List<Curso> buscarProfesor(String usuario)throws Exception{
+	    	return em.createQuery("SELECT u FROM Curso u where u.usuario='"+usuario+"'",Curso.class).getResultList();
+		 }
 	 public List<Curso> buscarDestacados(String destacado)throws Exception{
 	    	return em.createQuery("SELECT u FROM Curso u where u.destacado='"+destacado+"'",Curso.class).getResultList();
 		 }
