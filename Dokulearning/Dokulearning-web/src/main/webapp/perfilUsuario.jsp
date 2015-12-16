@@ -72,10 +72,10 @@
 
 						</br> </br> <a href="Cursos?accion=crearCurso&estado=${registrado.nick}"><button
 								type="button" class="btn btn-default">Crear curso</button></a> </br> </br>
-<c:if test="${estadoRol!=null}">
+					<c:if test="${estadoRol!=null}">
 						<button class="btn btn-default" title="mis cursos">Mis
 							Cursos</button>
-</c:if>
+					</c:if>
 
 					</div>
 
