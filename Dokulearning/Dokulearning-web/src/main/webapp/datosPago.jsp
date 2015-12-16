@@ -72,7 +72,7 @@ a:hover {
 				<div class="col-lg-12">
 
 					<ol class="breadcrumb" style="background-color: #F9F4EF">
-						<li><a href="#" class="letras">Matriculacion</a></li>
+						<li><a href="Cursos?accion=${cursoS.titulo}&estado=matricularse" class="letras">Matriculacion</a></li>
 						<li class="active" style="text-decoration: bold; font-size: 18px">Datos de pago</li>
 						<li class="desactivado">Resumen</li>
 					</ol>
@@ -133,8 +133,8 @@ a:hover {
 								<div class="form-group col-lg-12"
 									style="margin: 0px 0px 0px 190px">
 
-									<input id="atras" style="margin-right: 25px" type="button"
-										class="btn btn-default" value="Atras" /> <input
+									<a href="Cursos?accion=${cursoS.titulo}&estado=matricularse"><input id="atras" style="margin-right: 25px" type="button"
+										class="btn btn-default" value="Atras" /></a> <input
 										id="btnEnviarPago" type="submit" class="btn btn-default"
 										value="Confirmar compra" />
 								</div>

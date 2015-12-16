@@ -155,8 +155,7 @@ a:hover {text-decoration:none; color:#DDB888;  font-weight: bold; font-size: 18p
 					
 					<div class="form-group col-lg-12 botones">
 									
-									 <input id="atras" 
-									type="button" class="btn btn-default" value="Atras" />
+						
 									
 									
 									<a href="#" data-toggle="modal"

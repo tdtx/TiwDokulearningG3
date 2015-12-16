@@ -57,6 +57,9 @@ public class CursoDAO{
 			}
 			
 		}
+	 public List<Curso> buscarDestacados(String destacado)throws Exception{
+	    	return em.createQuery("SELECT u FROM Curso u where u.destacado='"+destacado+"'",Curso.class).getResultList();
+		 }
 	    public Curso buscarCurso(Long id) {
 	        return em.find(Curso.class, id);
 	    } 

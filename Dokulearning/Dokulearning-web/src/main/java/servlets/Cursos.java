@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
+
 import dominio.FormularioCurso;
 import es.uc3m.tiw.model.daos.CursoDAO;
 import es.uc3m.tiw.model.daos.UsuarioDAO;
@@ -128,6 +129,13 @@ public class Cursos extends HttpServlet {
 
 		}
 		if (accion.equals("destacados")) {
+			try {
+				cursos =  cdao.buscarDestacados("Si");
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			request.setAttribute("cursos", cursos);
 			pagina = "/cursoDestacados.jsp";
 		}
