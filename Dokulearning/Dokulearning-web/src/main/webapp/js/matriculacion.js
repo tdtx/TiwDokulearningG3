@@ -1,5 +1,5 @@
 
-function comprobarMatriculacion(formularioMat){
+function comprobarMatriculacion(){
     var contador = 0;
    var mensaje = "";
 	   //validar telefono
@@ -77,28 +77,7 @@ function comprobarMatriculacion(formularioMat){
 		  
 		  
 		  
-		//validar genero
-			 var formaPagoMatriculado = document.getElementById("formaPago").value;
-			    var formaPagoM = formaPagoMatriculado.toString();
-			    if (formaPagoM == null || formaPagoM == "") {
-			        mensaje = mensaje.concat("El campo genero debe rellenarse" + '\n');
-			        document.getElementById("formaPago").style.borderColor="red";
-			        document.getElementById("formaPago").style.borderStyle="dotted";
-					document.getElementById("txtFormaPago").style.color="red";
-
-			    } else if (formaPagoM=="Transferencia" || formaPagoM=="Paypal" || formaPagoM=="Tarjeta" ){
-			        document.getElementById("formaPago").style.borderColor="green";
-			        document.getElementById("formaPago").style.borderStyle="dotted";
-					document.getElementById("txtFormaPago").style.color="green";
-
-			        contador = contador + 1;    
-			    } else {
-			        mensaje = mensaje.concat("El campo genero debe rellenarse con Hombre o Mujer" + '\n');
-			        document.getElementById("formaPago").style.borderColor="red";
-			        document.getElementById("formaPago").style.borderStyle="dotted";
-					document.getElementById("txtFormaPago").style.color="red";
-
-			    }
+		
  
 			  //Validado el campo calle
 				var calleMatriculado = document.getElementById("calle").value;
@@ -212,7 +191,7 @@ function comprobarMatriculacion(formularioMat){
 				
 				
      
-    if(contador == 9){
+    if(contador == 8){
         alert("Usuario registrado con éxito");
     } else{
         //alert(mensaje);

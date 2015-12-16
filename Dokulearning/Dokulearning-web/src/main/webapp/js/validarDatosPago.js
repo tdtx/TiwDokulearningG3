@@ -1,5 +1,5 @@
 
-function validacionDatosPago(formularioPago){
+function validacionDatosPago(){
     var contador = 0;
    var mensaje = "";
 	   //validar tarjeta
@@ -40,19 +40,10 @@ function validacionDatosPago(formularioPago){
     var dVale = document.getElementById("vale").value;
 	var datosVale = dVale.toString();
 	var valeLongLong = datosVale.length;
-	 if (!datosVale.match(/^(VALE)[0-9]*$/)){
-		alert("mal");
-		document.getElementById("vale").style.borderColor="red";
-		document.getElementById("vale").style.borderStyle="dotted";
-		document.getElementById("txtVale").style.color="red";
+	 if (!datosVale.match(/^(VALE)[0-9]*$/) ||datosVale!=null ||datosVale!=""){
+		
 
 		//mensaje = mensaje.concat("El campo telefono no puede contener letras ni estar en blanco" + '\n');
-	} else if (valeLongLong < 24){
-		document.getElementById("vale").style.borderColor="red";
-		document.getElementById("vale").style.borderStyle="dotted";
-		document.getElementById("txtVale").style.color="red";
-
-		//mensaje = mensaje.concat("El campo telefono debe tener 9 dígitos" + '\n');
 	} else{	
 		document.getElementById("vale").style.borderColor="green";
 		document.getElementById("vale").style.borderStyle="dotted";
@@ -62,7 +53,7 @@ function validacionDatosPago(formularioPago){
 	}
 	
 	  
-    if(contador == 2){
+    if(contador >=1){
         alert("Operacion realizada con éxito");
     } else{
         //alert(mensaje);

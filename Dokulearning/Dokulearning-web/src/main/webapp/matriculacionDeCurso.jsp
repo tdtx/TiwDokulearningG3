@@ -92,7 +92,7 @@
 									<option value="Mujer">Mujer</option>
 								</select><br /> <label id="txtDNI" for="DNI">DNI *</label><input
 									type="text" placeholder="Ej.: 12345678G / sin guion"
-									class="form-control" name="DNI" id="DNI" maxlength="10" /><br />
+									class="form-control" name="DNI" id="DNI" maxlength="9" /><br />
 
 
 					
