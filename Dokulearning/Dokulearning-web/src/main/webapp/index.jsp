@@ -14,24 +14,48 @@
         <div class="row">
             <div class="box">
                 <div class="col-lg-12 text-center">
+                 <hr>
+                    <h2 class="intro-text text-center">Cursos 
+                        <strong>destacados</strong>
+                    </h2>
+                    <hr>
                     <div id="carousel-example-generic" class="carousel slide">
                         <!-- Indicators -->
                         <ol class="carousel-indicators hidden-xs">
                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="6"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
-                            <div class="item active">
-                                <img class="img-responsive img-full" src="img/slide-1.jpg" alt="">
+                            <div class="item active image">
+                               <a href="Cursos?accion=Chino"> <img class="img-responsive img-full" src="imagenes/chino.jpg" alt=""></a>
+                               <h3><span>Curso de chino</span></h3>
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="img/slide-2.jpg" alt="">
+                               <a href="Cursos?accion=Arquitectura de computadores"> <img class="img-responsive img-full" src="imagenes/arcos.png" alt=""></a>
+                               <h3><span>Curso arquitectura de computadores</span></h3>
                             </div>
                             <div class="item">
-                                <img class="img-responsive img-full" src="img/slide-3.jpg" alt="">
+                               <a href="Cursos?accion=ADE"> <img class="img-responsive img-full" src="imagenes/ADE.jpg" alt=""></a>
+  								<h3><span>Curso de ADE</span></h3>                          
+                            </div>
+                            <div class="item">
+                                <a href="Cursos?accion=Programacion"><img class="img-responsive img-full" src="imagenes/programacion.jpg" alt=""></a>
+                                <h3><span>Curso de programacion</span></h3>
+                            </div>
+                            <div class="item">
+                                <a href="Cursos?accion=Francia"><img class="img-responsive img-full" src="imagenes/frances.jpg" alt=""></a>
+                                <h3><span>Curso de frances</span></h3>
+                            </div>
+                             <div class="item">
+                                <a href="Cursos?accion=Calculo"><img class="img-responsive img-full" src="imagenes/calculo.png" alt=""></a>
+                                <h3><span>Curso de calculo</span></h3>
                             </div>
                         </div>
 
@@ -43,11 +67,7 @@
                             <span class="icon-next"></span>
                         </a>
                     </div>
-                    <h2 class="brand-before">
-                        <small></small>
-                    </h2>
-                    <h1 class="brand-name">Cursos destacados</h1>
-                    <hr class="tagline-divider">
+                    
                     <h2>
                         <small> 
                             <strong> </strong>
