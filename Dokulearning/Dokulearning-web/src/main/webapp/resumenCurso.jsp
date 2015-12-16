@@ -18,6 +18,7 @@
 </head>
 <body>
 <c:set var="cursoS" scope="session" value="${perfilCurso}"></c:set>
+	<c:set var="estPro" scope="session" value="${profesor}"></c:set>
 	<jsp:include page="header.jsp"></jsp:include>
 
 	<div class="container">
@@ -56,6 +57,199 @@
 									<c:if test="${estadoValidacion!=null}">
 						<a href="chat.jsp"><button type="button"
 									class="btn btn-default" style="text-align:center" >Chat</button></a>
+										<c:if test="${profesor!=null}">
+											<button type="button"
+									class="btn btn-default" style="text-align:center" data-toggle="modal" data-toggle="tooltip" data-placement="left" data-target="#miDialog${cursoS.id}">Editar Curso</button>
+									<div class="modal fade" id="miDialog${cursoS.id}" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">
+														<span aria-hidden="true">&times;</span><span
+															class="sr-only">Close</span>
+													</button>
+													<h4 class="modal-title" id="myModalLabel">Editar
+														Curso de ${cursoS.titulo}</h4>
+												</div>
+												<div class="modal-body">
+													<div class="">
+														<form onSubmit="return validarC(this)" action="Cursos" method="post"
+															class="form-horizontal" role="form">
+															<input type="text" name="action" value="${cursoS.titulo}"
+																style="display: none">																	
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																
+																<label for="tituloC">Titulo</label> <span class="red">*</span><input
+																		type="text" class="form-control" id="tituloC"
+																		name="tituloC"
+																		value="${cursoS.titulo}">																	
+																<div>  &nbsp</div>
+																	<label for="usuarioC">Profesor</label> <span class="red">*</span><input
+																		type="text" class="form-control" id="usuarioC" readonly
+																		name="usuarioC" 
+																		value="${cursoS.usuario}">
+																</div>
+												
+																<div class="text-center">
+																<img alt="fotoU" src="${cursoS.idImagen}">																		
+																	</div>
+															</div>
+														
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	<label for="descripcionC">Descripcion </label> <span class="red">*</span><input type="text"
+																		class="form-control" id="descripcionC" name="descripcionC"
+																		value="${cursoS.descripcion}">
+																</div>
+																<div class="form-group col-md-5">
+																	<label for="horasC">Numero de horas</label> <span class="red">*</span><input
+																		type="text" class="form-control" id="horasC" maxlength="4"
+																		name="horasC"
+																		value="${cursoS.horas}">
+																</div>
+															</div>
+													
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	<label for="temarioC">Temario </label> <span class="red">*</span><input type="text"
+																		class="form-control" id="temarioC" name="temarioC"
+																		value="${cursoS.temario}">
+																</div>
+																
+																<div class="form-group col-md-5">
+																
+																<label id="txtcertif" for="certificadoC">Certificado</label><span class="red">*</span>
+																		<select id="certificadoC" name="certificadoC" class="form-control">
+																			<option value="${cursoS.certificado}">${cursoS.certificado}</option>
+																			<option value="Si">Si</option>
+																			<option value="No">No</option>											
+																		</select>
+																
+																</div>
+															</div>
+												
+											
+										
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	<label for="categoriaC">Categoria </label> <span class="red">*</span><input type="text"
+																		class="form-control" id="categoriaC" name="categoriaC"
+																		value="${cursoS.categoria}">
+																</div>
+																<div class="form-group col-md-5">
+																
+																
+																	<label id="txtdestacado" for="destacadoC">Destacado</label><span class="red">*</span>
+																		<select id="destacadoC" name="destacadoC" class="form-control">
+																			<option value="${cursoS.destacado}">${cursoS.destacado}</option>
+																			<option value="Si">Si</option>
+																			<option value="No">No</option>											
+																		</select>
+																
+																</div>
+															</div>
+													
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	 
+																	 <label id="txtValidacion" for="validacionC">Validacion</label><span class="red">*</span>
+																		<select id="validacionC" name="validacionC" class="form-control">
+																			<option value="${cursoS.validacion}">${cursoS.validacion}</option>
+																			<option value="A eliminar">A eleminar</option>
+																			<option value="Validado">Validado</option>	
+																			<option value="Pendiente">Pendiente</option>																														
+																		</select>
+
+																</div>
+																<div class="form-group col-md-5">
+																	<label for="precioC">Precio</label> <span class="red">*</span><input
+																		type="text" class="form-control" id="precioC"
+																		name="precioC" 
+																		value="${cursoS.precio}">
+																</div>
+															</div>
+										
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	
+																	<label id="txtoferta" for="tipoOfertaC">Tipo de oferta</label><span class="red">*</span>
+																		<select id="tipoOfertaC" name="tipoOfertaC" class="form-control">
+																			<option value="${cursoS.tipoOferta}">${cursoS.tipoOferta}</option>
+																			<option value="Si">Si</option>
+																			<option value="No">No</option>											
+																		</select>
+													
+																</div>
+																<div class="form-group col-md-5">
+																	
+																	
+																	
+																	 <label id="txtDif" for="nivelC">Nivel</label><span class="red">*</span>
+																		<select id="nivelC" name="nivelC" class="form-control">
+																			<option value="${cursoS.nivel}">${cursoS.nivel}</option>
+																			<option value="A eliminar">Medio</option>
+																			<option value="Validado">Bajo</option>	
+																			<option value="Pendiente">Alto</option>																														
+																		</select>
+															
+																</div>
+															</div>
+													<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																 <label for="fechaInicioC">Fecha Inicial </label> <input type="text"
+																		class="form-control" id="fechaInicioC" name="fechaInicioC" readonly
+																		value="${cursoS.fechaInicio}"> 
+																</div>
+																<div class="form-group col-md-5">
+																	<label for="fechaFInC">Fecha FIn</label> <input
+																		type="text" class="form-control" id="fechaCaducidadC" readonly
+																		name="fechaCaducidadC" 
+																		value="${cursoS.fechaCaducidad}">
+																</div>
+															</div>
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																 <label for="contadorC">Contador </label><input type="text"
+																		class="form-control" id="contadorC" name="contadorC" readonly
+																		value="${cursoS.contador}"> 
+																</div>
+															<div class="form-group col-md-5">
+																	<label for="idC">ID</label><input
+																		type="text" class="form-control" id="idC"
+																		name="idC" readonly
+																		value="${cursoS.id}">
+																</div>
+															</div>
+													
+													
+														
+																<div class="modal-footer">
+													<div>
+																<button type="submit" class="btn btn-primary" >Guardar
+																	Cambios</button>
+																<button type="button" class="btn btn-primary"
+																	data-dismiss="modal">Cerrar</button>
+															</div>								
+												</div>
+														</form>
+													</div>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+										</c:if>
 									</c:if>
 					</div>
 					</div>

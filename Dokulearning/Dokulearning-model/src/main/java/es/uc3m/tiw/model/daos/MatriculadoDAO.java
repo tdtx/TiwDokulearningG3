@@ -8,6 +8,8 @@ import javax.persistence.Query;
 import javax.transaction.UserTransaction;
 
 
+
+
 //import javax.persistence.Query;
 import es.uc3m.tiw.model.dominios.Matriculados;
 
@@ -44,6 +46,12 @@ public class MatriculadoDAO {
     public List<Matriculados> buscarCurso(String curso)throws Exception{
     	return em.createQuery("SELECT u FROM Matriculados u where u.curso='"+curso+"'",Matriculados.class).getResultList();
 	 }
+    public List<Matriculados> buscarMatriculados(String titulo)throws Exception{
+    	return em.createQuery("SELECT u FROM Matriculados u where u.curso='"+titulo+"'",Matriculados.class).getResultList();
+	 }
+	 public List<Matriculados> buscarMatriculados()throws Exception{
+	        return em.createQuery("SELECT u FROM Matriculados u",Matriculados.class).getResultList();
+		 }
     // public matriculados comprobarLogin(String email, String password)throws NoResultException{
     //    return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",matriculados.class).getSingleResult();
     // }

@@ -3,6 +3,7 @@ package servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -96,6 +97,7 @@ public class controlMatriculacion extends HttpServlet {
 		String estado = request.getParameter("estado");
 		List cursos = null;
 		List matriculados = null;
+
 		String pagina = indexJSP;
 		if (accion != null && estado.equals("misCursos")) {
 			Usuarios u=udao.buscarNick(accion);
@@ -109,7 +111,10 @@ public class controlMatriculacion extends HttpServlet {
 				Curso c = (Curso) cursos.get(i);
 				try {
 					matriculados = mdao.buscarCurso(c.getTitulo());
-				
+				for (int j = 0; j < matriculados.size(); j++) {
+					 Matriculados m = (Matriculados) matriculados.get(j);
+
+				}
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

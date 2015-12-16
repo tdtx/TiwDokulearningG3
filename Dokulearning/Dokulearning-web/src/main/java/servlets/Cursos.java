@@ -16,11 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
-
 import dominio.FormularioCurso;
 import es.uc3m.tiw.model.daos.CursoDAO;
+import es.uc3m.tiw.model.daos.MatriculadoDAO;
 import es.uc3m.tiw.model.daos.UsuarioDAO;
 import es.uc3m.tiw.model.dominios.Curso;
+import es.uc3m.tiw.model.dominios.Matriculados;
 import es.uc3m.tiw.model.dominios.Usuarios;
 
 
@@ -41,6 +42,7 @@ public class Cursos extends HttpServlet {
 	UserTransaction ut;
 	UsuarioDAO udao;
 	CursoDAO cdao;
+	MatriculadoDAO mdao;
 	/**
 	 * 
 	 * @see HttpServlet#HttpServlet()
@@ -65,6 +67,7 @@ public class Cursos extends HttpServlet {
 		cursos.add(curso2);
 		udao=new UsuarioDAO(em, ut);
 		cdao=new CursoDAO(em, ut);
+		mdao=new MatriculadoDAO(em, ut);
 	}
 	
 	public Cursos() {
@@ -108,6 +111,10 @@ public class Cursos extends HttpServlet {
 				if (estado.equals("matricularse") && idUsuario != null) {
 					sesion.setAttribute("perfilCurso", u);
 					pagina = "/matriculacionDeCurso.jsp";
+				}else if(estado.equals("Profe")){
+					sesion.setAttribute("perfilCurso", u);
+					sesion.setAttribute("profesor", u.getUsuario());
+					pagina = "/resumenCurso.jsp";
 				}else{
 					pagina = "/clienteNoValidado.jsp";
 				}
@@ -162,34 +169,98 @@ public class Cursos extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		FormularioCurso form = new FormularioCurso();
-
-		response.setContentType("text/html");
-
-		HttpSession curso = request.getSession();
+		List cursos = null;
+		List matriculados = null;
+        String pagina = "/index.jsp";
 		String action = request.getParameter("action");
+		HttpSession sesion = request.getSession();
 
 		if (action != null) {
+			long idCEdit = Integer.parseInt(request.getParameter("idC"));
+			String tituloCEdit= request.getParameter("tituloC");
+	        String descripcionCEdit = request.getParameter("descripcionC");
+	        String nHorasCEdit= request.getParameter("horasC");
+	        String temariosCEdit= request.getParameter("temarioC");
+	        String usuarioCEdit= request.getParameter("usuarioC");
+	        String nivelCEdit= request.getParameter("nivelC");
+	        String certificadoCEdit= request.getParameter("certificadoC");   
+	        String categoriaCEdit= request.getParameter("categoriaC");
+	        String destacadoCEdit= request.getParameter("destacadoC");      
+	        String validacionCEdit = request.getParameter("validacionC");
+	        double precioCEdit= Double.parseDouble(request.getParameter("precioC"));
+	        String tOfertaCEdit= request.getParameter("tipoOfertaC");
+	        String fechaFinCEdit= request.getParameter("fechaCaducidadC"); 
+	        String fechaInicioCEdit= request.getParameter("fechaInicioC"); 
+	        int contador = Integer.parseInt(request.getParameter("contadorC"));
+	        contador = 0;
+	        
+	        String img = "imagenes/addressbook_add_128.png";
 
-			switch (action) {
-			case "rellenar_formulario":
+	        
+	        
+	        try {
+			    	Curso c = cdao.buscarCurso(idCEdit);
+			    	matriculados = mdao.buscarMatriculados(c.getTitulo());
+			    	for (int j = 0; j < matriculados.size(); j++) {
+						Matriculados m = (Matriculados) matriculados.get(j);
+						m.setCurso(tituloCEdit);
+						m.setPrecio_final(precioCEdit);
+						mdao.actualizarMatriculado(m);
+					}
+			    	
+			    	contador = matriculados.size();
+			    	if (c!= null) {
+						c.setTitulo(tituloCEdit);
+						c.setDescripcion(descripcionCEdit);
+						c.setHoras(nHorasCEdit);
+						c.setTemario(temariosCEdit);
+						c.setUsuario(usuarioCEdit);
+						c.setNivel(nivelCEdit);
+						c.setCertificado(certificadoCEdit);
+						c.setCategoria(categoriaCEdit);
+						c.setDestacado(destacadoCEdit);
+						c.setValidacion(validacionCEdit);
+						c.setPrecio(precioCEdit);
+						c.setTipoOferta(tOfertaCEdit);
+						c.setFechaCaducidad(fechaFinCEdit);
+						c.setDescuentoCupon(10);
+						c.setFechaInicio(fechaInicioCEdit);
+						c.setIdImagen(img);					
+						c.setContador(contador);			
+						cdao.actualizarCurso(c);			
+					}
+			    	cursos = cdao.buscarCursos();
+			    	matriculados = mdao.buscarMatriculados();
+			    	Usuarios u=udao.buscarNick(action);
+					try {
+						cursos = cdao.buscarProfesor(u.getNick());
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					for (int i = 0; i < cursos.size(); i++) {
+						Curso cm = (Curso) cursos.get(i);
+						try {
+							matriculados = mdao.buscarCurso(cm.getTitulo());
+						for (int j = 0; j < matriculados.size(); j++) {
+							 Matriculados m = (Matriculados) matriculados.get(j);
 
-
-				this.getServletContext()
-						.getRequestDispatcher("/vistaPreviaCurso.jsp")
-						.forward(request, response);
-
-				break;
-			case "vistaPrevia":
-
-				this.getServletContext().getRequestDispatcher("/index.jsp")
-						.forward(request, response);
-				break;
-			default:
-				break;
+						}
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+					request.setAttribute("matriculados", matriculados);
+			        pagina = "/misCursos.jsp";
+			    } catch (Exception e) {
+			        // TODO: handle exception
+			        e.printStackTrace();
+			        System.out.println("**Editar Registrado** Error al actualizar el registrado***");
+			    }		
 			}
-
-		}
+		this.getServletContext().getRequestDispatcher(pagina)
+		.forward(request, response);
 
 	}
 }

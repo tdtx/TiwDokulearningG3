@@ -11,6 +11,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 
 
+
 			<div class="container">
 				<!-- Page Heading -->
 				<div class="row">
@@ -33,7 +34,7 @@
 								<tbody>
                                <c:forEach items="${matriculados}" var="matriculadosM">
                                     <tr>
-                                        <td><a href="Cursos?accion=${matriculadosM.curso}&estado=${matriculadosM.usuario}">${matriculadosM.curso}</a></td>
+                                        <td><a href="Cursos?accion=${matriculadosM.curso}&estado=Profe">${matriculadosM.curso}</a></td>
                                         <td>${matriculadosM.usuario}</td>
                                     </tr>
                                   
