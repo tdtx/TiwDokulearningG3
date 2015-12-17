@@ -71,27 +71,27 @@
 
 
 							<label id="labelNombre" for="nom">Nombre de curso </label> <input
-								class="form-control" type="text" id="nom" name="nom"
+								class="form-control" type="text" id="nom" name="nom" maxlength="30"
 								placeholder="Ej.: Matematicas" /><br /> 
 								
 							<label
 								id="labelDescripcion">Descripcion del curso</label>
-							<textarea class="form-control" rows="3" name="descripcion"
+							<textarea class="form-control" rows="3" name="descripcion" maxlength="200"
 								id="descripcion" placeholder="Ej.: bases de datos"></textarea>
 							<br />
 							
 							<label id="labelListado">Listado del contenido del curso</label>
-							<textarea class="form-control" rows="3" name="temario"
+							<textarea class="form-control" rows="3" name="temario" maxlength="200"
 								id="temario" placeholder="Ej.: titulos de los temas"></textarea>
 							<br /> 
 							
 							<label id="labelListadoSec">Listado de secciones del curso</label>
-							<textarea class="form-control" rows="3" name="secciones"
+							<textarea class="form-control" rows="3" name="secciones" maxlength="200"
 								id="secciones" placeholder="Ej.: bloque 1, bloque2,..."></textarea>
 							<br />
 							
 							 <label id="labelListadoLec">Listado de lecciones del curso</label>
-							<textarea class="form-control" rows="3" name="lecciones"
+							<textarea class="form-control" rows="3" name="lecciones" maxlength="200"
 								id="lecciones" placeholder="Ej.: tema1, tema2,..."></textarea>
 							<br />
 							
@@ -105,11 +105,11 @@
 						<div class="form-group col-lg-4">
 
 							<label id="labelPrecio">Precio</label> <input class="form-control" type="text"
-								name="precio" id="precio" placeholder="Ej.: 300"> <br />
+								name="precio"  maxlength="4" id="precio" placeholder="Ej.: 300"> <br />
 
 							<label id="labelNumHoras">Numero de horas</label> <input class="form-control"
 								type="text" name="horas" id="horas"
-								placeholder="Ej.: 0053 (cuatro digitos)"> <br /> 
+								maxlength="4" placeholder="Ej.: 0053 (cuatro digitos)"> <br /> 
 								
 							<label id="labelNombreProf">Nombre
 								del profesor</label> <input class="form-control" type="text"
@@ -117,19 +117,19 @@
 				
 							
 							<label id="labelFechaIni">Fecha inicio del curso</label> <input class="form-control"
-								type="text" name="f_inicio" id="f_inicio"
+								type="text" name="f_inicio" id="f_inicio" maxlength="10"
 								placeholder="Ej: 20/11/2015"> <br /> 
 								
 							<label id="labelFechaFin">Fecha
 								fin del curso</label> <input class="form-control" type="text"
-								name="f_fin" id="f_fin" placeholder="Ej: 01/12/2015"> <br />
+								name="f_fin" id="f_fin" maxlength="10" placeholder="Ej: 01/12/2015"> <br />
 							
 							<label id="labelFechaCierre">Fecha de cierre del curso</label> <input
-								class="form-control" type="text" name="cierre_curso"
+								class="form-control" type="text" name="cierre_curso" maxlength="10"
 								id="cierre_curso" placeholder="Ej: 02/12/2015"> <br />
 							
 							<label id="labelCategoria">Categoria del curso</label> <input class="form-control"
-								type="text" name="categoria" id="categoria"
+								type="text" name="categoria" id="categoria" maxlength="40"
 								placeholder="Rama del curso">
 							<br />
 							<label id="txtDif" for="dificultad">Dificultad del curso</label>

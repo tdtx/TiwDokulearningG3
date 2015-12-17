@@ -254,11 +254,16 @@
 
 					<div class="modal fade" id="editPerfil" tabindex="-1" role="dialog"
 						aria-labelledby="myModalLabel" aria-hidden="true">
+						
+						
 						<div class="container">
+						
 							<div id="loginbox" style="margin-top: 50px;"
 								class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
+								
 								<div class="panel dialog-info">
+									
 									<div class="cabeceraDialog">
 										<button type="button" class="close" data-dismiss="modal">
 											<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>

@@ -131,7 +131,7 @@ function validarCurso(formulario){
 		document.getElementById("labelNumHoras").style.color="red";
 
 		//mensaje = mensaje.concat("El numero de horas no puede permanecer vacío y sólo puede estar formado por números" + '\n');
-	} else if(cpLong != 4){
+	} else if(cpLong> 4){
 		document.getElementById("horas").style.borderColor="red";
 		document.getElementById("horas").style.borderStyle="dotted";
 		document.getElementById("labelNumHoras").style.color="red";
@@ -145,29 +145,7 @@ function validarCurso(formulario){
 		contador = contador + 1;
 	}
 	 
-//Validado el campo nombre del profesor
-    var profesorCurso = document.getElementById("profesor").value;
-    var profesorC = profesorCurso.toString();
-    if (profesorC == null || profesorC == "") {
-        //mensaje = mensaje.concat("El campo profesor de cursp debe rellenarse" + '\n');
-        document.getElementById("profesor").style.borderColor="red";
-        document.getElementById("profesor").style.borderStyle="dotted";
-		document.getElementById("labelNombreProf").style.color="red";
 
-    } else if (profesorC.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
-        document.getElementById("profesor").style.borderColor="red";
-        document.getElementById("profesor").style.borderStyle="dotted";
-		document.getElementById("labelNombreProf").style.color="red";
-
-        //mensaje = mensaje.concat("El profesor del curso no puede contener símbolos, ni estar en blanco" + '\n');
-    } else {
-        document.getElementById("profesor").style.borderColor="green";
-        document.getElementById("profesor").style.borderStyle="dotted";
-		document.getElementById("labelNombreProf").style.color="green";
-
-        contador = contador + 1;
-    }
-    
     
 //Validado el campo fecha de inicio
 	var f_inicioursos = document.getElementById("f_inicio").value;
@@ -423,7 +401,7 @@ function validarCurso(formulario){
         contador = contador + 1;
     }
 			    		
-    if(contador == 14){
+    if(contador == 13){
         alert("Datos del curso correctos. Cargando vista previa.");
     } else{
         //alert(mensaje);
