@@ -199,6 +199,7 @@ public class Cursos extends HttpServlet {
 				e.printStackTrace();
 			}
 	        pagina = "/index.jsp";
+	        
 		}
 		if (action != null && !action.equals("rellenarFormulario")) {
 			long idCEdit = Integer.parseInt(request.getParameter("idC"));
