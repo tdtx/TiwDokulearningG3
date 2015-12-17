@@ -64,39 +64,7 @@ function validarCurso(formulario){
 		contador = contador + 1;
 	}
 	
-//Validado el campo secciones
-	var seccionesCurso = document.getElementById("secciones").value;
-	var seccionesC = seccionesCurso.toString();
-	if (temarioC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| seccionesC == null || seccionesC == ""){
-		document.getElementById("secciones").style.borderColor="red";
-		document.getElementById("secciones").style.borderStyle="dotted";
-		document.getElementById("labelListadoSec").style.color="red";
 
-		//mensaje = mensaje.concat("El campo secciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
-	} else {
-		document.getElementById("secciones").style.borderColor="green";
-		document.getElementById("secciones").style.borderStyle="dotted";
-		document.getElementById("labelListadoSec").style.color="green";
-
-		contador = contador + 1;
-	}
-	
-//Validado el campo lecciones
-	var leccionesCurso = document.getElementById("lecciones").value;
-	var leccionesC = leccionesCurso.toString();
-	if (temarioC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| leccionesC == null || leccionesC == ""){
-		document.getElementById("lecciones").style.borderColor="red";
-		document.getElementById("lecciones").style.borderStyle="dotted";
-		document.getElementById("labelListadoLec").style.color="red";
-
-		//mensaje = mensaje.concat("El campo lecciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
-	} else {
-		document.getElementById("lecciones").style.borderColor="green";
-		document.getElementById("lecciones").style.borderStyle="dotted";
-		document.getElementById("labelListadoLec").style.color="green";
-
-		contador = contador + 1;
-	}
 	
 //Validado el campo precio
     var precioCursos = document.getElementById("precio").value;
@@ -148,7 +116,7 @@ function validarCurso(formulario){
 
     
 //Validado el campo fecha de inicio
-	var f_inicioursos = document.getElementById("f_inicio").value;
+	var f_inicioursos = document.getElementById("fInicio").value;
 	var f_inicio = f_inicioursos.toString();
 	    hoy=new Date(); 
 	    var array_fecha = f_inicio.split("/"); 
@@ -160,55 +128,55 @@ function validarCurso(formulario){
 	    dia = parseInt(array_fecha[0]); 
 	    
 	    if (array_fecha.length!=3) {
-	    	 document.getElementById("f_inicio").style.borderColor="red";
-	         document.getElementById("f_inicio").style.borderStyle="dotted";
+	    	 document.getElementById("fInicio").style.borderColor="red";
+	         document.getElementById("fInicio").style.borderStyle="dotted";
 	 		document.getElementById("labelFechaIni").style.color="red";
 
 	      //   mensaje = mensaje.concat("La fecha de inicio no tiene el formato dd/mm/aaaa" + '\n');
 	    }else if (isNaN(ano)) {
-	    	 document.getElementById("f_inicio").style.borderColor="red";
-	         document.getElementById("f_inicio").style.borderStyle="dotted";
+	    	 document.getElementById("fInicio").style.borderColor="red";
+	         document.getElementById("fInicio").style.borderStyle="dotted";
 	 		document.getElementById("labelFechaIni").style.color="red";
 
 	        // mensaje = mensaje.concat("El año es incorrecto" + '\n');
 	    }else if (isNaN(mes)) {
-	    	 document.getElementById("f_inicio").style.borderColor="red";
-	         document.getElementById("f_inicio").style.borderStyle="dotted";
+	    	 document.getElementById("fInicio").style.borderColor="red";
+	         document.getElementById("fInicio").style.borderStyle="dotted";
 	 		document.getElementById("labelFechaIni").style.color="red";
 
 	         //mensaje = mensaje.concat("El mes es incorrecto" + '\n');
 	    }else if (isNaN(dia)) {
-	    	 document.getElementById("f_inicio").style.borderColor="red";
-	         document.getElementById("f_inicio").style.borderStyle="dotted";
+	    	 document.getElementById("fInicio").style.borderColor="red";
+	         document.getElementById("fInicio").style.borderStyle="dotted";
 	 		document.getElementById("labelFechaIni").style.color="red";
 
 	         //mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 	    }else if (ano - hoy.getYear() >= 0) {
 	    	if (mes - hoy.getMonth() > 0) {
 	    		if (dia - hoy.getDate() >= 0 || mes - hoy.getMonth() > 1 || ano - hoy.getFullYear() >= 1) {
-	    		 	 document.getElementById("f_inicio").style.borderColor="green";
-	    	         document.getElementById("f_inicio").style.borderStyle="dotted";
+	    		 	 document.getElementById("fInicio").style.borderColor="green";
+	    	         document.getElementById("fInicio").style.borderStyle="dotted";
 	    	 		document.getElementById("labelFechaIni").style.color="green";
  //alert(dia +" "+mes +" "+ano+"ACTUAL "+ hoy.getDate()+" "+ hoy.getMonth() +" "+ hoy.getFullYear() );
 	    	         contador = contador + 1;
 				}else {
-				   	 document.getElementById("f_inicio").style.borderColor="red";
-			         document.getElementById("f_inicio").style.borderStyle="dotted";
+				   	 document.getElementById("fInicio").style.borderColor="red";
+			         document.getElementById("fInicio").style.borderStyle="dotted";
 			 		document.getElementById("labelFechaIni").style.color="red";
 
 			   //      mensaje = mensaje.concat("dia menor, el plazo de inicio de matriculacion tiene que ser mayor al dñia actual" + '\n');
 				
 				}
 	    	}else{
-		    	 document.getElementById("f_inicio").style.borderColor="red";
-		         document.getElementById("f_inicio").style.borderStyle="dotted";
+		    	 document.getElementById("fInicio").style.borderColor="red";
+		         document.getElementById("fInicio").style.borderStyle="dotted";
 		 		document.getElementById("labelFechaIni").style.color="red";
 
 		         //mensaje = mensaje.concat("mes menor" + '\n');
 				}
 	    }else{
-	    	document.getElementById("f_inicio").style.borderColor="red";
-	         document.getElementById("f_inicio").style.borderStyle="dotted";
+	    	document.getElementById("fInicio").style.borderColor="red";
+	         document.getElementById("fInicio").style.borderStyle="dotted";
 	 		document.getElementById("labelFechaIni").style.color="red";
 
 	         //mensaje = mensaje.concat("año menor" + '\n');
@@ -216,7 +184,7 @@ function validarCurso(formulario){
 	    
 	    
 //Validado el campo fecha de fin
-		var f_finursos = document.getElementById("f_fin").value;
+		var f_finursos = document.getElementById("fFin").value;
 		var f_fin = f_finursos.toString();
 		    hoyF=new Date() 
 		    var array_fechaF = f_fin.split("/") 
@@ -227,26 +195,26 @@ function validarCurso(formulario){
 		    var diaF 
 		    diaF = parseInt(array_fechaF[0]); 
 		    if (array_fechaF.length!=3) {
-		    	 document.getElementById("f_fin").style.borderColor="red";
-		         document.getElementById("f_fin").style.borderStyle="dotted";
+		    	 document.getElementById("fFin").style.borderColor="red";
+		         document.getElementById("fFin").style.borderStyle="dotted";
 			 		document.getElementById("labelFechaFin").style.color="red";
 
 		       //  mensaje = mensaje.concat("La fecha de fin no tiene el formato dd/mm/aaaa" + '\n');
 		    }else if (isNaN(anoF)) {
-		    	 document.getElementById("f_fin").style.borderColor="red";
-		         document.getElementById("f_fin").style.borderStyle="dotted";
+		    	 document.getElementById("fFin").style.borderColor="red";
+		         document.getElementById("fFin").style.borderStyle="dotted";
 			 		document.getElementById("labelFechaFin").style.color="red";
 
 		         //mensaje = mensaje.concat("El año es incorrecto" + '\n');
 		    }else if (isNaN(mesF)) {
-		    	 document.getElementById("f_fin").style.borderColor="red";
-		         document.getElementById("f_fin").style.borderStyle="dotted";
+		    	 document.getElementById("fFin").style.borderColor="red";
+		         document.getElementById("fFin").style.borderStyle="dotted";
 			 		document.getElementById("labelFechaFin").style.color="red";
 
 		         //mensaje = mensaje.concat("El mes es incorrecto" + '\n');
 		    }else if (isNaN(diaF)) {
-		    	 document.getElementById("f_fin").style.borderColor="red";
-		         document.getElementById("f_fin").style.borderStyle="dotted";
+		    	 document.getElementById("fFin").style.borderColor="red";
+		         document.getElementById("fFin").style.borderStyle="dotted";
 			 		document.getElementById("labelFechaFin").style.color="red";
 
 		         //mensaje = mensaje.concat("El dia es incorrecto" + '\n');
@@ -254,97 +222,34 @@ function validarCurso(formulario){
 		    	if (mesF - mes >= 0) {
 
 		    		if (diaF - dia >= 1 || mesF - mes > 1 || anoF - ano >= 1) {
-		    		 	 document.getElementById("f_fin").style.borderColor="green";
-		    	         document.getElementById("f_fin").style.borderStyle="dotted";
+		    		 	 document.getElementById("fFin").style.borderColor="green";
+		    	         document.getElementById("fFin").style.borderStyle="dotted";
 		    		 	document.getElementById("labelFechaFin").style.color="green";
 
 		    	         contador = contador + 1;
 					}else {
-					   	 document.getElementById("f_fin").style.borderColor="red";
-				         document.getElementById("f_fin").style.borderStyle="dotted";
+					   	 document.getElementById("fFin").style.borderColor="red";
+				         document.getElementById("fFin").style.borderStyle="dotted";
 					 		document.getElementById("labelFechaFin").style.color="red";
 
 				        // mensaje = mensaje.concat("dia menor, el plazo de inicio de matriculacion tiene que ser mayor al dia actual" + '\n');
 					alert("El curso debe durar al menos 1 dia");
 					}
 		    	}else{
-			    	 document.getElementById("f_fin").style.borderColor="red";
-			         document.getElementById("f_fin").style.borderStyle="dotted";
+			    	 document.getElementById("fFin").style.borderColor="red";
+			         document.getElementById("fFin").style.borderStyle="dotted";
 				 		document.getElementById("labelFechaFin").style.color="red";
 
 			        // mensaje = mensaje.concat("mes menor" + '\n');
 					}
 		    }else{
-		    	document.getElementById("f_fin").style.borderColor="red";
-		         document.getElementById("f_fin").style.borderStyle="dotted";
+		    	document.getElementById("fFin").style.borderColor="red";
+		         document.getElementById("fFin").style.borderStyle="dotted";
 			 		document.getElementById("labelFechaFin").style.color="red";
 
 		         //mensaje = mensaje.concat("año menor" + '\n');
 		    }
 		    
-//Validado el campo f del cierre curso
-		    var cierre_cursoursos = document.getElementById("cierre_curso").value;
-			var cierre_curso = cierre_cursoursos.toString();
-			    hoyC=new Date() 
-			    var array_fechaF = cierre_curso.split("/") 
-			    var anoC 
-			    anoC = parseInt(array_fechaF[2]); 
-			    var mesC 
-			    mesC = parseInt(array_fechaF[1]); 
-			    var diaC 
-			    diaC = parseInt(array_fechaF[0]); 
-			    if (array_fechaF.length!=3) {
-			    	 document.getElementById("cierre_curso").style.borderColor="red";
-			         document.getElementById("cierre_curso").style.borderStyle="dotted";
-			         
-				 		document.getElementById("labelFechaCierre").style.color="red";
-
-			       //  mensaje = mensaje.concat("La fecha de fin no tiene el formato dd/mm/aaaa" + '\n');
-			    }else if (isNaN(anoC)) {
-			    	 document.getElementById("cierre_curso").style.borderColor="red";
-			         document.getElementById("cierre_curso").style.borderStyle="dotted";
-				 		document.getElementById("labelFechaCierre").style.color="red";
-			         //mensaje = mensaje.concat("El año es incorrecto" + '\n');
-			    }else if (isNaN(mesC)) {
-			    	 document.getElementById("cierre_curso").style.borderColor="red";
-			         document.getElementById("cierre_curso").style.borderStyle="dotted";
-				 		document.getElementById("labelFechaCierre").style.color="red";
-			         //mensaje = mensaje.concat("El mes es incorrecto" + '\n');
-			    }else if (isNaN(diaC)) {
-			    	 document.getElementById("cierre_curso").style.borderColor="red";
-			         document.getElementById("cierre_curso").style.borderStyle="dotted";
-				 		document.getElementById("labelFechaCierre").style.color="red";
-			         //mensaje = mensaje.concat("El dia es incorrecto" + '\n');
-			    }else if (anoC - anoF >= 0) {
-			    	if (mesC - mesF >= 0) {
-			    		if (diaC - diaF >= 1 || mesC - mesF > 1 || anoC - anoF >= 1) {
-			    		 	 document.getElementById("cierre_curso").style.borderColor="green";
-			    	         document.getElementById("cierre_curso").style.borderStyle="dotted";
-						 		document.getElementById("labelFechaCierre").style.color="green";
-
-			    	         contador = contador + 1;
-						}else {
-						   	 document.getElementById("cierre_curso").style.borderColor="red";
-					         document.getElementById("cierre_curso").style.borderStyle="dotted";
-						 		document.getElementById("labelFechaCierre").style.color="red";
-
-					        // mensaje = mensaje.concat("dia menor, el plazo de inicio de matriculacion tiene que ser mayor al dia actual" + '\n');
-						alert("El curso debe cerrarse al menos 1 dia despues de su fin");
-						}
-			    	}else{
-				    	 document.getElementById("cierre_curso").style.borderColor="red";
-				         document.getElementById("cierre_curso").style.borderStyle="dotted";
-					 		document.getElementById("labelFechaCierre").style.color="red";
-
-				        // mensaje = mensaje.concat("mes menor" + '\n');
-						}
-			    }else{
-			    	document.getElementById("cierre_curso").style.borderColor="red";
-			         document.getElementById("cierre_curso").style.borderStyle="dotted";
-				 		document.getElementById("labelFechaFin").style.color="red";
-
-			         //mensaje = mensaje.concat("año menor" + '\n');
-			    }
 
 //Validado el campo dificultad
 	    var dificultadCursos = document.getElementById("dificultad").value;
@@ -401,7 +306,7 @@ function validarCurso(formulario){
         contador = contador + 1;
     }
 			    		
-    if(contador == 13){
+    if(contador == 10){
         alert("Datos del curso correctos. Cargando vista previa.");
     } else{
         //alert(mensaje);
