@@ -1,11 +1,10 @@
-function validarK(formulario){
+function validarK(){
    
 	
 	
 	var contador = 0;
     //var mensaje = "";
 
-	 
     //Validado el campo nombre de registrado
     var nombreRegistrado = document.getElementById("nombreC").value;
     var nombreR = nombreRegistrado.toString();
@@ -33,7 +32,7 @@ function validarK(formulario){
     //Validado el campo correo de registrado
     var correoContact0 = document.getElementById("correoC").value;
     var correoCC = correoContact0.toString();
-    if (correoCC.match(/[^\w\d.@-_ñÑ&#/]/g)|| correoCC == null || correoCC == ""){
+    if (!correoCC.match(/\S+@\S+\.\S+/g)|| correoCC == null || correoCC == ""){
         document.getElementById("correoC").style.borderColor="red";
         document.getElementById("correoC").style.borderStyle="dotted";
 		document.getElementById("etiqCorreo").style.color="red";
@@ -43,6 +42,7 @@ function validarK(formulario){
         document.getElementById("correoC").style.borderColor="green";
         document.getElementById("correoC").style.borderStyle="dotted";
 		document.getElementById("etiqCorreo").style.color="green";
+
 
         contador = contador + 1;
     }
@@ -77,6 +77,7 @@ function validarK(formulario){
 		document.getElementById("telefonoC").style.borderStyle="dotted";
 		document.getElementById("etiqTLF").style.color="green";
 
+
 		contador = contador + 1;
 	}
     
@@ -100,22 +101,23 @@ function validarK(formulario){
         document.getElementById("mensajeC").style.borderStyle="dotted";
 		document.getElementById("etiqMEnsaj").style.color="green";
 
+
         contador = contador + 1;
     }
     
     
      
-   
-    
+  
     if(contador == 4){  
-    	 $("#dialogo").dialog({
+    	alert("Mensaje enviado");
+    	/* $("#dialogo").dialog({
              scrollable: true,
              width: 650,
              modal: true
 
          });
     	$("#dialogo").show;
-    		
+    		*/
     	        
    
         
