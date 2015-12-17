@@ -118,15 +118,15 @@
 							
 							<label id="labelFechaIni">Fecha inicio del curso</label> <input class="form-control"
 								type="text" name="f_inicio" id="f_inicio" maxlength="10"
-								placeholder="Ej: 20/11/2015"> <br /> 
+								placeholder="Ej: 20/12/2015"> <br /> 
 								
 							<label id="labelFechaFin">Fecha
 								fin del curso</label> <input class="form-control" type="text"
-								name="f_fin" id="f_fin" maxlength="10" placeholder="Ej: 01/12/2015"> <br />
+								name="f_fin" id="f_fin" maxlength="10" placeholder="Ej: 24/12/2015"> <br />
 							
 							<label id="labelFechaCierre">Fecha de cierre del curso</label> <input
 								class="form-control" type="text" name="cierre_curso" maxlength="10"
-								id="cierre_curso" placeholder="Ej: 02/12/2015"> <br />
+								id="cierre_curso" placeholder="Ej: 27/12/2015"> <br />
 							
 							<label id="labelCategoria">Categoria del curso</label> <input class="form-control"
 								type="text" name="categoria" id="categoria" maxlength="40"
