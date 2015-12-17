@@ -292,7 +292,8 @@ function validarCurso(formulario){
 
 		contador = contador + 1;
 	}
-			    
+			   
+	
  //Valido el terminos
     
     if (!document.getElementById("terminos").checked){ 
