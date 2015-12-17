@@ -82,7 +82,7 @@
 									type="text" class="form-control" name="correoR" id="correoR"
 									maxlength="30" placeholder="Ej.:algo@algo.es"><br /> <label
 									id="txtclave1Reg" for="clave1">Contraseña *</label> <input
-									type="password" class="form-control" name="clave1" id="clave1"
+									type="password" class="form-control" name="clave1" id="clave"
 									maxlength="30" placeholder="Ej.: contraseniahipersegura">
 
 									

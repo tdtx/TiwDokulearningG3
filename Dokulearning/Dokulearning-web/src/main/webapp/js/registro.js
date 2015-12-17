@@ -1,11 +1,11 @@
 function pwdIguales(){ //Antes de validar el resto del formulario, es indispensable que tanto la contraseña como la confirmación de contraseña sean la misma
-    var pwd1 = document.getElementById("clave1").value;
+    var pwd1 = document.getElementById("clave").value;
     var pwd2 = document.getElementById("clave2").value;
     if(pwd1==pwd2 && pwd1 != null && pwd1 != "" && pwd2 != null && pwd2 != ""){
         return validarR();
     } else {
-        document.getElementById("clave1").style.borderColor="red";
-        document.getElementById("clave1").style.borderStyle="dotted";
+        document.getElementById("clave").style.borderColor="red";
+        document.getElementById("clave").style.borderStyle="dotted";
 		document.getElementById("txtclave1Reg").style.color="red";
         document.getElementById("clave2").style.borderColor="red";
         document.getElementById("clave2").style.borderStyle="dotted";
@@ -90,23 +90,23 @@ function validarR(formulario){
     
     
     //Valido el campo 'contrasena'
-    var pwdUsuario = document.getElementById("clave1").value;
+    var pwdUsuario = document.getElementById("clave").value;
     var pwd = pwdUsuario.toString();
 	var pwd1Long = pwd.length;
     if (pwd.match(/[^\w\d-.@$%&#€/¡!¿?ñÑáéíóúüçÁÉÍÓÚÇÜ]/g)|| pwd == null || pwd == ""){
-        document.getElementById("clave1").style.borderColor="red";
-        document.getElementById("clave1").style.borderStyle="dotted";
+        document.getElementById("clave").style.borderColor="red";
+        document.getElementById("clave").style.borderStyle="dotted";
 		document.getElementById("txtclave1Reg").style.color="red";
 
         //mensaje = mensaje.concat("El campo Contraseña del proveedor no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
     } else if(pwd1Long < 4){
-    	document.getElementById("clave1").style.borderColor="red";
-        document.getElementById("clave1").style.borderStyle="dotted";
+    	document.getElementById("clave").style.borderColor="red";
+        document.getElementById("clave").style.borderStyle="dotted";
 		document.getElementById("txtclave1Reg").style.color="red";
 		alert("la contraseña debe tener minimo 4 caracteres");
 	}else {
-        document.getElementById("clave1").style.borderColor="green";
-        document.getElementById("clave1").style.borderStyle="dotted";
+        document.getElementById("clave").style.borderColor="green";
+        document.getElementById("clave").style.borderStyle="dotted";
 		document.getElementById("txtclave1Reg").style.color="green";
 
         contador = contador + 1;
