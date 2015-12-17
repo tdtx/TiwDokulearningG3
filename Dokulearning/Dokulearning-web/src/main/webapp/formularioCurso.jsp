@@ -85,15 +85,9 @@
 								id="temario" placeholder="Ej.: titulos de los temas"></textarea>
 							<br /> 
 							
-							<label id="labelListadoSec">Listado de secciones del curso</label>
-							<textarea class="form-control" rows="3" name="secciones" maxlength="200"
-								id="secciones" placeholder="Ej.: bloque 1, bloque2,..."></textarea>
-							<br />
+							<label id="labelPrecio">Precio</label> <input class="form-control" type="text"
+								name="precio"  maxlength="4" id="precio" placeholder="Ej.: 300"> <br />
 							
-							 <label id="labelListadoLec">Listado de lecciones del curso</label>
-							<textarea class="form-control" rows="3" name="lecciones" maxlength="200"
-								id="lecciones" placeholder="Ej.: tema1, tema2,..."></textarea>
-							<br />
 							
 							<label>Imagen del curso</label> <input type="file"
 								name="imagen" id="imagen">
@@ -104,9 +98,7 @@
 
 						<div class="form-group col-lg-4">
 
-							<label id="labelPrecio">Precio</label> <input class="form-control" type="text"
-								name="precio"  maxlength="4" id="precio" placeholder="Ej.: 300"> <br />
-
+							
 							<label id="labelNumHoras">Numero de horas</label> <input class="form-control"
 								type="text" name="horas" id="horas"
 								maxlength="4" placeholder="Ej.: 0053 (cuatro digitos)"> <br /> 
@@ -117,16 +109,13 @@
 				
 							
 							<label id="labelFechaIni">Fecha inicio del curso</label> <input class="form-control"
-								type="text" name="f_inicio" id="f_inicio" maxlength="10"
+								type="text" name="fInicio" id="fInicio" maxlength="10"
 								placeholder="Ej: 20/12/2015"> <br /> 
 								
 							<label id="labelFechaFin">Fecha
 								fin del curso</label> <input class="form-control" type="text"
-								name="f_fin" id="f_fin" maxlength="10" placeholder="Ej: 24/12/2015"> <br />
+								name="f_fin" id="fFin" maxlength="10" placeholder="Ej: 24/12/2015"> <br />
 							
-							<label id="labelFechaCierre">Fecha de cierre del curso</label> <input
-								class="form-control" type="text" name="cierre_curso" maxlength="10"
-								id="cierre_curso" placeholder="Ej: 27/12/2015"> <br />
 							
 							<label id="labelCategoria">Categoria del curso</label> <input class="form-control"
 								type="text" name="categoria" id="categoria" maxlength="40"
@@ -164,30 +153,30 @@
 											<div class="modal-body">
 												<div style="height: 400px; overflow: scroll">
 													<p>Las presentes condiciones generales de uso del
-														portal regulan el acceso y la utilización del portal,
+														portal regulan el acceso y la utilizaciÃ³n del portal,
 														incluyendo los contenidos y los servicios puestos a
-														disposición de los usuarios en y/o a través del portal,
+														disposiciÃ³n de los usuarios en y/o a travÃ©s del portal,
 														bien por el portal, bien por sus usuarios, bien por
-														terceros. No obstante, el acceso y la utilización de
+														terceros. No obstante, el acceso y la utilizaciÃ³n de
 														ciertos contenidos y/o servicios puede encontrarse
-														sometido a determinadas condiciones específicas.</p>
+														sometido a determinadas condiciones especÃ­ficas.</p>
 													<p>La empresa se reserva la facultad de modificar en
 														cualquier momento las condiciones generales de uso del
 														portal. En todo caso, se recomienda que consulte
-														periódicamente los presentes términos de uso del portal,
+														periÃ³dicamente los presentes tÃ©rminos de uso del portal,
 														ya que pueden ser modificados.</p>
-													<p>El usuario deberá respetar en todo momento los
-														términos y condiciones establecidos en las presentes
+													<p>El usuario deberÃ¡ respetar en todo momento los
+														tÃ©rminos y condiciones establecidos en las presentes
 														condiciones generales de uso del portal. De forma expresa
-														el usuario manifiesta que utilizará el portal de forma
+														el usuario manifiesta que utilizarÃ¡ el portal de forma
 														diligente y asumiendo cualquier responsabilidad que
-														pudiera derivarse del incumplimiento de las normas. Así
-														mismo, el usuario no podrá utilizar el portal para
+														pudiera derivarse del incumplimiento de las normas. AsÃ­
+														mismo, el usuario no podrÃ¡ utilizar el portal para
 														transmitir, almacenar, divulgar promover o distribuir
 														datos o contenidos que sean portadores de virus o
-														cualquier otro código informático, archivos o programas
-														diseñados para interrumpir, destruir o perjudicar el
-														funcionamiento de cualquier programa o equipo informático
+														cualquier otro cÃ³digo informÃ¡tico, archivos o programas
+														diseÃ±ados para interrumpir, destruir o perjudicar el
+														funcionamiento de cualquier programa o equipo informÃ¡tico
 														o de telecomunicaciones.</p>
 												</div>
 												<br>
