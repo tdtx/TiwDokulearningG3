@@ -174,8 +174,33 @@ public class Cursos extends HttpServlet {
         String pagina = "/index.jsp";
 		String action = request.getParameter("action");
 		HttpSession sesion = request.getSession();
-
-		if (action != null) {
+		if (action.equals("rellenarFormulario")) {
+			String titulo= request.getParameter("nom");
+			String descripcion= request.getParameter("descripcion");
+			String temario= request.getParameter("temario");
+			String imagen= "imagenes/addressbook_add_128.png";
+			double precio= Double.parseDouble(request.getParameter("precio"));
+			String horas= request.getParameter("horas");
+			String profesor= request.getParameter("profesor");
+			String fInicio= request.getParameter("fInicio");
+			String fFin= request.getParameter("fFin");
+			String dificultad= request.getParameter("dificultad");
+	        String Rol = "Profesor";
+	        
+	        Curso cn = new Curso(titulo, descripcion, horas, temario, profesor, dificultad, "No", "Magistrales", "No", "No", precio, "No", imagen, fFin, 0, fInicio, 0);
+	        try {
+				cdao.guardarCurso(cn);
+				Matriculados mn = new Matriculados(cn.getTitulo(), cn.getUsuario(), null, cn.getPrecio(), 0);
+				Usuarios un = udao.buscarNick(cn.getUsuario());
+				un.setRol(Rol);
+				udao.actualizarUsuario(un);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        pagina = "/index.jsp";
+		}
+		if (action != null && !action.equals("rellenarFormulario")) {
 			long idCEdit = Integer.parseInt(request.getParameter("idC"));
 			String tituloCEdit= request.getParameter("tituloC");
 	        String descripcionCEdit = request.getParameter("descripcionC");
@@ -193,7 +218,7 @@ public class Cursos extends HttpServlet {
 	        String fechaInicioCEdit= request.getParameter("fechaInicioC"); 
 	        int contador = Integer.parseInt(request.getParameter("contadorC"));
 	        contador = 0;
-	        
+
 	        String img = "imagenes/addressbook_add_128.png";
 
 	        
@@ -223,15 +248,18 @@ public class Cursos extends HttpServlet {
 						c.setPrecio(precioCEdit);
 						c.setTipoOferta(tOfertaCEdit);
 						c.setFechaCaducidad(fechaFinCEdit);
-						c.setDescuentoCupon(10);
+						c.setDescuentoCupon(0);
 						c.setFechaInicio(fechaInicioCEdit);
 						c.setIdImagen(img);					
-						c.setContador(contador);			
+						c.setContador(contador);	
+						
 						cdao.actualizarCurso(c);			
 					}
 			    	cursos = cdao.buscarCursos();
 			    	matriculados = mdao.buscarMatriculados();
 			    	Usuarios u=udao.buscarNick(action);
+
+			    	udao.actualizarUsuario(u);
 					try {
 						cursos = cdao.buscarProfesor(u.getNick());
 					} catch (Exception e) {
