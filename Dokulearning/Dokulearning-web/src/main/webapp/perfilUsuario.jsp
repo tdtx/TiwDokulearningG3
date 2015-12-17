@@ -18,6 +18,7 @@
 <link href="css/ventanaDialog.css" rel="stylesheet">
 
 <script src="js/ValidacionPwd.js"></script>
+<script src="js/validarEditarPerfil.js"></script>
 
 <!-- Custom Fonts icono-->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
@@ -267,7 +268,7 @@
 									<div class="modal-body">
 
 										<!---Form Registrado -------------------------->
-										<form action="registroWeb" method="post"
+										<form action="registroWeb" onSubmit="return validarPerfil(this)" method="post"
 											class="form-horizontal" role="form">
 											<input type="text" name="distribucion" value="editarPerfil"
 												style="display: none">
@@ -276,19 +277,19 @@
 											<div class="row">
 												<div class="form-group col-md-6">
 													<div>
-														<label for="nickActual">Nick: </label> <input type="text"
+														<label for="nickActual" id="labelNick">Nick: </label> <input type="text"
 															class="form-control" id="nickActual" name="nickActual"
 															value="${registrado.nick}">
 
 													</div>
 													<div>
-														<label for="nombreActual"><br>Nombre: </label> <input
+														<label for="nombreActual" id="labelNombre"><br>Nombre: </label> <input
 															type="text" class="form-control" id="nombreActual"
 															name="nombreActual" value="${registrado.nombre}">
 
 													</div>
 													<div>
-														<label for="correoActual"><br>Correo
+														<label for="correoActual" id="labelCorreo"><br>Correo
 															electronico: </label> <input type="text" class="form-control"
 															id="correoActual" name="correoActual"
 															value="${registrado.correo}">
@@ -302,7 +303,7 @@
 
 												<div class="form-group col-md-6">
 													<div>
-														<label for="apellido1Actual">Primer apellido: </label> <input
+														<label for="apellido1Actual" id="labelApell">Primer apellido: </label> <input
 															type="text" class="form-control" id="apellido1Actual"
 															name="apellido1Actual" value="${registrado.apellido1}">
 													</div>
