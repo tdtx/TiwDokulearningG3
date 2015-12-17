@@ -307,7 +307,7 @@ function validarCurso(formulario){
     }
 			    		
     if(contador == 10){
-        alert("Datos del curso correctos. Cargando vista previa.");
+        alert("Datos del curso correctos. Curso creado");
     } else{
         //alert(mensaje);
         return false;
