@@ -4,7 +4,7 @@
   <parent>
     <groupId>es.uc3m.tiw</groupId>
     <artifactId>Dokulearning</artifactId>
-    <version>1.0</version>
+    <version>3.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <groupId>es.uc3m.tiw.model</groupId>

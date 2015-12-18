@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>es.uc3m.tiw</groupId>
 	<artifactId>Dokulearning</artifactId>
-	<version>1.0</version>
+	<version>3.0</version>
 	<packaging>pom</packaging>
 	<name>TIW-Archetype</name>
 	<description>Archetype for rapid development. This archetype build a parent project with submodules like EAR, EJB, WAR, Util and Persistence model.
